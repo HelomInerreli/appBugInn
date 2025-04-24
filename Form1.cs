@@ -16,5 +16,10 @@ namespace appBugInn
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            msgbox.Show("Hello World");
+        }
     }
 }
