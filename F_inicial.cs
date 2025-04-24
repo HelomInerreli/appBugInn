@@ -20,7 +20,7 @@ namespace appBugInn
         private void button1_Click(object sender, EventArgs e)
         {
             F_login loginForm = new F_login();
-            //this.Hide(); // Esconde o formulário atual
+            this.Hide(); // Esconde o formulário atual
             loginForm.Show();
             
         }

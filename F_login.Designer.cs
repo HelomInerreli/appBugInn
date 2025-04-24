@@ -34,11 +34,13 @@
             this.lb_nome = new System.Windows.Forms.Label();
             this.lb_password = new System.Windows.Forms.Label();
             this.bt_mostrarPassword = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_login
             // 
-            this.bt_login.Location = new System.Drawing.Point(481, 388);
+            this.bt_login.Location = new System.Drawing.Point(164, 285);
             this.bt_login.Name = "bt_login";
             this.bt_login.Size = new System.Drawing.Size(75, 23);
             this.bt_login.TabIndex = 0;
@@ -48,7 +50,7 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.Location = new System.Drawing.Point(481, 154);
+            this.txt_nome.Location = new System.Drawing.Point(164, 51);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(100, 22);
             this.txt_nome.TabIndex = 1;
@@ -56,7 +58,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(481, 227);
+            this.txt_password.Location = new System.Drawing.Point(164, 124);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(100, 22);
             this.txt_password.TabIndex = 2;
@@ -65,7 +67,7 @@
             // lb_nome
             // 
             this.lb_nome.AutoSize = true;
-            this.lb_nome.Location = new System.Drawing.Point(370, 160);
+            this.lb_nome.Location = new System.Drawing.Point(53, 57);
             this.lb_nome.Name = "lb_nome";
             this.lb_nome.Size = new System.Drawing.Size(44, 16);
             this.lb_nome.TabIndex = 3;
@@ -75,7 +77,7 @@
             // lb_password
             // 
             this.lb_password.AutoSize = true;
-            this.lb_password.Location = new System.Drawing.Point(370, 233);
+            this.lb_password.Location = new System.Drawing.Point(53, 130);
             this.lb_password.Name = "lb_password";
             this.lb_password.Size = new System.Drawing.Size(67, 16);
             this.lb_password.TabIndex = 4;
@@ -83,7 +85,7 @@
             // 
             // bt_mostrarPassword
             // 
-            this.bt_mostrarPassword.Location = new System.Drawing.Point(481, 282);
+            this.bt_mostrarPassword.Location = new System.Drawing.Point(164, 179);
             this.bt_mostrarPassword.Name = "bt_mostrarPassword";
             this.bt_mostrarPassword.Size = new System.Drawing.Size(78, 47);
             this.bt_mostrarPassword.TabIndex = 5;
@@ -91,21 +93,30 @@
             this.bt_mostrarPassword.UseVisualStyleBackColor = true;
             this.bt_mostrarPassword.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txt_password);
+            this.panel1.Controls.Add(this.bt_mostrarPassword);
+            this.panel1.Controls.Add(this.bt_login);
+            this.panel1.Controls.Add(this.lb_password);
+            this.panel1.Controls.Add(this.txt_nome);
+            this.panel1.Controls.Add(this.lb_nome);
+            this.panel1.Location = new System.Drawing.Point(263, 108);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(333, 385);
+            this.panel1.TabIndex = 6;
+            // 
             // F_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 593);
-            this.Controls.Add(this.bt_mostrarPassword);
-            this.Controls.Add(this.lb_password);
-            this.Controls.Add(this.lb_nome);
-            this.Controls.Add(this.txt_password);
-            this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.bt_login);
+            this.Controls.Add(this.panel1);
             this.Name = "F_login";
             this.Text = "F_login";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -117,5 +128,6 @@
         private System.Windows.Forms.Label lb_nome;
         private System.Windows.Forms.Label lb_password;
         private System.Windows.Forms.Button bt_mostrarPassword;
+        private System.Windows.Forms.Panel panel1;
     }
 }
