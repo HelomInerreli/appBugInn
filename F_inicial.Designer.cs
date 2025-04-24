@@ -1,6 +1,6 @@
 ﻿namespace appBugInn
 {
-    partial class Form1
+    partial class F_inicial
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -33,21 +33,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(423, 204);
+            this.button1.Location = new System.Drawing.Point(439, 270);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 71);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // F_inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 684);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "F_inicial";
             this.Text = "Form1";
             this.ResumeLayout(false);
 

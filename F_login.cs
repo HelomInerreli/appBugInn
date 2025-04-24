@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class Form1 : Form
+    public partial class F_login : Form
     {
-        public Form1()
+        public F_login()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            msgbox.Show("Hello World");
         }
     }
 }
