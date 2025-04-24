@@ -73,6 +73,9 @@
     <EmbeddedResource Include="F_inicial.resx">
       <DependentUpon>F_inicial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_login.resx">
+      <DependentUpon>F_login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

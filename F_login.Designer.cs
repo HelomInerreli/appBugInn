@@ -28,12 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.bt_login = new System.Windows.Forms.Button();
+            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.lb_nome = new System.Windows.Forms.Label();
+            this.lb_password = new System.Windows.Forms.Label();
+            this.bt_mostrarPassword = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // bt_login
+            // 
+            this.bt_login.Location = new System.Drawing.Point(481, 388);
+            this.bt_login.Name = "bt_login";
+            this.bt_login.Size = new System.Drawing.Size(75, 23);
+            this.bt_login.TabIndex = 0;
+            this.bt_login.Text = "Login";
+            this.bt_login.UseVisualStyleBackColor = true;
+            this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
+            // 
+            // txt_nome
+            // 
+            this.txt_nome.Location = new System.Drawing.Point(481, 154);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(100, 22);
+            this.txt_nome.TabIndex = 1;
+            this.txt_nome.TextChanged += new System.EventHandler(this.txt_nome_TextChanged);
+            // 
+            // txt_password
+            // 
+            this.txt_password.Location = new System.Drawing.Point(481, 227);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(100, 22);
+            this.txt_password.TabIndex = 2;
+            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
+            // 
+            // lb_nome
+            // 
+            this.lb_nome.AutoSize = true;
+            this.lb_nome.Location = new System.Drawing.Point(370, 160);
+            this.lb_nome.Name = "lb_nome";
+            this.lb_nome.Size = new System.Drawing.Size(44, 16);
+            this.lb_nome.TabIndex = 3;
+            this.lb_nome.Text = "Nome";
+            this.lb_nome.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lb_password
+            // 
+            this.lb_password.AutoSize = true;
+            this.lb_password.Location = new System.Drawing.Point(370, 233);
+            this.lb_password.Name = "lb_password";
+            this.lb_password.Size = new System.Drawing.Size(67, 16);
+            this.lb_password.TabIndex = 4;
+            this.lb_password.Text = "Password";
+            // 
+            // bt_mostrarPassword
+            // 
+            this.bt_mostrarPassword.Location = new System.Drawing.Point(481, 282);
+            this.bt_mostrarPassword.Name = "bt_mostrarPassword";
+            this.bt_mostrarPassword.Size = new System.Drawing.Size(78, 47);
+            this.bt_mostrarPassword.TabIndex = 5;
+            this.bt_mostrarPassword.Text = "Mostrar Password";
+            this.bt_mostrarPassword.UseVisualStyleBackColor = true;
+            this.bt_mostrarPassword.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // F_login
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1069, 593);
+            this.Controls.Add(this.bt_mostrarPassword);
+            this.Controls.Add(this.lb_password);
+            this.Controls.Add(this.lb_nome);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.bt_login);
+            this.Name = "F_login";
             this.Text = "F_login";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button bt_login;
+        private System.Windows.Forms.TextBox txt_nome;
+        private System.Windows.Forms.TextBox txt_password;
+        private System.Windows.Forms.Label lb_nome;
+        private System.Windows.Forms.Label lb_password;
+        private System.Windows.Forms.Button bt_mostrarPassword;
     }
 }
