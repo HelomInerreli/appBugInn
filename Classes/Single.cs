@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace appBugInn
 {
-    internal class Single
+    internal class Single : Quarto
+
     {
+    public Single(int numQuarto, int andar) : base(numQuarto, andar)
+        {
+            PrecoPorNoite = 70;
+        }
     }
 }

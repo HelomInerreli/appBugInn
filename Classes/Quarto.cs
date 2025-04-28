@@ -9,98 +9,108 @@ namespace appBugInn
 {
     internal class Quarto
     {
-
         private int _numQuarto;
         private int _andar;
         private float _conta;
         private bool _livre;
         private string _status;
 
-       public int NumQuarto
+        public List<string> ProdutosMinibar { get; set; } = new List<string>(); // Lista de produtos para o minibar
+
+        public virtual double PrecoPorNoite { get; set; }
+        public int NumQuarto
         {
             get => _numQuarto;
             set
             {
                 if (value < 100)
                 {
-                    //alguma coisa
+                    throw new ArgumentException("O número do quarto deve ser maior ou igual a 100.");
                 }
                 _numQuarto = value;
             }
         }
 
-       public int Andar
+        public int Andar
         {
             get => _andar;
             set
             {
                 if (value < 0)
                 {
-                    //receber algo}
+                    throw new ArgumentException("O andar não pode ser negativo.");
                 }
                 _andar = value;
             }
         }
 
-       public float Conta
+        public float Conta
         {
             get => _conta;
             set
             {
-                if (_conta < 0)
+                if (value < 0)
                 {
-                    //algo
+                    throw new ArgumentException("A conta não pode ser negativa.");
                 }
                 _conta = value;
             }
         }
-       public bool Livre 
-        { get => _livre;
+
+        public bool Livre
+        {
+            get => _livre;
             set
             {
-                if (_livre = false)
-                {
-
-                }
-                _livre = value;
+                _livre = value; // Corrigido: não faz sentido testar aqui, só definir.
             }
         }
-        //
-       public string Status
+
+        public string Status
         {
             get => _status;
             set
             {
-                if(_status != value)
+                if (string.IsNullOrEmpty(value))
                 {
-                    //
+                    throw new ArgumentException("Status não pode ser vazio.");
                 }
                 _status = value;
             }
         }
-        //criar lista de produtos para o minibar.
 
-
-        public Quarto(int numQuarto, int andar) { }
-
-        void alterarStatus() { }
-
-        bool alterarOcupacao(bool opLivre) 
+        public Quarto(int numQuarto, int andar)
         {
-            if (opLivre = true) 
-            { 
-                return Livre = true; 
+            NumQuarto = numQuarto;
+            Andar = andar;
+            Livre = true;        // Ao criar, o quarto começa livre
+            Status = "Disponível";
+            Conta = 0;
+        }
+
+        // Método para alterar status manualmente
+        public void AlterarStatus(string novoStatus)
+        {
+            if (!string.IsNullOrEmpty(novoStatus))
+            {
+                Status = novoStatus;
             }
-            else { return Livre = false; }
         }
 
-        double alterarConta(int dias, int consumiveis) 
+        // Método para alterar ocupação
+        public bool AlterarOcupacao(bool opLivre)
         {
-            //dias * preco do quarto + consumiveis + reparacoes
-            return 0;
+            Livre = opLivre;
+            Status = opLivre ? "Disponível" : "Ocupado";
+            return Livre;
         }
 
-
-        
+        // Método para alterar a conta
+        public double AlterarConta(int dias, double precoPorNoite, double consumiveis, double reparacoes)
+        {
+            double total = (dias * precoPorNoite) + consumiveis + reparacoes;
+            Conta += (float)total;
+            return Conta;
+        }
     }
 }

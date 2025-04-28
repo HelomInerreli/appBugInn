@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace appBugInn
 {
-    internal class Suite
+    internal class Suite : Quarto
     {
+
+
+        public Suite(int numQuarto, int andar) : base(numQuarto, andar)
+        {
+            PrecoPorNoite = 150;
+
+
+        }
     }
 }

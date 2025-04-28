@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace appBugInn
 {
-    internal class Duplo
+    internal class Duplo : Quarto
+
     {
+    public Duplo(int numQuarto, int andar) : base(numQuarto,andar)
+
+            {
+            PrecoPorNoite = 100;
+        
+        }
+
+    
+    
+    
+    
     }
 }
