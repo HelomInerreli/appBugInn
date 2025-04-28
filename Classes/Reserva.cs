@@ -14,11 +14,10 @@ namespace appBugInn
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
         public string Email { get; set; }
-        public Quarto tipoQuarto{ get; set; }
+        public Quarto TipoQuarto { get; set; } 
 
         // Construtor
-
-        public Reserva(int id, string nome, string telefone, DateTime dataInicio, DateTime dataFim, string email)
+        public Reserva(int id, string nome, string telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
         {
             Id = id;
             Nome = nome;
@@ -26,27 +25,27 @@ namespace appBugInn
             DataInicio = dataInicio;
             DataFim = dataFim;
             Email = email;
+            TipoQuarto = tipoQuarto; // agora guarda o quarto na reserva
         }
-    
-    public TimeSpan calcularDuracao()
+
+        public TimeSpan CalcularDuracao()
         {
-                TimeSpan duracao= DataFim - DataInicio;
-            return duracao;
-
-
-
+            return DataFim - DataInicio;
         }
 
-        public bool validarReserva()
+        public bool ValidarReserva()
         {
             return DataInicio < DataFim;
         }
 
-        public decimal calcularPrecoTotal()
+        public decimal CalcularPrecoTotal()
         {
-            int dias = (int)calcularDuracao().TotalDays;
-            return dias;  // multiplicar os dias pelo preço do tipo de quarto
+            int dias = (int)CalcularDuracao().TotalDays;
 
+            if (dias <= 0)
+                dias = 1; // Para garantir no mínimo 1 dia (evita erros)
+
+            return (decimal)(dias * TipoQuarto.PrecoPorNoite);
         }
     }
 }
