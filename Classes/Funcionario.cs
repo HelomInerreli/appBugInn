@@ -8,5 +8,17 @@ namespace appBugInn
 {
     internal class Funcionario
     {
+        public int Id  { get; set; }
+        public string Nome { get; set; }
+        public string Telefone { get; set; }
+        public bool TipoFuncionario { get; set; }
+
+        public Funcionario(int id, string nome, string telefone, bool tipoFuncionario)
+        {
+            Id = id;
+            Nome = nome;
+            Telefone = telefone;
+            TipoFuncionario = tipoFuncionario;
+        }
     }
 }
