@@ -8,5 +8,12 @@ namespace appBugInn
 {
     internal class Reserva
     {
+   
+    
+    
+    
+    
+    
+    
     }
 }
