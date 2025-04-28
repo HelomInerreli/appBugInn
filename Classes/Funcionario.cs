@@ -19,6 +19,12 @@ namespace appBugInn
             Nome = nome;
             Telefone = telefone;
             TipoFuncionario = tipoFuncionario;
+       
         }
+        // public string ObterCargo();
+    
+    
+    
+    
     }
 }
