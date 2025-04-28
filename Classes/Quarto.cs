@@ -65,7 +65,7 @@ namespace appBugInn
                 _livre = value;
             }
         }
-
+        //
        public string Status
         {
             get => _status;
