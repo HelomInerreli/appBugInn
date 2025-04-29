@@ -16,7 +16,7 @@ namespace appBugInn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_login());
+            Application.Run(new F_inicial());
         }
     }
 }
