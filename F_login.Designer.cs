@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_login));
             this.bt_login = new System.Windows.Forms.Button();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
@@ -50,7 +51,7 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.Location = new System.Drawing.Point(164, 51);
+            this.txt_nome.Location = new System.Drawing.Point(177, 87);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(100, 22);
             this.txt_nome.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(164, 124);
+            this.txt_password.Location = new System.Drawing.Point(177, 160);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(100, 22);
             this.txt_password.TabIndex = 2;
@@ -67,7 +68,7 @@
             // lb_nome
             // 
             this.lb_nome.AutoSize = true;
-            this.lb_nome.Location = new System.Drawing.Point(53, 57);
+            this.lb_nome.Location = new System.Drawing.Point(62, 87);
             this.lb_nome.Name = "lb_nome";
             this.lb_nome.Size = new System.Drawing.Size(44, 16);
             this.lb_nome.TabIndex = 3;
@@ -77,7 +78,7 @@
             // lb_password
             // 
             this.lb_password.AutoSize = true;
-            this.lb_password.Location = new System.Drawing.Point(53, 130);
+            this.lb_password.Location = new System.Drawing.Point(62, 166);
             this.lb_password.Name = "lb_password";
             this.lb_password.Size = new System.Drawing.Size(67, 16);
             this.lb_password.TabIndex = 4;
@@ -85,11 +86,12 @@
             // 
             // bt_mostrarPassword
             // 
-            this.bt_mostrarPassword.Location = new System.Drawing.Point(164, 179);
+            this.bt_mostrarPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bt_mostrarPassword.Image = ((System.Drawing.Image)(resources.GetObject("bt_mostrarPassword.Image")));
+            this.bt_mostrarPassword.Location = new System.Drawing.Point(283, 103);
             this.bt_mostrarPassword.Name = "bt_mostrarPassword";
-            this.bt_mostrarPassword.Size = new System.Drawing.Size(78, 47);
+            this.bt_mostrarPassword.Size = new System.Drawing.Size(194, 166);
             this.bt_mostrarPassword.TabIndex = 5;
-            this.bt_mostrarPassword.Text = "Mostrar Password";
             this.bt_mostrarPassword.UseVisualStyleBackColor = true;
             this.bt_mostrarPassword.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -103,7 +105,7 @@
             this.panel1.Controls.Add(this.lb_nome);
             this.panel1.Location = new System.Drawing.Point(263, 108);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 385);
+            this.panel1.Size = new System.Drawing.Size(514, 385);
             this.panel1.TabIndex = 6;
             // 
             // F_login
@@ -112,8 +114,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 593);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_login";
             this.Text = "F_login";
+            this.Load += new System.EventHandler(this.F_login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -18,6 +18,7 @@ namespace appBugInn
         public List<string> ProdutosMinibar { get; set; } = new List<string>(); // Lista de produtos para o minibar
 
         public virtual double PrecoPorNoite { get; set; }
+
         public int NumQuarto
         {
             get => _numQuarto;
