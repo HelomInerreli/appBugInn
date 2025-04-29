@@ -54,6 +54,9 @@ namespace appBugInn
             
         }
 
-        
+        private void F_login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
