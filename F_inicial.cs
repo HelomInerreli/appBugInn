@@ -28,18 +28,31 @@ namespace appBugInn
             if (dados.Length > 0)
             {
                 string[] linha = dados[1].Split(';'); // Supondo que os dados estejam separados por ponto e vírgula
-                string texto = dados[1];
-                //foreach (var item in dados)
-                //{
-                //    texto += item + "\n";
-                //}
-                rtxt_caixa.Text = linha[2]; // Exibir o primeiro dado lido
+                string texto = "";
+                foreach (var item in dados)
+                {
+                    texto += item + "\n";
+                }
+                rtxt_caixa.Text = texto; // Exibir o primeiro dado lido
             }
             else
             {
                 MessageBox.Show("Nenhum dado encontrado.");
             }
 
+        }
+
+        private void btn_gravar_Click(object sender, EventArgs e)
+        {
+            bool resultado = Funcionalidades.GravarBaseDados(txt_basedados.Text, txt_addLinha.Text);
+            if (resultado)
+            {
+                MessageBox.Show("Gravação bem-sucedida.");
+            }
+            else
+            {
+                MessageBox.Show("Erro ao gravar os dados.");
+            }
         }
     }
 }
