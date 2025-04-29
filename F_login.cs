@@ -16,7 +16,6 @@ namespace appBugInn
         {
             InitializeComponent();
             txt_password.PasswordChar = '*'; // Começa com senha oculta
-            bt_mostrarPassword.Text = "Mostrar";        // Texto inicial do botão
         }
 
         private void bt_login_Click(object sender, EventArgs e)
@@ -40,12 +39,10 @@ namespace appBugInn
             if (txt_password.PasswordChar == '*')
             {
                 txt_password.PasswordChar = '\0'; // Mostra a senha
-                bt_mostrarPassword.Text = "Ocultar";         // Troca o texto do botão (opcional)
             }
             else
             {
                 txt_password.PasswordChar = '*'; // Oculta a senha
-                bt_mostrarPassword.Text = "Mostrar";        // Troca o texto do botão (opcional)
             }
         }
 

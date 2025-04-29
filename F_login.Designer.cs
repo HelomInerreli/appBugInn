@@ -88,9 +88,9 @@
             // 
             this.bt_mostrarPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.bt_mostrarPassword.Image = ((System.Drawing.Image)(resources.GetObject("bt_mostrarPassword.Image")));
-            this.bt_mostrarPassword.Location = new System.Drawing.Point(283, 103);
+            this.bt_mostrarPassword.Location = new System.Drawing.Point(299, 162);
             this.bt_mostrarPassword.Name = "bt_mostrarPassword";
-            this.bt_mostrarPassword.Size = new System.Drawing.Size(194, 166);
+            this.bt_mostrarPassword.Size = new System.Drawing.Size(25, 25);
             this.bt_mostrarPassword.TabIndex = 5;
             this.bt_mostrarPassword.UseVisualStyleBackColor = true;
             this.bt_mostrarPassword.Click += new System.EventHandler(this.button1_Click);
