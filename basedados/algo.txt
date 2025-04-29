@@ -1,0 +1,3 @@
+id;nome;cargo;gestor
+1;Joao;Gerente;true
+2;Maria;Rececionista;false
