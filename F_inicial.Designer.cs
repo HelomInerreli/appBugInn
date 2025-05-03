@@ -33,6 +33,7 @@
             this.rtxt_caixa = new System.Windows.Forms.RichTextBox();
             this.txt_addLinha = new System.Windows.Forms.TextBox();
             this.btn_gravar = new System.Windows.Forms.Button();
+            this.btn_logins = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_lerFicheiro
@@ -78,11 +79,22 @@
             this.btn_gravar.UseVisualStyleBackColor = true;
             this.btn_gravar.Click += new System.EventHandler(this.btn_gravar_Click);
             // 
+            // btn_logins
+            // 
+            this.btn_logins.Location = new System.Drawing.Point(608, 352);
+            this.btn_logins.Name = "btn_logins";
+            this.btn_logins.Size = new System.Drawing.Size(75, 23);
+            this.btn_logins.TabIndex = 6;
+            this.btn_logins.Text = "Logins";
+            this.btn_logins.UseVisualStyleBackColor = true;
+            this.btn_logins.Click += new System.EventHandler(this.btn_logins_Click);
+            // 
             // F_inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_logins);
             this.Controls.Add(this.btn_gravar);
             this.Controls.Add(this.txt_addLinha);
             this.Controls.Add(this.rtxt_caixa);
@@ -90,6 +102,7 @@
             this.Controls.Add(this.btn_lerFicheiro);
             this.Name = "F_inicial";
             this.Text = "F_inicial";
+            this.Load += new System.EventHandler(this.F_inicial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,5 +114,6 @@
         private System.Windows.Forms.RichTextBox rtxt_caixa;
         private System.Windows.Forms.TextBox txt_addLinha;
         private System.Windows.Forms.Button btn_gravar;
+        private System.Windows.Forms.Button btn_logins;
     }
 }

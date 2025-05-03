@@ -54,5 +54,17 @@ namespace appBugInn
                 MessageBox.Show("Erro ao gravar os dados.");
             }
         }
+
+        private void F_inicial_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_logins_Click(object sender, EventArgs e)
+        {
+            F_login flogin = new F_login();
+
+            flogin.Show();
+        }
     }
 }
