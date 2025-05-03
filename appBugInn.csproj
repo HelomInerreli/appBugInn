@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_nFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_nFunc.Designer.cs">
+      <DependentUpon>F_nFunc.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Classes\Suite.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_nFunc.resx">
+      <DependentUpon>F_nFunc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_inicial.resx">
       <DependentUpon>F_inicial.cs</DependentUpon>
@@ -110,6 +119,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="BaseDados\algo.txt" />
+    <Content Include="BaseDados\funcionarios.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BaseDados\logins.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

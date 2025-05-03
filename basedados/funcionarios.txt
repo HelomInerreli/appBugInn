@@ -1,0 +1,6 @@
+id;nome;telefone;tipoFunc
+
+1;bruno;912345687;False
+2;goncalo;912345678;True
+3;helom;987654321;True
+4;henrique;98127634;False

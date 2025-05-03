@@ -66,5 +66,10 @@ namespace appBugInn
 
             flogin.Show();
         }
+
+        private void txt_basedados_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

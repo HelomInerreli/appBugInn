@@ -53,6 +53,7 @@
             this.txt_basedados.Size = new System.Drawing.Size(100, 20);
             this.txt_basedados.TabIndex = 2;
             this.txt_basedados.Text = "algo";
+            this.txt_basedados.TextChanged += new System.EventHandler(this.txt_basedados_TextChanged);
             // 
             // rtxt_caixa
             // 

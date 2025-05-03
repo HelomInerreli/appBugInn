@@ -71,7 +71,15 @@ namespace appBugInn
 
         private void txt_nome_TextChanged(object sender, EventArgs e)
         {
+            string texto = txt_nome.Text;
+            string apenasLetras = new string(texto.Where(c => char.IsLetter(c)).ToArray());
 
+            if (texto != apenasLetras)
+            {
+                int pos = txt_nome.SelectionStart - 1;
+                txt_nome.Text = apenasLetras;
+                txt_nome.SelectionStart = Math.Max(pos, 0); // Mantém o cursor na posição correta
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,6 +103,12 @@ namespace appBugInn
         private void F_login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_newuser_Click(object sender, EventArgs e)
+        {
+           F_nFunc f_NFunc = new F_nFunc();
+            f_NFunc.Show();
         }
     }
 }
