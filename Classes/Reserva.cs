@@ -13,6 +13,7 @@ namespace appBugInn
         private string _telefone;
         private DateTime _dataInicio;
         private DateTime _dataFim;
+        private string _email;
 
 
 
@@ -78,7 +79,22 @@ namespace appBugInn
                 }
             }
         }
-        public string Email { get; set; }
+        public string Email
+        {
+            get => _email;
+            set
+            {
+                // Verificar se o e-mail não está vazio e tem o formato correto
+                if (string.IsNullOrWhiteSpace(value) || !IsEmailValido(value))
+                {
+                    throw new ArgumentException("O email fornecido não é válido.");
+                }
+                _email = value;
+            }
+
+
+
+        }
         public Quarto TipoQuarto { get; set; } 
 
         // Construtor
@@ -108,8 +124,6 @@ namespace appBugInn
 
         }
 
-
-
         public TimeSpan CalcularDuracao()
         {
             return DataFim - DataInicio;
@@ -128,6 +142,13 @@ namespace appBugInn
                 dias = 1; // Para garantir no mínimo 1 dia (evita erros)
 
             return (decimal)(dias * TipoQuarto.PrecoPorNoite);
+        }
+
+        public bool IsEmailValido(string email)
+        {
+            //  para validar o formato do e-mail
+            var format = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            return format.IsMatch(email);
         }
     }
 }
