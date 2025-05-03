@@ -24,12 +24,11 @@ namespace appBugInn
             string username = txt_nome.Text.Trim();
             string password = txt_password.Text;
 
-            string caminhoArquivo = Path.Combine(Application.StartupPath, "BaseDados", "logins.txt");
-
-            if (File.Exists(caminhoArquivo))
+            try
             {
+                string[] linhas = Funcionalidades.LerBaseDados("logins");
+
                 bool loginValido = false;
-                string[] linhas = File.ReadAllLines(caminhoArquivo);
 
                 foreach (string linha in linhas.Skip(1)) // Pula o cabeçalho
                 {
@@ -59,9 +58,9 @@ namespace appBugInn
                     MessageBox.Show("Usuário ou senha inválidos.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show($"Arquivo de usuários não encontrado em: {caminhoArquivo}");
+                MessageBox.Show("Erro ao carregar a base de dados: " + ex.Message);
             }
         }
 
