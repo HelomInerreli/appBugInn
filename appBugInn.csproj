@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_gerirQuartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_gerirQuartos.Designer.cs">
+      <DependentUpon>F_gerirQuartos.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_nFunc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Classes\Suite.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_gerirQuartos.resx">
+      <DependentUpon>F_gerirQuartos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_nFunc.resx">
       <DependentUpon>F_nFunc.cs</DependentUpon>
@@ -134,6 +143,7 @@
     <Content Include="BaseDados\logins.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="BaseDados\quartos.txt" />
     <Content Include="Imagens\algo1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

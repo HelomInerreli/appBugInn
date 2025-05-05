@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class F_inicial: Form
+    public partial class F_inicial : Form
     {
         public F_inicial()
         {
@@ -71,5 +71,14 @@ namespace appBugInn
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            F_gerirQuartos quartos = new F_gerirQuartos();
+            quartos.Show();
+
+        }
+
+      
     }
 }
