@@ -71,5 +71,12 @@ namespace appBugInn
         {
 
         }
+
+        private void btn_criarObjeto_Click(object sender, EventArgs e)
+        {
+            CriarObjeto fcriarObjeto = new CriarObjeto();
+
+            fcriarObjeto.Show();
+        }
     }
 }

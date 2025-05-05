@@ -59,6 +59,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_criarObjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_criarObjeto.Designer.cs">
+      <DependentUpon>F_criarObjeto.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_nFunc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="Classes\Suite.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_criarObjeto.resx">
+      <DependentUpon>F_criarObjeto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_nFunc.resx">
       <DependentUpon>F_nFunc.cs</DependentUpon>

@@ -21,10 +21,15 @@ namespace appBugInn
             TipoFuncionario = tipoFuncionario;
        
         }
-        // public string ObterCargo();
-    
-    
-    
-    
+
+        public override string ToString()
+        {
+            return $"{Id}: {Nome} - {Telefone} - {(TipoFuncionario ? "Gerente" : "Funcionário")}";
+        }
+
+
+
+
+
     }
 }
