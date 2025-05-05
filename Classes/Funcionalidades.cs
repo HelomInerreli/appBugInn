@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace appBugInn
 {
@@ -43,5 +45,44 @@ namespace appBugInn
                 throw new Exception("Erro ao gravar os dados: " + ex.Message);
             }
         }
+        public static bool ValidarLetras(string texto)
+        {
+            return !string.IsNullOrWhiteSpace(texto) && texto.All(char.IsLetter);
+        }
+        public static bool ValidarNumeros(string valor)
+        {
+            // Verifica se a string não está vazia e contém apenas dígitos
+            return !string.IsNullOrWhiteSpace(valor) && valor.All(char.IsDigit);
+        }
+        public static bool IsEmailValido(string email)
+        {
+            //  para validar o formato do e-mail
+            var format = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            return format.IsMatch(email);
+        }
+        public static bool ValidarDataComFormato(string dataStr, string formato, out DateTime dataValida)
+        {
+            dataValida = DateTime.MinValue;
+
+            // Tenta converter a string para DateTime com o formato específico
+            bool isValida = DateTime.TryParseExact(dataStr, formato,
+                                                   System.Globalization.CultureInfo.InvariantCulture,
+                                                   System.Globalization.DateTimeStyles.None,
+                                                   out dataValida);
+
+            return isValida;
+        }
+
+        public static bool ValidarTipoQuarto(string tipoQuarto)
+        {
+            // Lista dos tipos válidos de quarto
+            var tiposValidos = new List<string> { "Simples", "Duplo", "Deluxe", "Suite" };
+
+            // Verifica se o tipo de quarto fornecido está na lista de tipos válidos (ignora maiúsculas e minúsculas)
+            return tiposValidos.Contains(tipoQuarto, StringComparer.OrdinalIgnoreCase);
+        }
+
     }
+
 }
+

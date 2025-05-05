@@ -62,6 +62,7 @@
             this.txt_nomeReserva.Name = "txt_nomeReserva";
             this.txt_nomeReserva.Size = new System.Drawing.Size(186, 31);
             this.txt_nomeReserva.TabIndex = 1;
+            this.txt_nomeReserva.Leave += new System.EventHandler(this.txt_nomeReserva_Leave);
             // 
             // label3
             // 
@@ -79,6 +80,9 @@
             this.txt_telefoneReserva.Name = "txt_telefoneReserva";
             this.txt_telefoneReserva.Size = new System.Drawing.Size(186, 31);
             this.txt_telefoneReserva.TabIndex = 4;
+            this.txt_telefoneReserva.TextChanged += new System.EventHandler(this.txt_telefoneReserva_TextChanged);
+            this.txt_telefoneReserva.Leave += new System.EventHandler(this.txt_telefoneReserva_Leave);
+            this.txt_telefoneReserva.Validating += new System.ComponentModel.CancelEventHandler(this.txt_telefoneReserva_Validating);
             // 
             // label2
             // 
@@ -144,6 +148,8 @@
             this.txt_dataInicioReserva.Name = "txt_dataInicioReserva";
             this.txt_dataInicioReserva.Size = new System.Drawing.Size(182, 31);
             this.txt_dataInicioReserva.TabIndex = 11;
+            this.txt_dataInicioReserva.TextChanged += new System.EventHandler(this.txt_dataInicioReserva_TextChanged);
+            this.txt_dataInicioReserva.Leave += new System.EventHandler(this.txt_dataInicioReserva_Leave);
             // 
             // txt_dataFimReserva
             // 
@@ -151,6 +157,8 @@
             this.txt_dataFimReserva.Name = "txt_dataFimReserva";
             this.txt_dataFimReserva.Size = new System.Drawing.Size(182, 31);
             this.txt_dataFimReserva.TabIndex = 12;
+            this.txt_dataFimReserva.TextChanged += new System.EventHandler(this.txt_dataFimReserva_TextChanged);
+            this.txt_dataFimReserva.Leave += new System.EventHandler(this.txt_dataFimReserva_Leave);
             // 
             // txt_tipoQuartoReserva
             // 
@@ -158,6 +166,8 @@
             this.txt_tipoQuartoReserva.Name = "txt_tipoQuartoReserva";
             this.txt_tipoQuartoReserva.Size = new System.Drawing.Size(182, 31);
             this.txt_tipoQuartoReserva.TabIndex = 13;
+            this.txt_tipoQuartoReserva.TextChanged += new System.EventHandler(this.txt_tipoQuartoReserva_TextChanged);
+            this.txt_tipoQuartoReserva.Leave += new System.EventHandler(this.txt_tipoQuartoReserva_Leave);
             // 
             // label9
             // 
@@ -174,6 +184,8 @@
             this.txt_emailreserva.Name = "txt_emailreserva";
             this.txt_emailreserva.Size = new System.Drawing.Size(186, 31);
             this.txt_emailreserva.TabIndex = 15;
+            this.txt_emailreserva.TextChanged += new System.EventHandler(this.txt_emailreserva_TextChanged);
+            this.txt_emailreserva.Leave += new System.EventHandler(this.txt_emailreserva_Leave);
             // 
             // btn_registarReserva
             // 
