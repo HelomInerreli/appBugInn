@@ -54,5 +54,11 @@ namespace appBugInn
                 MessageBox.Show("Erro ao gravar os dados.");
             }
         }
+
+        private void btn_reservasInicial_Click(object sender, EventArgs e)
+        {
+            F_reserva f_Reserva = new F_reserva();
+            f_Reserva.Show();
+        }
     }
 }

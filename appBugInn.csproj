@@ -110,6 +110,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="BaseDados\algo.txt" />
+    <Content Include="BaseDados\reservas.txt" />
     <Content Include="Imagens\algo1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

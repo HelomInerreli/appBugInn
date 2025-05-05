@@ -108,7 +108,7 @@ namespace appBugInn
             Email = email;
             TipoQuarto = tipoQuarto; // agora guarda o quarto na reserva
 
-            string linha = $"{Id};{Nome};{Telefone};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{Email};{TipoQuarto.NumQuarto};{TipoQuarto.PrecoPorNoite}";
+            string linha = $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto}";
 
             try
             {
