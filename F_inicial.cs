@@ -77,6 +77,11 @@ namespace appBugInn
             F_testesHelom fteste = new F_testesHelom();
 
             fteste.Show();
+        private void btn_criarObjeto_Click(object sender, EventArgs e)
+        {
+            CriarObjeto fcriarObjeto = new CriarObjeto();
+
+            fcriarObjeto.Show();
         }
     }
 }

@@ -21,20 +21,15 @@ namespace appBugInn
             TipoFuncionario = tipoFuncionario;
        
         }
-        public bool Gravar()
+
+        public override string ToString()
         {
-            string linha = $"{Id};{Nome};{Telefone};{TipoFuncionario}";
-            return Funcionalidades.GravarBaseDados("funcionarios", linha);
+            return $"{Id}: {Nome} - {Telefone} - {(TipoFuncionario ? "Gerente" : "Funcionário")}";
         }
 
-        public bool GravarLogin(string password)
-        {
-            if (string.IsNullOrEmpty(password))
-            {
-                password = "atec123";
-            }
-            string linha = $"{Id};{Nome};{password}";
-            return Funcionalidades.GravarBaseDados("logins", linha);
-        }
+
+
+
+
     }
 }
