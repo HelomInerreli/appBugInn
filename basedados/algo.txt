@@ -1,8 +1,5 @@
 id;nome;cargo;gestor
 1;Joao;Gerente;true
 2;Maria;Rececionista;false
-3;Helom;Desenvolvedor;true
-4;Teste;Teste;Teste
-5;Teste;Teste;Teste
 6;Teste;Teste;Teste
-7;teste;teste;teste
+4;Henrique;Dono;true

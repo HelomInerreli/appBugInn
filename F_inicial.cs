@@ -58,7 +58,7 @@ namespace appBugInn
         private void F_inicial_Load(object sender, EventArgs e)
         {
 
-        }
+        } 
 
         private void btn_logins_Click(object sender, EventArgs e)
         {
@@ -70,6 +70,13 @@ namespace appBugInn
         private void txt_basedados_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_testesHelom_Click(object sender, EventArgs e)
+        {
+            F_testesHelom fteste = new F_testesHelom();
+
+            fteste.Show();
         }
     }
 }
