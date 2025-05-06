@@ -90,7 +90,11 @@ namespace appBugInn
             F_testesHelom fteste = new F_testesHelom();
 
             fteste.Show();
-
+        }
+        private void btn_reservasInicial_Click(object sender, EventArgs e)
+        {
+            F_reserva f_Reserva = new F_reserva();
+            f_Reserva.Show();
         }
     }
 }
