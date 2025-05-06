@@ -84,5 +84,13 @@ namespace appBugInn
 
             fcriarObjeto.Show();
         }
+
+        private void btn_testeHelom_Click(object sender, EventArgs e)
+        {
+            F_testesHelom fteste = new F_testesHelom();
+
+            fteste.Show();
+
+        }
     }
 }
