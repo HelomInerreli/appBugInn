@@ -1,2 +1,4 @@
-id;nome;telefone;tipoFunc
+id;nome;telefone;tipoFuncionario
 1;goncalo;912345678;True
+2;helom;987654321;True
+3;henrique;98127634;False

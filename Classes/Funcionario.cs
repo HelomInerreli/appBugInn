@@ -36,5 +36,15 @@ namespace appBugInn
             string linha = $"{Id};{Nome};{password}";
             return Funcionalidades.GravarBaseDados("logins", linha);
         }
+
+        public override string ToString()
+        {
+            return $"{Id}: {Nome} - {Telefone} - {(TipoFuncionario ? "Gerente" : "Funcionário")}";
+        }
+
+
+
+
+
     }
 }
