@@ -33,6 +33,7 @@ namespace appBugInn
             {
                 string nome = txt_nome.Text.Trim();
                 string telefone = txt_telefone.Text.Trim();
+                string password = txt_password.Text.Trim();
                 bool tipoFuncionario = chb_gestor.Checked;
 
                 if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(telefone))
@@ -47,38 +48,40 @@ namespace appBugInn
                     return;
                 }
 
-                // Ler todos os funcionários, ignorando a primeira linha (cabeçalho)
-                string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios").Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
+                // Ler funcionários existentes
+                string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
+                    .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
 
-                // Verificar se já existe um funcionário com o mesmo nome e telefone
+                // Verifica duplicados
                 foreach (string linha in funcionarios)
                 {
                     string[] partes = linha.Split(';');
-                    string nomeExistente = partes[1];
-                    string telefoneExistente = partes[2];
+                    if (partes.Length < 3) continue;
 
-                    if (nomeExistente.Equals(nome, StringComparison.OrdinalIgnoreCase) && telefoneExistente.Equals(telefone))
+                    if (partes[1].Equals(nome, StringComparison.OrdinalIgnoreCase) && partes[2] == telefone)
                     {
                         MessageBox.Show("Já existe um funcionário com esse nome e telefone.");
                         return;
                     }
                 }
 
-                // Obter o novo ID
-                int novoId = 1;
-                foreach (string linha in funcionarios)
-                {
-                    string[] partes = linha.Split(';');
-                    if (int.TryParse(partes[0], out int idAtual) && idAtual >= novoId)
-                        novoId = idAtual + 1;
-                }
+                // Calcula novo ID
+                int novoId = funcionarios.Select(l => int.TryParse(l.Split(';')[0], out int id) ? id : 0).DefaultIfEmpty(0).Max() + 1;
 
-                string novaLinha = $"{novoId};{nome};{telefone};{tipoFuncionario}";
+                // Cria e grava funcionário
+                Funcionario novoFunc = new Funcionario(novoId, nome, telefone, tipoFuncionario);
 
-                if (Funcionalidades.GravarBaseDados("funcionarios", novaLinha))
+                bool funcionarioGravado = novoFunc.Gravar();
+                bool loginGravado = novoFunc.GravarLogin(password);
+
+                if (funcionarioGravado && loginGravado)
                 {
-                    MessageBox.Show("Funcionário criado com sucesso!");
+                    MessageBox.Show("Funcionário e login criados com sucesso!");
                     this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao gravar os dados.");
                 }
             }
             catch (Exception ex)
@@ -88,6 +91,11 @@ namespace appBugInn
         }
 
         private void chb_gestor_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_password_TextChanged(object sender, EventArgs e)
         {
 
         }
