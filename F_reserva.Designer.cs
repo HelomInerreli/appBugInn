@@ -38,8 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_dataInicioReserva = new System.Windows.Forms.TextBox();
-            this.txt_dataFimReserva = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_emailreserva = new System.Windows.Forms.TextBox();
             this.btn_registarReserva = new System.Windows.Forms.Button();
@@ -47,6 +45,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cb_NumeroPessoas = new MaterialSkin.Controls.MaterialComboBox();
             this.cb_TipoQuarto = new MaterialSkin.Controls.MaterialComboBox();
+            this.dtp_dataInicioReserva = new System.Windows.Forms.DateTimePicker();
+            this.dtp_dataFimReserva = new System.Windows.Forms.DateTimePicker();
+            this.btn_adicionarDia = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +64,7 @@
             // txt_nomeReserva
             // 
             this.txt_nomeReserva.Location = new System.Drawing.Point(92, 113);
-            this.txt_nomeReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_nomeReserva.Margin = new System.Windows.Forms.Padding(2);
             this.txt_nomeReserva.Name = "txt_nomeReserva";
             this.txt_nomeReserva.Size = new System.Drawing.Size(95, 20);
             this.txt_nomeReserva.TabIndex = 1;
@@ -82,7 +84,7 @@
             // txt_telefoneReserva
             // 
             this.txt_telefoneReserva.Location = new System.Drawing.Point(92, 140);
-            this.txt_telefoneReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_telefoneReserva.Margin = new System.Windows.Forms.Padding(2);
             this.txt_telefoneReserva.Name = "txt_telefoneReserva";
             this.txt_telefoneReserva.Size = new System.Drawing.Size(95, 20);
             this.txt_telefoneReserva.TabIndex = 4;
@@ -153,24 +155,6 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Tipo de quarto";
             // 
-            // txt_dataInicioReserva
-            // 
-            this.txt_dataInicioReserva.Location = new System.Drawing.Point(368, 113);
-            this.txt_dataInicioReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_dataInicioReserva.Name = "txt_dataInicioReserva";
-            this.txt_dataInicioReserva.Size = new System.Drawing.Size(93, 20);
-            this.txt_dataInicioReserva.TabIndex = 11;
-            this.txt_dataInicioReserva.Leave += new System.EventHandler(this.txt_dataInicioReserva_Leave);
-            // 
-            // txt_dataFimReserva
-            // 
-            this.txt_dataFimReserva.Location = new System.Drawing.Point(368, 140);
-            this.txt_dataFimReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txt_dataFimReserva.Name = "txt_dataFimReserva";
-            this.txt_dataFimReserva.Size = new System.Drawing.Size(93, 20);
-            this.txt_dataFimReserva.TabIndex = 12;
-            this.txt_dataFimReserva.Leave += new System.EventHandler(this.txt_dataFimReserva_Leave);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -184,7 +168,7 @@
             // txt_emailreserva
             // 
             this.txt_emailreserva.Location = new System.Drawing.Point(92, 167);
-            this.txt_emailreserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_emailreserva.Margin = new System.Windows.Forms.Padding(2);
             this.txt_emailreserva.Name = "txt_emailreserva";
             this.txt_emailreserva.Size = new System.Drawing.Size(95, 20);
             this.txt_emailreserva.TabIndex = 15;
@@ -193,7 +177,7 @@
             // btn_registarReserva
             // 
             this.btn_registarReserva.Location = new System.Drawing.Point(116, 297);
-            this.btn_registarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_registarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btn_registarReserva.Name = "btn_registarReserva";
             this.btn_registarReserva.Size = new System.Drawing.Size(56, 30);
             this.btn_registarReserva.TabIndex = 16;
@@ -204,7 +188,7 @@
             // btn_cancelarReserva
             // 
             this.btn_cancelarReserva.Location = new System.Drawing.Point(360, 297);
-            this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancelarReserva.Name = "btn_cancelarReserva";
             this.btn_cancelarReserva.Size = new System.Drawing.Size(58, 30);
             this.btn_cancelarReserva.TabIndex = 17;
@@ -230,7 +214,7 @@
             this.cb_NumeroPessoas.DropDownHeight = 174;
             this.cb_NumeroPessoas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_NumeroPessoas.DropDownWidth = 121;
-            this.cb_NumeroPessoas.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cb_NumeroPessoas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cb_NumeroPessoas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cb_NumeroPessoas.FormattingEnabled = true;
             this.cb_NumeroPessoas.IntegralHeight = false;
@@ -258,7 +242,7 @@
             this.cb_TipoQuarto.DropDownHeight = 174;
             this.cb_TipoQuarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TipoQuarto.DropDownWidth = 121;
-            this.cb_TipoQuarto.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cb_TipoQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cb_TipoQuarto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cb_TipoQuarto.FormattingEnabled = true;
             this.cb_TipoQuarto.IntegralHeight = false;
@@ -277,12 +261,77 @@
             this.cb_TipoQuarto.TabIndex = 21;
             this.cb_TipoQuarto.SelectedIndexChanged += new System.EventHandler(this.cb_TipoQuarto_SelectedIndexChanged);
             // 
+            // dtp_dataInicioReserva
+            // 
+            this.dtp_dataInicioReserva.CustomFormat = "dd/MM/yyyy";
+            this.dtp_dataInicioReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(368, 110);
+            this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
+            this.dtp_dataInicioReserva.Size = new System.Drawing.Size(115, 20);
+            this.dtp_dataInicioReserva.TabIndex = 22;
+            this.dtp_dataInicioReserva.ValueChanged += new System.EventHandler(this.dtp_dataInicioReserva_ValueChanged);
+            // 
+            // dtp_dataFimReserva
+            // 
+            this.dtp_dataFimReserva.CustomFormat = "dd/MM/yyyy";
+            this.dtp_dataFimReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_dataFimReserva.Location = new System.Drawing.Point(368, 137);
+            this.dtp_dataFimReserva.Name = "dtp_dataFimReserva";
+            this.dtp_dataFimReserva.Size = new System.Drawing.Size(115, 20);
+            this.dtp_dataFimReserva.TabIndex = 23;
+            this.dtp_dataFimReserva.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // btn_adicionarDia
+            // 
+            this.btn_adicionarDia.AutoSize = false;
+            this.btn_adicionarDia.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_adicionarDia.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_adicionarDia.Depth = 0;
+            this.btn_adicionarDia.HighEmphasis = true;
+            this.btn_adicionarDia.Icon = null;
+            this.btn_adicionarDia.Location = new System.Drawing.Point(505, 107);
+            this.btn_adicionarDia.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_adicionarDia.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_adicionarDia.Name = "btn_adicionarDia";
+            this.btn_adicionarDia.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_adicionarDia.Size = new System.Drawing.Size(34, 26);
+            this.btn_adicionarDia.TabIndex = 24;
+            this.btn_adicionarDia.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_adicionarDia.UseAccentColor = false;
+            this.btn_adicionarDia.UseVisualStyleBackColor = true;
+            this.btn_adicionarDia.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(504, 137);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(35, 34);
+            this.materialButton1.TabIndex = 25;
+            this.materialButton1.Text = "materialButton1";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click_1);
+            // 
             // F_reserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(603, 433);
+            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.btn_adicionarDia);
+            this.Controls.Add(this.dtp_dataFimReserva);
+            this.Controls.Add(this.dtp_dataInicioReserva);
             this.Controls.Add(this.cb_TipoQuarto);
             this.Controls.Add(this.cb_NumeroPessoas);
             this.Controls.Add(this.label10);
@@ -290,8 +339,6 @@
             this.Controls.Add(this.btn_registarReserva);
             this.Controls.Add(this.txt_emailreserva);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txt_dataFimReserva);
-            this.Controls.Add(this.txt_dataInicioReserva);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -302,7 +349,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_nomeReserva);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "F_reserva";
             this.Text = "F_reserva";
             this.ResumeLayout(false);
@@ -322,8 +369,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_dataInicioReserva;
-        private System.Windows.Forms.TextBox txt_dataFimReserva;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_emailreserva;
         private System.Windows.Forms.Button btn_registarReserva;
@@ -331,5 +376,9 @@
         private System.Windows.Forms.Label label10;
         private MaterialSkin.Controls.MaterialComboBox cb_NumeroPessoas;
         private MaterialSkin.Controls.MaterialComboBox cb_TipoQuarto;
+        private System.Windows.Forms.DateTimePicker dtp_dataInicioReserva;
+        private System.Windows.Forms.DateTimePicker dtp_dataFimReserva;
+        private MaterialSkin.Controls.MaterialButton btn_adicionarDia;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

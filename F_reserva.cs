@@ -85,32 +85,32 @@ namespace appBugInn
                     return; // Impede continuar se o email for inválido
                 }
 
-                DateTime dataInicio, dataFim;
-                string dataInicioStr = txt_dataInicioReserva.Text;
-                string dataFimStr = txt_dataFimReserva.Text;
+                //DateTime dataInicio, dataFim;
+                //string dataInicioStr = txt_dataInicioReserva.Text;
+                //string dataFimStr = txt_dataFimReserva.Text;
 
                 // Validação e conversão das datas
-                if (Funcionalidades.ValidarDataComFormato(dataInicioStr, "dd/MM/yyyy", out dataInicio))
-                {
-                    // Atribui o valor correto para a data
-                    dataInicio = DateTime.ParseExact(dataInicioStr, "dd/MM/yyyy", null);
-                }
-                else
-                {
-                    MessageBox.Show("Data de início incorreta!");
-                    return; // Impede continuar se a data for inválida
-                }
+                //if (Funcionalidades.ValidarDataComFormato(dataInicioStr, "dd/MM/yyyy", out dataInicio))
+                //{
+                //    // Atribui o valor correto para a data
+                //    dataInicio = DateTime.ParseExact(dataInicioStr, "dd/MM/yyyy", null);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Data de início incorreta!");
+                //    return; // Impede continuar se a data for inválida
+                //}
 
-                if (Funcionalidades.ValidarDataComFormato(dataFimStr, "dd/MM/yyyy", out dataFim))
-                {
-                    // Atribui o valor correto para a data
-                    dataFim = DateTime.ParseExact(dataFimStr, "dd/MM/yyyy", null);
-                }
-                else
-                {
-                    MessageBox.Show("Data de fim incorreta!");
-                    return; // Impede continuar se a data for inválida
-                }
+                //if (Funcionalidades.ValidarDataComFormato(dataFimStr, "dd/MM/yyyy", out dataFim))
+                //{
+                //    // Atribui o valor correto para a data
+                //    dataFim = DateTime.ParseExact(dataFimStr, "dd/MM/yyyy", null);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Data de fim incorreta!");
+                //    return; // Impede continuar se a data for inválida
+                //}
 
                 //string tipoQuarto = txt_tipoQuartoReserva.Text;
 
@@ -135,10 +135,10 @@ namespace appBugInn
 
 
                 // Monta a linha com ID e sem hora nas datas
-                string linha = $"{id};{nome};{telefone};{email};{dataInicio:dd/MM/yyyy};{dataFim:dd/MM/yyyy};{tipoQuarto}";
+             //   string linha = $"{id};{nome};{telefone};{email};{dataInicio:dd/MM/yyyy};{dataFim:dd/MM/yyyy};{tipoQuarto}";
 
                 // Usa a função para gravar no ficheiro
-                Funcionalidades.GravarBaseDados("reservas", linha);
+              //  Funcionalidades.GravarBaseDados("reservas", linha);
                 MessageBox.Show($"Reserva salva com sucesso! (ID: {id})", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -196,33 +196,33 @@ namespace appBugInn
             }
         }
 
-        private void txt_dataInicioReserva_Leave(object sender, EventArgs e)
-        {
-            DateTime dataInicio;
-            string dataInicioStr = txt_dataInicioReserva.Text;
+        //private void txt_dataInicioReserva_Leave(object sender, EventArgs e)
+        //{
+        //    DateTime dataInicio;
+        //    string dataInicioStr = txt_dataInicioReserva.Text;
 
-            if (!Funcionalidades.ValidarDataComFormato(dataInicioStr, "dd/MM/yyyy", out dataInicio))
-            {
-                MessageBox.Show("Data incorreta");
-                txt_dataInicioReserva.Text = string.Empty;
-                txt_dataInicioReserva.Focus();
-                return;
-            }
-        }
+        //    if (!Funcionalidades.ValidarDataComFormato(dataInicioStr, "dd/MM/yyyy", out dataInicio))
+        //    {
+        //        MessageBox.Show("Data incorreta");
+        //        txt_dataInicioReserva.Text = string.Empty;
+        //        txt_dataInicioReserva.Focus();
+        //        return;
+        //    }
+        //}
 
-        private void txt_dataFimReserva_Leave(object sender, EventArgs e)
-        {
-            DateTime dataFim;
+        //private void txt_dataFimReserva_Leave(object sender, EventArgs e)
+        //{
+        //    DateTime dataFim;
 
-            string dataFimStr = txt_dataFimReserva.Text;
-            if (!Funcionalidades.ValidarDataComFormato(dataFimStr, "dd/MM/yyyy", out dataFim))
-            {
-                MessageBox.Show("Data incorreta");
-                txt_dataFimReserva.Text = string.Empty;
-                txt_dataFimReserva.Focus();
-                return;
-            }
-        }
+        //    string dataFimStr = txt_dataFimReserva.Text;
+        //    if (!Funcionalidades.ValidarDataComFormato(dataFimStr, "dd/MM/yyyy", out dataFim))
+        //    {
+        //        MessageBox.Show("Data incorreta");
+        //        txt_dataFimReserva.Text = string.Empty;
+        //        txt_dataFimReserva.Focus();
+        //        return;
+        //    }
+        //}
 
         private void txt_tipoQuartoReserva_Leave(object sender, EventArgs e)
         {
@@ -288,6 +288,26 @@ namespace appBugInn
                 // Exibe o tipo de quarto selecionado (exemplo simples)
               //  MessageBox.Show("Você escolheu o tipo de quarto: " + tipoQuarto, "Tipo de Quarto Selecionado");
             }
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_dataFimReserva.MinDate = dtp_dataInicioReserva.Value.AddDays(1);
+        }
+
+        private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            dtp_dataInicioReserva.Value = dtp_dataInicioReserva.Value.AddDays(1);
+        }
+
+        private void materialButton1_Click_1(object sender, EventArgs e)
+        {
+            dtp_dataFimReserva.Value = dtp_dataFimReserva.Value.AddDays(-1);
         }
     }
 
