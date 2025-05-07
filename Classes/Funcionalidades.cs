@@ -131,28 +131,33 @@ namespace appBugInn
 
         public static List<object> CriarObjetosDoTexto(string nomeArquivo, string nomeClasse)
         {
+            //Inicializacao da lista de resultados
             var resultado = new List<object>();
 
-            // Passo 1: Ler os dados do arquivo
-            string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", nomeArquivo + ".txt");
+            //Ler os dados do arquivo
+            string[] linhas;
 
-            if (!File.Exists(caminhoArquivo))
+            try
             {
-                MessageBox.Show("Arquivo não encontrado.");
+                linhas = LerBaseDados(nomeArquivo);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
                 return resultado;
             }
 
-            string[] linhas = File.ReadAllLines(caminhoArquivo);
-
+            //Garante que ha uma linha de cabecalho e um de dados
             if (linhas.Length < 2)
             {
                 MessageBox.Show("Arquivo não contém dados suficientes.");
                 return resultado;
             }
 
+            //separa o nome das colunas
             var cabecalhos = linhas[0].Split(';');
 
-            // Passo 2: Buscar o tipo da classe dinamicamente
+            //Buscar o tipo da classe dinamicamente
             var tipo = ObterTipoPorNome(nomeClasse);
             if (tipo == null)
             {
@@ -160,43 +165,45 @@ namespace appBugInn
                 return resultado;
             }
 
-            // Passo 3: Buscar o construtor da classe
+            //Obtem o primeiro construtor publico da class
             var construtor = tipo.GetConstructors().FirstOrDefault();
+
             if (construtor == null)
             {
                 MessageBox.Show($"Construtor não encontrado para a classe '{nomeClasse}'.");
                 return resultado;
             }
 
-            // Passo 4: Obter os parâmetros do construtor da classe
+            //Obter os parâmetros do construtor da classe
             var parametros = construtor.GetParameters();
 
-            // Passo 5: Iterar sobre as linhas do arquivo e criar os objetos
+            // Iterar sobre as linhas do arquivo e criar os objetos
             for (int i = 1; i < linhas.Length; i++)
             {
+                //serapara os valores e inicializa um array para os argumentos
                 var valores = linhas[i].Split(';');
                 object[] argumentos = new object[parametros.Length];
 
                 try
                 {
-                    for (int j = 0; j < parametros.Length; j++)
+                    for (int j = 0; j < parametros.Length; j++)//percorre todos os parametros da classe
                     {
-                        string nomeParametro = parametros[j].Name;
+                        string nomeParametro = parametros[j].Name; //obtem o nome do parametro atual
 
                         // Encontrar o índice da coluna correspondente ao parâmetro
-                        int indiceColuna = Array.FindIndex(cabecalhos, h => string.Equals(h, nomeParametro, StringComparison.OrdinalIgnoreCase));
+                        int indiceColuna = Array.FindIndex(cabecalhos, h => string.Equals(h, nomeParametro, StringComparison.OrdinalIgnoreCase));//procura o indice da coluna onde tem o mesmo no que o parametro
 
-                        if (indiceColuna == -1)
+                        if (indiceColuna == -1)//valida se ela existe
                             throw new Exception($"Coluna '{nomeParametro}' não encontrada.");
 
                         // Converter o valor da célula para o tipo correto do parâmetro
-                        string valorBruto = valores[indiceColuna];
-                        object valorConvertido = Convert.ChangeType(valorBruto, parametros[j].ParameterType);
-                        argumentos[j] = valorConvertido;
+                        string valorBruto = valores[indiceColuna];//pega no valor da celula
+                        object valorConvertido = Convert.ChangeType(valorBruto, parametros[j].ParameterType);//converte o valor da celula para o tipo do construtor
+                        argumentos[j] = valorConvertido;//armazena o valor convertido na posicao correta do array
                     }
 
-                    // Criar o objeto a partir do construtor e adicionar à lista de resultados
-                    object instancia = construtor.Invoke(argumentos);
+                    //Criar o objeto a partir do construtor e adicionar à lista de resultados
+                    object instancia = construtor.Invoke(argumentos);//instacia o objeto dinamicamento com os argumentos do array
                     resultado.Add(instancia);
                 }
                 catch (Exception ex)
