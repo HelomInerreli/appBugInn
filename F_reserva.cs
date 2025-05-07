@@ -112,17 +112,27 @@ namespace appBugInn
                     return; // Impede continuar se a data for inválida
                 }
 
-                string tipoQuarto = txt_tipoQuartoReserva.Text;
+                //string tipoQuarto = txt_tipoQuartoReserva.Text;
 
-                if (Funcionalidades.ValidarTipoQuarto(tipoQuarto))
+                //if (Funcionalidades.ValidarTipoQuarto(tipoQuarto))
+                //{
+                //    tipoQuarto = txt_tipoQuartoReserva.Text;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Tipo de quarto não existe");
+                //    return; // Impede continuar se o tipo de quarto for inválido
+                //}
+                // Captura o tipo de quarto selecionado
+                string tipoQuarto = cb_TipoQuarto.SelectedItem.ToString();
+
+                // Validação do tipo de quarto
+                if (string.IsNullOrEmpty(tipoQuarto))
                 {
-                    tipoQuarto = txt_tipoQuartoReserva.Text;
+                    MessageBox.Show("Por favor, selecione um tipo de quarto.");
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Tipo de quarto não existe");
-                    return; // Impede continuar se o tipo de quarto for inválido
-                }
+
 
                 // Monta a linha com ID e sem hora nas datas
                 string linha = $"{id};{nome};{telefone};{email};{dataInicio:dd/MM/yyyy};{dataFim:dd/MM/yyyy};{tipoQuarto}";
@@ -150,27 +160,6 @@ namespace appBugInn
            
         }
 
-        private void txt_telefoneReserva_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void txt_emailreserva_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void txt_dataInicioReserva_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void txt_dataFimReserva_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-       
         private void txt_tipoQuartoReserva_TextChanged(object sender, EventArgs e)
         {
             
@@ -237,13 +226,67 @@ namespace appBugInn
 
         private void txt_tipoQuartoReserva_Leave(object sender, EventArgs e)
         {
-            string tipoQuarto = txt_tipoQuartoReserva.Text;
-            if (!Funcionalidades.ValidarTipoQuarto(tipoQuarto))
+            //string tipoQuarto = txt_tipoQuartoReserva.Text;
+            //if (!Funcionalidades.ValidarTipoQuarto(tipoQuarto))
+            //{
+            //    MessageBox.Show("Tipo de quarto nao existe");
+            //    txt_tipoQuartoReserva.Text = string.Empty;
+            //    txt_tipoQuartoReserva.Focus();
+            //    return;
+            //}
+        }
+
+        private void cb_NumeroPessoas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica se há algo selecionado no comboBox
+            if (cb_NumeroPessoas.SelectedItem != null)
             {
-                MessageBox.Show("Tipo de quarto nao existe");
-                txt_tipoQuartoReserva.Text = string.Empty;
-                txt_tipoQuartoReserva.Focus();
-                return;
+                string textoSelecionado = cb_NumeroPessoas.SelectedItem.ToString();
+                int numeroPessoas = int.Parse(textoSelecionado.Split(' ')[0]); // Extrai o número de pessoas
+
+                // Limpa o ComboBox de tipo de quarto para adicionar as opções corretas
+                cb_TipoQuarto.Items.Clear();
+
+                // Adiciona apenas o quarto válido com base no número de pessoas
+                switch (numeroPessoas)
+                {
+                    case 1:
+                        cb_TipoQuarto.Items.Add("Simples");
+                        cb_TipoQuarto.Items.Add("Duplo");
+                        cb_TipoQuarto.Items.Add("Suite");
+                        cb_TipoQuarto.Items.Add("Deluxe");
+                        break;
+                    case 2:
+                        cb_TipoQuarto.Items.Add("Duplo");
+                        cb_TipoQuarto.Items.Add("Suite");
+                        cb_TipoQuarto.Items.Add("Duplo");
+                        break;
+                    case 3:
+                        cb_TipoQuarto.Items.Add("Suite");
+                        cb_TipoQuarto.Items.Add("Deluxe");
+                        break;
+                    case 4:
+                        cb_TipoQuarto.Items.Add("Deluxe"); 
+                        break;
+                }
+
+                // Seleciona automaticamente a primeira opção (se houver)
+                if (cb_TipoQuarto.Items.Count > 0)
+                {
+                    cb_TipoQuarto.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void cb_TipoQuarto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica se há algo selecionado no comboBox de tipo de quarto
+            if (cb_TipoQuarto.SelectedItem != null)
+            {
+                string tipoQuarto = cb_TipoQuarto.SelectedItem.ToString();
+
+                // Exibe o tipo de quarto selecionado (exemplo simples)
+              //  MessageBox.Show("Você escolheu o tipo de quarto: " + tipoQuarto, "Tipo de Quarto Selecionado");
             }
         }
     }
