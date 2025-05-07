@@ -96,5 +96,29 @@ namespace appBugInn
             F_reserva f_Reserva = new F_reserva();
             f_Reserva.Show();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox21_Enter(object sender, EventArgs e)
+        {
+            materialTextBox21.Text = "";
+            lbl_teste.Visible = true;
+
+
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            dtp_data.Value = dtp_data.Value.AddDays(-1);
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            dtp_data.Value = dtp_data.Value.AddDays(1);
+        }
     }
 }
