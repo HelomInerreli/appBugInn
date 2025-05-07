@@ -120,5 +120,19 @@ namespace appBugInn
         {
             dtp_data.Value = dtp_data.Value.AddDays(1);
         }
+
+        private void sw_load_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pb_teste.Value == 0)
+            {
+                for (int i = 0; i < 25; i++)
+                {
+                    pb_teste.Value = pb_teste.Value + 4;
+                    System.Threading.Thread.Sleep(100);
+
+                }
+                
+            }
+        }
     }
 }

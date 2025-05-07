@@ -42,9 +42,9 @@
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.lbl_teste = new MaterialSkin.Controls.MaterialLabel();
-            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.pb_teste = new MaterialSkin.Controls.MaterialProgressBar();
             this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
+            this.sw_load = new MaterialSkin.Controls.MaterialSwitch();
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
@@ -198,7 +198,7 @@
             // 
             this.materialCheckbox1.AutoSize = true;
             this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(213, 422);
+            this.materialCheckbox1.Location = new System.Drawing.Point(228, 394);
             this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -224,15 +224,14 @@
             this.lbl_teste.Text = "Nome";
             this.lbl_teste.Visible = false;
             // 
-            // materialProgressBar1
+            // pb_teste
             // 
-            this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(12, 439);
-            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialProgressBar1.Name = "materialProgressBar1";
-            this.materialProgressBar1.Size = new System.Drawing.Size(100, 5);
-            this.materialProgressBar1.TabIndex = 16;
-            this.materialProgressBar1.Value = 50;
+            this.pb_teste.Depth = 0;
+            this.pb_teste.Location = new System.Drawing.Point(12, 439);
+            this.pb_teste.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pb_teste.Name = "pb_teste";
+            this.pb_teste.Size = new System.Drawing.Size(744, 5);
+            this.pb_teste.TabIndex = 16;
             // 
             // materialRadioButton1
             // 
@@ -250,20 +249,21 @@
             this.materialRadioButton1.Text = "materialRadioButton1";
             this.materialRadioButton1.UseVisualStyleBackColor = true;
             // 
-            // materialSwitch1
+            // sw_load
             // 
-            this.materialSwitch1.AutoSize = true;
-            this.materialSwitch1.Depth = 0;
-            this.materialSwitch1.Location = new System.Drawing.Point(226, 320);
-            this.materialSwitch1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch1.Name = "materialSwitch1";
-            this.materialSwitch1.Ripple = true;
-            this.materialSwitch1.Size = new System.Drawing.Size(173, 37);
-            this.materialSwitch1.TabIndex = 18;
-            this.materialSwitch1.Text = "materialSwitch1";
-            this.materialSwitch1.UseVisualStyleBackColor = true;
+            this.sw_load.AutoSize = true;
+            this.sw_load.Depth = 0;
+            this.sw_load.Location = new System.Drawing.Point(226, 320);
+            this.sw_load.Margin = new System.Windows.Forms.Padding(0);
+            this.sw_load.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sw_load.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sw_load.Name = "sw_load";
+            this.sw_load.Ripple = true;
+            this.sw_load.Size = new System.Drawing.Size(173, 37);
+            this.sw_load.TabIndex = 18;
+            this.sw_load.Text = "materialSwitch1";
+            this.sw_load.UseVisualStyleBackColor = true;
+            this.sw_load.CheckedChanged += new System.EventHandler(this.sw_load_CheckedChanged);
             // 
             // materialMultiLineTextBox1
             // 
@@ -396,9 +396,9 @@
             this.Controls.Add(this.materialTextBox21);
             this.Controls.Add(this.materialTextBox2);
             this.Controls.Add(this.materialMultiLineTextBox1);
-            this.Controls.Add(this.materialSwitch1);
+            this.Controls.Add(this.sw_load);
             this.Controls.Add(this.materialRadioButton1);
-            this.Controls.Add(this.materialProgressBar1);
+            this.Controls.Add(this.pb_teste);
             this.Controls.Add(this.lbl_teste);
             this.Controls.Add(this.materialCheckbox1);
             this.Controls.Add(this.materialCard1);
@@ -437,9 +437,9 @@
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox1;
         private MaterialSkin.Controls.MaterialLabel lbl_teste;
-        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
+        private MaterialSkin.Controls.MaterialProgressBar pb_teste;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
+        private MaterialSkin.Controls.MaterialSwitch sw_load;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
