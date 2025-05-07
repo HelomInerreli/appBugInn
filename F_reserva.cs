@@ -259,7 +259,7 @@ namespace appBugInn
                     case 2:
                         cb_TipoQuarto.Items.Add("Duplo");
                         cb_TipoQuarto.Items.Add("Suite");
-                        cb_TipoQuarto.Items.Add("Duplo");
+                        cb_TipoQuarto.Items.Add("Deluxe");
                         break;
                     case 3:
                         cb_TipoQuarto.Items.Add("Suite");
