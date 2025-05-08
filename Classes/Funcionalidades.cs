@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace appBugInn
 {
@@ -260,15 +261,27 @@ namespace appBugInn
         }
         public static bool ValidarLetras(string texto)
         {
-            return !string.IsNullOrWhiteSpace(texto) && texto.All(char.IsLetter);
+            // Se estiver vazio ou só com espaços, está ok
+            if (string.IsNullOrWhiteSpace(texto))
+                return true;
+
+            // Se não estiver vazio, deve conter apenas letras
+            return texto.All(char.IsLetter);
         }
         public static bool ValidarNumeros(string valor)
         {
-            // Verifica se a string não está vazia e contém apenas dígitos
-            return !string.IsNullOrWhiteSpace(valor) && valor.All(char.IsDigit);
+            // Se estiver vazio ou só com espaços, está ok
+            if (string.IsNullOrWhiteSpace(valor))
+                return true;
+
+            // Se não estiver vazio, deve conter apenas dígitos
+            return valor.All(char.IsDigit);
         }
         public static bool IsEmailValido(string email)
         {
+            // Se estiver vazio ou só com espaços, está ok
+            if (string.IsNullOrWhiteSpace(email))
+                return true;
             //  para validar o formato do e-mail
             var format = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
             return format.IsMatch(email);

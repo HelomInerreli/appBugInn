@@ -203,6 +203,7 @@
     <Content Include="BaseDados\logins.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="BaseDados\reservas.txt" />
     <Content Include="Imagens\algo1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
