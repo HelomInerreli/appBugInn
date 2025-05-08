@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_nomeReserva = new System.Windows.Forms.Label();
             this.txt_nomeReserva = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_telefoneReserva = new System.Windows.Forms.Label();
             this.txt_telefoneReserva = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_dataInicioReserva = new System.Windows.Forms.Label();
+            this.lbl_dataFimReserva = new System.Windows.Forms.Label();
+            this.lbl_tipoQuartoReserva = new System.Windows.Forms.Label();
+            this.lbl_emailReserva = new System.Windows.Forms.Label();
             this.txt_emailreserva = new System.Windows.Forms.TextBox();
             this.btn_registarReserva = new System.Windows.Forms.Button();
             this.btn_cancelarReserva = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_nrPessoasREserva = new System.Windows.Forms.Label();
             this.cb_NumeroPessoas = new MaterialSkin.Controls.MaterialComboBox();
             this.cb_TipoQuarto = new MaterialSkin.Controls.MaterialComboBox();
             this.dtp_dataInicioReserva = new System.Windows.Forms.DateTimePicker();
@@ -51,15 +51,15 @@
             this.btn_avançaDiaReserva = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_nomeReserva
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 217);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome";
+            this.lbl_nomeReserva.AutoSize = true;
+            this.lbl_nomeReserva.Location = new System.Drawing.Point(80, 217);
+            this.lbl_nomeReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_nomeReserva.Name = "lbl_nomeReserva";
+            this.lbl_nomeReserva.Size = new System.Drawing.Size(68, 25);
+            this.lbl_nomeReserva.TabIndex = 0;
+            this.lbl_nomeReserva.Text = "Nome";
             // 
             // txt_nomeReserva
             // 
@@ -70,16 +70,16 @@
             this.txt_nomeReserva.TabIndex = 1;
             this.txt_nomeReserva.Leave += new System.EventHandler(this.txt_nomeReserva_Leave);
             // 
-            // label3
+            // lbl_telefoneReserva
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 269);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Telefone";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lbl_telefoneReserva.AutoSize = true;
+            this.lbl_telefoneReserva.Location = new System.Drawing.Point(80, 269);
+            this.lbl_telefoneReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_telefoneReserva.Name = "lbl_telefoneReserva";
+            this.lbl_telefoneReserva.Size = new System.Drawing.Size(96, 25);
+            this.lbl_telefoneReserva.TabIndex = 3;
+            this.lbl_telefoneReserva.Text = "Telefone";
+            this.lbl_telefoneReserva.Click += new System.EventHandler(this.label3_Click);
             // 
             // txt_telefoneReserva
             // 
@@ -124,46 +124,46 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Detalhes da reserva";
             // 
-            // label6
+            // lbl_dataInicioReserva
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(564, 215);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 25);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Data de inicio ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lbl_dataInicioReserva.AutoSize = true;
+            this.lbl_dataInicioReserva.Location = new System.Drawing.Point(564, 215);
+            this.lbl_dataInicioReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_dataInicioReserva.Name = "lbl_dataInicioReserva";
+            this.lbl_dataInicioReserva.Size = new System.Drawing.Size(149, 25);
+            this.lbl_dataInicioReserva.TabIndex = 8;
+            this.lbl_dataInicioReserva.Text = "Data de inicio ";
+            this.lbl_dataInicioReserva.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
+            // lbl_dataFimReserva
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(564, 269);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 25);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Data de fim";
+            this.lbl_dataFimReserva.AutoSize = true;
+            this.lbl_dataFimReserva.Location = new System.Drawing.Point(564, 269);
+            this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_dataFimReserva.Name = "lbl_dataFimReserva";
+            this.lbl_dataFimReserva.Size = new System.Drawing.Size(121, 25);
+            this.lbl_dataFimReserva.TabIndex = 9;
+            this.lbl_dataFimReserva.Text = "Data de fim";
             // 
-            // label8
+            // lbl_tipoQuartoReserva
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(534, 465);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 25);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Tipo de quarto";
+            this.lbl_tipoQuartoReserva.AutoSize = true;
+            this.lbl_tipoQuartoReserva.Location = new System.Drawing.Point(534, 465);
+            this.lbl_tipoQuartoReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_tipoQuartoReserva.Name = "lbl_tipoQuartoReserva";
+            this.lbl_tipoQuartoReserva.Size = new System.Drawing.Size(151, 25);
+            this.lbl_tipoQuartoReserva.TabIndex = 10;
+            this.lbl_tipoQuartoReserva.Text = "Tipo de quarto";
             // 
-            // label9
+            // lbl_emailReserva
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(80, 321);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 25);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "e-mail";
+            this.lbl_emailReserva.AutoSize = true;
+            this.lbl_emailReserva.Location = new System.Drawing.Point(80, 321);
+            this.lbl_emailReserva.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_emailReserva.Name = "lbl_emailReserva";
+            this.lbl_emailReserva.Size = new System.Drawing.Size(70, 25);
+            this.lbl_emailReserva.TabIndex = 14;
+            this.lbl_emailReserva.Text = "e-mail";
             // 
             // txt_emailreserva
             // 
@@ -196,15 +196,15 @@
             this.btn_cancelarReserva.UseVisualStyleBackColor = true;
             this.btn_cancelarReserva.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label10
+            // lbl_nrPessoasREserva
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(570, 321);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(129, 25);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Nr. Pessoas";
+            this.lbl_nrPessoasREserva.AutoSize = true;
+            this.lbl_nrPessoasREserva.Location = new System.Drawing.Point(570, 321);
+            this.lbl_nrPessoasREserva.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_nrPessoasREserva.Name = "lbl_nrPessoasREserva";
+            this.lbl_nrPessoasREserva.Size = new System.Drawing.Size(129, 25);
+            this.lbl_nrPessoasREserva.TabIndex = 18;
+            this.lbl_nrPessoasREserva.Text = "Nr. Pessoas";
             // 
             // cb_NumeroPessoas
             // 
@@ -273,7 +273,6 @@
             this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
             this.dtp_dataInicioReserva.Size = new System.Drawing.Size(226, 31);
             this.dtp_dataInicioReserva.TabIndex = 22;
-          //  this.dtp_dataInicioReserva.ValueChanged += new System.EventHandler(this.dtp_dataInicioReserva_ValueChanged);
             // 
             // dtp_dataFimReserva
             // 
@@ -284,7 +283,6 @@
             this.dtp_dataFimReserva.Name = "dtp_dataFimReserva";
             this.dtp_dataFimReserva.Size = new System.Drawing.Size(226, 31);
             this.dtp_dataFimReserva.TabIndex = 23;
-          //  this.dtp_dataFimReserva.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // btn_recuaDiaReserva
             // 
@@ -341,21 +339,21 @@
             this.Controls.Add(this.dtp_dataInicioReserva);
             this.Controls.Add(this.cb_TipoQuarto);
             this.Controls.Add(this.cb_NumeroPessoas);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbl_nrPessoasREserva);
             this.Controls.Add(this.btn_cancelarReserva);
             this.Controls.Add(this.btn_registarReserva);
             this.Controls.Add(this.txt_emailreserva);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_emailReserva);
+            this.Controls.Add(this.lbl_tipoQuartoReserva);
+            this.Controls.Add(this.lbl_dataFimReserva);
+            this.Controls.Add(this.lbl_dataInicioReserva);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_telefoneReserva);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_telefoneReserva);
             this.Controls.Add(this.txt_nomeReserva);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_nomeReserva);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_reserva";
             this.Text = "F_reserva";
@@ -366,21 +364,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_nomeReserva;
         private System.Windows.Forms.TextBox txt_nomeReserva;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_telefoneReserva;
         private System.Windows.Forms.TextBox txt_telefoneReserva;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbl_dataInicioReserva;
+        private System.Windows.Forms.Label lbl_dataFimReserva;
+        private System.Windows.Forms.Label lbl_tipoQuartoReserva;
+        private System.Windows.Forms.Label lbl_emailReserva;
         private System.Windows.Forms.TextBox txt_emailreserva;
         private System.Windows.Forms.Button btn_registarReserva;
         private System.Windows.Forms.Button btn_cancelarReserva;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_nrPessoasREserva;
         private MaterialSkin.Controls.MaterialComboBox cb_NumeroPessoas;
         private MaterialSkin.Controls.MaterialComboBox cb_TipoQuarto;
         private System.Windows.Forms.DateTimePicker dtp_dataInicioReserva;
