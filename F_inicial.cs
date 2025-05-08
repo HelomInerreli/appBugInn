@@ -15,6 +15,7 @@ namespace appBugInn
         public F_inicial()
         {
             InitializeComponent();
+
         }
 
         private void lbl_teste_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace appBugInn
 
         private void btn_logins_Click(object sender, EventArgs e)
         {
-            F_login flogin = new F_login();
+            lb_nome flogin = new lb_nome();
 
             flogin.Show();
         }
