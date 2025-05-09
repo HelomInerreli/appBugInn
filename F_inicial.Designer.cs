@@ -39,6 +39,7 @@ namespace appBugInn
             this.btn_testeHelom = new System.Windows.Forms.Button();
             this.btn_reservasInicial = new System.Windows.Forms.Button();
             this.btn_novaTelaInicial = new MaterialSkin.Controls.MaterialButton();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // btn_lerFicheiro
@@ -152,7 +153,7 @@ namespace appBugInn
             this.btn_novaTelaInicial.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_novaTelaInicial.Name = "btn_novaTelaInicial";
             this.btn_novaTelaInicial.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_novaTelaInicial.Size = new System.Drawing.Size(158, 36);
+            this.btn_novaTelaInicial.Size = new System.Drawing.Size(154, 36);
             this.btn_novaTelaInicial.TabIndex = 9;
             this.btn_novaTelaInicial.Text = "Nova Tela Inicial";
             this.btn_novaTelaInicial.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -160,11 +161,30 @@ namespace appBugInn
             this.btn_novaTelaInicial.UseVisualStyleBackColor = false;
             this.btn_novaTelaInicial.Click += new System.EventHandler(this.btn_novaTelaInicial_Click);
             // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.Hint = "Nome";
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(61, 368);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(293, 50);
+            this.materialTextBox1.TabIndex = 10;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
+            // 
             // F_inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 468);
+            this.Controls.Add(this.materialTextBox1);
             this.Controls.Add(this.btn_novaTelaInicial);
             this.Controls.Add(this.btn_testeHelom);
             this.Controls.Add(this.btn_criarObjeto);
@@ -195,5 +215,6 @@ namespace appBugInn
         private System.Windows.Forms.Button btn_testeHelom;
         private System.Windows.Forms.Button btn_reservasInicial;
         private MaterialSkin.Controls.MaterialButton btn_novaTelaInicial;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
     }
 }
