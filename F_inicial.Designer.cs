@@ -203,7 +203,7 @@ namespace appBugInn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(898, 620);
             this.Controls.Add(this.materialTextBox2);
             this.Controls.Add(this.materialTextBox1);
             this.Controls.Add(this.btn_novaTelaInicial);
