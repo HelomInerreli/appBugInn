@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -245,6 +245,11 @@ namespace appBugInn
                 txt_tipoQuartoReserva.Focus();
                 return;
             }
+        }
+
+        private void txt_nomeReserva_Leave_1(object sender, EventArgs e)
+        {
+
         }
     }
 
