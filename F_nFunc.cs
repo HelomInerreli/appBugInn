@@ -17,17 +17,13 @@ namespace appBugInn
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void txt_nome_Click(object sender, EventArgs e)
         {
-
+            txt_nome.Text = "";
+            lbl_nome.Visible = true;
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_criar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -90,14 +86,66 @@ namespace appBugInn
             }
         }
 
-        private void chb_gestor_CheckedChanged(object sender, EventArgs e)
+        private void txt_nome_leave(object sender, EventArgs e)
+        {
+            if (!Funcionalidades.ValidarLetras(txt_nome.Text))
+            {
+                MessageBox.Show("O nome apenas deve contar letras e nao pode estar vazio");
+                txt_nome.Text = string.Empty;
+                txt_nome.Focus();
+                return;
+
+            }
+        }
+
+        private void txt_telefone_leave(object sender, EventArgs e)
+        {
+            if(!Funcionalidades.ValidarNumeros(txt_telefone.Text))
+            {
+                MessageBox.Show("O telefone apenas deve contar números e não pode estar vazio");
+                txt_telefone.Text = string.Empty;
+                txt_telefone.Focus();
+                return;
+            }
+        }
+
+        private void txt_password_leave(object sender, EventArgs e)
+        {
+            string texto = string.IsNullOrWhiteSpace(txt_password.Text) ? "atec123" : txt_password.Text;
+
+            // Verifica: mínimo 5 caracteres e sem espaços
+            bool tamanhoValido = texto.Length >= 5 && !texto.Contains(' ');
+
+            // Separa as letras e os números da string
+            string apenasLetras = new string(texto.Where(char.IsLetter).ToArray());
+            string apenasNumeros = new string(texto.Where(char.IsDigit).ToArray());
+
+            // Usa suas funções para validar as partes
+            bool contemLetras = !string.IsNullOrEmpty(apenasLetras) && Funcionalidades.ValidarLetras(apenasLetras);
+            bool contemNumeros = !string.IsNullOrEmpty(apenasNumeros) && Funcionalidades.ValidarNumeros(apenasNumeros);
+
+            if (!(tamanhoValido && contemLetras && contemNumeros))
+            {
+                MessageBox.Show("A senha deve ter no mínimo 5 caracteres, conter letras e números, e não conter espaços.");
+                txt_password.Clear(); // limpa a caixa após erro
+            }
+        }
+
+        private void txt_password_Click(object sender, EventArgs e)
+        {
+            txt_password.Text = "";
+            lbl_password.Visible = true;
+        }
+
+        private void lbl_password_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txt_password_TextChanged(object sender, EventArgs e)
+        private void txt_telefone_Click(object sender, EventArgs e)
         {
-
+            txt_telefone.Text = "";
+            lbl_telefone.Visible = true;
         }
     }
 }
