@@ -1,4 +1,6 @@
-﻿using System;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,15 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class F_inicial: Form
+    public partial class F_inicial: MaterialForm
     {
         public F_inicial()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void lbl_teste_Click(object sender, EventArgs e)
@@ -97,42 +103,14 @@ namespace appBugInn
             f_Reserva.Show();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void btn_novaTelaInicial_Click(object sender, EventArgs e)
         {
+            F_telaInicial fnovaTela = new F_telaInicial();
+            ActiveForm.Hide(); // Esconde a tela atual
 
-        }
-
-        private void materialTextBox21_Enter(object sender, EventArgs e)
-        {
-            materialTextBox21.Text = "";
-            lbl_teste.Visible = true;
+            fnovaTela.Show();
 
 
-
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-            dtp_data.Value = dtp_data.Value.AddDays(-1);
-        }
-
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-            dtp_data.Value = dtp_data.Value.AddDays(1);
-        }
-
-        private void sw_load_CheckedChanged(object sender, EventArgs e)
-        {
-            if (pb_teste.Value == 0)
-            {
-                for (int i = 0; i < 25; i++)
-                {
-                    pb_teste.Value = pb_teste.Value + 4;
-                    System.Threading.Thread.Sleep(100);
-
-                }
-                
-            }
         }
     }
 }
