@@ -47,8 +47,10 @@
             this.cb_TipoQuarto = new MaterialSkin.Controls.MaterialComboBox();
             this.dtp_dataInicioReserva = new System.Windows.Forms.DateTimePicker();
             this.dtp_dataFimReserva = new System.Windows.Forms.DateTimePicker();
-            this.btn_recuaDiaReserva = new MaterialSkin.Controls.MaterialButton();
-            this.btn_avançaDiaReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_recuaDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_avançaDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_avançarDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_recuarDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // lbl_nomeReserva
@@ -284,48 +286,91 @@
             this.dtp_dataFimReserva.Size = new System.Drawing.Size(226, 31);
             this.dtp_dataFimReserva.TabIndex = 23;
             // 
-            // btn_recuaDiaReserva
+            // btn_recuaDiaFimReserva
             // 
-            this.btn_recuaDiaReserva.AutoSize = false;
-            this.btn_recuaDiaReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_recuaDiaReserva.BackColor = System.Drawing.Color.Transparent;
-            this.btn_recuaDiaReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_recuaDiaReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_recuaDiaReserva.Depth = 0;
-            this.btn_recuaDiaReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_recuaDiaReserva.HighEmphasis = true;
-            this.btn_recuaDiaReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
-            this.btn_recuaDiaReserva.Location = new System.Drawing.Point(976, 263);
-            this.btn_recuaDiaReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
-            this.btn_recuaDiaReserva.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_recuaDiaReserva.Name = "btn_recuaDiaReserva";
-            this.btn_recuaDiaReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_recuaDiaReserva.Size = new System.Drawing.Size(76, 38);
-            this.btn_recuaDiaReserva.TabIndex = 26;
-            this.btn_recuaDiaReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_recuaDiaReserva.UseAccentColor = false;
-            this.btn_recuaDiaReserva.UseVisualStyleBackColor = false;
-            this.btn_recuaDiaReserva.Click += new System.EventHandler(this.btn_recuaDiaReserva_Click);
+            this.btn_recuaDiaFimReserva.AutoSize = false;
+            this.btn_recuaDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_recuaDiaFimReserva.BackColor = System.Drawing.Color.Transparent;
+            this.btn_recuaDiaFimReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_recuaDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_recuaDiaFimReserva.Depth = 0;
+            this.btn_recuaDiaFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_recuaDiaFimReserva.HighEmphasis = true;
+            this.btn_recuaDiaFimReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
+            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(976, 262);
+            this.btn_recuaDiaFimReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.btn_recuaDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_recuaDiaFimReserva.Name = "btn_recuaDiaFimReserva";
+            this.btn_recuaDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_recuaDiaFimReserva.Size = new System.Drawing.Size(76, 38);
+            this.btn_recuaDiaFimReserva.TabIndex = 26;
+            this.btn_recuaDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_recuaDiaFimReserva.UseAccentColor = false;
+            this.btn_recuaDiaFimReserva.UseVisualStyleBackColor = false;
+            this.btn_recuaDiaFimReserva.Click += new System.EventHandler(this.btn_recuaDiaReserva_Click);
             // 
-            // btn_avançaDiaReserva
+            // btn_avançaDiaInicioReserva
             // 
-            this.btn_avançaDiaReserva.AutoSize = false;
-            this.btn_avançaDiaReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_avançaDiaReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_avançaDiaReserva.Depth = 0;
-            this.btn_avançaDiaReserva.HighEmphasis = true;
-            this.btn_avançaDiaReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
-            this.btn_avançaDiaReserva.Location = new System.Drawing.Point(976, 210);
-            this.btn_avançaDiaReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
-            this.btn_avançaDiaReserva.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_avançaDiaReserva.Name = "btn_avançaDiaReserva";
-            this.btn_avançaDiaReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_avançaDiaReserva.Size = new System.Drawing.Size(76, 38);
-            this.btn_avançaDiaReserva.TabIndex = 27;
-            this.btn_avançaDiaReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_avançaDiaReserva.UseAccentColor = false;
-            this.btn_avançaDiaReserva.UseVisualStyleBackColor = true;
-            this.btn_avançaDiaReserva.Click += new System.EventHandler(this.btn_avançaDiaReserva_Click);
+            this.btn_avançaDiaInicioReserva.AutoSize = false;
+            this.btn_avançaDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_avançaDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_avançaDiaInicioReserva.Depth = 0;
+            this.btn_avançaDiaInicioReserva.HighEmphasis = true;
+            this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
+            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(1100, 208);
+            this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
+            this.btn_avançaDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_avançaDiaInicioReserva.Size = new System.Drawing.Size(76, 38);
+            this.btn_avançaDiaInicioReserva.TabIndex = 27;
+            this.btn_avançaDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_avançaDiaInicioReserva.UseAccentColor = false;
+            this.btn_avançaDiaInicioReserva.UseVisualStyleBackColor = true;
+            this.btn_avançaDiaInicioReserva.Click += new System.EventHandler(this.btn_avançaDiaReserva_Click);
+            // 
+            // btn_avançarDiaFimReserva
+            // 
+            this.btn_avançarDiaFimReserva.AutoSize = false;
+            this.btn_avançarDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_avançarDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_avançarDiaFimReserva.Depth = 0;
+            this.btn_avançarDiaFimReserva.HighEmphasis = true;
+            this.btn_avançarDiaFimReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
+            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1100, 261);
+            this.btn_avançarDiaFimReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.btn_avançarDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_avançarDiaFimReserva.Name = "btn_avançarDiaFimReserva";
+            this.btn_avançarDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_avançarDiaFimReserva.Size = new System.Drawing.Size(76, 38);
+            this.btn_avançarDiaFimReserva.TabIndex = 28;
+            this.btn_avançarDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_avançarDiaFimReserva.UseAccentColor = false;
+            this.btn_avançarDiaFimReserva.UseVisualStyleBackColor = true;
+            this.btn_avançarDiaFimReserva.Click += new System.EventHandler(this.btn_avançarDiaFimReserva_Click);
+            // 
+            // btn_recuarDiaInicioReserva
+            // 
+            this.btn_recuarDiaInicioReserva.AutoSize = false;
+            this.btn_recuarDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_recuarDiaInicioReserva.BackColor = System.Drawing.Color.Transparent;
+            this.btn_recuarDiaInicioReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_recuarDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_recuarDiaInicioReserva.Depth = 0;
+            this.btn_recuarDiaInicioReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_recuarDiaInicioReserva.HighEmphasis = true;
+            this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
+            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(976, 210);
+            this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
+            this.btn_recuarDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_recuarDiaInicioReserva.Size = new System.Drawing.Size(76, 38);
+            this.btn_recuarDiaInicioReserva.TabIndex = 29;
+            this.btn_recuarDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_recuarDiaInicioReserva.UseAccentColor = false;
+            this.btn_recuarDiaInicioReserva.UseVisualStyleBackColor = false;
+            this.btn_recuarDiaInicioReserva.Click += new System.EventHandler(this.btn_recuarDiaInicioReserva_Click);
             // 
             // F_reserva
             // 
@@ -333,8 +378,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1206, 833);
-            this.Controls.Add(this.btn_avançaDiaReserva);
-            this.Controls.Add(this.btn_recuaDiaReserva);
+            this.Controls.Add(this.btn_recuarDiaInicioReserva);
+            this.Controls.Add(this.btn_avançarDiaFimReserva);
+            this.Controls.Add(this.btn_avançaDiaInicioReserva);
+            this.Controls.Add(this.btn_recuaDiaFimReserva);
             this.Controls.Add(this.dtp_dataFimReserva);
             this.Controls.Add(this.dtp_dataInicioReserva);
             this.Controls.Add(this.cb_TipoQuarto);
@@ -383,7 +430,9 @@
         private MaterialSkin.Controls.MaterialComboBox cb_TipoQuarto;
         private System.Windows.Forms.DateTimePicker dtp_dataInicioReserva;
         private System.Windows.Forms.DateTimePicker dtp_dataFimReserva;
-        private MaterialSkin.Controls.MaterialButton btn_recuaDiaReserva;
-        private MaterialSkin.Controls.MaterialButton btn_avançaDiaReserva;
+        private MaterialSkin.Controls.MaterialButton btn_recuaDiaFimReserva;
+        private MaterialSkin.Controls.MaterialButton btn_avançaDiaInicioReserva;
+        private MaterialSkin.Controls.MaterialButton btn_avançarDiaFimReserva;
+        private MaterialSkin.Controls.MaterialButton btn_recuarDiaInicioReserva;
     }
 }

@@ -235,7 +235,15 @@ namespace appBugInn
             dtp_dataFimReserva.Value = dtp_dataFimReserva.Value.AddDays(-1);
         }
 
-        
+        private void btn_avançarDiaFimReserva_Click(object sender, EventArgs e)
+        {
+            dtp_dataFimReserva.Value = dtp_dataFimReserva.Value.AddDays(1);
+        }
+
+        private void btn_recuarDiaInicioReserva_Click(object sender, EventArgs e)
+        {
+            dtp_dataInicioReserva.Value = dtp_dataInicioReserva.Value.AddDays(-1);
+        }
     }
 
 }
