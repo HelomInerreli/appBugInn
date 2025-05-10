@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace appBugInn
 {
-    internal class Reserva
+    public partial class F_reserva
     {
         private int _id;
         private string _nome;
@@ -92,10 +92,10 @@ namespace appBugInn
 
 
         }
-        public Quarto TipoQuarto { get; set; }
+        internal Quarto TipoQuarto { get; set; }
 
         // Construtor
-        public Reserva(int id, string nome, int telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
+        internal F_reserva(int id, string nome, int telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
         {
             Id = id;
             Nome = nome;

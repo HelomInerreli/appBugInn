@@ -74,9 +74,9 @@ namespace appBugInn
 
                 string nome = "";
                 // Captura os dados do formulário
-                if (Funcionalidades.ValidarLetras(txt_nomeReserva.Text))
+                if (Funcionalidades.ValidarLetras(txt_nomeReserva1.Text))
                 {
-                    nome = txt_nomeReserva.Text;
+                    nome = txt_nomeReserva1.Text;
                 }
                 else
                 {
@@ -84,11 +84,11 @@ namespace appBugInn
                     return;
                 }
 
-                int telefone = int.Parse(txt_telefoneReserva.Text);
+                int telefone = int.Parse(txt_telefoneReserva1.Text);
                 string email = "";
-                if (Funcionalidades.IsEmailValido(txt_emailreserva.Text))
+                if (Funcionalidades.IsEmailValido(txt_emailReserva1.Text))
                 {
-                    email = txt_emailreserva.Text;
+                    email = txt_emailReserva1.Text;
                 }
                 else
                 {
@@ -126,14 +126,14 @@ namespace appBugInn
 
         private void txt_nomeReserva_Leave(object sender, EventArgs e)
         {
-            if (!Funcionalidades.ValidarLetras(txt_nomeReserva.Text))
-            {
-                MessageBox.Show("O nome apenas deve contar letras e nao pode estar vazio");
-                txt_nomeReserva.Text = string.Empty;
-                txt_nomeReserva.Focus();
-                return;
+            //if (!Funcionalidades.ValidarLetras(txt_nomeReserva.Text))
+            //{
+            //    MessageBox.Show("O nome apenas deve contar letras e nao pode estar vazio");
+            //    txt_nomeReserva.Text = string.Empty;
+            //    txt_nomeReserva.Focus();
+            //    return;
 
-            }
+            //}
            
         }
 
@@ -149,32 +149,33 @@ namespace appBugInn
 
         private void txt_telefoneReserva_Leave(object sender, EventArgs e)
         {
-            string texto = txt_telefoneReserva.Text;
+           // string texto = txt_telefoneReserva.Text;
 
-            // Verifica se está vazio ou contém caracteres não numéricos
-            if (!texto.All(char.IsDigit))
+           // // Verifica se está vazio ou contém caracteres não numéricos
+           // if (!texto.All(char.IsDigit))
             
-           {
+           //{
                
-                txt_telefoneReserva.Text = string.Empty;
-                txt_telefoneReserva.Focus();
-                return;
-            }
+           //     txt_telefoneReserva.Text = string.Empty;
+           //     txt_telefoneReserva.Focus();
+           //     return;
+           // }
         }
 
         private void txt_emailreserva_Leave(object sender, EventArgs e)
         {
-            if (!Funcionalidades.IsEmailValido(txt_emailreserva.Text))
-            {
-                MessageBox.Show("Email com formato incorreto");
-                txt_emailreserva.Text = string.Empty;
-                txt_emailreserva.Focus();
-                return;
-            }
+            //if (!Funcionalidades.IsEmailValido(txt_emailreserva.Text))
+            //{
+            //    MessageBox.Show("Email com formato incorreto");
+            //    txt_emailreserva.Text = string.Empty;
+            //    txt_emailreserva.Focus();
+            //    return;
+            //}
         }
 
         private void cb_NumeroPessoas_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             // Verifica se há algo selecionado no comboBox
             if (cb_NumeroPessoas.SelectedItem != null)
             {
@@ -215,6 +216,7 @@ namespace appBugInn
             }
         }
 
+
         private void cb_TipoQuarto_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Verifica se há algo selecionado no comboBox de tipo de quarto
@@ -243,6 +245,66 @@ namespace appBugInn
         private void btn_recuarDiaInicioReserva_Click(object sender, EventArgs e)
         {
             dtp_dataInicioReserva.Value = dtp_dataInicioReserva.Value.AddDays(-1);
+        }
+
+        private void txt_nomeReserva_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nomeReserva1_Leave(object sender, EventArgs e)
+        {
+            if (!Funcionalidades.ValidarLetras(txt_nomeReserva1.Text))
+            {
+                MessageBox.Show("O nome apenas deve contar letras e nao pode estar vazio");
+                txt_nomeReserva1.Text = string.Empty;
+                txt_nomeReserva1.Focus();
+                return;
+
+            }
+        }
+
+        private void txt_telefoneReserva_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_telefoneReserva1_Leave(object sender, EventArgs e)
+        {
+            if(!Funcionalidades.ValidarNumeros(txt_telefoneReserva1.Text))
+            {
+                MessageBox.Show("O telefone deve contar apenas numeros e nao pode estar vazio");
+                txt_telefoneReserva1.Text = string.Empty;
+                txt_telefoneReserva1.Focus();
+                return;
+            }
+           
+        }
+
+        private void txt_emailReserva1_Leave(object sender, EventArgs e)
+        {
+            if (!Funcionalidades.IsEmailValido(txt_emailReserva1.Text))
+            {
+                MessageBox.Show("Email com formato incorreto");
+                txt_emailReserva1.Text = string.Empty;
+                txt_emailReserva1.Focus();
+                return;
+            }
+        }
+
+        private void txt_nomeReserva1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void F_reserva_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

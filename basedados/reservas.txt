@@ -1,4 +1,3 @@
 id;nome;telefone;email;dataInicio,dataFim,tipoQuarto
-1;Henrique;123456789;aaaaa@gmail.com;2025-05-09;2025-05-12;Simples
-2;Gonçalo;987654321;calo@gmail.com;2025-05-22;2025-05-31;Simples
-3;Helom;123987654;helom@gmail.com;2025-05-14;2025-05-21;Duplo
+
+1;Henrique;123456789;henrique@gmail.com;2025-05-12;2025-05-16;Duplo
