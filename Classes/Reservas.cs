@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace appBugInn
 {
-    public partial class F_reserva
+    internal class Reservas
     {
         private int _id;
         private string _nome;
@@ -48,7 +48,14 @@ namespace appBugInn
             set
             {
 
-                _telefone = Telefone;
+                string numero = value.ToString();
+
+                // Verifica se tem exatamente 9 dígitos
+                if (numero.Length != 9 || !numero.All(char.IsDigit))
+                    throw new ArgumentException("O número de telefone deve ter exatamente 9 dígitos numéricos.");
+
+
+                _telefone = value;
             }
         }
 
@@ -95,7 +102,7 @@ namespace appBugInn
         internal Quarto TipoQuarto { get; set; }
 
         // Construtor
-        internal F_reserva(int id, string nome, int telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
+        internal Reservas(int id, string nome, int telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
         {
             Id = id;
             Nome = nome;
@@ -144,3 +151,4 @@ namespace appBugInn
 
     }
 }
+

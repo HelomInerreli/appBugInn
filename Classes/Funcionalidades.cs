@@ -57,7 +57,6 @@ namespace appBugInn
             }
         }
 
-
         public static int LocalizarLinhaRegisto(string baseDados, int coluna, string valor)
         {
             string[] linhas = LerBaseDados(baseDados);
@@ -259,15 +258,17 @@ namespace appBugInn
                 return "Objeto criado, mas não foi possível exibir.";
             }
         }
+        
         public static bool ValidarLetras(string texto)
         {
             // Se estiver vazio ou só com espaços, está ok
             if (string.IsNullOrWhiteSpace(texto))
                 return true;
 
-            // Se não estiver vazio, deve conter apenas letras
-            return texto.All(char.IsLetter);
+            // Permitir letras e espaços
+            return texto.All(c => char.IsLetter(c) || c == ' ');
         }
+        
         public static bool ValidarNumeros(string valor)
         {
             // Se estiver vazio ou só com espaços, está ok
@@ -277,6 +278,7 @@ namespace appBugInn
             // Se não estiver vazio, deve conter apenas dígitos
             return valor.All(char.IsDigit);
         }
+        
         public static bool IsEmailValido(string email)
         {
             // Se estiver vazio ou só com espaços, está ok
@@ -286,6 +288,7 @@ namespace appBugInn
             var format = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
             return format.IsMatch(email);
         }
+        
         public static bool ValidarDataComFormato(string dataStr, string formato, out DateTime dataValida)
         {
             dataValida = DateTime.MinValue;
@@ -298,7 +301,7 @@ namespace appBugInn
 
             return isValida;
         }
-
+        
         public static bool ValidarTipoQuarto(string tipoQuarto)
         {
             // Lista dos tipos válidos de quarto
