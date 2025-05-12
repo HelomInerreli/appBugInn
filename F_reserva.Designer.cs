@@ -121,6 +121,7 @@
             this.dtp_dataInicioReserva.Size = new System.Drawing.Size(115, 20);
             this.dtp_dataInicioReserva.TabIndex = 22;
             this.dtp_dataInicioReserva.ValueChanged += new System.EventHandler(this.dtp_dataInicioReserva_ValueChanged);
+            this.dtp_dataInicioReserva.Leave += new System.EventHandler(this.dtp_dataInicioReserva_Leave);
             // 
             // dtp_dataFimReserva
             // 
@@ -428,7 +429,7 @@
             this.Controls.Add(this.materialCard2);
             this.Controls.Add(this.materialCard1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "F_reserva";

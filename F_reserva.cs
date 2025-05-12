@@ -305,12 +305,18 @@ namespace appBugInn
 
         private void F_reserva_Load(object sender, EventArgs e)
         {
-
+            dtp_dataInicioReserva.Value = DateTime.Today;
+            dtp_dataInicioReserva.MinDate = DateTime.Today;
         }
 
         private void btn_cancelarReserva_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtp_dataInicioReserva_Leave(object sender, EventArgs e)
+        {
+            dtp_dataFimReserva.MinDate = dtp_dataInicioReserva.Value.AddDays(1);
         }
     }
 
