@@ -1,4 +1,6 @@
-﻿using System;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,15 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class F_inicial : Form
+    public partial class F_inicial: MaterialForm
     {
         public F_inicial()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void lbl_teste_Click(object sender, EventArgs e)
@@ -58,11 +64,11 @@ namespace appBugInn
         private void F_inicial_Load(object sender, EventArgs e)
         {
 
-        }
+        } 
 
         private void btn_logins_Click(object sender, EventArgs e)
         {
-            F_login flogin = new F_login();
+            lb_nome flogin = new lb_nome();
 
             flogin.Show();
         }
@@ -80,5 +86,39 @@ namespace appBugInn
         }
 
       
+        private void btn_testesHelom_Click(object sender, EventArgs e)
+        {
+            F_testesHelom fteste = new F_testesHelom();
+
+            fteste.Show();
+        }
+        private void btn_criarObjeto_Click(object sender, EventArgs e)
+        {
+            CriarObjeto fcriarObjeto = new CriarObjeto();
+
+            fcriarObjeto.Show();
+        }
+
+        private void btn_testeHelom_Click(object sender, EventArgs e)
+        {
+            F_testesHelom fteste = new F_testesHelom();
+
+            fteste.Show();
+        }
+        private void btn_reservasInicial_Click(object sender, EventArgs e)
+        {
+            F_reserva f_Reserva = new F_reserva();
+            f_Reserva.Show();
+        }
+
+        private void btn_novaTelaInicial_Click(object sender, EventArgs e)
+        {
+            F_telaInicial fnovaTela = new F_telaInicial();
+            ActiveForm.Hide(); // Esconde a tela atual
+
+            fnovaTela.Show();
+
+
+        }
     }
 }

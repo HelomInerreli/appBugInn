@@ -9,32 +9,91 @@ namespace appBugInn
 {
     internal static class Hotel
     {
-        public static List<Suite> listarQuartos = new List<Suite>();
+        List<Funcionario> funcionarios = new List<Funcionario>();
+        List<Single> qSingles = new List<Single>();
+        List<Duplo> qDuplos = new List<Duplo>();
 
 
-
-        public static List<Suite> CarregarTodosQuartosDoArquivo(string caminhoArquivo)
-        {
-            if (!File.Exists(caminhoArquivo))
-                throw new FileNotFoundException($"O arquivo {caminhoArquivo} não foi encontrado.");
-
-            var quartos = new List<Suite>();
-            var linhas = File.ReadAllLines(caminhoArquivo);
-            foreach (var linha in linhas.Skip(1)) // Ignora o cabeçalho
+        public void preencherFuncionarios() {
+            List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
+            foreach (var item in func)
             {
-                var dados = linha.Split(';');
-                if (dados.Length == 3)
+                if (item is Funcionario funcionario)
                 {
-                    int numQuarto = int.Parse(dados[0]);
-                    int andar = int.Parse(dados[1]);
-                    bool livre = dados[2].Trim().Equals("disponivel", StringComparison.OrdinalIgnoreCase);
+                    funcionarios.Add(funcionario);
+                }
 
-                    var suite = new Suite(numQuarto, andar) { Livre = livre };
-                    quartos.Add(suite);
+            }
+        }
+
+        public void preencherQuartos()
+        {
+            List<object> qSing = Funcionalidades.CriarObjetosDoTexto("Single", "Single");
+            foreach (var item in qSing)
+            {
+                if (item is Single single)
+                {
+                    qSingles.Add(single);
                 }
             }
 
-            return quartos;
+            //List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("Duplo", "Duplo");
+            //foreach (var item in qDuplo)
+            //{
+            //    if (item is Duplo duplo)
+            //    {
+            //        qDuplos.Add(duplo);
+            //    }
+            //}
         }
+
+        public void gravarFuncionario()
+        {
+            //Apagar a base de dados
+            string linha = "";
+            foreach (var item in funcionarios)
+            {
+                linha += item.linhaBDFuncionarios() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("funcionarios", linha);
+        }
+
+        public void gravarQuartos()
+        {
+            //Apagar a base de dados
+            string linha = "";
+            foreach (var item in qSingles)
+            {
+                linha += item.linhaBDSingle() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("Single", linha);
+            ////Apagar a base de dados
+            //linha = "";
+            //foreach (var item in qDuplos)
+            //{
+            //    linha += item.linhaBDQuarto() + "\n";
+            //}
+            //Funcionalidades.GravarBaseDados("Duplo", linha);
+        }
+
+        public List<int> verificaQuartosVaziosSingle()
+        {
+            List<int> retorno = new List<int>();
+            for (int i = 0; i < qSingles.Count; i++)
+            {
+                if (qSingles[i].Livre == true)
+                {
+                    retorno.Add(qSingles[i].NumQuarto);
+                }
+
+            }
+
+            return retorno;
+        }
+
+
+
+
     }
+
 }

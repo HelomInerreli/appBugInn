@@ -1,0 +1,4 @@
+id;nome;telefone;email;dataInicio,dataFim,tipoQuarto
+
+1;Henrique;123456789;henrique@gmail.com;2025-05-12;2025-05-16;Duplo
+2;Henrique Magalhães;213456789;adasdas@gmail.com;2025-05-12;2025-05-14;Simples

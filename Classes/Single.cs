@@ -9,9 +9,13 @@ namespace appBugInn
     internal class Single : Quarto
 
     {
-    public Single(int numQuarto, int andar) : base(numQuarto, andar)
-        {
-            PrecoPorNoite = 70;
-        }
+        public Single(int numQuarto, int andar) : base(numQuarto, andar)
+            {
+                PrecoPorNoite = 70;
+            }
+        public string linhaBDSingle()
+            {
+                return $"{NumQuarto};{Andar};{Conta};{Livre};{Status}";
+            }
     }
 }

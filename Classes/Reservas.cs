@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace appBugInn
 {
-    internal class Reserva
+    internal class Reservas
     {
         private int _id;
         private string _nome;
-        private string _telefone;
+        private int _telefone;
         private DateTime _dataInicio;
         private DateTime _dataFim;
         private string _email;
@@ -42,15 +42,19 @@ namespace appBugInn
                 _nome = value;
             }
         }
-        public string Telefone
+        public int Telefone
         {
             get => _telefone;
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || !value.All(char.IsDigit))
-                {
-                    throw new ArgumentException("O telefone deve conter apenas digitos numericos e nao pode estar vazio."); // verificar telefone so com numeros
-                }
+
+                string numero = value.ToString();
+
+                // Verifica se tem exatamente 9 dígitos
+                if (numero.Length != 9 || !numero.All(char.IsDigit))
+                    throw new ArgumentException("O número de telefone deve ter exatamente 9 dígitos numéricos.");
+
+
                 _telefone = value;
             }
         }
@@ -85,7 +89,7 @@ namespace appBugInn
             set
             {
                 // Verificar se o e-mail não está vazio e tem o formato correto
-                if (string.IsNullOrWhiteSpace(value) || !IsEmailValido(value))
+                if (string.IsNullOrWhiteSpace(value) || !Funcionalidades.IsEmailValido(value))
                 {
                     throw new ArgumentException("O email fornecido não é válido.");
                 }
@@ -95,10 +99,10 @@ namespace appBugInn
 
 
         }
-        public Quarto TipoQuarto { get; set; } 
+        internal Quarto TipoQuarto { get; set; }
 
         // Construtor
-        public Reserva(int id, string nome, string telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
+        internal Reservas(int id, string nome, int telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
         {
             Id = id;
             Nome = nome;
@@ -108,7 +112,7 @@ namespace appBugInn
             Email = email;
             TipoQuarto = tipoQuarto; // agora guarda o quarto na reserva
 
-            string linha = $"{Id};{Nome};{Telefone};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{Email};{TipoQuarto.NumQuarto};{TipoQuarto.PrecoPorNoite}";
+            string linha = $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto}";
 
             try
             {
@@ -119,7 +123,7 @@ namespace appBugInn
             {
                 // mostra o erro
                 Console.WriteLine("Erro ao gravar reserva: " + ex.Message);
-               
+
             }
 
         }
@@ -144,11 +148,7 @@ namespace appBugInn
             return (decimal)(dias * TipoQuarto.PrecoPorNoite);
         }
 
-        public bool IsEmailValido(string email)
-        {
-            //  para validar o formato do e-mail
-            var format = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
-            return format.IsMatch(email);
-        }
+
     }
 }
+
