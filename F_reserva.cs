@@ -207,6 +207,7 @@ namespace appBugInn
                         cb_TipoQuarto.Items.Add("Deluxe"); 
                         break;
                 }
+                cb_TipoQuarto.Enabled = true; // Habilita o ComboBox de tipo de quarto
 
                 // Seleciona automaticamente a primeira opção (se houver)
                 if (cb_TipoQuarto.Items.Count > 0)
@@ -305,6 +306,11 @@ namespace appBugInn
         private void F_reserva_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_cancelarReserva_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
