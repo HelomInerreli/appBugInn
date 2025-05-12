@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,17 +12,20 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class F_nFunc : Form
+    public partial class F_nFunc : MaterialForm
     {
         public F_nFunc()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void txt_nome_Click(object sender, EventArgs e)
         {
             txt_nome.Text = "";
-            lbl_nome.Visible = true;
+            //lbl_nome.Visible = true;
         }
 
         private void btn_criar_Click(object sender, EventArgs e)
@@ -44,40 +49,75 @@ namespace appBugInn
                     return;
                 }
 
-                // Ler funcionários existentes
-                string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
-                    .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
-
-                // Verifica duplicados
-                foreach (string linha in funcionarios)
+                // Se um funcionário está selecionado, MODIFICAR
+                if (cb_Funcionarios.SelectedIndex >= 0)
                 {
-                    string[] partes = linha.Split(';');
-                    if (partes.Length < 3) continue;
+                    // Encontrar a linha do funcionário pelo nome
+                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios");
+                    int linhaFuncionario = Array.FindIndex(funcionarios, l => l.Split(';')[1] == cb_Funcionarios.SelectedItem.ToString());
 
-                    if (partes[1].Equals(nome, StringComparison.OrdinalIgnoreCase) && partes[2] == telefone)
+                    if (linhaFuncionario > 0) // >0 para ignorar o cabeçalho
                     {
-                        MessageBox.Show("Já existe um funcionário com esse nome e telefone.");
+                        string[] partes = funcionarios[linhaFuncionario].Split(';');
+                        string id = partes[0];
+
+                        // Monta a nova linha do funcionário
+                        string novaLinhaFuncionario = $"{id};{nome};{telefone};{tipoFuncionario}";
+
+                        // Edita o registro do funcionário
+                        Funcionalidades.EditarRegisto("funcionarios", linhaFuncionario, novaLinhaFuncionario);
+
+                        // Edita o registro do login
+                        string[] logins = Funcionalidades.LerBaseDados("logins");
+                        int linhaLogin = Array.FindIndex(logins, l => l.Split(';')[0] == id);
+                        if (linhaLogin > 0)
+                        {
+                            string novaLinhaLogin = $"{id};{nome};{password}";
+                            Funcionalidades.EditarRegisto("logins", linhaLogin, novaLinhaLogin);
+                        }
+
+                        MessageBox.Show("Funcionário modificado com sucesso!");
+                        this.Close();
                         return;
                     }
                 }
-
-                // Calcula novo ID
-                int novoId = funcionarios.Select(l => int.TryParse(l.Split(';')[0], out int id) ? id : 0).DefaultIfEmpty(0).Max() + 1;
-
-                // Cria e grava funcionário
-                Funcionario novoFunc = new Funcionario(novoId, nome, telefone, tipoFuncionario);
-
-                bool funcionarioGravado = novoFunc.Gravar();
-                bool loginGravado = novoFunc.GravarLogin(password);
-
-                if (funcionarioGravado && loginGravado)
+                else // Se não, CRIAR novo
                 {
-                    MessageBox.Show("Funcionário e login criados com sucesso!");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao gravar os dados.");
+                    // Ler funcionários existentes (sem pular cabeçalho)
+                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
+                        .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
+
+                    // Verifica duplicados
+                    foreach (string linha in funcionarios)
+                    {
+                        string[] partes = linha.Split(';');
+                        if (partes.Length < 3) continue;
+
+                        if (partes[1].Equals(nome, StringComparison.OrdinalIgnoreCase) && partes[2] == telefone)
+                        {
+                            MessageBox.Show("Já existe um funcionário com esse nome e telefone.");
+                            return;
+                        }
+                    }
+
+                    // Calcula novo ID
+                    int novoId = funcionarios.Select(l => int.TryParse(l.Split(';')[0], out int id) ? id : 0).DefaultIfEmpty(0).Max() + 1;
+
+                    // Cria e grava funcionário
+                    Funcionario novoFunc = new Funcionario(novoId, nome, telefone, tipoFuncionario);
+
+                    bool funcionarioGravado = novoFunc.Gravar();
+                    bool loginGravado = novoFunc.GravarLogin(password);
+
+                    if (funcionarioGravado && loginGravado)
+                    {
+                        MessageBox.Show("Funcionário e login criados com sucesso!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao gravar os dados.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -134,7 +174,7 @@ namespace appBugInn
         private void txt_password_Click(object sender, EventArgs e)
         {
             txt_password.Text = "";
-            lbl_password.Visible = true;
+            //bl_password.Visible = true;
         }
 
         private void lbl_password_Click(object sender, EventArgs e)
@@ -145,7 +185,128 @@ namespace appBugInn
         private void txt_telefone_Click(object sender, EventArgs e)
         {
             txt_telefone.Text = "";
-            lbl_telefone.Visible = true;
+            //lbl_telefone.Visible = true;
+        }
+
+        // Adicione este código ao evento F_nFunc_Load
+        private void F_nFunc_Load(object sender, EventArgs e)
+        {
+            // Lê todas as linhas do arquivo de funcionários, pulando o cabeçalho
+            string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
+                .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
+
+            // Limpa o ComboBox antes de adicionar
+            cb_Funcionarios.Items.Clear();
+
+            // Adiciona os nomes ao ComboBox
+            foreach (string linha in funcionarios)
+            {
+                string[] partes = linha.Split(';');
+                if (partes.Length >= 2)
+                {
+                    cb_Funcionarios.Items.Add(partes[1]); // partes[1] é o nome
+                }
+            }
+        }
+
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nomeSelecionado = cb_Funcionarios.SelectedItem?.ToString();
+            // Faça algo com o nome selecionado
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void cb_Funcionarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btn_excluir.Visible = cb_Funcionarios.SelectedIndex >= 0;
+
+            if (cb_Funcionarios.SelectedIndex >= 0)
+            {
+                btn_criar.Text = "Modificar";
+
+                // Lê todos os funcionários
+                string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
+                    .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
+
+                // Pega o nome selecionado
+                string nomeSelecionado = cb_Funcionarios.SelectedItem.ToString();
+
+                // Procura o funcionário pelo nome
+                string linhaFuncionario = funcionarios.FirstOrDefault(l => l.Split(';')[1] == nomeSelecionado);
+
+                if (linhaFuncionario != null)
+                {
+                    string[] partes = linhaFuncionario.Split(';');
+                    if (partes.Length >= 4)
+                    {
+                        txt_nome.Text = partes[1];
+                        txt_telefone.Text = partes[2];
+                        chb_gestor.Checked = partes[3] == "True" || partes[3] == "1";
+
+                        // Agora busca a password no logins.txt usando o ID
+                        string idFuncionario = partes[0];
+                        string[] logins = Funcionalidades.LerBaseDados("logins")
+                            .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
+
+                        string linhaLogin = logins.FirstOrDefault(l => l.Split(';')[0] == idFuncionario);
+                        if (linhaLogin != null)
+                        {
+                            string[] partesLogin = linhaLogin.Split(';');
+                            if (partesLogin.Length >= 2)
+                                txt_password.Text = partesLogin[2];
+                            else
+                                txt_password.Text = "";
+                        }
+                        else
+                        {
+                            txt_password.Text = "";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                btn_criar.Text = "Criar";
+                txt_nome.Text = "";
+                txt_telefone.Text = "";
+                txt_password.Text = "";
+                chb_gestor.Checked = false;
+            }
+        }
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            if (cb_Funcionarios.SelectedIndex >= 0)
+            {
+                // Confirmação
+                if (MessageBox.Show("Tem certeza que deseja excluir este funcionário?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    // Localiza a linha do funcionário
+                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios");
+                    int linhaFuncionario = Array.FindIndex(funcionarios, l => l.Split(';')[1] == cb_Funcionarios.SelectedItem.ToString());
+
+                    if (linhaFuncionario > 0) // >0 para ignorar o cabeçalho
+                    {
+                        string id = funcionarios[linhaFuncionario].Split(';')[0];
+
+                        // Exclui funcionário
+                        Funcionalidades.ExcluirRegisto("funcionarios", linhaFuncionario);
+
+                        // Exclui login correspondente
+                        string[] logins = Funcionalidades.LerBaseDados("logins");
+                        int linhaLogin = Array.FindIndex(logins, l => l.Split(';')[0] == id);
+                        if (linhaLogin > 0)
+                        {
+                            Funcionalidades.ExcluirRegisto("logins", linhaLogin);
+                        }
+
+                        MessageBox.Show("Funcionário excluído com sucesso!");
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }

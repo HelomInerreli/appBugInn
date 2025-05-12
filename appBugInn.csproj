@@ -227,6 +227,9 @@
     </Content>
     <Content Include="BaseDados\reservas.txt" />
     <Content Include="Imagens\algo1.txt" />
+    <None Include="Resources\icons8-visível-24.png" />
+    <None Include="Resources\icons8-trancar-241.png" />
+    <None Include="Resources\icons8-trancar-24.png" />
     <None Include="Resources\Personnome.png" />
     <None Include="Resources\person1.png" />
     <None Include="Resources\person.png" />
