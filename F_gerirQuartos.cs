@@ -22,10 +22,7 @@ namespace appBugInn
             // Handle label click event here  
         }
 
-
-
         private void button1_Click(object sender, EventArgs e) //mostra o que está no quartos.txt
-
         {
             string[] texto = Funcionalidades.LerBaseDados("quartos");
 
@@ -38,12 +35,17 @@ namespace appBugInn
             label1.Text = sb.ToString(); // o label não é o ideal para mostrar textos grandes
         } 
 
+
+        private void btn_procurarQuarto_Click()
+        {
+            if (int.TryParse(txt_numQuarto.Text, out int numeroQuarto))
+            {
+                lbl_infoQuarto.Text = Hotel.ProcurarStatusQuartoPorNumero(numeroQuarto);
     }
-
+            else
+            {
+                lbl_infoQuarto.Text = "Insira um número de quarto válido.";
 }
-
-    
-
-
-
-
+        }
+    }
+}
