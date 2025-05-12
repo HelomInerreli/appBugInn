@@ -231,6 +231,7 @@
             this.Controls.Add(this.label1);
             this.Name = "F_nFunc";
             this.Text = "Novo Funcionario";
+            this.Load += new System.EventHandler(this.F_nFunc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

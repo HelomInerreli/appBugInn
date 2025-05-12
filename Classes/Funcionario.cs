@@ -81,5 +81,9 @@ namespace appBugInn
         {
             return $"{Id}: {Nome} - {Telefone} - {(TipoFuncionario ? "Gerente" : "Funcionário")}";
         }
+        public string linhaBDFuncionarios()
+        {
+            return $"{Id};{Nome};{Telefone};{TipoFuncionario}";
+        }
     }
 }

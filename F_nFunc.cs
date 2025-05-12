@@ -12,9 +12,11 @@ namespace appBugInn
 {
     public partial class F_nFunc : Form
     {
+        Hotel hFuncionarios = new Hotel();
         public F_nFunc()
         {
             InitializeComponent();
+            
         }
 
         private void txt_nome_Click(object sender, EventArgs e)
@@ -146,6 +148,12 @@ namespace appBugInn
         {
             txt_telefone.Text = "";
             lbl_telefone.Visible = true;
+        }
+
+        private void F_nFunc_Load(object sender, EventArgs e)
+        {
+            hFuncionarios.preencherFuncionarios();
+
         }
     }
 }
