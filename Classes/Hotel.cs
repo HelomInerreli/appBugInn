@@ -8,7 +8,7 @@ namespace appBugInn
 {
     internal class Hotel
     {
-        List<Funcionario> funcionarios = new List<Funcionario>();
+        public List<Funcionario> funcionarios = new List<Funcionario>();
 
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");

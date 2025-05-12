@@ -257,9 +257,6 @@
             this.btn_excluir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_excluir.UseAccentColor = false;
             this.btn_excluir.UseVisualStyleBackColor = true;
-            btn_excluir.Visible = cb_Funcionarios.SelectedIndex >= 0;
-            this.btn_excluir.Visible = false;
-            btn_excluir.Click += btn_excluir_Click;
             this.btn_excluir.Visible = false;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 

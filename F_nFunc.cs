@@ -15,6 +15,7 @@ namespace appBugInn
     public partial class F_nFunc : MaterialForm
     {
         Hotel hFuncionarios = new Hotel();
+        
         public F_nFunc()
         {
             InitializeComponent();
@@ -192,28 +193,33 @@ namespace appBugInn
         // Adicione este código ao evento F_nFunc_Load
         private void F_nFunc_Load(object sender, EventArgs e)
         {
-            // Lê todas as linhas do arquivo de funcionários, pulando o cabeçalho
-            string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
-                .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
+            hFuncionarios.preencherFuncionarios();
 
-            // Limpa o ComboBox antes de adicionar
             cb_Funcionarios.Items.Clear();
-
-            // Adiciona os nomes ao ComboBox
-            foreach (string linha in funcionarios)
+            foreach (var func in hFuncionarios.funcionarios)
             {
-                string[] partes = linha.Split(';');
-                if (partes.Length >= 2)
-                {
-                    cb_Funcionarios.Items.Add(partes[1]); // partes[1] é o nome
-                }
+                cb_Funcionarios.Items.Add(func.Nome);
             }
         }
 
         private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string nomeSelecionado = cb_Funcionarios.SelectedItem?.ToString();
-            // Faça algo com o nome selecionado
+            if (string.IsNullOrEmpty(nomeSelecionado))
+                return;
+
+            // Busca o funcionário na lista
+            var funcionario = hFuncionarios.funcionarios
+                .FirstOrDefault(f => f.Nome.Equals(nomeSelecionado, StringComparison.OrdinalIgnoreCase));
+
+            if (funcionario != null)
+            {
+                // Exemplo: mostrar os dados nos TextBox
+                txt_nome.Text = funcionario.Nome;
+                txt_telefone.Text = funcionario.Telefone;
+                chb_gestor.Checked = funcionario.TipoFuncionario;
+                // Adicione outros campos se necessário
+            }
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
@@ -284,24 +290,24 @@ namespace appBugInn
                 // Confirmação
                 if (MessageBox.Show("Tem certeza que deseja excluir este funcionário?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    // Localiza a linha do funcionário
-                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios");
-                    int linhaFuncionario = Array.FindIndex(funcionarios, l => l.Split(';')[1] == cb_Funcionarios.SelectedItem.ToString());
+                    string nomeSelecionado = cb_Funcionarios.SelectedItem.ToString();
 
-                    if (linhaFuncionario > 0) // >0 para ignorar o cabeçalho
+                    // Remove da lista em memória
+                    var funcionarioRemover = hFuncionarios.funcionarios
+                        .FirstOrDefault(f => f.Nome.Equals(nomeSelecionado, StringComparison.OrdinalIgnoreCase));
+                    if (funcionarioRemover != null)
                     {
-                        string id = funcionarios[linhaFuncionario].Split(';')[0];
+                        hFuncionarios.funcionarios.Remove(funcionarioRemover);
 
-                        // Exclui funcionário
-                        Funcionalidades.ExcluirRegisto("funcionarios", linhaFuncionario);
+                        // Remove do TXT sobrescrevendo o arquivo com a lista atualizada
+                        SalvarFuncionariosNoTxt();
 
-                        // Exclui login correspondente
-                        string[] logins = Funcionalidades.LerBaseDados("logins");
-                        int linhaLogin = Array.FindIndex(logins, l => l.Split(';')[0] == id);
-                        if (linhaLogin > 0)
-                        {
-                            Funcionalidades.ExcluirRegisto("logins", linhaLogin);
-                        }
+                        // Remove login correspondente do TXT
+                        string caminhoLogins = "basedados/logins.txt";
+                        var linhasLogins = System.IO.File.ReadAllLines(caminhoLogins).ToList();
+                        // Supondo que o ID é a primeira coluna
+                        linhasLogins = linhasLogins.Where(l => !l.StartsWith(funcionarioRemover.Id + ";")).ToList();
+                        System.IO.File.WriteAllLines(caminhoLogins, linhasLogins, Encoding.UTF8);
 
                         MessageBox.Show("Funcionário excluído com sucesso!");
                         this.Close();
@@ -309,11 +315,34 @@ namespace appBugInn
                 }
             }
         }
-
-        private void F_nFunc_Load(object sender, EventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            hFuncionarios.preencherFuncionarios();
+            base.OnFormClosing(e);
 
+            // Atualiza a lista antes de salvar, se necessário
+            // hFuncionarios.preencherFuncionarios(); // Descomente se quiser garantir atualização
+
+            // Salva todos os funcionários da lista no TXT
+            SalvarFuncionariosNoTxt();
         }
+
+        private void SalvarFuncionariosNoTxt()
+        {
+            // Caminho do arquivo
+            string caminho = "basedados/funcionarios.txt";
+
+            // Cabeçalho (ajuste conforme seu arquivo)
+            string cabecalho = "Id;Nome;Telefone;TipoFuncionario";
+
+            var linhas = new List<string> { cabecalho };
+            foreach (var func in hFuncionarios.funcionarios)
+            {
+                linhas.Add(func.linhaBDFuncionarios());
+            }
+
+            System.IO.File.WriteAllLines(caminho, linhas, Encoding.UTF8);
+        }
+
+               
     }
 }
