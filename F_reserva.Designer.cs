@@ -39,7 +39,6 @@
             this.btn_avançarDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
             this.btn_avançaDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
             this.btn_recuaDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
-            this.lbl_dataInicioReserva = new System.Windows.Forms.Label();
             this.lbl_dataFimReserva = new System.Windows.Forms.Label();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
@@ -47,6 +46,7 @@
             this.btn_cancelarReserva = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.SuspendLayout();
@@ -205,7 +205,7 @@
             this.btn_recuarDiaInicioReserva.HighEmphasis = true;
             this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
             this.btn_recuarDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(362, 53);
+            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(364, 53);
             this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
@@ -247,7 +247,7 @@
             this.btn_avançaDiaInicioReserva.HighEmphasis = true;
             this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
             this.btn_avançaDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(399, 53);
+            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(401, 53);
             this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
@@ -283,25 +283,12 @@
             this.btn_recuaDiaFimReserva.UseVisualStyleBackColor = false;
             this.btn_recuaDiaFimReserva.Click += new System.EventHandler(this.btn_recuaDiaReserva_Click);
             // 
-            // lbl_dataInicioReserva
-            // 
-            this.lbl_dataInicioReserva.AutoSize = true;
-            this.lbl_dataInicioReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dataInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_dataInicioReserva.Location = new System.Drawing.Point(350, 15);
-            this.lbl_dataInicioReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbl_dataInicioReserva.Name = "lbl_dataInicioReserva";
-            this.lbl_dataInicioReserva.Size = new System.Drawing.Size(53, 9);
-            this.lbl_dataInicioReserva.TabIndex = 8;
-            this.lbl_dataInicioReserva.Text = "Data de inicio ";
-            this.lbl_dataInicioReserva.Click += new System.EventHandler(this.label6_Click);
-            // 
             // lbl_dataFimReserva
             // 
             this.lbl_dataFimReserva.AutoSize = true;
             this.lbl_dataFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dataFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_dataFimReserva.Location = new System.Drawing.Point(470, 15);
+            this.lbl_dataFimReserva.Location = new System.Drawing.Point(470, 12);
             this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_dataFimReserva.Name = "lbl_dataFimReserva";
             this.lbl_dataFimReserva.Size = new System.Drawing.Size(44, 9);
@@ -327,12 +314,12 @@
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.label1);
             this.materialCard2.Controls.Add(this.cb_NumeroPessoas);
             this.materialCard2.Controls.Add(this.cb_TipoQuarto);
             this.materialCard2.Controls.Add(this.btn_avançarDiaFimReserva);
             this.materialCard2.Controls.Add(this.btn_recuaDiaFimReserva);
             this.materialCard2.Controls.Add(this.btn_recuarDiaInicioReserva);
-            this.materialCard2.Controls.Add(this.lbl_dataInicioReserva);
             this.materialCard2.Controls.Add(this.dtp_dataFimReserva);
             this.materialCard2.Controls.Add(this.dtp_dataInicioReserva);
             this.materialCard2.Controls.Add(this.btn_avançaDiaInicioReserva);
@@ -414,6 +401,18 @@
             this.materialLabel2.TabIndex = 38;
             this.materialLabel2.Text = "Detalhes da reserva";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(351, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 9);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Data de início";
+            // 
             // F_reserva
             // 
             this.AcceptButton = this.btn_registarReserva;
@@ -436,7 +435,7 @@
             this.Padding = new System.Windows.Forms.Padding(3, 64, 2, 2);
             this.Text = "                                          Reserva de quartos";
             this.Load += new System.EventHandler(this.F_reserva_Load);
-            this.Leave += new System.EventHandler(this.txt_emailreserva_Leave);
+           // this.Leave += new System.EventHandler(this.txt_emailreserva_Leave);
             this.materialCard1.ResumeLayout(false);
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
@@ -446,7 +445,7 @@
         }
 
         #endregion
-      private System.Windows.Forms.TextBox txt_telefoneReserva;
+        //private System.Windows.Forms.TextBox txt_telefoneReserva;
         private MaterialSkin.Controls.MaterialComboBox cb_NumeroPessoas;
         private MaterialSkin.Controls.MaterialComboBox cb_TipoQuarto;
         private System.Windows.Forms.DateTimePicker dtp_dataInicioReserva;
@@ -458,7 +457,6 @@
         private MaterialSkin.Controls.MaterialTextBox txt_nomeReserva1;
         private MaterialSkin.Controls.MaterialTextBox txt_telefoneReserva1;
         private MaterialSkin.Controls.MaterialTextBox txt_emailReserva1;
-        private System.Windows.Forms.Label lbl_dataInicioReserva;
         private System.Windows.Forms.Label lbl_dataFimReserva;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard2;
@@ -466,5 +464,6 @@
         private MaterialSkin.Controls.MaterialButton btn_cancelarReserva;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.Label label1;
     }
 }

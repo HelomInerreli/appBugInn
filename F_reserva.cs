@@ -123,20 +123,6 @@ namespace appBugInn
             }
         }
 
-
-        private void txt_nomeReserva_Leave(object sender, EventArgs e)
-        {
-            //if (!Funcionalidades.ValidarLetras(txt_nomeReserva.Text))
-            //{
-            //    MessageBox.Show("O nome apenas deve contar letras e nao pode estar vazio");
-            //    txt_nomeReserva.Text = string.Empty;
-            //    txt_nomeReserva.Focus();
-            //    return;
-
-            //}
-           
-        }
-
         private void txt_tipoQuartoReserva_TextChanged(object sender, EventArgs e)
         {
             
@@ -145,32 +131,6 @@ namespace appBugInn
         private void txt_telefoneReserva_Validating(object sender, CancelEventArgs e)
         {
 
-        }
-
-        private void txt_telefoneReserva_Leave(object sender, EventArgs e)
-        {
-           // string texto = txt_telefoneReserva.Text;
-
-           // // Verifica se está vazio ou contém caracteres não numéricos
-           // if (!texto.All(char.IsDigit))
-            
-           //{
-               
-           //     txt_telefoneReserva.Text = string.Empty;
-           //     txt_telefoneReserva.Focus();
-           //     return;
-           // }
-        }
-
-        private void txt_emailreserva_Leave(object sender, EventArgs e)
-        {
-            //if (!Funcionalidades.IsEmailValido(txt_emailreserva.Text))
-            //{
-            //    MessageBox.Show("Email com formato incorreto");
-            //    txt_emailreserva.Text = string.Empty;
-            //    txt_emailreserva.Focus();
-            //    return;
-            //}
         }
 
         private void cb_NumeroPessoas_SelectedIndexChanged(object sender, EventArgs e)
@@ -317,6 +277,11 @@ namespace appBugInn
         private void dtp_dataInicioReserva_Leave(object sender, EventArgs e)
         {
             dtp_dataFimReserva.MinDate = dtp_dataInicioReserva.Value.AddDays(1);
+        }
+
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
