@@ -29,23 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lb_nome));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.bt_login = new MaterialSkin.Controls.MaterialButton();
             this.btn_newuser = new MaterialSkin.Controls.MaterialButton();
             this.txt_nome = new MaterialSkin.Controls.MaterialTextBox2();
-            this.lbl_nome = new MaterialSkin.Controls.MaterialLabel();
-            this.lb_password = new MaterialSkin.Controls.MaterialLabel();
             this.btn_showpass = new MaterialSkin.Controls.MaterialButton();
             this.txt_password = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(33, 35);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(52, 53);
-            this.panel1.TabIndex = 6;
             // 
             // bt_login
             // 
@@ -54,7 +45,7 @@
             this.bt_login.Depth = 0;
             this.bt_login.HighEmphasis = true;
             this.bt_login.Icon = null;
-            this.bt_login.Location = new System.Drawing.Point(408, 386);
+            this.bt_login.Location = new System.Drawing.Point(162, 261);
             this.bt_login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bt_login.MouseState = MaterialSkin.MouseState.HOVER;
             this.bt_login.Name = "bt_login";
@@ -74,7 +65,7 @@
             this.btn_newuser.Depth = 0;
             this.btn_newuser.HighEmphasis = true;
             this.btn_newuser.Icon = null;
-            this.btn_newuser.Location = new System.Drawing.Point(238, 386);
+            this.btn_newuser.Location = new System.Drawing.Point(28, 295);
             this.btn_newuser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_newuser.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_newuser.Name = "btn_newuser";
@@ -95,12 +86,14 @@
             this.txt_nome.Depth = 0;
             this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_nome.HideSelection = true;
-            this.txt_nome.LeadingIcon = null;
-            this.txt_nome.Location = new System.Drawing.Point(253, 116);
+            this.txt_nome.Hint = "Utilizador";
+            this.txt_nome.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nome.Location = new System.Drawing.Point(54, 90);
             this.txt_nome.MaxLength = 32767;
             this.txt_nome.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.PasswordChar = '\0';
+            this.txt_nome.PrefixSuffix = MaterialSkin.Controls.MaterialTextBox2.PrefixSuffixTypes.Prefix;
             this.txt_nome.PrefixSuffixText = null;
             this.txt_nome.ReadOnly = false;
             this.txt_nome.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -108,42 +101,14 @@
             this.txt_nome.SelectionLength = 0;
             this.txt_nome.SelectionStart = 0;
             this.txt_nome.ShortcutsEnabled = true;
-            this.txt_nome.Size = new System.Drawing.Size(250, 48);
+            this.txt_nome.Size = new System.Drawing.Size(294, 48);
             this.txt_nome.TabIndex = 11;
             this.txt_nome.TabStop = false;
-            this.txt_nome.Text = "Digite seu nome...";
             this.txt_nome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_nome.TrailingIcon = null;
             this.txt_nome.UseSystemPasswordChar = false;
             this.txt_nome.Click += new System.EventHandler(this.txt_nome_Click);
             this.txt_nome.Leave += new System.EventHandler(this.txt_nome_focusLeave);
-            // 
-            // lbl_nome
-            // 
-            this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Depth = 0;
-            this.lbl_nome.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lbl_nome.Location = new System.Drawing.Point(250, 94);
-            this.lbl_nome.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(43, 19);
-            this.lbl_nome.TabIndex = 12;
-            this.lbl_nome.Text = "Nome";
-            this.lbl_nome.Visible = false;
-            this.lbl_nome.Leave += new System.EventHandler(this.txt_nome_focusLeave);
-            // 
-            // lb_password
-            // 
-            this.lb_password.AutoSize = true;
-            this.lb_password.Depth = 0;
-            this.lb_password.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lb_password.Location = new System.Drawing.Point(250, 242);
-            this.lb_password.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lb_password.Name = "lb_password";
-            this.lb_password.Size = new System.Drawing.Size(71, 19);
-            this.lb_password.TabIndex = 13;
-            this.lb_password.Text = "Password";
-            this.lb_password.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btn_showpass
             // 
@@ -152,7 +117,7 @@
             this.btn_showpass.Depth = 0;
             this.btn_showpass.HighEmphasis = true;
             this.btn_showpass.Icon = null;
-            this.btn_showpass.Location = new System.Drawing.Point(556, 264);
+            this.btn_showpass.Location = new System.Drawing.Point(269, 261);
             this.btn_showpass.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_showpass.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_showpass.Name = "btn_showpass";
@@ -171,14 +136,16 @@
             this.txt_password.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txt_password.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txt_password.Depth = 0;
-            this.txt_password.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_password.HideSelection = true;
-            this.txt_password.LeadingIcon = null;
-            this.txt_password.Location = new System.Drawing.Point(253, 279);
+            this.txt_password.Hint = "Password";
+            this.txt_password.LeadingIcon = global::appBugInn.Properties.Resources._1151429;
+            this.txt_password.Location = new System.Drawing.Point(54, 182);
             this.txt_password.MaxLength = 32767;
             this.txt_password.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '\0';
+            this.txt_password.PrefixSuffix = MaterialSkin.Controls.MaterialTextBox2.PrefixSuffixTypes.Prefix;
             this.txt_password.PrefixSuffixText = null;
             this.txt_password.ReadOnly = false;
             this.txt_password.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -186,44 +153,54 @@
             this.txt_password.SelectionLength = 0;
             this.txt_password.SelectionStart = 0;
             this.txt_password.ShortcutsEnabled = true;
-            this.txt_password.Size = new System.Drawing.Size(250, 48);
+            this.txt_password.Size = new System.Drawing.Size(294, 48);
             this.txt_password.TabIndex = 15;
             this.txt_password.TabStop = false;
             this.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txt_password.TrailingIcon = null;
             this.txt_password.UseSystemPasswordChar = false;
             // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.txt_nome);
+            this.materialCard1.Controls.Add(this.btn_newuser);
+            this.materialCard1.Controls.Add(this.btn_showpass);
+            this.materialCard1.Controls.Add(this.txt_password);
+            this.materialCard1.Controls.Add(this.bt_login);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(39, 104);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(391, 351);
+            this.materialCard1.TabIndex = 16;
+            // 
             // lb_nome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 571);
-            this.Controls.Add(this.txt_password);
-            this.Controls.Add(this.btn_showpass);
-            this.Controls.Add(this.lb_password);
-            this.Controls.Add(this.lbl_nome);
-            this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.btn_newuser);
-            this.Controls.Add(this.bt_login);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(479, 571);
+            this.Controls.Add(this.materialCard1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "lb_nome";
             this.Text = "Show pass";
             this.Load += new System.EventHandler(this.F_login_Load);
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialButton bt_login;
         private MaterialSkin.Controls.MaterialButton btn_newuser;
         private MaterialSkin.Controls.MaterialTextBox2 txt_nome;
-        private MaterialSkin.Controls.MaterialLabel lbl_nome;
-        private MaterialSkin.Controls.MaterialLabel lb_password;
         private MaterialSkin.Controls.MaterialButton btn_showpass;
         private MaterialSkin.Controls.MaterialTextBox2 txt_password;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
     }
 }

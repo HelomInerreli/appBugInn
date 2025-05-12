@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +13,14 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class lb_nome : Form
+    public partial class lb_nome : MaterialForm
     {
         public lb_nome()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             txt_password.UseSystemPasswordChar = true;
         }
 
@@ -65,8 +70,7 @@ namespace appBugInn
 
         private void txt_nome_Click(object sender, EventArgs e)
         {
-            txt_nome.Text = "";
-            lbl_nome.Visible = true;
+
         }
 
         private void btn_newuser_Click_1(object sender, EventArgs e)
