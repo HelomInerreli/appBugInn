@@ -14,6 +14,7 @@ namespace appBugInn
 {
     public partial class F_nFunc : MaterialForm
     {
+        Hotel hFuncionarios = new Hotel();
         public F_nFunc()
         {
             InitializeComponent();
@@ -307,6 +308,12 @@ namespace appBugInn
                     }
                 }
             }
+        }
+
+        private void F_nFunc_Load(object sender, EventArgs e)
+        {
+            hFuncionarios.preencherFuncionarios();
+
         }
     }
 }
