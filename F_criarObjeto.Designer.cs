@@ -88,6 +88,7 @@
             this.listBoxObjetos.Name = "listBoxObjetos";
             this.listBoxObjetos.Size = new System.Drawing.Size(120, 84);
             this.listBoxObjetos.TabIndex = 5;
+            this.listBoxObjetos.SelectedIndexChanged += new System.EventHandler(this.listBoxObjetos_SelectedIndexChanged);
             // 
             // CriarObjeto
             // 

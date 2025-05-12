@@ -128,11 +128,17 @@ namespace appBugInn
         {
             // Alterna entre mostrar e esconder o texto
            
-            txt_password.UseSystemPasswordChar = !txt_password.UseSystemPasswordChar;
+           // txt_password.UseSystemPasswordChar = !txt_password.UseSystemPasswordChar;
         }
 
         private void txt_password_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void flButton_ShowPassowrd_Click(object sender, EventArgs e)
+        {
+            txt_password.UseSystemPasswordChar = !txt_password.UseSystemPasswordChar;
 
         }
     }
