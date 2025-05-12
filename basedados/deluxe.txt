@@ -1,0 +1,6 @@
+numQuarto;andar;conta;livre;status;miniBar;vistaQuarto;Jacuzzi
+104;1;0;disponivel;disponivel;sim;mar;sim
+204;2;0;disponivel;disponivel;sim;mar;sim
+304;3;0;disponivel;disponivel;sim;mar;sim
+404;4;0;disponivel;disponivel;sim;mar;sim
+504;5;0;disponivel;disponivel;sim;mar;sim

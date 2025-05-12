@@ -1,0 +1,6 @@
+numQuarto;andar;conta;livre;status
+101;1;0;disponivel;disponivel
+201;2;0;disponivel;disponivel
+301;3;0;disponivel;disponivel
+401;4;0;disponivel;disponivel
+501;5;0;disponivel;disponivel

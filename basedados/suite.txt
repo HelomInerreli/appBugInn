@@ -1,0 +1,6 @@
+numQuarto;andar;conta;livre;status;miniBar;vistaQuarto
+103;1;0;disponivel;disponivel;sim;montanha
+203;2;0;disponivel;disponivel;sim;montanha
+303;3;0;disponivel;disponivel;sim;montanha
+403;4;0;disponivel;disponivel;sim;montanha
+503;5;0;disponivel;disponivel;sim;montanha

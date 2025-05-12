@@ -137,6 +137,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="BaseDados\algo.txt" />
+    <Content Include="BaseDados\Deluxe.txt" />
+    <Content Include="BaseDados\Duplo.txt" />
     <Content Include="BaseDados\funcionarios.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -144,6 +146,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="BaseDados\quartos.txt" />
+    <Content Include="BaseDados\Single.txt" />
+    <Content Include="BaseDados\Suite.txt" />
     <Content Include="Imagens\algo1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

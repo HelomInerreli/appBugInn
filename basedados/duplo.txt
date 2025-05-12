@@ -1,0 +1,6 @@
+numQuarto;andar;conta;livre;status;CamaCasal
+102;1;0;disponivel;disponivel;sim
+202;2;0;disponivel;disponivel;sim
+302;3;0;disponivel;disponivel;sim
+402;4;0;disponivel;disponivel;sim
+502;5;0;disponivel;disponivel;sim
