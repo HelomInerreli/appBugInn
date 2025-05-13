@@ -113,7 +113,7 @@
     <Compile Include="Classes\Funcionario.cs" />
     <Compile Include="Classes\Hotel.cs" />
     <Compile Include="Classes\Quarto.cs" />
-    <Compile Include="Classes\Reservas.cs" />
+    <Compile Include="Classes\Reserva.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
