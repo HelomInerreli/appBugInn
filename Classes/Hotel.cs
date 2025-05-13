@@ -9,9 +9,9 @@ namespace appBugInn
     internal class Hotel
     {
         public List<Funcionario> funcionarios = new List<Funcionario>();
+        public List<Reserva> reservas = new List<Reserva>();
         List<Single> qSingles = new List<Single>();
         List<Duplo> qDuplos = new List<Duplo>();
-
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -21,6 +21,18 @@ namespace appBugInn
                     funcionarios.Add(funcionario);
                 }
 
+            }
+        }
+        
+        public void preencherReservas()
+        {
+            List<object> func = Funcionalidades.CriarObjetosDoTexto("reservas", "Reserva");
+            foreach (var item in func)
+            {
+                if (item is Reserva reserva)
+                {
+                    reservas.Add(reserva);
+                }
             }
         }
 
@@ -56,6 +68,17 @@ namespace appBugInn
             Funcionalidades.GravarBaseDados("funcionarios", linha);
         }
 
+        public void gravarReserva()
+        {
+            //apagar base de dados
+            string linha = "";
+            foreach (var item in reservas)
+            {
+                linha += item.linhaBDReservas() + "\n";
+         
+            }
+            Funcionalidades.GravarBaseDados("reservas", linha);
+        }
         public void gravarQuartos()
         {
             //Apagar a base de dados

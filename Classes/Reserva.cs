@@ -125,8 +125,12 @@ namespace appBugInn
                 Console.WriteLine("Erro ao gravar reserva: " + ex.Message);
 
             }
-
         }
+        public string linhaBDReservas()
+        {
+            return $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto}";
+        }
+
 
         public TimeSpan CalcularDuracao()
         {
