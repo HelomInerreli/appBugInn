@@ -47,5 +47,10 @@ namespace appBugInn
         {
             
         }
+
+        private void listBoxObjetos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
