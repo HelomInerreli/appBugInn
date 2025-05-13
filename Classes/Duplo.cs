@@ -10,15 +10,13 @@ namespace appBugInn
 
     {
     public Duplo(int numQuarto, int andar) : base(numQuarto,andar)
-
             {
             PrecoPorNoite = 100;
-        
         }
 
-    
-    
-    
-    
+        public string linhaBDSingle()
+        {
+            return $"{NumQuarto};{Andar};{Conta};{Livre};{Status}";
+        }
     }
 }
