@@ -81,24 +81,30 @@ namespace appBugInn
 
         private void bt_login_Click_1(object sender, EventArgs e)
         {
-            string username = txt_nome.Text.Trim();
-            string password = txt_password.Text;
+            string usernameDigitado = txt_nome.Text.Trim();
+            string passwordDigitado = txt_password.Text;
 
             try
             {
-                string[] linhas = Funcionalidades.LerBaseDados("logins");
+                // Agora lemos os dados do arquivo "funcionarios.txt"
+                string[] linhas = Funcionalidades.LerBaseDados("funcionarios");
 
                 bool loginValido = false;
 
-                foreach (string linha in linhas.Skip(1)) // Pula o cabeçalho
+                // Pula o cabeçalho e percorre as linhas restantes
+                foreach (string linha in linhas.Skip(1))
                 {
                     string[] partes = linha.Split(';');
-                    if (partes.Length == 3)
-                    {
-                        string nome = partes[1];
-                        string senha = partes[2];
 
-                        if (username == nome && password == senha)
+                    // Verifica se o formato está correto (pelo menos 6 campos)
+                    if (partes.Length >= 6)
+                    {
+                        string senhaArquivo = partes[4].Trim();
+                        string usernameArquivo = partes[5].Trim();
+
+                        // Comparação (usando comparação insensível a maiúsculas para o username)
+                        if (usernameDigitado.Equals(usernameArquivo, StringComparison.OrdinalIgnoreCase) &&
+                            passwordDigitado.Equals(senhaArquivo))
                         {
                             loginValido = true;
                             break;
@@ -123,6 +129,7 @@ namespace appBugInn
                 MessageBox.Show("Erro ao carregar a base de dados: " + ex.Message);
             }
         }
+
 
         private void btn_showpass_Click(object sender, EventArgs e)
         {

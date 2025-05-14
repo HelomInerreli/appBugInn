@@ -14,6 +14,8 @@ namespace appBugInn
 {
     public partial class F_nFunc : MaterialForm
     {
+        Hotel hotelFunc = new Hotel();
+
         public F_nFunc()
         {
             InitializeComponent();
@@ -34,8 +36,9 @@ namespace appBugInn
             {
                 string nome = txt_nome.Text.Trim();
                 string telefone = txt_telefone.Text.Trim();
-                string password = txt_password.Text.Trim();
                 bool tipoFuncionario = chb_gestor.Checked;
+                string password = txt_password.Text.Trim();
+                string username = txt_username.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(telefone))
                 {
@@ -43,87 +46,23 @@ namespace appBugInn
                     return;
                 }
 
-                if (nome.Any(c => !char.IsLetter(c) && !char.IsWhiteSpace(c)))
+                if (cb_Funcionarios.SelectedIndex >= 0) // Modificar funcionário
                 {
-                    MessageBox.Show("O nome só pode conter letras.");
-                    return;
+                    string nomeSelecionado = cb_Funcionarios.SelectedItem.ToString();
+                    hotelFunc.ModificarFuncionario(nomeSelecionado, nome, telefone, tipoFuncionario, password, username);
+                }
+                else // Criar novo funcionário
+                {
+                    hotelFunc.AdicionarFuncionarioModificado(nome, telefone, tipoFuncionario, password, username);
                 }
 
-                // Se um funcionário está selecionado, MODIFICAR
-                if (cb_Funcionarios.SelectedIndex >= 0)
-                {
-                    // Encontrar a linha do funcionário pelo nome
-                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios");
-                    int linhaFuncionario = Array.FindIndex(funcionarios, l => l.Split(';')[1] == cb_Funcionarios.SelectedItem.ToString());
-
-                    if (linhaFuncionario > 0) // >0 para ignorar o cabeçalho
-                    {
-                        string[] partes = funcionarios[linhaFuncionario].Split(';');
-                        string id = partes[0];
-
-                        // Monta a nova linha do funcionário
-                        string novaLinhaFuncionario = $"{id};{nome};{telefone};{tipoFuncionario}";
-
-                        // Edita o registro do funcionário
-                        Funcionalidades.EditarRegisto("funcionarios", linhaFuncionario, novaLinhaFuncionario);
-
-                        // Edita o registro do login
-                        string[] logins = Funcionalidades.LerBaseDados("logins");
-                        int linhaLogin = Array.FindIndex(logins, l => l.Split(';')[0] == id);
-                        if (linhaLogin > 0)
-                        {
-                            string novaLinhaLogin = $"{id};{nome};{password}";
-                            Funcionalidades.EditarRegisto("logins", linhaLogin, novaLinhaLogin);
-                        }
-
-                        MessageBox.Show("Funcionário modificado com sucesso!");
-                        this.Close();
-                        return;
-                    }
-                }
-                else // Se não, CRIAR novo
-                {
-                    // Ler funcionários existentes (sem pular cabeçalho)
-                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
-                        .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
-
-                    // Verifica duplicados
-                    foreach (string linha in funcionarios)
-                    {
-                        string[] partes = linha.Split(';');
-                        if (partes.Length < 3) continue;
-
-                        if (partes[1].Equals(nome, StringComparison.OrdinalIgnoreCase) && partes[2] == telefone)
-                        {
-                            MessageBox.Show("Já existe um funcionário com esse nome e telefone.");
-                            return;
-                        }
-                    }
-
-                    // Calcula novo ID
-                    int novoId = funcionarios.Select(l => int.TryParse(l.Split(';')[0], out int id) ? id : 0).DefaultIfEmpty(0).Max() + 1;
-
-                    // Cria e grava funcionário
-                    Funcionario novoFunc = new Funcionario(novoId, nome, telefone, tipoFuncionario);
-
-                    bool funcionarioGravado = novoFunc.Gravar();
-                    bool loginGravado = novoFunc.GravarLogin(password);
-
-                    if (funcionarioGravado && loginGravado)
-                    {
-                        MessageBox.Show("Funcionário e login criados com sucesso!");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erro ao gravar os dados.");
-                    }
-                }
+                AtualizarComboBox(); // Atualiza a interface
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
         }
 
         private void txt_nome_leave(object sender, EventArgs e)
@@ -191,22 +130,9 @@ namespace appBugInn
         // Adicione este código ao evento F_nFunc_Load
         private void F_nFunc_Load(object sender, EventArgs e)
         {
-            // Lê todas as linhas do arquivo de funcionários, pulando o cabeçalho
-            string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
-                .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
-
-            // Limpa o ComboBox antes de adicionar
-            cb_Funcionarios.Items.Clear();
-
-            // Adiciona os nomes ao ComboBox
-            foreach (string linha in funcionarios)
-            {
-                string[] partes = linha.Split(';');
-                if (partes.Length >= 2)
-                {
-                    cb_Funcionarios.Items.Add(partes[1]); // partes[1] é o nome
-                }
-            }
+            
+            hotelFunc.CarregarFuncionarios(); // Adiciona os funcionários existentes à lista
+            AtualizarComboBox(); // Atualiza o ComboBox com os funcionários existentes
         }
 
         private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -227,44 +153,20 @@ namespace appBugInn
             {
                 btn_criar.Text = "Modificar";
 
-                // Lê todos os funcionários
-                string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios")
-                    .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
-
-                // Pega o nome selecionado
+                // Obtém o nome selecionado na ComboBox
                 string nomeSelecionado = cb_Funcionarios.SelectedItem.ToString();
 
-                // Procura o funcionário pelo nome
-                string linhaFuncionario = funcionarios.FirstOrDefault(l => l.Split(';')[1] == nomeSelecionado);
+                // Busca o funcionário na LISTA, em vez do TXT
+                Funcionario funcionarioSelecionado = hotelFunc.hfuncionarios.FirstOrDefault(f => f.Nome == nomeSelecionado);
 
-                if (linhaFuncionario != null)
+                if (funcionarioSelecionado != null)
                 {
-                    string[] partes = linhaFuncionario.Split(';');
-                    if (partes.Length >= 4)
-                    {
-                        txt_nome.Text = partes[1];
-                        txt_telefone.Text = partes[2];
-                        chb_gestor.Checked = partes[3] == "True" || partes[3] == "1";
+                    txt_nome.Text = funcionarioSelecionado.Nome;
+                    txt_telefone.Text = funcionarioSelecionado.Telefone;
+                    chb_gestor.Checked = funcionarioSelecionado.TipoFuncionario;
+                    txt_password.Text = funcionarioSelecionado.Password;
+                    txt_username.Text = funcionarioSelecionado.Username;
 
-                        // Agora busca a password no logins.txt usando o ID
-                        string idFuncionario = partes[0];
-                        string[] logins = Funcionalidades.LerBaseDados("logins")
-                            .Where(l => !string.IsNullOrWhiteSpace(l)).Skip(1).ToArray();
-
-                        string linhaLogin = logins.FirstOrDefault(l => l.Split(';')[0] == idFuncionario);
-                        if (linhaLogin != null)
-                        {
-                            string[] partesLogin = linhaLogin.Split(';');
-                            if (partesLogin.Length >= 2)
-                                txt_password.Text = partesLogin[2];
-                            else
-                                txt_password.Text = "";
-                        }
-                        else
-                        {
-                            txt_password.Text = "";
-                        }
-                    }
                 }
             }
             else
@@ -273,9 +175,11 @@ namespace appBugInn
                 txt_nome.Text = "";
                 txt_telefone.Text = "";
                 txt_password.Text = "";
+                txt_username.Text = "";
                 chb_gestor.Checked = false;
             }
         }
+
         private void btn_excluir_Click(object sender, EventArgs e)
         {
             if (cb_Funcionarios.SelectedIndex >= 0)
@@ -283,30 +187,37 @@ namespace appBugInn
                 // Confirmação
                 if (MessageBox.Show("Tem certeza que deseja excluir este funcionário?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    // Localiza a linha do funcionário
-                    string[] funcionarios = Funcionalidades.LerBaseDados("funcionarios");
-                    int linhaFuncionario = Array.FindIndex(funcionarios, l => l.Split(';')[1] == cb_Funcionarios.SelectedItem.ToString());
+                   string nomeFuncionario = cb_Funcionarios.SelectedItem.ToString();
 
-                    if (linhaFuncionario > 0) // >0 para ignorar o cabeçalho
+                    Funcionario funcionarioParaExcluir = hotelFunc.hfuncionarios.FirstOrDefault(f => f.Nome == nomeFuncionario);
+                    if (funcionarioParaExcluir != null)
                     {
-                        string id = funcionarios[linhaFuncionario].Split(';')[0];
-
-                        // Exclui funcionário
-                        Funcionalidades.ExcluirRegisto("funcionarios", linhaFuncionario);
-
-                        // Exclui login correspondente
-                        string[] logins = Funcionalidades.LerBaseDados("logins");
-                        int linhaLogin = Array.FindIndex(logins, l => l.Split(';')[0] == id);
-                        if (linhaLogin > 0)
-                        {
-                            Funcionalidades.ExcluirRegisto("logins", linhaLogin);
-                        }
-
-                        MessageBox.Show("Funcionário excluído com sucesso!");
-                        this.Close();
+                        hotelFunc.hfuncionarios.Remove(funcionarioParaExcluir);
+                        MessageBox.Show($"Funcionário {nomeFuncionario} removido da lista.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        hotelFunc.AtualizarBaseDeDados(); // Atualiza o arquivo após a remoção
+                        AtualizarComboBox(); // Atualiza a ComboBox
+                        txt_nome.Text = "";
+                        txt_telefone.Text = "";
+                        txt_password.Text = "";
+                        txt_username.Text = "";
+                        chb_gestor.Checked = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Funcionário {nomeFuncionario} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
+        private void AtualizarComboBox()
+        {
+            cb_Funcionarios.Items.Clear(); // Limpa itens antigos
+
+            foreach (Funcionario func in hotelFunc.hfuncionarios) // Pegando da lista e não do txt
+            {
+                cb_Funcionarios.Items.Add(func.Nome); // Adiciona os nomes dos funcionários na ComboBox
+            }
+        }
+
     }
 }
