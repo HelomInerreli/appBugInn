@@ -112,5 +112,10 @@ namespace appBugInn
 
 
         }
+
+        private void rtxt_caixa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
