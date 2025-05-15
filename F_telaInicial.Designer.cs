@@ -67,7 +67,6 @@ namespace appBugInn
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.tb_funcionarios = new System.Windows.Forms.TabPage();
-            this.cb_Funcionarios = new MaterialSkin.Controls.MaterialComboBox();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.cb_NumeroPessoas = new MaterialSkin.Controls.MaterialComboBox();
             this.cb_TipoQuarto = new MaterialSkin.Controls.MaterialComboBox();
@@ -566,7 +565,6 @@ namespace appBugInn
             // 
             // tb_funcionarios
             // 
-            this.tb_funcionarios.Controls.Add(this.cb_Funcionarios);
             this.tb_funcionarios.Controls.Add(this.materialCard5);
             this.tb_funcionarios.ImageKey = "icons8-contrato-de-trabalho-32.png";
             this.tb_funcionarios.Location = new System.Drawing.Point(4, 39);
@@ -579,28 +577,6 @@ namespace appBugInn
             // 
             // cb_Funcionarios
             // 
-            this.cb_Funcionarios.AutoResize = false;
-            this.cb_Funcionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cb_Funcionarios.Depth = 0;
-            this.cb_Funcionarios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cb_Funcionarios.DropDownHeight = 174;
-            this.cb_Funcionarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_Funcionarios.DropDownWidth = 121;
-            this.cb_Funcionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cb_Funcionarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cb_Funcionarios.FormattingEnabled = true;
-            this.cb_Funcionarios.Hint = "Funcionarios";
-            this.cb_Funcionarios.IntegralHeight = false;
-            this.cb_Funcionarios.ItemHeight = 43;
-            this.cb_Funcionarios.Location = new System.Drawing.Point(46, 149);
-            this.cb_Funcionarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cb_Funcionarios.MaxDropDownItems = 4;
-            this.cb_Funcionarios.MouseState = MaterialSkin.MouseState.OUT;
-            this.cb_Funcionarios.Name = "cb_Funcionarios";
-            this.cb_Funcionarios.Size = new System.Drawing.Size(350, 49);
-            this.cb_Funcionarios.StartIndex = 0;
-            this.cb_Funcionarios.TabIndex = 43;
-            this.cb_Funcionarios.SelectedIndexChanged += new System.EventHandler(this.cb_Funcionarios_SelectedIndexChanged_1);
             // 
             // materialCard5
             // 
@@ -1815,14 +1791,14 @@ namespace appBugInn
             this.mtv_dadosReserva.AutoSizeTable = false;
             this.mtv_dadosReserva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mtv_dadosReserva.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mtv_dadosReserva.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            //this.mtv_dadosReserva.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            //this.columnHeader1,
+            //this.columnHeader2,
+            //this.columnHeader3,
+            //this.columnHeader4,
+            //this.columnHeader5,
+            //this.columnHeader6,
+            //this.columnHeader7});
             this.mtv_dadosReserva.Depth = 0;
             this.mtv_dadosReserva.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosReserva.FullRowSelect = true;
