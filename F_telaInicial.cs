@@ -140,11 +140,11 @@ namespace appBugInn
         {
             try
             {
-                string nome = txt_nome.Text.Trim();
-                string telefone = txt_telefone.Text.Trim();
-                bool tipoFuncionario = chb_gestor.Checked;
-                string password = txt_password.Text.Trim();
-                string username = txt_username.Text.Trim();
+                string nome = txt_nomeFuncionarios.Text.Trim();
+                string telefone = txt_telefoneFuncionarios.Text.Trim();
+                bool tipoFuncionario = chb_gestorFuncionarios.Checked;
+                string password = txt_passwordFuncionarios.Text.Trim();
+                string username = txt_usernameFuncionarios.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(telefone))
                 {
@@ -211,24 +211,24 @@ namespace appBugInn
 
         private void LimparCamposFuncionario()
         {
-            txt_nome.Text = "";
-            txt_telefone.Text = "";
-            txt_password.Text = "";
-            txt_username.Text = "";
-            chb_gestor.Checked = false;
+            txt_nomeFuncionarios.Text = "";
+            txt_telefoneFuncionarios.Text = "";
+            txt_passwordFuncionarios.Text = "";
+            txt_usernameFuncionarios.Text = "";
+            chb_gestorFuncionarios.Checked = false;
             mtv_dadosFunc.SelectedItems.Clear();
-            btn_criar.Text = "Criar";
-            btn_excluir.Visible = false;
-            btn_limpar.Visible = false;
+            btn_criarFunciornarios.Text = "Criar";
+            btn_excluirFuncionarios.Visible = false;
+            btn_limparFuncionarios.Visible = false;
         }
 
         private void mtv_dadosFunc_DoubleClick(object sender, EventArgs e)
         {
             if (mtv_dadosFunc.SelectedItems.Count > 0)
             {
-                btn_limpar.Visible = true;
-                btn_excluir.Visible = true;
-                btn_criar.Text = "Modificar";
+                btn_limparFuncionarios.Visible = true;
+                btn_excluirFuncionarios.Visible = true;
+                btn_criarFunciornarios.Text = "Modificar";
 
                 // Pega o item selecionado na ListView
                 ListViewItem itemSelecionado = mtv_dadosFunc.SelectedItems[0];
@@ -241,11 +241,11 @@ namespace appBugInn
 
                 if (funcionarioSelecionado != null)
                 {
-                    txt_nome.Text = funcionarioSelecionado.Nome;
-                    txt_telefone.Text = funcionarioSelecionado.Telefone;
-                    chb_gestor.Checked = funcionarioSelecionado.TipoFuncionario;
-                    txt_password.Text = funcionarioSelecionado.Password;
-                    txt_username.Text = funcionarioSelecionado.Username;
+                    txt_nomeFuncionarios.Text = funcionarioSelecionado.Nome;
+                    txt_telefoneFuncionarios.Text = funcionarioSelecionado.Telefone;
+                    chb_gestorFuncionarios.Checked = funcionarioSelecionado.TipoFuncionario;
+                    txt_passwordFuncionarios.Text = funcionarioSelecionado.Password;
+                    txt_usernameFuncionarios.Text = funcionarioSelecionado.Username;
                 }
             }
             else

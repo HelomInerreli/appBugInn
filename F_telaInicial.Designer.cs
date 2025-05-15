@@ -63,14 +63,14 @@ namespace appBugInn
             this.tb_gerirQuartos = new System.Windows.Forms.TabPage();
             this.tb_funcionarios = new System.Windows.Forms.TabPage();
             this.mtv_dadosFunc = new MaterialSkin.Controls.MaterialListView();
-            this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
-            this.btn_excluir = new MaterialSkin.Controls.MaterialButton();
-            this.txt_username = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txt_nome = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txt_telefone = new MaterialSkin.Controls.MaterialTextBox2();
-            this.btn_criar = new MaterialSkin.Controls.MaterialButton();
-            this.chb_gestor = new MaterialSkin.Controls.MaterialSwitch();
-            this.txt_password = new MaterialSkin.Controls.MaterialTextBox2();
+            this.cd_FuncionariosDados = new MaterialSkin.Controls.MaterialCard();
+            this.btn_excluirFuncionarios = new MaterialSkin.Controls.MaterialButton();
+            this.txt_usernameFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txt_nomeFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txt_telefoneFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.btn_criarFunciornarios = new MaterialSkin.Controls.MaterialButton();
+            this.chb_gestorFuncionarios = new MaterialSkin.Controls.MaterialSwitch();
+            this.txt_passwordFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
             this.tb_diretoria = new System.Windows.Forms.TabPage();
             this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -93,12 +93,12 @@ namespace appBugInn
             this.tb_configuracoes = new System.Windows.Forms.TabPage();
             this.sw_darkMode = new MaterialSkin.Controls.MaterialSwitch();
             this.iconesMenu = new System.Windows.Forms.ImageList(this.components);
-            this.btn_limpar = new MaterialSkin.Controls.MaterialButton();
+            this.btn_limparFuncionarios = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tb_reservas.SuspendLayout();
             this.materialCard6.SuspendLayout();
             this.tb_funcionarios.SuspendLayout();
-            this.materialCard5.SuspendLayout();
+            this.cd_FuncionariosDados.SuspendLayout();
             this.tb_diretoria.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard4.SuspendLayout();
@@ -586,7 +586,7 @@ namespace appBugInn
             // tb_funcionarios
             // 
             this.tb_funcionarios.Controls.Add(this.mtv_dadosFunc);
-            this.tb_funcionarios.Controls.Add(this.materialCard5);
+            this.tb_funcionarios.Controls.Add(this.cd_FuncionariosDados);
             this.tb_funcionarios.ImageKey = "icons8-contrato-de-trabalho-32.png";
             this.tb_funcionarios.Location = new System.Drawing.Point(4, 39);
             this.tb_funcionarios.Name = "tb_funcionarios";
@@ -619,205 +619,205 @@ namespace appBugInn
             this.mtv_dadosFunc.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged_1);
             this.mtv_dadosFunc.DoubleClick += new System.EventHandler(this.mtv_dadosFunc_DoubleClick_1);
             // 
-            // materialCard5
+            // cd_FuncionariosDados
             // 
-            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard5.Controls.Add(this.btn_limpar);
-            this.materialCard5.Controls.Add(this.btn_excluir);
-            this.materialCard5.Controls.Add(this.txt_username);
-            this.materialCard5.Controls.Add(this.txt_nome);
-            this.materialCard5.Controls.Add(this.txt_telefone);
-            this.materialCard5.Controls.Add(this.btn_criar);
-            this.materialCard5.Controls.Add(this.chb_gestor);
-            this.materialCard5.Controls.Add(this.txt_password);
-            this.materialCard5.Depth = 0;
-            this.materialCard5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(0, 0);
-            this.materialCard5.Margin = new System.Windows.Forms.Padding(7);
-            this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard5.Name = "materialCard5";
-            this.materialCard5.Padding = new System.Windows.Forms.Padding(7);
-            this.materialCard5.Size = new System.Drawing.Size(987, 206);
-            this.materialCard5.TabIndex = 42;
+            this.cd_FuncionariosDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cd_FuncionariosDados.Controls.Add(this.btn_limparFuncionarios);
+            this.cd_FuncionariosDados.Controls.Add(this.btn_excluirFuncionarios);
+            this.cd_FuncionariosDados.Controls.Add(this.txt_usernameFuncionarios);
+            this.cd_FuncionariosDados.Controls.Add(this.txt_nomeFuncionarios);
+            this.cd_FuncionariosDados.Controls.Add(this.txt_telefoneFuncionarios);
+            this.cd_FuncionariosDados.Controls.Add(this.btn_criarFunciornarios);
+            this.cd_FuncionariosDados.Controls.Add(this.chb_gestorFuncionarios);
+            this.cd_FuncionariosDados.Controls.Add(this.txt_passwordFuncionarios);
+            this.cd_FuncionariosDados.Depth = 0;
+            this.cd_FuncionariosDados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cd_FuncionariosDados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cd_FuncionariosDados.Location = new System.Drawing.Point(0, 0);
+            this.cd_FuncionariosDados.Margin = new System.Windows.Forms.Padding(7);
+            this.cd_FuncionariosDados.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cd_FuncionariosDados.Name = "cd_FuncionariosDados";
+            this.cd_FuncionariosDados.Padding = new System.Windows.Forms.Padding(7);
+            this.cd_FuncionariosDados.Size = new System.Drawing.Size(987, 206);
+            this.cd_FuncionariosDados.TabIndex = 42;
             // 
-            // btn_excluir
+            // btn_excluirFuncionarios
             // 
-            this.btn_excluir.AutoSize = false;
-            this.btn_excluir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_excluir.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_excluir.Depth = 0;
-            this.btn_excluir.HighEmphasis = true;
-            this.btn_excluir.Icon = null;
-            this.btn_excluir.Location = new System.Drawing.Point(717, 149);
-            this.btn_excluir.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btn_excluir.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluir.Size = new System.Drawing.Size(108, 37);
-            this.btn_excluir.TabIndex = 45;
-            this.btn_excluir.Text = "Excluir";
-            this.btn_excluir.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
-            this.btn_excluir.UseAccentColor = true;
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            this.btn_excluir.Visible = false;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            this.btn_excluirFuncionarios.AutoSize = false;
+            this.btn_excluirFuncionarios.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_excluirFuncionarios.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_excluirFuncionarios.Depth = 0;
+            this.btn_excluirFuncionarios.HighEmphasis = true;
+            this.btn_excluirFuncionarios.Icon = null;
+            this.btn_excluirFuncionarios.Location = new System.Drawing.Point(717, 149);
+            this.btn_excluirFuncionarios.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btn_excluirFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_excluirFuncionarios.Name = "btn_excluirFuncionarios";
+            this.btn_excluirFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(108, 37);
+            this.btn_excluirFuncionarios.TabIndex = 45;
+            this.btn_excluirFuncionarios.Text = "Excluir";
+            this.btn_excluirFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.btn_excluirFuncionarios.UseAccentColor = true;
+            this.btn_excluirFuncionarios.UseVisualStyleBackColor = true;
+            this.btn_excluirFuncionarios.Visible = false;
+            this.btn_excluirFuncionarios.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
-            // txt_username
+            // txt_usernameFuncionarios
             // 
-            this.txt_username.AnimateReadOnly = false;
-            this.txt_username.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_username.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_username.Depth = 0;
-            this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_username.HideSelection = true;
-            this.txt_username.Hint = "Username";
-            this.txt_username.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_username.Location = new System.Drawing.Point(501, 16);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_username.MaxLength = 32767;
-            this.txt_username.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_username.Name = "txt_username";
-            this.txt_username.PasswordChar = '\0';
-            this.txt_username.PrefixSuffixText = null;
-            this.txt_username.ReadOnly = false;
-            this.txt_username.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_username.SelectedText = "";
-            this.txt_username.SelectionLength = 0;
-            this.txt_username.SelectionStart = 0;
-            this.txt_username.ShortcutsEnabled = true;
-            this.txt_username.Size = new System.Drawing.Size(477, 48);
-            this.txt_username.TabIndex = 14;
-            this.txt_username.TabStop = false;
-            this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_username.TrailingIcon = null;
-            this.txt_username.UseSystemPasswordChar = false;
+            this.txt_usernameFuncionarios.AnimateReadOnly = false;
+            this.txt_usernameFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_usernameFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_usernameFuncionarios.Depth = 0;
+            this.txt_usernameFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_usernameFuncionarios.HideSelection = true;
+            this.txt_usernameFuncionarios.Hint = "Username";
+            this.txt_usernameFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(501, 16);
+            this.txt_usernameFuncionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_usernameFuncionarios.MaxLength = 32767;
+            this.txt_usernameFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_usernameFuncionarios.Name = "txt_usernameFuncionarios";
+            this.txt_usernameFuncionarios.PasswordChar = '\0';
+            this.txt_usernameFuncionarios.PrefixSuffixText = null;
+            this.txt_usernameFuncionarios.ReadOnly = false;
+            this.txt_usernameFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_usernameFuncionarios.SelectedText = "";
+            this.txt_usernameFuncionarios.SelectionLength = 0;
+            this.txt_usernameFuncionarios.SelectionStart = 0;
+            this.txt_usernameFuncionarios.ShortcutsEnabled = true;
+            this.txt_usernameFuncionarios.Size = new System.Drawing.Size(477, 48);
+            this.txt_usernameFuncionarios.TabIndex = 14;
+            this.txt_usernameFuncionarios.TabStop = false;
+            this.txt_usernameFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_usernameFuncionarios.TrailingIcon = null;
+            this.txt_usernameFuncionarios.UseSystemPasswordChar = false;
             // 
-            // txt_nome
+            // txt_nomeFuncionarios
             // 
-            this.txt_nome.AnimateReadOnly = false;
-            this.txt_nome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_nome.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_nome.Depth = 0;
-            this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nome.HideSelection = true;
-            this.txt_nome.Hint = "Nome";
-            this.txt_nome.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nome.Location = new System.Drawing.Point(17, 16);
-            this.txt_nome.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_nome.MaxLength = 32767;
-            this.txt_nome.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.PasswordChar = '\0';
-            this.txt_nome.PrefixSuffixText = null;
-            this.txt_nome.ReadOnly = false;
-            this.txt_nome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_nome.SelectedText = "";
-            this.txt_nome.SelectionLength = 0;
-            this.txt_nome.SelectionStart = 0;
-            this.txt_nome.ShortcutsEnabled = true;
-            this.txt_nome.Size = new System.Drawing.Size(459, 48);
-            this.txt_nome.TabIndex = 12;
-            this.txt_nome.TabStop = false;
-            this.txt_nome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_nome.TrailingIcon = null;
-            this.txt_nome.UseSystemPasswordChar = false;
+            this.txt_nomeFuncionarios.AnimateReadOnly = false;
+            this.txt_nomeFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_nomeFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_nomeFuncionarios.Depth = 0;
+            this.txt_nomeFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeFuncionarios.HideSelection = true;
+            this.txt_nomeFuncionarios.Hint = "Nome";
+            this.txt_nomeFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nomeFuncionarios.Location = new System.Drawing.Point(17, 16);
+            this.txt_nomeFuncionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_nomeFuncionarios.MaxLength = 32767;
+            this.txt_nomeFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nomeFuncionarios.Name = "txt_nomeFuncionarios";
+            this.txt_nomeFuncionarios.PasswordChar = '\0';
+            this.txt_nomeFuncionarios.PrefixSuffixText = null;
+            this.txt_nomeFuncionarios.ReadOnly = false;
+            this.txt_nomeFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_nomeFuncionarios.SelectedText = "";
+            this.txt_nomeFuncionarios.SelectionLength = 0;
+            this.txt_nomeFuncionarios.SelectionStart = 0;
+            this.txt_nomeFuncionarios.ShortcutsEnabled = true;
+            this.txt_nomeFuncionarios.Size = new System.Drawing.Size(459, 48);
+            this.txt_nomeFuncionarios.TabIndex = 12;
+            this.txt_nomeFuncionarios.TabStop = false;
+            this.txt_nomeFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_nomeFuncionarios.TrailingIcon = null;
+            this.txt_nomeFuncionarios.UseSystemPasswordChar = false;
             // 
-            // txt_telefone
+            // txt_telefoneFuncionarios
             // 
-            this.txt_telefone.AnimateReadOnly = false;
-            this.txt_telefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_telefone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_telefone.Depth = 0;
-            this.txt_telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_telefone.HideSelection = true;
-            this.txt_telefone.Hint = "Telefone";
-            this.txt_telefone.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefone.Location = new System.Drawing.Point(17, 75);
-            this.txt_telefone.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_telefone.MaxLength = 32767;
-            this.txt_telefone.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.PasswordChar = '\0';
-            this.txt_telefone.PrefixSuffixText = null;
-            this.txt_telefone.ReadOnly = false;
-            this.txt_telefone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_telefone.SelectedText = "";
-            this.txt_telefone.SelectionLength = 0;
-            this.txt_telefone.SelectionStart = 0;
-            this.txt_telefone.ShortcutsEnabled = true;
-            this.txt_telefone.Size = new System.Drawing.Size(459, 48);
-            this.txt_telefone.TabIndex = 11;
-            this.txt_telefone.TabStop = false;
-            this.txt_telefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_telefone.TrailingIcon = null;
-            this.txt_telefone.UseSystemPasswordChar = false;
+            this.txt_telefoneFuncionarios.AnimateReadOnly = false;
+            this.txt_telefoneFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_telefoneFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_telefoneFuncionarios.Depth = 0;
+            this.txt_telefoneFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_telefoneFuncionarios.HideSelection = true;
+            this.txt_telefoneFuncionarios.Hint = "Telefone";
+            this.txt_telefoneFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(17, 75);
+            this.txt_telefoneFuncionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_telefoneFuncionarios.MaxLength = 32767;
+            this.txt_telefoneFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_telefoneFuncionarios.Name = "txt_telefoneFuncionarios";
+            this.txt_telefoneFuncionarios.PasswordChar = '\0';
+            this.txt_telefoneFuncionarios.PrefixSuffixText = null;
+            this.txt_telefoneFuncionarios.ReadOnly = false;
+            this.txt_telefoneFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_telefoneFuncionarios.SelectedText = "";
+            this.txt_telefoneFuncionarios.SelectionLength = 0;
+            this.txt_telefoneFuncionarios.SelectionStart = 0;
+            this.txt_telefoneFuncionarios.ShortcutsEnabled = true;
+            this.txt_telefoneFuncionarios.Size = new System.Drawing.Size(459, 48);
+            this.txt_telefoneFuncionarios.TabIndex = 11;
+            this.txt_telefoneFuncionarios.TabStop = false;
+            this.txt_telefoneFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_telefoneFuncionarios.TrailingIcon = null;
+            this.txt_telefoneFuncionarios.UseSystemPasswordChar = false;
             // 
-            // btn_criar
+            // btn_criarFunciornarios
             // 
-            this.btn_criar.AutoSize = false;
-            this.btn_criar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_criar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_criar.Depth = 0;
-            this.btn_criar.HighEmphasis = true;
-            this.btn_criar.Icon = null;
-            this.btn_criar.Location = new System.Drawing.Point(574, 149);
-            this.btn_criar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btn_criar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_criar.Name = "btn_criar";
-            this.btn_criar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_criar.Size = new System.Drawing.Size(108, 37);
-            this.btn_criar.TabIndex = 41;
-            this.btn_criar.Text = "Criar";
-            this.btn_criar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_criar.UseAccentColor = false;
-            this.btn_criar.UseVisualStyleBackColor = true;
-            this.btn_criar.Click += new System.EventHandler(this.btn_criar_Click);
+            this.btn_criarFunciornarios.AutoSize = false;
+            this.btn_criarFunciornarios.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_criarFunciornarios.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_criarFunciornarios.Depth = 0;
+            this.btn_criarFunciornarios.HighEmphasis = true;
+            this.btn_criarFunciornarios.Icon = null;
+            this.btn_criarFunciornarios.Location = new System.Drawing.Point(574, 149);
+            this.btn_criarFunciornarios.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btn_criarFunciornarios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_criarFunciornarios.Name = "btn_criarFunciornarios";
+            this.btn_criarFunciornarios.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_criarFunciornarios.Size = new System.Drawing.Size(108, 37);
+            this.btn_criarFunciornarios.TabIndex = 41;
+            this.btn_criarFunciornarios.Text = "Criar";
+            this.btn_criarFunciornarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_criarFunciornarios.UseAccentColor = false;
+            this.btn_criarFunciornarios.UseVisualStyleBackColor = true;
+            this.btn_criarFunciornarios.Click += new System.EventHandler(this.btn_criar_Click);
             // 
-            // chb_gestor
+            // chb_gestorFuncionarios
             // 
-            this.chb_gestor.AutoSize = true;
-            this.chb_gestor.Depth = 0;
-            this.chb_gestor.Location = new System.Drawing.Point(372, 150);
-            this.chb_gestor.Margin = new System.Windows.Forms.Padding(0);
-            this.chb_gestor.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chb_gestor.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chb_gestor.Name = "chb_gestor";
-            this.chb_gestor.Ripple = true;
-            this.chb_gestor.Size = new System.Drawing.Size(104, 37);
-            this.chb_gestor.TabIndex = 13;
-            this.chb_gestor.Text = "Gestor";
-            this.chb_gestor.UseVisualStyleBackColor = true;
+            this.chb_gestorFuncionarios.AutoSize = true;
+            this.chb_gestorFuncionarios.Depth = 0;
+            this.chb_gestorFuncionarios.Location = new System.Drawing.Point(372, 150);
+            this.chb_gestorFuncionarios.Margin = new System.Windows.Forms.Padding(0);
+            this.chb_gestorFuncionarios.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chb_gestorFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chb_gestorFuncionarios.Name = "chb_gestorFuncionarios";
+            this.chb_gestorFuncionarios.Ripple = true;
+            this.chb_gestorFuncionarios.Size = new System.Drawing.Size(104, 37);
+            this.chb_gestorFuncionarios.TabIndex = 13;
+            this.chb_gestorFuncionarios.Text = "Gestor";
+            this.chb_gestorFuncionarios.UseVisualStyleBackColor = true;
             // 
-            // txt_password
+            // txt_passwordFuncionarios
             // 
-            this.txt_password.AnimateReadOnly = false;
-            this.txt_password.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_password.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_password.Depth = 0;
-            this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_password.HideSelection = true;
-            this.txt_password.Hint = "Password";
-            this.txt_password.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
-            this.txt_password.Location = new System.Drawing.Point(17, 138);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_password.MaxLength = 32767;
-            this.txt_password.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '\0';
-            this.txt_password.PrefixSuffixText = null;
-            this.txt_password.ReadOnly = false;
-            this.txt_password.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_password.SelectedText = "";
-            this.txt_password.SelectionLength = 0;
-            this.txt_password.SelectionStart = 0;
-            this.txt_password.ShortcutsEnabled = true;
-            this.txt_password.Size = new System.Drawing.Size(233, 48);
-            this.txt_password.TabIndex = 10;
-            this.txt_password.TabStop = false;
-            this.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_password.TrailingIcon = null;
-            this.txt_password.UseSystemPasswordChar = false;
+            this.txt_passwordFuncionarios.AnimateReadOnly = false;
+            this.txt_passwordFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_passwordFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_passwordFuncionarios.Depth = 0;
+            this.txt_passwordFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_passwordFuncionarios.HideSelection = true;
+            this.txt_passwordFuncionarios.Hint = "Password";
+            this.txt_passwordFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
+            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(17, 138);
+            this.txt_passwordFuncionarios.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_passwordFuncionarios.MaxLength = 32767;
+            this.txt_passwordFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_passwordFuncionarios.Name = "txt_passwordFuncionarios";
+            this.txt_passwordFuncionarios.PasswordChar = '\0';
+            this.txt_passwordFuncionarios.PrefixSuffixText = null;
+            this.txt_passwordFuncionarios.ReadOnly = false;
+            this.txt_passwordFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_passwordFuncionarios.SelectedText = "";
+            this.txt_passwordFuncionarios.SelectionLength = 0;
+            this.txt_passwordFuncionarios.SelectionStart = 0;
+            this.txt_passwordFuncionarios.ShortcutsEnabled = true;
+            this.txt_passwordFuncionarios.Size = new System.Drawing.Size(233, 48);
+            this.txt_passwordFuncionarios.TabIndex = 10;
+            this.txt_passwordFuncionarios.TabStop = false;
+            this.txt_passwordFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_passwordFuncionarios.TrailingIcon = null;
+            this.txt_passwordFuncionarios.UseSystemPasswordChar = false;
             // 
             // tb_diretoria
             // 
@@ -1092,27 +1092,27 @@ namespace appBugInn
             this.iconesMenu.Images.SetKeyName(9, "icons8-dashboard-32.png");
             this.iconesMenu.Images.SetKeyName(10, "icons8-profit-48.png");
             // 
-            // btn_limpar
+            // btn_limparFuncionarios
             // 
-            this.btn_limpar.AutoSize = false;
-            this.btn_limpar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_limpar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_limpar.Depth = 0;
-            this.btn_limpar.HighEmphasis = true;
-            this.btn_limpar.Icon = null;
-            this.btn_limpar.Location = new System.Drawing.Point(853, 149);
-            this.btn_limpar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btn_limpar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_limpar.Size = new System.Drawing.Size(108, 37);
-            this.btn_limpar.TabIndex = 46;
-            this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_limpar.UseAccentColor = false;
-            this.btn_limpar.UseVisualStyleBackColor = true;
-            this.btn_limpar.Visible = false;
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            this.btn_limparFuncionarios.AutoSize = false;
+            this.btn_limparFuncionarios.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_limparFuncionarios.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_limparFuncionarios.Depth = 0;
+            this.btn_limparFuncionarios.HighEmphasis = true;
+            this.btn_limparFuncionarios.Icon = null;
+            this.btn_limparFuncionarios.Location = new System.Drawing.Point(853, 149);
+            this.btn_limparFuncionarios.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btn_limparFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_limparFuncionarios.Name = "btn_limparFuncionarios";
+            this.btn_limparFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_limparFuncionarios.Size = new System.Drawing.Size(108, 37);
+            this.btn_limparFuncionarios.TabIndex = 46;
+            this.btn_limparFuncionarios.Text = "Limpar";
+            this.btn_limparFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_limparFuncionarios.UseAccentColor = false;
+            this.btn_limparFuncionarios.UseVisualStyleBackColor = true;
+            this.btn_limparFuncionarios.Visible = false;
+            this.btn_limparFuncionarios.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // F_telaInicial
             // 
@@ -1131,8 +1131,8 @@ namespace appBugInn
             this.materialCard6.ResumeLayout(false);
             this.materialCard6.PerformLayout();
             this.tb_funcionarios.ResumeLayout(false);
-            this.materialCard5.ResumeLayout(false);
-            this.materialCard5.PerformLayout();
+            this.cd_FuncionariosDados.ResumeLayout(false);
+            this.cd_FuncionariosDados.PerformLayout();
             this.tb_diretoria.ResumeLayout(false);
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
@@ -1177,14 +1177,14 @@ namespace appBugInn
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private MaterialSkin.Controls.MaterialButton btn_excluir;
-        private MaterialSkin.Controls.MaterialCard materialCard5;
-        private MaterialSkin.Controls.MaterialTextBox2 txt_username;
-        private MaterialSkin.Controls.MaterialTextBox2 txt_nome;
-        private MaterialSkin.Controls.MaterialTextBox2 txt_telefone;
-        private MaterialSkin.Controls.MaterialSwitch chb_gestor;
-        private MaterialSkin.Controls.MaterialTextBox2 txt_password;
-        private MaterialSkin.Controls.MaterialButton btn_criar;
+        private MaterialSkin.Controls.MaterialButton btn_excluirFuncionarios;
+        private MaterialSkin.Controls.MaterialCard cd_FuncionariosDados;
+        private MaterialSkin.Controls.MaterialTextBox2 txt_usernameFuncionarios;
+        private MaterialSkin.Controls.MaterialTextBox2 txt_nomeFuncionarios;
+        private MaterialSkin.Controls.MaterialTextBox2 txt_telefoneFuncionarios;
+        private MaterialSkin.Controls.MaterialSwitch chb_gestorFuncionarios;
+        private MaterialSkin.Controls.MaterialTextBox2 txt_passwordFuncionarios;
+        private MaterialSkin.Controls.MaterialButton btn_criarFunciornarios;
         private MaterialSkin.Controls.MaterialListView mtv_dadosReserva;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -1211,6 +1211,6 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialButton btn_avançarDiaFimReserva;
         private MaterialSkin.Controls.MaterialButton btn_recuaDiaFimReserva;
         private MaterialSkin.Controls.MaterialListView mtv_dadosFunc;
-        private MaterialSkin.Controls.MaterialButton btn_limpar;
+        private MaterialSkin.Controls.MaterialButton btn_limparFuncionarios;
     }
 }
