@@ -540,6 +540,11 @@ namespace appBugInn
         {
 
         }
+
+        private void materialTextBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

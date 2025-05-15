@@ -83,6 +83,16 @@ namespace appBugInn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap euro_symbol_icon_2048x2048_jz6x8c3o {
+            get {
+                object obj = ResourceManager.GetObject("euro-symbol-icon-2048x2048-jz6x8c3o", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap finance_48 {
             get {
                 object obj = ResourceManager.GetObject("finance_48", resourceCulture);
@@ -186,6 +196,16 @@ namespace appBugInn.Properties {
         internal static System.Drawing.Bitmap Personnome {
             get {
                 object obj = ResourceManager.GetObject("Personnome", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-computer-icons-icon-design-bed-bed-room-text-rectangle-computer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
