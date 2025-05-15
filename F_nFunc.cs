@@ -1,4 +1,4 @@
-﻿using MaterialSkin;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -142,7 +142,7 @@ namespace appBugInn
                 return;
 
             // Busca o funcionário na lista
-            var funcionario = hFuncionarios.funcionarios
+            var funcionario = hotelFunc.funcionarios
                 .FirstOrDefault(f => f.Nome.Equals(nomeSelecionado, StringComparison.OrdinalIgnoreCase));
 
             if (funcionario != null)

@@ -1243,8 +1243,6 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialButton btn_cancelarReserva;
         private MaterialSkin.Controls.MaterialButton btn_registarReserva;
-        private MaterialSkin.Controls.MaterialCard materialCard5;
-        private System.Windows.Forms.Label label7;
         private MaterialSkin.Controls.MaterialComboBox cb_NumeroPessoas;
         private MaterialSkin.Controls.MaterialComboBox cb_TipoQuarto;
         private MaterialSkin.Controls.MaterialButton btn_avançarDiaFimReserva;

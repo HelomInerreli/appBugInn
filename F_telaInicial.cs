@@ -240,8 +240,16 @@ namespace appBugInn
                     else
                     {
                         MessageBox.Show($"Funcionário {nomeFuncionario} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-        
+                    } 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um funcionário para excluir.");
+            }
+        }
+
+
         private void materialTabControl1_Selected(object sender, TabControlEventArgs e)
         {
             try
@@ -521,7 +529,8 @@ namespace appBugInn
         private void tb_funcionarios_Enter(object sender, EventArgs e)
         {
             hotelFunc.CarregarFuncionarios(); // Adiciona os funcionários existentes à lista
-            AtualizarComboBox(); // Atualiza o ComboBox com os funcionários existentes
+            AtualizarComboBox();
+        }// Atualiza o ComboBox com os funcionários existentes
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
             dtp_dataInicioReserva.MinDate = DateTime.Today;
