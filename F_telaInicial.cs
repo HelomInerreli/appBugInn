@@ -18,7 +18,7 @@ namespace appBugInn
 {
     public partial class F_telaInicial : MaterialForm
     {
-        Hotel hotelFunc = new Hotel();
+        Hotel hotel = new Hotel();
 
         public F_telaInicial()
         {
@@ -160,11 +160,11 @@ namespace appBugInn
                     string nomeSelecionado = itemSelecionado.SubItems[1].Text;
 
                     // Chama o método para modificar usando o nome selecionado
-                    hotelFunc.ModificarFuncionario(nomeSelecionado, nome, telefone, tipoFuncionario, password, username);
+                    hotel.ModificarFuncionario(nomeSelecionado, nome, telefone, tipoFuncionario, password, username);
                 }
                 else // Criar novo funcionário
                 {
-                    hotelFunc.AdicionarFuncionarioModificado(nome, telefone, tipoFuncionario, password, username);
+                    hotel.AdicionarFuncionarioModificado(nome, telefone, tipoFuncionario, password, username);
                 }
 
                 AtualizarListView(); // Atualiza a interface
@@ -193,7 +193,7 @@ namespace appBugInn
             mtv_dadosFunc.Columns.Add("Username", 200, HorizontalAlignment.Left);
 
             // Adiciona os dados da lista hfuncionarios
-            foreach (Funcionario func in hotelFunc.hfuncionarios)
+            foreach (Funcionario func in hotel.hfuncionarios)
             {
                 ListViewItem item = new ListViewItem(func.Id.ToString());
                 item.SubItems.Add(func.Nome);
@@ -237,7 +237,7 @@ namespace appBugInn
                 string nomeSelecionado = itemSelecionado.SubItems[1].Text;
 
                 // Busca o funcionário na lista
-                Funcionario funcionarioSelecionado = hotelFunc.hfuncionarios.FirstOrDefault(f => f.Nome == nomeSelecionado);
+                Funcionario funcionarioSelecionado = hotel.hfuncionarios.FirstOrDefault(f => f.Nome == nomeSelecionado);
 
                 if (funcionarioSelecionado != null)
                 {
@@ -267,13 +267,13 @@ namespace appBugInn
                     // Considerando que a coluna Nome é a segunda (índice 1)
                     string nomeFuncionario = itemSelecionado.SubItems[1].Text;
 
-                    Funcionario funcionarioParaExcluir = hotelFunc.hfuncionarios.FirstOrDefault(f => f.Nome == nomeFuncionario);
+                    Funcionario funcionarioParaExcluir = hotel.hfuncionarios.FirstOrDefault(f => f.Nome == nomeFuncionario);
                     if (funcionarioParaExcluir != null)
                     {
-                        hotelFunc.hfuncionarios.Remove(funcionarioParaExcluir);
+                        hotel.hfuncionarios.Remove(funcionarioParaExcluir);
                         MessageBox.Show($"Funcionário {nomeFuncionario} removido da lista.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        hotelFunc.AtualizarBaseDeDados(); // Atualiza o arquivo após a remoção
+                        hotel.AtualizarBaseDeDados(); // Atualiza o arquivo após a remoção
                         AtualizarListView(); // Atualiza a ListView
 
                         // Limpa os campos de edição
@@ -587,7 +587,7 @@ namespace appBugInn
 
         private void tb_funcionarios_Enter(object sender, EventArgs e)
         {
-            hotelFunc.CarregarFuncionarios(); // Adiciona os funcionários existentes à lista
+            hotel.CarregarFuncionarios(); // Adiciona os funcionários existentes à lista
             AtualizarListView();
         }// Atualiza o ListeView com os funcionários existentes
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
