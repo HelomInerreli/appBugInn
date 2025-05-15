@@ -126,6 +126,12 @@
     <Compile Include="F_criarObjeto.Designer.cs">
       <DependentUpon>F_criarObjeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_gerirQuartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_gerirQuartos.Designer.cs">
+      <DependentUpon>F_gerirQuartos.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_nFunc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_criarObjeto.resx">
       <DependentUpon>F_criarObjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_gerirQuartos.resx">
+      <DependentUpon>F_gerirQuartos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_nFunc.resx">
       <DependentUpon>F_nFunc.cs</DependentUpon>
@@ -222,6 +231,8 @@
     </Content>
     <Content Include="BaseDados\reservas.txt" />
     <Content Include="Imagens\algo1.txt" />
+    <None Include="Resources\euro-symbol-icon-2048x2048-jz6x8c3o.png" />
+    <None Include="Resources\png-transparent-computer-icons-icon-design-bed-bed-room-text-rectangle-computer4.png" />
     <None Include="Resources\icons8-visível-24.png" />
     <None Include="Resources\icons8-trancar-241.png" />
     <None Include="Resources\icons8-trancar-24.png" />
