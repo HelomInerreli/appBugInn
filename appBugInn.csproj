@@ -220,9 +220,6 @@
     <Content Include="BaseDados\funcionarios.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="BaseDados\logins.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="BaseDados\reservas.txt" />
     <Content Include="Imagens\algo1.txt" />
     <None Include="Resources\icons8-visível-24.png" />

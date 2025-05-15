@@ -38,6 +38,7 @@
             this.cb_Funcionarios = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btn_excluir = new MaterialSkin.Controls.MaterialButton();
+            this.txt_username = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             this.chb_gestor.AutoSize = true;
             this.chb_gestor.Depth = 0;
-            this.chb_gestor.Location = new System.Drawing.Point(449, 177);
+            this.chb_gestor.Location = new System.Drawing.Point(442, 213);
             this.chb_gestor.Margin = new System.Windows.Forms.Padding(0);
             this.chb_gestor.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chb_gestor.MouseState = MaterialSkin.MouseState.HOVER;
@@ -73,7 +74,7 @@
             this.btn_criar.Depth = 0;
             this.btn_criar.HighEmphasis = true;
             this.btn_criar.Icon = null;
-            this.btn_criar.Location = new System.Drawing.Point(242, 503);
+            this.btn_criar.Location = new System.Drawing.Point(242, 549);
             this.btn_criar.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_criar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_criar.Name = "btn_criar";
@@ -89,6 +90,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.txt_username);
             this.materialCard1.Controls.Add(this.txt_nome);
             this.materialCard1.Controls.Add(this.txt_telefone);
             this.materialCard1.Controls.Add(this.chb_gestor);
@@ -100,7 +102,7 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(696, 249);
+            this.materialCard1.Size = new System.Drawing.Size(696, 270);
             this.materialCard1.TabIndex = 18;
             // 
             // txt_nome
@@ -145,7 +147,7 @@
             this.txt_telefone.HideSelection = true;
             this.txt_telefone.Hint = "Telefone";
             this.txt_telefone.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefone.Location = new System.Drawing.Point(34, 98);
+            this.txt_telefone.Location = new System.Drawing.Point(34, 146);
             this.txt_telefone.Margin = new System.Windows.Forms.Padding(4);
             this.txt_telefone.MaxLength = 32767;
             this.txt_telefone.MouseState = MaterialSkin.MouseState.OUT;
@@ -177,7 +179,7 @@
             this.txt_password.HideSelection = true;
             this.txt_password.Hint = "Password";
             this.txt_password.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
-            this.txt_password.Location = new System.Drawing.Point(34, 166);
+            this.txt_password.Location = new System.Drawing.Point(34, 202);
             this.txt_password.Margin = new System.Windows.Forms.Padding(4);
             this.txt_password.MaxLength = 32767;
             this.txt_password.MouseState = MaterialSkin.MouseState.OUT;
@@ -246,7 +248,7 @@
             this.btn_excluir.Depth = 0;
             this.btn_excluir.HighEmphasis = true;
             this.btn_excluir.Icon = null;
-            this.btn_excluir.Location = new System.Drawing.Point(458, 503);
+            this.btn_excluir.Location = new System.Drawing.Point(459, 549);
             this.btn_excluir.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_excluir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluir.Name = "btn_excluir";
@@ -260,11 +262,41 @@
             this.btn_excluir.Visible = false;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
+            // txt_username
+            // 
+            this.txt_username.AnimateReadOnly = false;
+            this.txt_username.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_username.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_username.Depth = 0;
+            this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_username.HideSelection = true;
+            this.txt_username.Hint = "Username";
+            this.txt_username.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_username.Location = new System.Drawing.Point(34, 90);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_username.MaxLength = 32767;
+            this.txt_username.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_username.Name = "txt_username";
+            this.txt_username.PasswordChar = '\0';
+            this.txt_username.PrefixSuffixText = null;
+            this.txt_username.ReadOnly = false;
+            this.txt_username.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_username.SelectedText = "";
+            this.txt_username.SelectionLength = 0;
+            this.txt_username.SelectionStart = 0;
+            this.txt_username.ShortcutsEnabled = true;
+            this.txt_username.Size = new System.Drawing.Size(589, 48);
+            this.txt_username.TabIndex = 14;
+            this.txt_username.TabStop = false;
+            this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_username.TrailingIcon = null;
+            this.txt_username.UseSystemPasswordChar = false;
+            // 
             // F_nFunc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1156, 777);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.cb_Funcionarios);
@@ -294,5 +326,6 @@
         private MaterialSkin.Controls.MaterialComboBox cb_Funcionarios;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton btn_excluir;
+        private MaterialSkin.Controls.MaterialTextBox2 txt_username;
     }
 }

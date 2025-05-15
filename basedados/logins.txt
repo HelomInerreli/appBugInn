@@ -1,2 +1,0 @@
-id;nome;password
-1;goncalo;atec123
