@@ -64,6 +64,7 @@ namespace appBugInn
 
         private void F_telaInicial_Load(object sender, EventArgs e)
         {
+            mtv_dadosFunc.DoubleClick += mtv_dadosFunc_DoubleClick;
 
         }
 
@@ -151,9 +152,14 @@ namespace appBugInn
                     return;
                 }
 
-                if (cb_Funcionarios.SelectedIndex >= 0) // Modificar funcionário
+                if (mtv_dadosFunc.SelectedItems.Count > 0) // Modificar funcionário
                 {
-                    string nomeSelecionado = cb_Funcionarios.SelectedItem.ToString();
+                    ListViewItem itemSelecionado = mtv_dadosFunc.SelectedItems[0];
+
+                    // Pega o nome do funcionário na coluna 1 (Nome)
+                    string nomeSelecionado = itemSelecionado.SubItems[1].Text;
+
+                    // Chama o método para modificar usando o nome selecionado
                     hotelFunc.ModificarFuncionario(nomeSelecionado, nome, telefone, tipoFuncionario, password, username);
                 }
                 else // Criar novo funcionário
@@ -161,7 +167,11 @@ namespace appBugInn
                     hotelFunc.AdicionarFuncionarioModificado(nome, telefone, tipoFuncionario, password, username);
                 }
 
-                AtualizarComboBox(); // Atualiza a interface
+                AtualizarListView(); // Atualiza a interface
+
+                // Limpa seleção e campos
+                mtv_dadosFunc.SelectedItems.Clear();
+                LimparCamposFuncionario();
             }
             catch (Exception ex)
             {
@@ -169,29 +179,64 @@ namespace appBugInn
             }
         }
 
-     
-        private void AtualizarComboBox()
-        {
-            cb_Funcionarios.Items.Clear(); // Limpa itens antigos
 
-            foreach (Funcionario func in hotelFunc.hfuncionarios) // Pegando da lista e não do txt
+        private void AtualizarListView()
+        {
+            mtv_dadosFunc.Clear(); // Limpa colunas e itens
+
+            // Adiciona colunas com base no ficheiro
+            mtv_dadosFunc.Columns.Add("ID", 60, HorizontalAlignment.Left);
+            mtv_dadosFunc.Columns.Add("Nome", 300, HorizontalAlignment.Left);
+            mtv_dadosFunc.Columns.Add("Telefone", 200, HorizontalAlignment.Left);
+            mtv_dadosFunc.Columns.Add("Tipo de Funcionario", 150, HorizontalAlignment.Left);
+            mtv_dadosFunc.Columns.Add("Password", 150, HorizontalAlignment.Left);
+            mtv_dadosFunc.Columns.Add("Username", 200, HorizontalAlignment.Left);
+
+            // Adiciona os dados da lista hfuncionarios
+            foreach (Funcionario func in hotelFunc.hfuncionarios)
             {
-                cb_Funcionarios.Items.Add(func.Nome); // Adiciona os nomes dos funcionários na ComboBox
+                ListViewItem item = new ListViewItem(func.Id.ToString());
+                item.SubItems.Add(func.Nome);
+                item.SubItems.Add(func.Telefone);
+                item.SubItems.Add(func.TipoFuncionario ? "Gestor" : "Funcionario");
+                item.SubItems.Add(func.Password);
+                item.SubItems.Add(func.Username);
+
+                mtv_dadosFunc.Items.Add(item);
             }
+
+            mtv_dadosFunc.View = View.Details;
+            mtv_dadosFunc.FullRowSelect = true;
         }
 
-        private void cb_Funcionarios_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void LimparCamposFuncionario()
         {
-            btn_excluir.Visible = cb_Funcionarios.SelectedIndex >= 0;
+            txt_nome.Text = "";
+            txt_telefone.Text = "";
+            txt_password.Text = "";
+            txt_username.Text = "";
+            chb_gestor.Checked = false;
+            mtv_dadosFunc.SelectedItems.Clear();
+            btn_criar.Text = "Criar";
+            btn_excluir.Visible = false;
+            btn_limpar.Visible = false;
+        }
 
-            if (cb_Funcionarios.SelectedIndex >= 0)
+        private void mtv_dadosFunc_DoubleClick(object sender, EventArgs e)
+        {
+            if (mtv_dadosFunc.SelectedItems.Count > 0)
             {
+                btn_limpar.Visible = true;
+                btn_excluir.Visible = true;
                 btn_criar.Text = "Modificar";
 
-                // Obtém o nome selecionado na ComboBox
-                string nomeSelecionado = cb_Funcionarios.SelectedItem.ToString();
+                // Pega o item selecionado na ListView
+                ListViewItem itemSelecionado = mtv_dadosFunc.SelectedItems[0];
 
-                // Busca o funcionário na LISTA, em vez do TXT
+                // Obtém o nome do funcionário (coluna 1)
+                string nomeSelecionado = itemSelecionado.SubItems[1].Text;
+
+                // Busca o funcionário na lista
                 Funcionario funcionarioSelecionado = hotelFunc.hfuncionarios.FirstOrDefault(f => f.Nome == nomeSelecionado);
 
                 if (funcionarioSelecionado != null)
@@ -201,46 +246,44 @@ namespace appBugInn
                     chb_gestor.Checked = funcionarioSelecionado.TipoFuncionario;
                     txt_password.Text = funcionarioSelecionado.Password;
                     txt_username.Text = funcionarioSelecionado.Username;
-
                 }
             }
             else
             {
-                btn_criar.Text = "Criar";
-                txt_nome.Text = "";
-                txt_telefone.Text = "";
-                txt_password.Text = "";
-                txt_username.Text = "";
-                chb_gestor.Checked = false;
+                LimparCamposFuncionario();
             }
         }
+        
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            if (cb_Funcionarios.SelectedIndex >= 0)
+            if (mtv_dadosFunc.SelectedItems.Count > 0)
             {
                 // Confirmação
                 if (MessageBox.Show("Tem certeza que deseja excluir este funcionário?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string nomeFuncionario = cb_Funcionarios.SelectedItem.ToString();
+                    ListViewItem itemSelecionado = mtv_dadosFunc.SelectedItems[0];
+
+                    // Considerando que a coluna Nome é a segunda (índice 1)
+                    string nomeFuncionario = itemSelecionado.SubItems[1].Text;
 
                     Funcionario funcionarioParaExcluir = hotelFunc.hfuncionarios.FirstOrDefault(f => f.Nome == nomeFuncionario);
                     if (funcionarioParaExcluir != null)
                     {
                         hotelFunc.hfuncionarios.Remove(funcionarioParaExcluir);
                         MessageBox.Show($"Funcionário {nomeFuncionario} removido da lista.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         hotelFunc.AtualizarBaseDeDados(); // Atualiza o arquivo após a remoção
-                        AtualizarComboBox(); // Atualiza a ComboBox
-                        txt_nome.Text = "";
-                        txt_telefone.Text = "";
-                        txt_password.Text = "";
-                        txt_username.Text = "";
-                        chb_gestor.Checked = false;
-                    }
+                        AtualizarListView(); // Atualiza a ListView
+
+                        // Limpa os campos de edição
+                        LimparCamposFuncionario();
+                    
+                }
                     else
                     {
                         MessageBox.Show($"Funcionário {nomeFuncionario} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    } 
+                    }
                 }
             }
             else
@@ -249,29 +292,35 @@ namespace appBugInn
             }
         }
 
+        private void materialListView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+
+
+        }
+
 
         private void materialTabControl1_Selected(object sender, TabControlEventArgs e)
         {
             try
             {
 
-                string[] dados = Funcionalidades.LerBaseDados("reservas");
+                string[] dados = Funcionalidades.LerBaseDados("funcionarios");
 
                 if (dados.Length > 0)
                 {
-                    mtv_dadosReserva.Clear(); // Limpar tudo (colunas + itens)
+                    mtv_dadosFunc.Clear(); // Limpar tudo (colunas + itens)
 
                     string[] colunas = dados[0].Split(';');
 
                     // Adicionar colunas
 
-                    mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Nome", 400, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Telefone", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Email", 300, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Data de inicio", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Data de fim", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Tipo de quarto", 200, HorizontalAlignment.Left);
+                    mtv_dadosFunc.Columns.Add("ID", 60, HorizontalAlignment.Left);
+                    mtv_dadosFunc.Columns.Add("Nome", 180, HorizontalAlignment.Left);
+                    mtv_dadosFunc.Columns.Add("Telefone", 120, HorizontalAlignment.Left);
+                    mtv_dadosFunc.Columns.Add("Tipo Funcionario", 180, HorizontalAlignment.Left);
+                    mtv_dadosFunc.Columns.Add("Password", 120, HorizontalAlignment.Left);
+                    mtv_dadosFunc.Columns.Add("Username", 140, HorizontalAlignment.Left);
 
                     // Adicionar linhas
                     for (int i = 1; i < dados.Length; i++)
@@ -280,13 +329,23 @@ namespace appBugInn
                         ListViewItem item = new ListViewItem(campos[0]);
                         for (int j = 1; j < campos.Length; j++)
                         {
-                            item.SubItems.Add(campos[j]);
+                            // Verifica se é a coluna "Tipo de Funcionario" (índice 3)
+                            if (j == 3)
+                            {
+                                string tipo = campos[j].ToLower() == "true" ? "Gestor" : "Funcionario";
+                                item.SubItems.Add(tipo);
+                            }
+                            else
+                            {
+                                item.SubItems.Add(campos[j]);
+                            }
                         }
-                        mtv_dadosReserva.Items.Add(item);
+
+                        mtv_dadosFunc.Items.Add(item);
                     }
 
-                    mtv_dadosReserva.View = View.Details;
-                    mtv_dadosReserva.FullRowSelect = true;
+                    mtv_dadosFunc.View = View.Details;
+                    mtv_dadosFunc.FullRowSelect = true;
                 }
                 else
                 {
@@ -529,8 +588,8 @@ namespace appBugInn
         private void tb_funcionarios_Enter(object sender, EventArgs e)
         {
             hotelFunc.CarregarFuncionarios(); // Adiciona os funcionários existentes à lista
-            AtualizarComboBox();
-        }// Atualiza o ComboBox com os funcionários existentes
+            AtualizarListView();
+        }// Atualiza o ListeView com os funcionários existentes
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
             dtp_dataInicioReserva.MinDate = DateTime.Today;
@@ -540,6 +599,23 @@ namespace appBugInn
         {
 
         }
-    }
 
+        private void mtv_dadosFunc_DoubleClick_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            LimparCamposFuncionario();
+        }
+
+        private void tb_funcionarios_Leave(object sender, EventArgs e)
+        {
+            LimparCamposFuncionario();
+            
+        }
+    }
 }
+
+

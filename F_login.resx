@@ -118,32 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="materialButton1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAARdJREFUSEvtlLlNBEEQRZ+BcDgMbCRC4UiHABAIHwiDDBAQAVgkgLcWVwAYmKAn
-        9ayGnt87YAzC2CeVNOpfv/qqaVjy39kCDoFb4An4KOG3Y2rm/JoV4Bh4Bz5Hwhxz9fyIbeAhFBoLPXoX
-        sgPMgvkK2AXWSuwB1yFPrzUi68BjMB3ViT1OQr41rDXgMiS7clkFLoBX4AU4L2NyE3zW+oZbrpMMj0Us
-        WGuOyX7QDGvOuQ8JRrdVV15rb0XbCJpx16s/OoHHUmvPRdsM2mCC1hF120xHdFa0g6D1vXPSJduK4oU6
-        iTupL9k/uvYNLllabWortjgN+c02ldaPZivaLRoNjyWtfOGP1jHpU9Ex6WPXZ7Lnesnf8QXiNchYy+yZ
-        AgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="materialButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAARdJREFUSEvtlLlNBEEQRZ+BcDgMbCRC4UiHABAIHwiDDBAQAVgkgLcWVwAYmKAn
-        9ayGnt87YAzC2CeVNOpfv/qqaVjy39kCDoFb4An4KOG3Y2rm/JoV4Bh4Bz5Hwhxz9fyIbeAhFBoLPXoX
-        sgPMgvkK2AXWSuwB1yFPrzUi68BjMB3ViT1OQr41rDXgMiS7clkFLoBX4AU4L2NyE3zW+oZbrpMMj0Us
-        WGuOyX7QDGvOuQ8JRrdVV15rb0XbCJpx16s/OoHHUmvPRdsM2mCC1hF120xHdFa0g6D1vXPSJduK4oU6
-        iTupL9k/uvYNLllabWortjgN+c02ldaPZivaLRoNjyWtfOGP1jHpU9Ex6WPXZ7Lnesnf8QXiNchYy+yZ
-        AgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="txt_password.LeadingIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAMFJREFUSEulkTsOwjAQBaeCCkQNhwJxDT7XDBQgOjgH0IOM1gg9a5XNMtI08azj
+        DAAACwwBP0AiyAAAAMFJREFUSEulkTsOwjAQBaeCCkQNhwJxDT7XDBQgOjgH0IOM1gg9a5XNMtI08azj
         xNDPGNgBB+BpdsAWGGk8lAVwAV6OZ2CuQ1HKyevmV2AJTMwVcLO1U/ZL9j+bz3TRntWXbHQxwtGGy8k9
         1taUOxnMw4bLL/GYWnPXhQj1IvuIdg3RwWjXEB2Mdg3RwWjXEB2Mdh9q/K8uGmZ10TCri4ZZXTTM6qJh
         VhcNs7pomNVFw6wuGmZ10TCri4ZZXTTM+uUNZ1YcH05Qfc8AAAAASUVORK5CYII=

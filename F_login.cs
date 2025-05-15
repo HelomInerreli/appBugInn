@@ -115,8 +115,8 @@ namespace appBugInn
                 if (loginValido)
                 {
                     MessageBox.Show("Login bem-sucedido!");
-                    F_Principal form = new F_Principal();
-                    form.Show();
+                   F_telaInicial telaInicial = new F_telaInicial();
+                    telaInicial.Show();
                     this.Hide();
                 }
                 else
@@ -146,6 +146,16 @@ namespace appBugInn
         private void flButton_ShowPassowrd_Click(object sender, EventArgs e)
         {
             txt_password.UseSystemPasswordChar = !txt_password.UseSystemPasswordChar;
+
+        }
+
+        private void materialTextBox21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_password_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

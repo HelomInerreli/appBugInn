@@ -129,7 +129,7 @@ namespace appBugInn
             if (!hfuncionarios.Any(f => f.Nome == funcionario.Nome))
             {
                 hfuncionarios.Add(funcionario);
-                MessageBox.Show($"Funcionário {funcionario.Nome} adicionado.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show($"Funcionário {funcionario.Nome} adicionado.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             else
