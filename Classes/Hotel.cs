@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,8 +12,8 @@ namespace appBugInn
     {
         public List<Funcionario> funcionarios = new List<Funcionario>();
         public List<Reserva> reservas = new List<Reserva>();
-        List<Single> qSingles = new List<Single>();
-        List<Duplo> qDuplos = new List<Duplo>();
+        public List<QSingle> qSingles = new List<QSingle>();
+        public List<Duplo> qDuplos = new List<Duplo>();
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -40,23 +40,23 @@ namespace appBugInn
 
         public void preencherQuartos()
         {
-            List<object> qSing = Funcionalidades.CriarObjetosDoTexto("Single", "Single");
+            List<object> qSing = Funcionalidades.CriarObjetosDoTexto("qSingle", "QSingle");
             foreach (var item in qSing)
             {
-                if (item is Single single)
+                if (item is QSingle single)
                 {
                     qSingles.Add(single);
                 }
             }
 
-            //List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("Duplo", "Duplo");
-            //foreach (var item in qDuplo)
-            //{
-            //    if (item is Duplo duplo)
-            //    {
-            //        qDuplos.Add(duplo);
-            //    }
-            //}
+            List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("qDuplos", "Duplo");
+            foreach (var item in qDuplo)
+            {
+                if (item is Duplo duplo)
+                {
+                    qDuplos.Add(duplo);
+                }
+            }
         }
 
         public void gravarFuncionario()

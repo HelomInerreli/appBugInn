@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +12,7 @@ namespace appBugInn
 {
     public partial class CriarObjeto : Form
     {
+        Hotel hotel = new Hotel();
         public CriarObjeto()
         {
             InitializeComponent();
@@ -51,6 +52,16 @@ namespace appBugInn
         private void listBoxObjetos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CriarObjeto_Load(object sender, EventArgs e)
+        {
+            hotel.preencherQuartos();
+            foreach (var item in hotel.qDuplos)
+            {
+                listBoxObjetos.Items.Add(item.linhaBD());
+            }
+          
         }
     }
 }

@@ -164,7 +164,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Single.cs" />
+    <Compile Include="Classes\QSingle.cs" />
     <Compile Include="Classes\Suite.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -214,14 +214,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Imagens\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="BaseDados\algo.txt" />
     <Content Include="BaseDados\funcionarios.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="BaseDados\qDeluxe.txt" />
+    <Content Include="BaseDados\qDuplos.txt" />
+    <Content Include="BaseDados\qSingle.txt" />
+    <Content Include="BaseDados\qSuites.txt" />
     <Content Include="BaseDados\reservas.txt" />
-    <Content Include="Imagens\algo1.txt" />
     <None Include="Resources\icons8-visível-24.png" />
     <None Include="Resources\icons8-trancar-241.png" />
     <None Include="Resources\icons8-trancar-24.png" />

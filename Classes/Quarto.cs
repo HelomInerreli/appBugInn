@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
@@ -14,6 +14,7 @@ namespace appBugInn
         private float _conta;
         private bool _livre;
         private string _status;
+        public string Observacoes;
 
         public List<string> ProdutosMinibar { get; set; } = new List<string>(); // Lista de produtos para o minibar
 
@@ -80,13 +81,14 @@ namespace appBugInn
             }
         }
 
-        public Quarto(int numQuarto, int andar)
+        public Quarto(int numQuarto, int andar, float conta, bool livre, string status, string observacoes)
         {
             NumQuarto = numQuarto;
             Andar = andar;
-            Livre = true;        // Ao criar, o quarto começa livre
-            Status = "Disponível";
-            Conta = 0;
+            Livre = livre;        // Ao criar, o quarto começa livre
+            Status = status;
+            Conta = conta;
+            Observacoes = observacoes;
         }
 
         // Método para alterar status manualmente

@@ -1,4 +1,4 @@
-﻿namespace appBugInn
+namespace appBugInn
 {
     partial class CriarObjeto
     {
@@ -38,9 +38,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(321, 253);
+            this.button1.Location = new System.Drawing.Point(113, 200);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -49,60 +50,66 @@
             // lbl_txt
             // 
             this.lbl_txt.AutoSize = true;
-            this.lbl_txt.Location = new System.Drawing.Point(168, 110);
+            this.lbl_txt.Location = new System.Drawing.Point(44, 89);
+            this.lbl_txt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_txt.Name = "lbl_txt";
-            this.lbl_txt.Size = new System.Drawing.Size(83, 16);
+            this.lbl_txt.Size = new System.Drawing.Size(65, 13);
             this.lbl_txt.TabIndex = 1;
             this.lbl_txt.Text = "Base Dados";
             // 
             // lbl_objeto
             // 
             this.lbl_objeto.AutoSize = true;
-            this.lbl_objeto.Location = new System.Drawing.Point(171, 193);
+            this.lbl_objeto.Location = new System.Drawing.Point(44, 155);
+            this.lbl_objeto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_objeto.Name = "lbl_objeto";
-            this.lbl_objeto.Size = new System.Drawing.Size(41, 16);
+            this.lbl_objeto.Size = new System.Drawing.Size(32, 13);
             this.lbl_objeto.TabIndex = 2;
             this.lbl_objeto.Text = "Class";
             // 
             // txt_txt
             // 
-            this.txt_txt.Location = new System.Drawing.Point(310, 110);
+            this.txt_txt.Location = new System.Drawing.Point(113, 89);
+            this.txt_txt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_txt.Name = "txt_txt";
-            this.txt_txt.Size = new System.Drawing.Size(100, 22);
+            this.txt_txt.Size = new System.Drawing.Size(76, 20);
             this.txt_txt.TabIndex = 3;
             this.txt_txt.TextChanged += new System.EventHandler(this.txt_txt_TextChanged);
             // 
             // txt_objeto
             // 
-            this.txt_objeto.Location = new System.Drawing.Point(310, 187);
+            this.txt_objeto.Location = new System.Drawing.Point(113, 148);
+            this.txt_objeto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_objeto.Name = "txt_objeto";
-            this.txt_objeto.Size = new System.Drawing.Size(100, 22);
+            this.txt_objeto.Size = new System.Drawing.Size(76, 20);
             this.txt_objeto.TabIndex = 4;
             this.txt_objeto.TextChanged += new System.EventHandler(this.txt_objeto_TextChanged);
             // 
             // listBoxObjetos
             // 
             this.listBoxObjetos.FormattingEnabled = true;
-            this.listBoxObjetos.ItemHeight = 16;
-            this.listBoxObjetos.Location = new System.Drawing.Point(547, 150);
+            this.listBoxObjetos.Location = new System.Drawing.Point(204, 83);
+            this.listBoxObjetos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxObjetos.Name = "listBoxObjetos";
-            this.listBoxObjetos.Size = new System.Drawing.Size(120, 84);
+            this.listBoxObjetos.Size = new System.Drawing.Size(385, 173);
             this.listBoxObjetos.TabIndex = 5;
             this.listBoxObjetos.SelectedIndexChanged += new System.EventHandler(this.listBoxObjetos_SelectedIndexChanged);
             // 
             // CriarObjeto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.listBoxObjetos);
             this.Controls.Add(this.txt_objeto);
             this.Controls.Add(this.txt_txt);
             this.Controls.Add(this.lbl_objeto);
             this.Controls.Add(this.lbl_txt);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CriarObjeto";
             this.Text = "CriarObjeto";
+            this.Load += new System.EventHandler(this.CriarObjeto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace appBugInn
     {
 
 
-        public Suite(int numQuarto, int andar) : base(numQuarto, andar)
+        public Suite(int numQuarto, int andar, float conta, bool livre, string status, double precoPorNoite, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
         {
             PrecoPorNoite = 150;
 
