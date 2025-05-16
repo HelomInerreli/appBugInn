@@ -459,8 +459,8 @@ namespace appBugInn
 
                 // Atualiza a lista em memória e o ListView
                
-                hotelFunc.CarregarReservas();
-               // hotelFunc.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto);
+                hotel.CarregarReservas();
+               // hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto);
                 AtualizarListViewReservas();
                 mtv_dadosReserva.Refresh();
             }
@@ -539,8 +539,8 @@ namespace appBugInn
 
         //        // Atualiza a lista em memória e o ListView
         //        System.Threading.Thread.Sleep(100); // Teste: aguarde 100ms
-        //        hotelFunc.CarregarReservas();
-        //        MessageBox.Show("Reservas carregadas: " + hotelFunc.hreservas.Count);
+        //        hotel.CarregarReservas();
+        //        MessageBox.Show("Reservas carregadas: " + hotel.hreservas.Count);
         //        AtualizarListViewReservas();
         //    }
         //    catch (Exception ex)
@@ -807,7 +807,7 @@ namespace appBugInn
             mtv_dadosReserva.Columns.Add("Número de Pessoas", 120, HorizontalAlignment.Left);
 
             // Adiciona os dados da lista hreservas
-            foreach (Reserva reserva in hotelFunc.hreservas)
+            foreach (Reserva reserva in hotel.hreservas)
             {
                 ListViewItem item = new ListViewItem(reserva.Id.ToString());
                 item.SubItems.Add(reserva.Nome);
