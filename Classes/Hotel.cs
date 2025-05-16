@@ -118,6 +118,7 @@ namespace appBugInn
 
 
         public List<Funcionario> hfuncionarios = new List<Funcionario>();
+        public List<Reserva> hreservas = new List<Reserva>();
 
         public Hotel() 
         {
@@ -137,6 +138,22 @@ namespace appBugInn
                 MessageBox.Show($"Funcionário {funcionario.Nome} já está na lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        public void AdicionarReserva(Reserva reserva)
+        {
+            if (hreservas == null)
+                hreservas = new List<Reserva>();
+
+            if (!hreservas.Any(r => r.Nome == reserva.Nome))
+            {
+                hreservas.Add(reserva);
+            
+                MessageBox.Show($"Reserva para {reserva.Nome} adicionada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Reserva para {reserva.Nome} já existe.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         public void ExcluirFuncionario(string nome)
         {
@@ -149,6 +166,20 @@ namespace appBugInn
             else
             {
                 MessageBox.Show($"Funcionário {nome} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ExcluirReserva(string nome)
+        {
+            Reserva reserva = hreservas.FirstOrDefault(r => r.Nome == nome);
+            if (reserva != null)
+            {
+                hreservas.Remove(reserva);
+                MessageBox.Show($"Reserva para {nome} removida da lista.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Reserva para {nome} não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -180,6 +211,34 @@ namespace appBugInn
            // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        
+            public void CarregarReservas()
+        {
+            hreservas.Clear(); // Limpa a lista antes de carregar
+
+            string[] linhas = Funcionalidades.LerBaseDados("reservas");
+            foreach (string linha in linhas.Skip(1))
+            {
+                string[] dados = linha.Split(';');
+                if (dados.Length >= 8)
+                {
+                    int id = int.Parse(dados[0]);
+                    string nome = dados[1];
+                    int telefone = int.Parse(dados[2]);
+                    string email = dados[3];
+                    DateTime dataInicio = DateTime.Parse(dados[4]);
+                    DateTime dataFim = DateTime.Parse(dados[5]);
+                    string tipoQuartoStr = dados[6];
+                    int numeroPessoas = int.Parse(dados[7]);
+
+                    // Aqui você pode passar null ou criar um objeto Quarto fictício só para exibir
+                    Reserva novaReserva = new Reserva(id, nome, telefone, email, dataInicio, dataFim, null,numeroPessoas);
+                    hreservas.Add(novaReserva);
+                }
+            }
+        }
+
+        
         public void AtualizarBaseDeDados()
         {
             string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "funcionarios.txt");
@@ -205,6 +264,27 @@ namespace appBugInn
             }
         }
 
+        public void AtualizarBaseDadosReservas()
+        {
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "reservas.txt");
+            string caminhoAbsoluto = Path.GetFullPath(caminho);
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // `false` para sobrescrever o arquivo
+                {
+                    sw.WriteLine("ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto"); // Escreve o cabeçalho novamente
+                    foreach (Reserva reserva in hreservas)
+                    {
+                        sw.WriteLine($"{reserva.Id};{reserva.Nome};{reserva.Telefone};{reserva.Email};{reserva.DataInicio:yyyy-MM-dd};{reserva.DataFim:yyyy-MM-dd};{reserva.TipoQuarto}");
+                    }
+                }
+                //MessageBox.Show("Base de dados atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public void AdicionarFuncionarioModificado(string nome, string telefone, bool tipoFuncionario, string password, string username)
         {
             int novoId = hfuncionarios.Any() ? hfuncionarios.Max(f => f.Id) + 1 : 1;
@@ -215,8 +295,55 @@ namespace appBugInn
 
             MessageBox.Show($"Funcionário {nome} adicionado com sucesso");
         }
-        
+        public void AdicionarReservaModificada(string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto,int numeroPessoas)
+        {
+            int novoId = hreservas.Any() ? hreservas.Max(r => r.Id) + 1 : 1;
+            int numQuarto = int.Parse(tipoQuarto);
 
+            // Procura o quarto na lista de quartos
+            Quarto quarto = qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                            qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+
+            if (quarto != null)
+            {
+                Reserva novaReserva = new Reserva(novoId, nome, telefone, email, dataInicio, dataFim, quarto, numeroPessoas);
+                hreservas.Add(novaReserva);
+                AtualizarBaseDadosReservas(); // Atualiza o .txt
+                MessageBox.Show($"Reserva para {nome} adicionada com sucesso");
+            }
+            else
+            {
+                MessageBox.Show($"Quarto número {tipoQuarto} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void ModificarReserva(string nomeSelecionado, string novoNome, int novoTelefone, string novoEmail, DateTime novaDataInicio, DateTime novaDataFim, string novoTipoQuarto)
+        {
+            Reserva reservaExistente = hreservas.FirstOrDefault(r => r.Nome == nomeSelecionado);
+            if (reservaExistente != null)
+            {
+                reservaExistente.Nome = novoNome;
+                reservaExistente.Telefone = novoTelefone;
+                reservaExistente.Email = novoEmail;
+                reservaExistente.DataInicio = novaDataInicio;
+                reservaExistente.DataFim = novaDataFim;
+
+                int numQuarto = int.Parse(novoTipoQuarto);
+                Quarto quarto = qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                              qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+
+                if (quarto != null)
+                {
+                    reservaExistente.TipoQuarto = quarto;
+                    AtualizarBaseDadosReservas(); // Atualiza o .txt
+                    MessageBox.Show($"Reserva para {nomeSelecionado} modificada com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show($"Quarto número {novoTipoQuarto} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         public void ModificarFuncionario(string nomeSelecionado, string novoNome, string novoTelefone, bool novoTipoFuncionario, string novaPassword, string novoUsername)
         {
             Funcionario funcionarioExistente = hfuncionarios.FirstOrDefault(f => f.Nome == nomeSelecionado);

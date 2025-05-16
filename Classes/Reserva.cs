@@ -14,6 +14,7 @@ namespace appBugInn
         private DateTime _dataInicio;
         private DateTime _dataFim;
         private string _email;
+        private int _numeroPessoas;
 
 
 
@@ -100,9 +101,10 @@ namespace appBugInn
 
         }
         internal Quarto TipoQuarto { get; set; }
+        public string NumeroPessoas { get; set; }
 
         // Construtor
-        internal Reserva(int id, string nome, int telefone, DateTime dataInicio, DateTime dataFim, string email, Quarto tipoQuarto)
+        internal Reserva(int id, string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, Quarto tipoQuarto, int numeroPessoas)
         {
             Id = id;
             Nome = nome;
@@ -111,7 +113,7 @@ namespace appBugInn
             DataFim = dataFim;
             Email = email;
             TipoQuarto = tipoQuarto; // agora guarda o quarto na reserva
-
+            _numeroPessoas = numeroPessoas;
             string linha = $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto}";
 
             try
@@ -125,6 +127,8 @@ namespace appBugInn
                 Console.WriteLine("Erro ao gravar reserva: " + ex.Message);
 
             }
+
+            _numeroPessoas = numeroPessoas;
         }
         public string linhaBDReservas()
         {
