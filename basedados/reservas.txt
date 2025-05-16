@@ -1,6 +1,4 @@
-id;nome;telefone;email;dataInicio,dataFim,tipoQuarto
-1;Gonçalo Maria Pinto;912345678;gmariapinto@gmail.com;2025-05-12;2025-05-16;Duplo
-2;Henrique Magalhães;931245678;henriquemag@gmail.com;2025-05-12;2025-05-14;Simples
-3;Diogo Rodrigues;913434344;diogorodrigues@gmail.com;2025-05-12;2025-05-13;Simples
-4;Helom Inerreli Valentim;912345678;helom123inerreli@gmail.com;2025-05-15;2025-05-17;Duplo
-5;Rui Vieira Teixeira;919234876;ruiteixeira@gmail.com;2025-05-16;2025-05-20;Suite
+id;nome;telefone;email;dataInicio;dataFim;tipoQuarto;NumeroPessoas
+1;Henrique Magalhaes;912345678;henriquemag@gmail.com;2025-05-22;2025-05-22;Duplo;2
+2;Helom Valentim;932145876;helomval@sapo.pt;2025-05-19;2025-05-22;Suite;2
+3;Renato Maria Silva;933122455;renatosilva@gmail.com;2025-05-18;2025-05-26;Suite;3
