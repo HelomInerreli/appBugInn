@@ -1,6 +1,6 @@
-numQuarto;andar;conta;livre;status;precoPorNoite;tipoCama;observacoes
-102;1;0;true;Livre;100;1 Casal;Quarto Livre para ocupação
-202;1;0;false;Ocupado;100;2 Solteiro;Quarto em utilizacao
-302;1;0;true;Livre;100;1 Casal;Quarto Livre para ocupação
-402;1;0;false;Ocupado;100;2 Solteiro;Quarto em utilizacao
-502;1;0;true;Livre;100;1 Casal;Quarto Livre para ocupação
+numQuarto;andar;conta;livre;status;tipoCama;observacoes
+102;2;0;true;Livre;Casal;Quarto Livre para ocupação
+202;2;0;false;Ocupado;Solteiro;Quarto em utilizacao
+302;2;0;true;Livre;Casal;Quarto Livre para ocupação
+402;2;0;false;Ocupado;Solteiro;Quarto em utilizacao
+502;2;0;true;Livre;Casal;Quarto Livre para ocupação

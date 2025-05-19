@@ -64,9 +64,9 @@ namespace appBugInn
             this.tb_gerirQuartos = new System.Windows.Forms.TabPage();
             this.mtv_dadosQuartos = new MaterialSkin.Controls.MaterialListView();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
-            this.materialSwitch3 = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialSwitch2 = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
+            this.sw_camaCasal = new MaterialSkin.Controls.MaterialSwitch();
+            this.sw_miniBar = new MaterialSkin.Controls.MaterialSwitch();
+            this.sw_Jacuzzi = new MaterialSkin.Controls.MaterialSwitch();
             this.txt_Andar = new MaterialSkin.Controls.MaterialTextBox();
             this.txt_tQuarto = new MaterialSkin.Controls.MaterialTextBox();
             this.txt_Vista = new MaterialSkin.Controls.MaterialTextBox();
@@ -689,9 +689,9 @@ namespace appBugInn
             // materialCard7
             // 
             this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard7.Controls.Add(this.materialSwitch3);
-            this.materialCard7.Controls.Add(this.materialSwitch2);
-            this.materialCard7.Controls.Add(this.materialSwitch1);
+            this.materialCard7.Controls.Add(this.sw_camaCasal);
+            this.materialCard7.Controls.Add(this.sw_miniBar);
+            this.materialCard7.Controls.Add(this.sw_Jacuzzi);
             this.materialCard7.Controls.Add(this.txt_Andar);
             this.materialCard7.Controls.Add(this.txt_tQuarto);
             this.materialCard7.Controls.Add(this.txt_Vista);
@@ -711,50 +711,50 @@ namespace appBugInn
             this.materialCard7.Size = new System.Drawing.Size(1279, 324);
             this.materialCard7.TabIndex = 41;
             // 
-            // materialSwitch3
+            // sw_camaCasal
             // 
-            this.materialSwitch3.AutoSize = true;
-            this.materialSwitch3.Depth = 0;
-            this.materialSwitch3.Location = new System.Drawing.Point(531, 216);
-            this.materialSwitch3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch3.Name = "materialSwitch3";
-            this.materialSwitch3.Ripple = true;
-            this.materialSwitch3.Size = new System.Drawing.Size(165, 37);
-            this.materialSwitch3.TabIndex = 51;
-            this.materialSwitch3.Text = "Cama de Casal";
-            this.materialSwitch3.UseVisualStyleBackColor = true;
+            this.sw_camaCasal.AutoSize = true;
+            this.sw_camaCasal.Depth = 0;
+            this.sw_camaCasal.Location = new System.Drawing.Point(531, 216);
+            this.sw_camaCasal.Margin = new System.Windows.Forms.Padding(0);
+            this.sw_camaCasal.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sw_camaCasal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sw_camaCasal.Name = "sw_camaCasal";
+            this.sw_camaCasal.Ripple = true;
+            this.sw_camaCasal.Size = new System.Drawing.Size(165, 37);
+            this.sw_camaCasal.TabIndex = 51;
+            this.sw_camaCasal.Text = "Cama de Casal";
+            this.sw_camaCasal.UseVisualStyleBackColor = true;
             // 
-            // materialSwitch2
+            // sw_miniBar
             // 
-            this.materialSwitch2.AutoSize = true;
-            this.materialSwitch2.Depth = 0;
-            this.materialSwitch2.Location = new System.Drawing.Point(531, 135);
-            this.materialSwitch2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch2.Name = "materialSwitch2";
-            this.materialSwitch2.Ripple = true;
-            this.materialSwitch2.Size = new System.Drawing.Size(117, 37);
-            this.materialSwitch2.TabIndex = 50;
-            this.materialSwitch2.Text = "Mini Bar";
-            this.materialSwitch2.UseVisualStyleBackColor = true;
+            this.sw_miniBar.AutoSize = true;
+            this.sw_miniBar.Depth = 0;
+            this.sw_miniBar.Location = new System.Drawing.Point(531, 135);
+            this.sw_miniBar.Margin = new System.Windows.Forms.Padding(0);
+            this.sw_miniBar.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sw_miniBar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sw_miniBar.Name = "sw_miniBar";
+            this.sw_miniBar.Ripple = true;
+            this.sw_miniBar.Size = new System.Drawing.Size(117, 37);
+            this.sw_miniBar.TabIndex = 50;
+            this.sw_miniBar.Text = "Mini Bar";
+            this.sw_miniBar.UseVisualStyleBackColor = true;
             // 
-            // materialSwitch1
+            // sw_Jacuzzi
             // 
-            this.materialSwitch1.AutoSize = true;
-            this.materialSwitch1.Depth = 0;
-            this.materialSwitch1.Location = new System.Drawing.Point(531, 51);
-            this.materialSwitch1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch1.Name = "materialSwitch1";
-            this.materialSwitch1.Ripple = true;
-            this.materialSwitch1.Size = new System.Drawing.Size(113, 37);
-            this.materialSwitch1.TabIndex = 49;
-            this.materialSwitch1.Text = "Jacuzzi";
-            this.materialSwitch1.UseVisualStyleBackColor = true;
+            this.sw_Jacuzzi.AutoSize = true;
+            this.sw_Jacuzzi.Depth = 0;
+            this.sw_Jacuzzi.Location = new System.Drawing.Point(531, 51);
+            this.sw_Jacuzzi.Margin = new System.Windows.Forms.Padding(0);
+            this.sw_Jacuzzi.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sw_Jacuzzi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sw_Jacuzzi.Name = "sw_Jacuzzi";
+            this.sw_Jacuzzi.Ripple = true;
+            this.sw_Jacuzzi.Size = new System.Drawing.Size(113, 37);
+            this.sw_Jacuzzi.TabIndex = 49;
+            this.sw_Jacuzzi.Text = "Jacuzzi";
+            this.sw_Jacuzzi.UseVisualStyleBackColor = true;
             // 
             // txt_Andar
             // 
@@ -1576,9 +1576,9 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialTextBox txt_nQuarto;
         private MaterialSkin.Controls.MaterialTextBox txt_Conta;
         private MaterialSkin.Controls.MaterialListView mtv_dadosQuartos;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch3;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch2;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
+        private MaterialSkin.Controls.MaterialSwitch sw_camaCasal;
+        private MaterialSkin.Controls.MaterialSwitch sw_miniBar;
+        private MaterialSkin.Controls.MaterialSwitch sw_Jacuzzi;
         private MaterialSkin.Controls.MaterialListView mtv_dadosFunc;
         private MaterialSkin.Controls.MaterialButton btn_limparFuncionarios;
         private MaterialSkin.Controls.MaterialButton btn_excluirReserva;

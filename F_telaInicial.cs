@@ -831,7 +831,7 @@ namespace appBugInn
 
             try
             {
-                // Limpa a ListView antes de adicionar novos dados
+                // NÃO ESTÁ A LIMPAR OS DADOS 
                 mtv_dadosQuartos.Clear();
 
                 hotel.preencherQuartos();
@@ -851,6 +851,20 @@ namespace appBugInn
                     ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
                     item.SubItems.Add(quarto.Andar.ToString());
                     item.SubItems.Add("single");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+
+                }
+
+                foreach (var quarto in hotel.qDuplos)
+                {
+
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Duplo");
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
@@ -915,6 +929,14 @@ namespace appBugInn
                 txt_nQuarto.Text = item.SubItems[0].Text;
                 txt_Andar.Text = item.SubItems[1].Text;
                 txt_tQuarto.Text = item.SubItems[2].Text;
+                txt_Conta.Text = item.SubItems[3].Text;
+
+                // Campo "Livre" (bool) está na coluna 4
+                string livreValue = item.SubItems[4].Text.Trim().ToLower();
+                if (livreValue == "true" || livreValue == "sim" || livreValue == "yes" || livreValue == "1")
+                    txt_Status.Text = "Sim";
+                else
+                    txt_Status.Text = "Não";
             }
         }
     }
