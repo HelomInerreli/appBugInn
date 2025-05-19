@@ -676,7 +676,7 @@ namespace appBugInn
                     mtv_dadosReserva.Columns.Add("Email", 250, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de inicio", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de fim", 150, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Tipo de quarto", 150, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Tipo de quarto", 170, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Número de Pessoas", 180, HorizontalAlignment.Left);
 
                     // Adicionar linhas
