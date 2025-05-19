@@ -173,7 +173,7 @@ namespace appBugInn
             this.tb_reservas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_reservas.Name = "tb_reservas";
             this.tb_reservas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_reservas.Size = new System.Drawing.Size(1319, 578);
+            this.tb_reservas.Size = new System.Drawing.Size(1279, 578);
             this.tb_reservas.TabIndex = 1;
             this.tb_reservas.Text = "RESERVAS";
             this.tb_reservas.UseVisualStyleBackColor = true;
@@ -207,23 +207,24 @@ namespace appBugInn
             this.mc_dadosReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.mc_dadosReserva.Name = "mc_dadosReserva";
             this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.mc_dadosReserva.Size = new System.Drawing.Size(1315, 319);
+            this.mc_dadosReserva.Size = new System.Drawing.Size(1275, 319);
             this.mc_dadosReserva.TabIndex = 39;
             this.mc_dadosReserva.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
             // 
             // btn_excluirReserva
             // 
+            this.btn_excluirReserva.AutoSize = false;
             this.btn_excluirReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_excluirReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btn_excluirReserva.Depth = 0;
             this.btn_excluirReserva.HighEmphasis = true;
             this.btn_excluirReserva.Icon = null;
-            this.btn_excluirReserva.Location = new System.Drawing.Point(1168, 168);
+            this.btn_excluirReserva.Location = new System.Drawing.Point(1178, 166);
             this.btn_excluirReserva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_excluirReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirReserva.Name = "btn_excluirReserva";
             this.btn_excluirReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluirReserva.Size = new System.Drawing.Size(80, 36);
+            this.btn_excluirReserva.Size = new System.Drawing.Size(90, 36);
             this.btn_excluirReserva.TabIndex = 55;
             this.btn_excluirReserva.Text = "Excluir";
             this.btn_excluirReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -267,7 +268,7 @@ namespace appBugInn
             this.cb_NumeroPessoas.MaxDropDownItems = 4;
             this.cb_NumeroPessoas.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_NumeroPessoas.Name = "cb_NumeroPessoas";
-            this.cb_NumeroPessoas.Size = new System.Drawing.Size(129, 49);
+            this.cb_NumeroPessoas.Size = new System.Drawing.Size(163, 49);
             this.cb_NumeroPessoas.StartIndex = 0;
             this.cb_NumeroPessoas.TabIndex = 46;
             this.cb_NumeroPessoas.SelectedIndexChanged += new System.EventHandler(this.cb_NumeroPessoas_SelectedIndexChanged);
@@ -295,12 +296,12 @@ namespace appBugInn
             "Suite",
             "Deluxe",
             ""});
-            this.cb_TipoQuarto.Location = new System.Drawing.Point(635, 157);
+            this.cb_TipoQuarto.Location = new System.Drawing.Point(609, 160);
             this.cb_TipoQuarto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_TipoQuarto.MaxDropDownItems = 4;
             this.cb_TipoQuarto.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_TipoQuarto.Name = "cb_TipoQuarto";
-            this.cb_TipoQuarto.Size = new System.Drawing.Size(132, 49);
+            this.cb_TipoQuarto.Size = new System.Drawing.Size(163, 49);
             this.cb_TipoQuarto.StartIndex = 0;
             this.cb_TipoQuarto.TabIndex = 47;
             this.cb_TipoQuarto.SelectedIndexChanged += new System.EventHandler(this.cb_TipoQuarto_SelectedIndexChanged);
@@ -329,12 +330,12 @@ namespace appBugInn
             this.btn_recuarDiaInicioReserva.HighEmphasis = true;
             this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
             this.btn_recuarDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(875, 101);
+            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(854, 81);
             this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
             this.btn_recuarDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_recuarDiaInicioReserva.Size = new System.Drawing.Size(25, 13);
+            this.btn_recuarDiaInicioReserva.Size = new System.Drawing.Size(45, 20);
             this.btn_recuarDiaInicioReserva.TabIndex = 29;
             this.btn_recuarDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_recuarDiaInicioReserva.UseAccentColor = false;
@@ -346,7 +347,7 @@ namespace appBugInn
             this.lbl_dataFimReserva.AutoSize = true;
             this.lbl_dataFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dataFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1140, 21);
+            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1140, 24);
             this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbl_dataFimReserva.Name = "lbl_dataFimReserva";
             this.lbl_dataFimReserva.Size = new System.Drawing.Size(61, 13);
@@ -374,12 +375,12 @@ namespace appBugInn
             this.btn_avançaDiaInicioReserva.HighEmphasis = true;
             this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
             this.btn_avançaDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(905, 101);
+            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(905, 81);
             this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
             this.btn_avançaDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_avançaDiaInicioReserva.Size = new System.Drawing.Size(25, 13);
+            this.btn_avançaDiaInicioReserva.Size = new System.Drawing.Size(45, 20);
             this.btn_avançaDiaInicioReserva.TabIndex = 27;
             this.btn_avançaDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_avançaDiaInicioReserva.UseAccentColor = false;
@@ -391,7 +392,7 @@ namespace appBugInn
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(845, 21);
+            this.label7.Location = new System.Drawing.Point(845, 24);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
@@ -408,12 +409,12 @@ namespace appBugInn
             this.btn_avançarDiaFimReserva.HighEmphasis = true;
             this.btn_avançarDiaFimReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
             this.btn_avançarDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1191, 101);
+            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1189, 81);
             this.btn_avançarDiaFimReserva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_avançarDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_avançarDiaFimReserva.Name = "btn_avançarDiaFimReserva";
             this.btn_avançarDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_avançarDiaFimReserva.Size = new System.Drawing.Size(25, 13);
+            this.btn_avançarDiaFimReserva.Size = new System.Drawing.Size(45, 20);
             this.btn_avançarDiaFimReserva.TabIndex = 52;
             this.btn_avançarDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_avançarDiaFimReserva.UseAccentColor = false;
@@ -432,12 +433,12 @@ namespace appBugInn
             this.btn_recuaDiaFimReserva.HighEmphasis = true;
             this.btn_recuaDiaFimReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
             this.btn_recuaDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(1161, 101);
+            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(1138, 81);
             this.btn_recuaDiaFimReserva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_recuaDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_recuaDiaFimReserva.Name = "btn_recuaDiaFimReserva";
             this.btn_recuaDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_recuaDiaFimReserva.Size = new System.Drawing.Size(25, 13);
+            this.btn_recuaDiaFimReserva.Size = new System.Drawing.Size(45, 20);
             this.btn_recuaDiaFimReserva.TabIndex = 26;
             this.btn_recuaDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_recuaDiaFimReserva.UseAccentColor = false;
@@ -466,18 +467,19 @@ namespace appBugInn
             // 
             // btn_cancelarReserva
             // 
+            this.btn_cancelarReserva.AutoSize = false;
             this.btn_cancelarReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_cancelarReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btn_cancelarReserva.Depth = 0;
             this.btn_cancelarReserva.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelarReserva.HighEmphasis = true;
             this.btn_cancelarReserva.Icon = null;
-            this.btn_cancelarReserva.Location = new System.Drawing.Point(981, 168);
+            this.btn_cancelarReserva.Location = new System.Drawing.Point(1000, 166);
             this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.btn_cancelarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_cancelarReserva.Name = "btn_cancelarReserva";
             this.btn_cancelarReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_cancelarReserva.Size = new System.Drawing.Size(96, 36);
+            this.btn_cancelarReserva.Size = new System.Drawing.Size(90, 36);
             this.btn_cancelarReserva.TabIndex = 42;
             this.btn_cancelarReserva.Text = "Cancelar";
             this.btn_cancelarReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -587,7 +589,7 @@ namespace appBugInn
             this.mtv_dadosReserva.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosReserva.Name = "mtv_dadosReserva";
             this.mtv_dadosReserva.OwnerDraw = true;
-            this.mtv_dadosReserva.Size = new System.Drawing.Size(1315, 262);
+            this.mtv_dadosReserva.Size = new System.Drawing.Size(1275, 262);
             this.mtv_dadosReserva.TabIndex = 0;
             this.mtv_dadosReserva.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosReserva.View = System.Windows.Forms.View.Details;
@@ -1012,7 +1014,7 @@ namespace appBugInn
             this.btn_limparFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_limparFuncionarios.Name = "btn_limparFuncionarios";
             this.btn_limparFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_limparFuncionarios.Size = new System.Drawing.Size(121, 24);
+            this.btn_limparFuncionarios.Size = new System.Drawing.Size(121, 36);
             this.btn_limparFuncionarios.TabIndex = 46;
             this.btn_limparFuncionarios.Text = "Limpar";
             this.btn_limparFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1034,7 +1036,7 @@ namespace appBugInn
             this.btn_excluirFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirFuncionarios.Name = "btn_excluirFuncionarios";
             this.btn_excluirFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(121, 24);
+            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(121, 36);
             this.btn_excluirFuncionarios.TabIndex = 45;
             this.btn_excluirFuncionarios.Text = "Excluir";
             this.btn_excluirFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -1146,7 +1148,7 @@ namespace appBugInn
             this.btn_criarFunciornarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_criarFunciornarios.Name = "btn_criarFunciornarios";
             this.btn_criarFunciornarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_criarFunciornarios.Size = new System.Drawing.Size(121, 24);
+            this.btn_criarFunciornarios.Size = new System.Drawing.Size(121, 36);
             this.btn_criarFunciornarios.TabIndex = 41;
             this.btn_criarFunciornarios.Text = "Criar";
             this.btn_criarFunciornarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
