@@ -947,7 +947,7 @@ namespace appBugInn
             this.tb_funcionarios.Location = new System.Drawing.Point(4, 39);
             this.tb_funcionarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_funcionarios.Name = "tb_funcionarios";
-            this.tb_funcionarios.Size = new System.Drawing.Size(1319, 578);
+            this.tb_funcionarios.Size = new System.Drawing.Size(1279, 578);
             this.tb_funcionarios.TabIndex = 5;
             this.tb_funcionarios.Text = "FUNCIONARIOS";
             this.tb_funcionarios.UseVisualStyleBackColor = true;
@@ -963,14 +963,14 @@ namespace appBugInn
             this.mtv_dadosFunc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosFunc.FullRowSelect = true;
             this.mtv_dadosFunc.HideSelection = false;
-            this.mtv_dadosFunc.Location = new System.Drawing.Point(0, 421);
+            this.mtv_dadosFunc.Location = new System.Drawing.Point(0, 275);
             this.mtv_dadosFunc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mtv_dadosFunc.MinimumSize = new System.Drawing.Size(133, 64);
             this.mtv_dadosFunc.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosFunc.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosFunc.Name = "mtv_dadosFunc";
             this.mtv_dadosFunc.OwnerDraw = true;
-            this.mtv_dadosFunc.Size = new System.Drawing.Size(1319, 157);
+            this.mtv_dadosFunc.Size = new System.Drawing.Size(1279, 303);
             this.mtv_dadosFunc.TabIndex = 44;
             this.mtv_dadosFunc.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosFunc.View = System.Windows.Forms.View.Details;
@@ -996,7 +996,7 @@ namespace appBugInn
             this.cd_FuncionariosDados.MouseState = MaterialSkin.MouseState.HOVER;
             this.cd_FuncionariosDados.Name = "cd_FuncionariosDados";
             this.cd_FuncionariosDados.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cd_FuncionariosDados.Size = new System.Drawing.Size(1319, 132);
+            this.cd_FuncionariosDados.Size = new System.Drawing.Size(1279, 234);
             this.cd_FuncionariosDados.TabIndex = 42;
             // 
             // btn_limparFuncionarios
@@ -1007,12 +1007,12 @@ namespace appBugInn
             this.btn_limparFuncionarios.Depth = 0;
             this.btn_limparFuncionarios.HighEmphasis = true;
             this.btn_limparFuncionarios.Icon = null;
-            this.btn_limparFuncionarios.Location = new System.Drawing.Point(569, 95);
+            this.btn_limparFuncionarios.Location = new System.Drawing.Point(806, 179);
             this.btn_limparFuncionarios.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.btn_limparFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_limparFuncionarios.Name = "btn_limparFuncionarios";
             this.btn_limparFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_limparFuncionarios.Size = new System.Drawing.Size(72, 24);
+            this.btn_limparFuncionarios.Size = new System.Drawing.Size(121, 24);
             this.btn_limparFuncionarios.TabIndex = 46;
             this.btn_limparFuncionarios.Text = "Limpar";
             this.btn_limparFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1029,12 +1029,12 @@ namespace appBugInn
             this.btn_excluirFuncionarios.Depth = 0;
             this.btn_excluirFuncionarios.HighEmphasis = true;
             this.btn_excluirFuncionarios.Icon = null;
-            this.btn_excluirFuncionarios.Location = new System.Drawing.Point(478, 95);
+            this.btn_excluirFuncionarios.Location = new System.Drawing.Point(563, 179);
             this.btn_excluirFuncionarios.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.btn_excluirFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirFuncionarios.Name = "btn_excluirFuncionarios";
             this.btn_excluirFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(72, 24);
+            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(121, 24);
             this.btn_excluirFuncionarios.TabIndex = 45;
             this.btn_excluirFuncionarios.Text = "Excluir";
             this.btn_excluirFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -1053,7 +1053,7 @@ namespace appBugInn
             this.txt_usernameFuncionarios.HideSelection = true;
             this.txt_usernameFuncionarios.Hint = "Username";
             this.txt_usernameFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(334, 10);
+            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(656, 10);
             this.txt_usernameFuncionarios.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txt_usernameFuncionarios.MaxLength = 32767;
             this.txt_usernameFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1066,7 +1066,7 @@ namespace appBugInn
             this.txt_usernameFuncionarios.SelectionLength = 0;
             this.txt_usernameFuncionarios.SelectionStart = 0;
             this.txt_usernameFuncionarios.ShortcutsEnabled = true;
-            this.txt_usernameFuncionarios.Size = new System.Drawing.Size(318, 48);
+            this.txt_usernameFuncionarios.Size = new System.Drawing.Size(449, 48);
             this.txt_usernameFuncionarios.TabIndex = 14;
             this.txt_usernameFuncionarios.TabStop = false;
             this.txt_usernameFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1096,7 +1096,7 @@ namespace appBugInn
             this.txt_nomeFuncionarios.SelectionLength = 0;
             this.txt_nomeFuncionarios.SelectionStart = 0;
             this.txt_nomeFuncionarios.ShortcutsEnabled = true;
-            this.txt_nomeFuncionarios.Size = new System.Drawing.Size(306, 48);
+            this.txt_nomeFuncionarios.Size = new System.Drawing.Size(588, 48);
             this.txt_nomeFuncionarios.TabIndex = 12;
             this.txt_nomeFuncionarios.TabStop = false;
             this.txt_nomeFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1113,7 +1113,7 @@ namespace appBugInn
             this.txt_telefoneFuncionarios.HideSelection = true;
             this.txt_telefoneFuncionarios.Hint = "Telefone";
             this.txt_telefoneFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(11, 48);
+            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(11, 83);
             this.txt_telefoneFuncionarios.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txt_telefoneFuncionarios.MaxLength = 32767;
             this.txt_telefoneFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1141,12 +1141,12 @@ namespace appBugInn
             this.btn_criarFunciornarios.Depth = 0;
             this.btn_criarFunciornarios.HighEmphasis = true;
             this.btn_criarFunciornarios.Icon = null;
-            this.btn_criarFunciornarios.Location = new System.Drawing.Point(383, 95);
+            this.btn_criarFunciornarios.Location = new System.Drawing.Point(280, 179);
             this.btn_criarFunciornarios.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
             this.btn_criarFunciornarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_criarFunciornarios.Name = "btn_criarFunciornarios";
             this.btn_criarFunciornarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_criarFunciornarios.Size = new System.Drawing.Size(72, 24);
+            this.btn_criarFunciornarios.Size = new System.Drawing.Size(121, 24);
             this.btn_criarFunciornarios.TabIndex = 41;
             this.btn_criarFunciornarios.Text = "Criar";
             this.btn_criarFunciornarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1158,7 +1158,7 @@ namespace appBugInn
             // 
             this.chb_gestorFuncionarios.AutoSize = true;
             this.chb_gestorFuncionarios.Depth = 0;
-            this.chb_gestorFuncionarios.Location = new System.Drawing.Point(248, 96);
+            this.chb_gestorFuncionarios.Location = new System.Drawing.Point(486, 94);
             this.chb_gestorFuncionarios.Margin = new System.Windows.Forms.Padding(0);
             this.chb_gestorFuncionarios.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chb_gestorFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1179,7 +1179,7 @@ namespace appBugInn
             this.txt_passwordFuncionarios.HideSelection = true;
             this.txt_passwordFuncionarios.Hint = "Password";
             this.txt_passwordFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
-            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(11, 88);
+            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(656, 83);
             this.txt_passwordFuncionarios.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.txt_passwordFuncionarios.MaxLength = 32767;
             this.txt_passwordFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1192,7 +1192,7 @@ namespace appBugInn
             this.txt_passwordFuncionarios.SelectionLength = 0;
             this.txt_passwordFuncionarios.SelectionStart = 0;
             this.txt_passwordFuncionarios.ShortcutsEnabled = true;
-            this.txt_passwordFuncionarios.Size = new System.Drawing.Size(155, 48);
+            this.txt_passwordFuncionarios.Size = new System.Drawing.Size(449, 48);
             this.txt_passwordFuncionarios.TabIndex = 10;
             this.txt_passwordFuncionarios.TabStop = false;
             this.txt_passwordFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
