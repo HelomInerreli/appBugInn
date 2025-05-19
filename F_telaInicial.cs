@@ -827,44 +827,47 @@ namespace appBugInn
 
         private void mtv_dadosQuartos_Enter(object sender, EventArgs e)
         {
-            
-        
+
+
             try
             {
+                // Limpa a ListView antes de adicionar novos dados
+                mtv_dadosQuartos.Clear();
 
-                string[] dados = Funcionalidades.LerBaseDados("qSingle");
+                // Adiciona as colunas (apenas uma vez)
+                mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
 
-                if (dados.Length > 0)
+                // Lista de ficheiros a carregar
+                string[] ficheiros = { "qSingle", "qDuplos" };
+
+                foreach (var ficheiro in ficheiros)
                 {
-                    mtv_dadosReserva.Clear(); // Limpar tudo (colunas + itens)
+                    string[] dados = Funcionalidades.LerBaseDados(ficheiro);
 
-                    string[] colunas = dados[0].Split(';');
-
-                    // Adicionar colunas
-
-                    mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
-                    mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
-                    mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
-                    mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
-                   
-                    
-
-                    // Adicionar linhas
-                    for (int i = 1; i < dados.Length; i++)
+                    if (dados.Length > 1)
                     {
-                        string[] campos = dados[i].Split(';');
-                        ListViewItem item = new ListViewItem(campos[0]);
-                        for (int j = 1; j < campos.Length; j++)
+                        for (int i = 1; i < dados.Length; i++)
                         {
-                            item.SubItems.Add(campos[j]);
+                            string[] campos = dados[i].Split(';');
+                            if (campos.Length >= 4)
+                            {
+                                ListViewItem item = new ListViewItem(campos[0]);
+                                item.SubItems.Add(campos[1]);
+                                item.SubItems.Add(campos[2]);
+                                item.SubItems.Add(campos[3]);
+                                mtv_dadosQuartos.Items.Add(item);
+                            }
                         }
-                        mtv_dadosQuartos.Items.Add(item);
                     }
-
-                    mtv_dadosQuartos.View = View.Details;
-                    mtv_dadosQuartos.FullRowSelect = true;
                 }
-                else
+
+                mtv_dadosQuartos.View = View.Details;
+                mtv_dadosQuartos.FullRowSelect = true;
+
+                if (mtv_dadosQuartos.Items.Count == 0)
                 {
                     MessageBox.Show("Nenhum dado encontrado.");
                 }
@@ -881,6 +884,8 @@ namespace appBugInn
             {
                 MessageBox.Show($"Erro inesperado: {ex.Message}");
             }
+
+
 
         }
     }
