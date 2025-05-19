@@ -859,19 +859,19 @@ namespace appBugInn
 
                 }
 
-                foreach (var quarto in hotel.qDuplos)
-                {
+                //foreach (var quarto in hotel.qDuplos)
+                //{
 
-                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
-                    item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("Duplo");
-                    item.SubItems.Add(quarto.Conta.ToString());
-                    item.SubItems.Add(quarto.Livre.ToString());
-                    item.SubItems.Add(quarto.Status);
-                    item.SubItems.Add(quarto.Observacoes);
-                    mtv_dadosQuartos.Items.Add(item);
+                //    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                //    item.SubItems.Add(quarto.Andar.ToString());
+                //    item.SubItems.Add("Duplo");
+                //    item.SubItems.Add(quarto.Conta.ToString());
+                //    item.SubItems.Add(quarto.Livre.ToString());
+                //    item.SubItems.Add(quarto.Status);
+                //    item.SubItems.Add(quarto.Observacoes);
+                //    mtv_dadosQuartos.Items.Add(item);
 
-                }
+                //}
 
 
                 //    foreach (var ficheiro in ficheiros)
@@ -937,8 +937,22 @@ namespace appBugInn
                     txt_Status.Text = "Sim";
                 else
                     txt_Status.Text = "Não";
+
+                //// Ativa/desativa o switch de cama de casal para quartos duplos
+                //if (item.SubItems[2].Text == "Duplo")
+                //{
+                //    int numQuarto = int.Parse(item.SubItems[0].Text);
+                //    var quartoDuplo = hotel.qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                //    if (quartoDuplo != null)
+                //        sw_camaCasal.Checked = quartoDuplo.TipoCama.Trim().ToLower().Contains("casal");
+                //    else
+                //        sw_camaCasal.Checked = false;
+                //}
+                //else
+                //{
+                //    sw_camaCasal.Checked = false;
+                }
             }
         }
     }
-}
 
