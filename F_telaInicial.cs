@@ -819,6 +819,16 @@ namespace appBugInn
             }
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_diretoria_Enter(object sender, EventArgs e)
+        {
+            hotel.preencherFaturamento();
+        }
     }
 }
 

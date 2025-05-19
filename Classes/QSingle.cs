@@ -9,14 +9,14 @@ namespace appBugInn
     internal class QSingle : Quarto
 
     {
-        public double PrecoPorNoite { get; set; } // Preço por noite
-        public QSingle(int numQuarto, int andar, float conta, bool livre, string status, double precoPorNoite, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
+        public double PrecoPorNoite { get; set; } = 70;
+        public QSingle(int numQuarto, int andar, float conta, bool livre, string status, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
             {
-                PrecoPorNoite = precoPorNoite;
+
             }
-        public string linhaBDSingle()
+        public string linhaBD()
             {
-                return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{PrecoPorNoite};{Observacoes}";
+                return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{Observacoes}";
             }
         
     }

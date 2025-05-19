@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="Classes\Deluxe.cs" />
     <Compile Include="Classes\Duplo.cs" />
+    <Compile Include="Classes\Faturamento.cs" />
     <Compile Include="Classes\Funcionalidades.cs" />
     <Compile Include="Classes\Funcionario.cs" />
     <Compile Include="Classes\Hotel.cs" />
@@ -219,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BaseDados\algo.txt" />
+    <Content Include="BaseDados\faturamentos.txt" />
     <Content Include="BaseDados\funcionarios.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

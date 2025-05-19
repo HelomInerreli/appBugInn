@@ -8,12 +8,20 @@ namespace appBugInn
 {
     internal class Deluxe : Quarto
     {
-        public Deluxe(int numQuarto, int andar, float conta, bool livre, string status, double precoPorNoite, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
+        public string TipoVista { get; set; } // Tipo de vista (Mar, Montanha, etc.)
+        public bool Banheira { get; set; } // Indica se o quarto tem banheira
+        public double PrecoPorNoite { get; set; } = 200; // Preço por noite para o quarto Deluxe
+        public Deluxe(int numQuarto, int andar, float conta, bool livre, string status, string tipoVista, bool banheira, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
         {
-            float PrecoPorNoite = 200;
+            TipoVista = tipoVista; // Inicializa o tipo de vista
+            Banheira = banheira; // Define que o quarto Deluxe tem banheira
+
         }
 
-
+        public string linhaBD()
+        {
+            return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{TipoVista};{Banheira};{Observacoes}";
+        }
 
     }
 }
