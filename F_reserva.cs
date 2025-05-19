@@ -284,6 +284,11 @@ namespace appBugInn
         {
 
         }
+
+        private void materialCard2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

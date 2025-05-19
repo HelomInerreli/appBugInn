@@ -36,9 +36,9 @@ namespace appBugInn
             get => _nome;
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || !value.All(char.IsLetter)) // esta a verificar se o nome apenas contem letras :)
+                if (string.IsNullOrWhiteSpace(value) || !value.All(c => char.IsLetter(c) || c == ' '))
                 {
-                    throw new ArgumentException("O nome deve conter apenas letras e nao pode estar vazio.");
+                    throw new ArgumentException("O nome deve conter apenas letras e espaços, e não pode estar vazio.");
                 }
                 _nome = value;
             }
@@ -67,21 +67,22 @@ namespace appBugInn
             {
                 if (value.Date < DateTime.Today)
                 {
-                    throw new ArgumentException("A data de inicio tem de ser superior ao dia atual");
-                }
+                   throw new ArgumentException("A data de inicio tem de ser superior ao dia atual");
+               }
                 _dataInicio = value.Date;
 
-            }
+           }
         }
         public DateTime DataFim
         {
             get => _dataFim;
             set
             {
-                if (value.Date <= _dataInicio)
+                if (_dataInicio != default(DateTime) && value.Date <= _dataInicio)
                 {
                     throw new ArgumentException("A data do fim tem de ser superior a data do inicio da reserva");
                 }
+                _dataFim = value.Date;
             }
         }
         public string Email
@@ -100,11 +101,22 @@ namespace appBugInn
 
 
         }
-        internal Quarto TipoQuarto { get; set; }
-        public string NumeroPessoas { get; set; }
+        public string TipoQuarto { get; set; }
+        public int NumeroPessoas
+        {
+            get => _numeroPessoas;
+            set
+            {
+                if (value < 1 || value > 4)
+                {
+                    throw new ArgumentException("O número de pessoas deve ser entre 1 e 4.");
+                }
+                _numeroPessoas = value;
+            }
+        }
 
         // Construtor
-        internal Reserva(int id, string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, Quarto tipoQuarto, int numeroPessoas)
+        internal Reserva(int id, string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numeroPessoas)
         {
             Id = id;
             Nome = nome;
@@ -112,28 +124,30 @@ namespace appBugInn
             DataInicio = dataInicio;
             DataFim = dataFim;
             Email = email;
-            TipoQuarto = tipoQuarto; // agora guarda o quarto na reserva
-            _numeroPessoas = numeroPessoas;
-            string linha = $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto}";
+            TipoQuarto = tipoQuarto; // agora é string
+            NumeroPessoas = numeroPessoas;
+
+            string linha = $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto};{NumeroPessoas}";
 
             try
             {
-                // grava no ficheiro automaticamente
                 Funcionalidades.GravarBaseDados("reservas", linha);
             }
             catch (Exception ex)
             {
-                // mostra o erro
                 Console.WriteLine("Erro ao gravar reserva: " + ex.Message);
-
             }
-
-            _numeroPessoas = numeroPessoas;
         }
+
+        //public string linhaBDReservas()
+        //{
+        //    return $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto};{NumeroPessoas}";
+        //}
         public string linhaBDReservas()
         {
-            return $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto}";
+            return $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto};{NumeroPessoas}";
         }
+
 
 
         public TimeSpan CalcularDuracao()
@@ -149,12 +163,34 @@ namespace appBugInn
         public decimal CalcularPrecoTotal()
         {
             int dias = (int)CalcularDuracao().TotalDays;
-
             if (dias <= 0)
-                dias = 1; // Para garantir no mínimo 1 dia (evita erros)
+                dias = 1; // Para garantir no mínimo 1 dia
 
-            return (decimal)(dias * TipoQuarto.PrecoPorNoite);
+            // Defina os preços para cada tipo de quarto
+            decimal precoPorNoite = 0;
+            switch (TipoQuarto.ToLower())
+            {
+               
+                case "single":
+                    precoPorNoite = 70m;
+                    break;
+                case "duplo":
+                    precoPorNoite = 100m;
+                    break;
+                case "suite":
+                    precoPorNoite = 150m;
+                    break;
+                case "deluxe":
+                    precoPorNoite = 200m;
+                    break;
+                default:
+                    precoPorNoite = 0m; // Ou lance uma exceção se preferir
+                    break;
+            }
+
+            return dias * precoPorNoite;
         }
+
 
 
     }

@@ -1,4 +1,4 @@
-id;nome;telefone;email;dataInicio;dataFim;tipoQuarto;NumeroPessoas
-1;Henrique Magalhaes;912345678;henriquemag@gmail.com;2025-05-22;2025-05-22;Duplo;2
-2;Helom Valentim;932145876;helomval@sapo.pt;2025-05-19;2025-05-22;Suite;2
-3;Renato Maria Silva;933122455;renatosilva@gmail.com;2025-05-18;2025-05-26;Suite;3
+ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto;NumeroPessoas
+1;joao;123432123;joao@gmail.com;2025-05-19;2025-05-23;Deluxe;4
+2;jose;912345678;jose@gmail.com;2025-05-21;2025-05-23;Single;1
+3;henrique;912345876;ksksks@gmail.com;2025-05-20;2025-05-25;Single;1

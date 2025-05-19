@@ -211,34 +211,37 @@ namespace appBugInn
            // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        
-            public void CarregarReservas()
+
+        public void CarregarReservas()
         {
-            hreservas.Clear(); // Limpa a lista antes de carregar
+            hreservas.Clear();
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "reservas.txt");
+            if (!File.Exists(caminho))
+                return;
 
-            string[] linhas = Funcionalidades.LerBaseDados("reservas");
-            foreach (string linha in linhas.Skip(1))
+            var linhas = File.ReadAllLines(caminho);
+            for (int i = 1; i < linhas.Length; i++) // Ignora cabeçalho
             {
-                string[] dados = linha.Split(';');
-                if (dados.Length >= 8)
-                {
-                    int id = int.Parse(dados[0]);
-                    string nome = dados[1];
-                    int telefone = int.Parse(dados[2]);
-                    string email = dados[3];
-                    DateTime dataInicio = DateTime.Parse(dados[4]);
-                    DateTime dataFim = DateTime.Parse(dados[5]);
-                    string tipoQuartoStr = dados[6];
-                    int numeroPessoas = int.Parse(dados[7]);
+                var campos = linhas[i].Split(';');
+                if (campos.Length < 8) continue;
 
-                    // Aqui você pode passar null ou criar um objeto Quarto fictício só para exibir
-                    Reserva novaReserva = new Reserva(id, nome, telefone, email, dataInicio, dataFim, null,numeroPessoas);
-                    hreservas.Add(novaReserva);
-                }
+                if (!int.TryParse(campos[0], out int id)) continue;
+                string nome = campos[1];
+                if (!int.TryParse(campos[2], out int telefone)) continue;
+                string email = campos[3];
+                if (!DateTime.TryParse(campos[4], out DateTime dataInicio)) continue;
+                if (!DateTime.TryParse(campos[5], out DateTime dataFim)) continue;
+                string tipoQuarto = campos[6];
+                int numeroPessoas = 1;
+                if (!int.TryParse(campos[7], out numeroPessoas)) numeroPessoas = 1;
+
+                // Agora tipoQuarto é string
+                var reserva = new Reserva(id, nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
+                hreservas.Add(reserva);
             }
         }
 
-        
+
         public void AtualizarBaseDeDados()
         {
             string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "funcionarios.txt");
@@ -270,21 +273,23 @@ namespace appBugInn
             string caminhoAbsoluto = Path.GetFullPath(caminho);
             try
             {
-                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // `false` para sobrescrever o arquivo
+                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // false para sobrescrever
                 {
-                    sw.WriteLine("ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto"); // Escreve o cabeçalho novamente
+                    sw.WriteLine("ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto;NumeroPessoas"); // Cabeçalho correto
                     foreach (Reserva reserva in hreservas)
                     {
-                        sw.WriteLine($"{reserva.Id};{reserva.Nome};{reserva.Telefone};{reserva.Email};{reserva.DataInicio:yyyy-MM-dd};{reserva.DataFim:yyyy-MM-dd};{reserva.TipoQuarto}");
+                        // Só escreve reservas válidas (ignora nulos ou vazios)
+                        if (reserva != null)
+                            sw.WriteLine(reserva.linhaBDReservas());
                     }
                 }
-                //MessageBox.Show("Base de dados atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public void AdicionarFuncionarioModificado(string nome, string telefone, bool tipoFuncionario, string password, string username)
         {
             int novoId = hfuncionarios.Any() ? hfuncionarios.Max(f => f.Id) + 1 : 1;
@@ -295,26 +300,15 @@ namespace appBugInn
 
             MessageBox.Show($"Funcionário {nome} adicionado com sucesso");
         }
-        public void AdicionarReservaModificada(string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto,int numeroPessoas)
+        public void AdicionarReservaModificada(string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numeroPessoas)
         {
             int novoId = hreservas.Any() ? hreservas.Max(r => r.Id) + 1 : 1;
-            int numQuarto = int.Parse(tipoQuarto);
 
-            // Procura o quarto na lista de quartos
-            Quarto quarto = qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
-                            qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
-
-            if (quarto != null)
-            {
-                Reserva novaReserva = new Reserva(novoId, nome, telefone, email, dataInicio, dataFim, quarto, numeroPessoas);
-                hreservas.Add(novaReserva);
-                AtualizarBaseDadosReservas(); // Atualiza o .txt
-                MessageBox.Show($"Reserva para {nome} adicionada com sucesso");
-            }
-            else
-            {
-                MessageBox.Show($"Quarto número {tipoQuarto} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Agora tipoQuarto é string, não precisa buscar o objeto Quarto
+            Reserva novaReserva = new Reserva(novoId, nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
+            hreservas.Add(novaReserva);
+            AtualizarBaseDadosReservas(); // Atualiza o .txt
+            MessageBox.Show($"Reserva para {nome} adicionada com sucesso");
         }
 
         public void ModificarReserva(string nomeSelecionado, string novoNome, int novoTelefone, string novoEmail, DateTime novaDataInicio, DateTime novaDataFim, string novoTipoQuarto)
@@ -327,23 +321,17 @@ namespace appBugInn
                 reservaExistente.Email = novoEmail;
                 reservaExistente.DataInicio = novaDataInicio;
                 reservaExistente.DataFim = novaDataFim;
+                reservaExistente.TipoQuarto = novoTipoQuarto; // Agora é string
 
-                int numQuarto = int.Parse(novoTipoQuarto);
-                Quarto quarto = qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
-                              qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
-
-                if (quarto != null)
-                {
-                    reservaExistente.TipoQuarto = quarto;
-                    AtualizarBaseDadosReservas(); // Atualiza o .txt
-                    MessageBox.Show($"Reserva para {nomeSelecionado} modificada com sucesso");
-                }
-                else
-                {
-                    MessageBox.Show($"Quarto número {novoTipoQuarto} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                AtualizarBaseDadosReservas(); // Atualiza o .txt
+                MessageBox.Show($"Reserva para {nomeSelecionado} modificada com sucesso");
+            }
+            else
+            {
+                MessageBox.Show($"Reserva para {nomeSelecionado} não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public void ModificarFuncionario(string nomeSelecionado, string novoNome, string novoTelefone, bool novoTipoFuncionario, string novaPassword, string novoUsername)
         {
             Funcionario funcionarioExistente = hfuncionarios.FirstOrDefault(f => f.Nome == nomeSelecionado);
