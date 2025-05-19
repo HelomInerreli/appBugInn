@@ -26,7 +26,7 @@ namespace appBugInn
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
-            
+
 
             // No F_telaInicial
 
@@ -86,7 +86,7 @@ namespace appBugInn
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             }
         }
-        
+
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -258,7 +258,7 @@ namespace appBugInn
                 LimparCamposFuncionario();
             }
         }
-        
+
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
@@ -459,8 +459,8 @@ namespace appBugInn
 
                 // Atualiza a lista em memória e o ListView
 
-              //  hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, int.Parse(numeroPessoas));
-              //  AtualizarListViewReservas();
+                //  hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, int.Parse(numeroPessoas));
+                //  AtualizarListViewReservas();
                 mtv_dadosReserva.Refresh();
 
             }
@@ -612,7 +612,7 @@ namespace appBugInn
         }// Atualiza o ListeView com os funcionários existentes
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
-           dtp_dataInicioReserva.MinDate = DateTime.Today;
+            dtp_dataInicioReserva.MinDate = DateTime.Today;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -638,7 +638,7 @@ namespace appBugInn
         private void tb_funcionarios_Leave(object sender, EventArgs e)
         {
             LimparCamposFuncionario();
-        }   
+        }
 
         private void dtp_dataInicioReserva_ValueChanged_1(object sender, EventArgs e)
         {
@@ -647,7 +647,7 @@ namespace appBugInn
 
         private void dtp_dataFimReserva_ValueChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void dtp_dataFimReserva_Leave(object sender, EventArgs e)
@@ -672,7 +672,7 @@ namespace appBugInn
 
                     mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Nome", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Telefone",150, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Email", 250, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de inicio", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de fim", 150, HorizontalAlignment.Left);
@@ -711,12 +711,12 @@ namespace appBugInn
             {
                 MessageBox.Show($"Erro inesperado: {ex.Message}");
             }
-            
+
         }
 
         public void AtualizarListViewReservas()
         {
-           
+
             mtv_dadosReserva.Clear(); // Limpa colunas e itens
 
             // Adiciona colunas com base no ficheiro
@@ -739,22 +739,22 @@ namespace appBugInn
                 item.SubItems.Add(reserva.DataInicio.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(reserva.DataFim.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(reserva.TipoQuarto ?? "");
-                 item.SubItems.Add(reserva.NumeroPessoas.ToString());        
+                item.SubItems.Add(reserva.NumeroPessoas.ToString());
 
                 mtv_dadosReserva.Items.Add(item);
             }
 
             mtv_dadosReserva.View = View.Details;
             mtv_dadosReserva.FullRowSelect = true;
-        
 
-    }
+
+        }
 
         private void mtv_dadosReserva_Click(object sender, EventArgs e)
         {
-            
-        
-          
+
+
+
         }
 
         private void mtv_dadosReserva_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -777,7 +777,7 @@ namespace appBugInn
 
                 // Tipo de quarto
                 cb_TipoQuarto.SelectedItem = item.SubItems[6].Text;
-                cb_NumeroPessoas.SelectedItem= item.SubItems[7].Text;
+                cb_NumeroPessoas.SelectedItem = item.SubItems[7].Text;
             }
         }
 
@@ -834,35 +834,52 @@ namespace appBugInn
                 // Limpa a ListView antes de adicionar novos dados
                 mtv_dadosQuartos.Clear();
 
+                hotel.preencherQuartos();
+
                 // Adiciona as colunas (apenas uma vez)
                 mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Conta", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Livre", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Observações", 100, HorizontalAlignment.Left);
 
-                // Lista de ficheiros a carregar
-                string[] ficheiros = { "qSingle", "qDuplos" };
-
-                foreach (var ficheiro in ficheiros)
+                foreach (var quarto in hotel.qSingles)
                 {
-                    string[] dados = Funcionalidades.LerBaseDados(ficheiro);
 
-                    if (dados.Length > 1)
-                    {
-                        for (int i = 1; i < dados.Length; i++)
-                        {
-                            string[] campos = dados[i].Split(';');
-                            if (campos.Length >= 4)
-                            {
-                                ListViewItem item = new ListViewItem(campos[0]);
-                                item.SubItems.Add(campos[1]);
-                                item.SubItems.Add(campos[2]);
-                                item.SubItems.Add(campos[3]);
-                                mtv_dadosQuartos.Items.Add(item);
-                            }
-                        }
-                    }
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("single");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+
                 }
+
+
+                //    foreach (var ficheiro in ficheiros)
+                //{
+                //    string[] dados = Funcionalidades.LerBaseDados(ficheiro);
+
+                //    if (dados.Length > 1)
+                //    {
+                //        for (int i = 1; i < dados.Length; i++)
+                //        {
+                //            string[] campos = dados[i].Split(';');
+                //            if (campos.Length >= 4)
+                //            {
+                //                ListViewItem item = new ListViewItem(campos[0]);
+                //                item.SubItems.Add(campos[1]);
+                //                item.SubItems.Add(campos[2]);
+                //                item.SubItems.Add(campos[3]);
+                //////                mtv_dadosQuartos.Items.Add(item);
+                //////            }
+                ////        }
+                //    }
+                //}
 
                 mtv_dadosQuartos.View = View.Details;
                 mtv_dadosQuartos.FullRowSelect = true;
@@ -888,8 +905,18 @@ namespace appBugInn
 
 
         }
-    }
-    
-}
 
+        private void mtv_dadosQuartos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (mtv_dadosQuartos.SelectedItems.Count > 0)
+            {
+                ListViewItem item = mtv_dadosQuartos.SelectedItems[0];
+                // Preenche o campo txt_nQuarto com o número do quarto selecionado
+                txt_nQuarto.Text = item.SubItems[0].Text;
+                txt_Andar.Text = item.SubItems[1].Text;
+                txt_tQuarto.Text = item.SubItems[2].Text;
+            }
+        }
+    }
+}
 

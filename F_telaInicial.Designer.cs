@@ -67,14 +67,14 @@ namespace appBugInn
             this.materialSwitch3 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialSwitch2 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialTextBox4 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Andar = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_tQuarto = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Vista = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Status = new MaterialSkin.Controls.MaterialTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox9 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nQuarto = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Conta = new MaterialSkin.Controls.MaterialTextBox();
             this.tb_funcionarios = new System.Windows.Forms.TabPage();
             this.mtv_dadosFunc = new MaterialSkin.Controls.MaterialListView();
             this.cd_FuncionariosDados = new MaterialSkin.Controls.MaterialCard();
@@ -684,6 +684,7 @@ namespace appBugInn
             this.mtv_dadosQuartos.View = System.Windows.Forms.View.Details;
             this.mtv_dadosQuartos.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged_2);
             this.mtv_dadosQuartos.Enter += new System.EventHandler(this.mtv_dadosQuartos_Enter);
+            this.mtv_dadosQuartos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mtv_dadosQuartos_MouseDoubleClick);
             // 
             // materialCard7
             // 
@@ -691,14 +692,14 @@ namespace appBugInn
             this.materialCard7.Controls.Add(this.materialSwitch3);
             this.materialCard7.Controls.Add(this.materialSwitch2);
             this.materialCard7.Controls.Add(this.materialSwitch1);
-            this.materialCard7.Controls.Add(this.materialTextBox4);
-            this.materialCard7.Controls.Add(this.materialTextBox1);
-            this.materialCard7.Controls.Add(this.materialTextBox2);
-            this.materialCard7.Controls.Add(this.materialTextBox3);
+            this.materialCard7.Controls.Add(this.txt_Andar);
+            this.materialCard7.Controls.Add(this.txt_tQuarto);
+            this.materialCard7.Controls.Add(this.txt_Vista);
+            this.materialCard7.Controls.Add(this.txt_Status);
             this.materialCard7.Controls.Add(this.materialButton1);
             this.materialCard7.Controls.Add(this.materialButton2);
-            this.materialCard7.Controls.Add(this.materialTextBox7);
-            this.materialCard7.Controls.Add(this.materialTextBox9);
+            this.materialCard7.Controls.Add(this.txt_nQuarto);
+            this.materialCard7.Controls.Add(this.txt_Conta);
             this.materialCard7.Depth = 0;
             this.materialCard7.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -755,85 +756,85 @@ namespace appBugInn
             this.materialSwitch1.Text = "Jacuzzi";
             this.materialSwitch1.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox4
+            // txt_Andar
             // 
-            this.materialTextBox4.AnimateReadOnly = false;
-            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox4.Depth = 0;
-            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox4.Hint = "Andar";
-            this.materialTextBox4.LeadingIcon = global::appBugInn.Properties.Resources.building;
-            this.materialTextBox4.Location = new System.Drawing.Point(20, 203);
-            this.materialTextBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.materialTextBox4.MaxLength = 50;
-            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox4.Multiline = false;
-            this.materialTextBox4.Name = "materialTextBox4";
-            this.materialTextBox4.Size = new System.Drawing.Size(196, 50);
-            this.materialTextBox4.TabIndex = 48;
-            this.materialTextBox4.Text = "";
-            this.materialTextBox4.TrailingIcon = null;
-            this.materialTextBox4.UseAccent = false;
+            this.txt_Andar.AnimateReadOnly = false;
+            this.txt_Andar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Andar.Depth = 0;
+            this.txt_Andar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Andar.Hint = "Andar";
+            this.txt_Andar.LeadingIcon = global::appBugInn.Properties.Resources.building;
+            this.txt_Andar.Location = new System.Drawing.Point(20, 203);
+            this.txt_Andar.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Andar.MaxLength = 50;
+            this.txt_Andar.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Andar.Multiline = false;
+            this.txt_Andar.Name = "txt_Andar";
+            this.txt_Andar.Size = new System.Drawing.Size(196, 50);
+            this.txt_Andar.TabIndex = 48;
+            this.txt_Andar.Text = "";
+            this.txt_Andar.TrailingIcon = null;
+            this.txt_Andar.UseAccent = false;
             // 
-            // materialTextBox1
+            // txt_tQuarto
             // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.Hint = "Tipo de quarto";
-            this.materialTextBox1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.materialTextBox1.Location = new System.Drawing.Point(264, 38);
-            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(196, 50);
-            this.materialTextBox1.TabIndex = 45;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
-            this.materialTextBox1.UseAccent = false;
+            this.txt_tQuarto.AnimateReadOnly = false;
+            this.txt_tQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_tQuarto.Depth = 0;
+            this.txt_tQuarto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_tQuarto.Hint = "Tipo de quarto";
+            this.txt_tQuarto.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_tQuarto.Location = new System.Drawing.Point(264, 38);
+            this.txt_tQuarto.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_tQuarto.MaxLength = 50;
+            this.txt_tQuarto.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_tQuarto.Multiline = false;
+            this.txt_tQuarto.Name = "txt_tQuarto";
+            this.txt_tQuarto.Size = new System.Drawing.Size(196, 50);
+            this.txt_tQuarto.TabIndex = 45;
+            this.txt_tQuarto.Text = "";
+            this.txt_tQuarto.TrailingIcon = null;
+            this.txt_tQuarto.UseAccent = false;
             // 
-            // materialTextBox2
+            // txt_Vista
             // 
-            this.materialTextBox2.AnimateReadOnly = false;
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.Hint = "Vista";
-            this.materialTextBox2.LeadingIcon = global::appBugInn.Properties.Resources.mountain__1_;
-            this.materialTextBox2.Location = new System.Drawing.Point(264, 203);
-            this.materialTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(196, 50);
-            this.materialTextBox2.TabIndex = 46;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
-            this.materialTextBox2.UseAccent = false;
+            this.txt_Vista.AnimateReadOnly = false;
+            this.txt_Vista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Vista.Depth = 0;
+            this.txt_Vista.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Vista.Hint = "Vista";
+            this.txt_Vista.LeadingIcon = global::appBugInn.Properties.Resources.mountain__1_;
+            this.txt_Vista.Location = new System.Drawing.Point(264, 203);
+            this.txt_Vista.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Vista.MaxLength = 50;
+            this.txt_Vista.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Vista.Multiline = false;
+            this.txt_Vista.Name = "txt_Vista";
+            this.txt_Vista.Size = new System.Drawing.Size(196, 50);
+            this.txt_Vista.TabIndex = 46;
+            this.txt_Vista.Text = "";
+            this.txt_Vista.TrailingIcon = null;
+            this.txt_Vista.UseAccent = false;
             // 
-            // materialTextBox3
+            // txt_Status
             // 
-            this.materialTextBox3.AnimateReadOnly = false;
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox3.Hint = "Status";
-            this.materialTextBox3.LeadingIcon = global::appBugInn.Properties.Resources.check_list;
-            this.materialTextBox3.Location = new System.Drawing.Point(264, 122);
-            this.materialTextBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(196, 50);
-            this.materialTextBox3.TabIndex = 47;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.TrailingIcon = null;
-            this.materialTextBox3.UseAccent = false;
+            this.txt_Status.AnimateReadOnly = false;
+            this.txt_Status.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Status.Depth = 0;
+            this.txt_Status.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Status.Hint = "Status";
+            this.txt_Status.LeadingIcon = global::appBugInn.Properties.Resources.check_list;
+            this.txt_Status.Location = new System.Drawing.Point(264, 122);
+            this.txt_Status.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Status.MaxLength = 50;
+            this.txt_Status.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Status.Multiline = false;
+            this.txt_Status.Name = "txt_Status";
+            this.txt_Status.Size = new System.Drawing.Size(196, 50);
+            this.txt_Status.TabIndex = 47;
+            this.txt_Status.Text = "";
+            this.txt_Status.TrailingIcon = null;
+            this.txt_Status.UseAccent = false;
             // 
             // materialButton1
             // 
@@ -874,46 +875,46 @@ namespace appBugInn
             this.materialButton2.UseAccentColor = true;
             this.materialButton2.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox7
+            // txt_nQuarto
             // 
-            this.materialTextBox7.AnimateReadOnly = false;
-            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox7.Depth = 0;
-            this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox7.Hint = "Nº quarto";
-            this.materialTextBox7.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
-            this.materialTextBox7.Location = new System.Drawing.Point(11, 38);
-            this.materialTextBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.materialTextBox7.MaxLength = 50;
-            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox7.Multiline = false;
-            this.materialTextBox7.Name = "materialTextBox7";
-            this.materialTextBox7.Size = new System.Drawing.Size(205, 50);
-            this.materialTextBox7.TabIndex = 30;
-            this.materialTextBox7.Text = "";
-            this.materialTextBox7.TrailingIcon = null;
-            this.materialTextBox7.UseAccent = false;
-            this.materialTextBox7.TextChanged += new System.EventHandler(this.materialTextBox7_TextChanged);
+            this.txt_nQuarto.AnimateReadOnly = false;
+            this.txt_nQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nQuarto.Depth = 0;
+            this.txt_nQuarto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nQuarto.Hint = "Nº quarto";
+            this.txt_nQuarto.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
+            this.txt_nQuarto.Location = new System.Drawing.Point(11, 38);
+            this.txt_nQuarto.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_nQuarto.MaxLength = 50;
+            this.txt_nQuarto.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nQuarto.Multiline = false;
+            this.txt_nQuarto.Name = "txt_nQuarto";
+            this.txt_nQuarto.Size = new System.Drawing.Size(205, 50);
+            this.txt_nQuarto.TabIndex = 30;
+            this.txt_nQuarto.Text = "";
+            this.txt_nQuarto.TrailingIcon = null;
+            this.txt_nQuarto.UseAccent = false;
+            this.txt_nQuarto.TextChanged += new System.EventHandler(this.materialTextBox7_TextChanged);
             // 
-            // materialTextBox9
+            // txt_Conta
             // 
-            this.materialTextBox9.AnimateReadOnly = false;
-            this.materialTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox9.Depth = 0;
-            this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox9.Hint = "Conta";
-            this.materialTextBox9.LeadingIcon = global::appBugInn.Properties.Resources.euro_symbol_icon_2048x2048_jz6x8c3o;
-            this.materialTextBox9.Location = new System.Drawing.Point(20, 122);
-            this.materialTextBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.materialTextBox9.MaxLength = 50;
-            this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox9.Multiline = false;
-            this.materialTextBox9.Name = "materialTextBox9";
-            this.materialTextBox9.Size = new System.Drawing.Size(196, 50);
-            this.materialTextBox9.TabIndex = 32;
-            this.materialTextBox9.Text = "";
-            this.materialTextBox9.TrailingIcon = null;
-            this.materialTextBox9.UseAccent = false;
+            this.txt_Conta.AnimateReadOnly = false;
+            this.txt_Conta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Conta.Depth = 0;
+            this.txt_Conta.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Conta.Hint = "Conta";
+            this.txt_Conta.LeadingIcon = global::appBugInn.Properties.Resources.euro_symbol_icon_2048x2048_jz6x8c3o;
+            this.txt_Conta.Location = new System.Drawing.Point(20, 122);
+            this.txt_Conta.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Conta.MaxLength = 50;
+            this.txt_Conta.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Conta.Multiline = false;
+            this.txt_Conta.Name = "txt_Conta";
+            this.txt_Conta.Size = new System.Drawing.Size(196, 50);
+            this.txt_Conta.TabIndex = 32;
+            this.txt_Conta.Text = "";
+            this.txt_Conta.TrailingIcon = null;
+            this.txt_Conta.UseAccent = false;
             // 
             // tb_funcionarios
             // 
@@ -1566,14 +1567,14 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialButton btn_avançarDiaFimReserva;
         private MaterialSkin.Controls.MaterialButton btn_recuaDiaFimReserva;
         private MaterialSkin.Controls.MaterialCard materialCard7;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox4;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
+        private MaterialSkin.Controls.MaterialTextBox txt_Andar;
+        private MaterialSkin.Controls.MaterialTextBox txt_tQuarto;
+        private MaterialSkin.Controls.MaterialTextBox txt_Vista;
+        private MaterialSkin.Controls.MaterialTextBox txt_Status;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox9;
+        private MaterialSkin.Controls.MaterialTextBox txt_nQuarto;
+        private MaterialSkin.Controls.MaterialTextBox txt_Conta;
         private MaterialSkin.Controls.MaterialListView mtv_dadosQuartos;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch3;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch2;
