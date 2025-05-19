@@ -62,11 +62,7 @@ namespace appBugInn
             this.tb_checkIn = new System.Windows.Forms.TabPage();
             this.tb_checkOut = new System.Windows.Forms.TabPage();
             this.tb_gerirQuartos = new System.Windows.Forms.TabPage();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mtv_dadosQuartos = new MaterialSkin.Controls.MaterialListView();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
             this.materialSwitch3 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialSwitch2 = new MaterialSkin.Controls.MaterialSwitch();
@@ -655,7 +651,7 @@ namespace appBugInn
             // 
             // tb_gerirQuartos
             // 
-            this.tb_gerirQuartos.Controls.Add(this.materialListView1);
+            this.tb_gerirQuartos.Controls.Add(this.mtv_dadosQuartos);
             this.tb_gerirQuartos.Controls.Add(this.materialCard7);
             this.tb_gerirQuartos.ImageKey = "icons8-quarto-32.png";
             this.tb_gerirQuartos.Location = new System.Drawing.Point(4, 39);
@@ -666,51 +662,28 @@ namespace appBugInn
             this.tb_gerirQuartos.Text = "GERIR QUARTOS";
             this.tb_gerirQuartos.UseVisualStyleBackColor = true;
             // 
-            // materialListView1
+            // mtv_dadosQuartos
             // 
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader12});
-            this.materialListView1.Depth = 0;
-            this.materialListView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(0, 334);
-            this.materialListView1.Margin = new System.Windows.Forms.Padding(1);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(67, 33);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(1279, 244);
-            this.materialListView1.TabIndex = 42;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
-            this.materialListView1.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged_2);
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Nº";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Tipo";
-            this.columnHeader9.Width = 100;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Andar";
-            this.columnHeader10.Width = 100;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Status";
-            this.columnHeader12.Width = 100;
+            this.mtv_dadosQuartos.AutoSizeTable = false;
+            this.mtv_dadosQuartos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mtv_dadosQuartos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtv_dadosQuartos.Depth = 0;
+            this.mtv_dadosQuartos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mtv_dadosQuartos.FullRowSelect = true;
+            this.mtv_dadosQuartos.HideSelection = false;
+            this.mtv_dadosQuartos.Location = new System.Drawing.Point(0, 334);
+            this.mtv_dadosQuartos.Margin = new System.Windows.Forms.Padding(1);
+            this.mtv_dadosQuartos.MinimumSize = new System.Drawing.Size(67, 33);
+            this.mtv_dadosQuartos.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mtv_dadosQuartos.MouseState = MaterialSkin.MouseState.OUT;
+            this.mtv_dadosQuartos.Name = "mtv_dadosQuartos";
+            this.mtv_dadosQuartos.OwnerDraw = true;
+            this.mtv_dadosQuartos.Size = new System.Drawing.Size(1279, 244);
+            this.mtv_dadosQuartos.TabIndex = 42;
+            this.mtv_dadosQuartos.UseCompatibleStateImageBehavior = false;
+            this.mtv_dadosQuartos.View = System.Windows.Forms.View.Details;
+            this.mtv_dadosQuartos.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged_2);
+            this.mtv_dadosQuartos.Enter += new System.EventHandler(this.mtv_dadosQuartos_Enter);
             // 
             // materialCard7
             // 
@@ -1601,11 +1574,7 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox9;
-        private MaterialSkin.Controls.MaterialListView materialListView1;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private MaterialSkin.Controls.MaterialListView mtv_dadosQuartos;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch3;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch2;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch1;

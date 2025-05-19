@@ -824,7 +824,67 @@ namespace appBugInn
         {
 
         }
+
+        private void mtv_dadosQuartos_Enter(object sender, EventArgs e)
+        {
+            
+        
+            try
+            {
+
+                string[] dados = Funcionalidades.LerBaseDados("qSingle");
+
+                if (dados.Length > 0)
+                {
+                    mtv_dadosReserva.Clear(); // Limpar tudo (colunas + itens)
+
+                    string[] colunas = dados[0].Split(';');
+
+                    // Adicionar colunas
+
+                    mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
+                    mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
+                    mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
+                    mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
+                   
+                    
+
+                    // Adicionar linhas
+                    for (int i = 1; i < dados.Length; i++)
+                    {
+                        string[] campos = dados[i].Split(';');
+                        ListViewItem item = new ListViewItem(campos[0]);
+                        for (int j = 1; j < campos.Length; j++)
+                        {
+                            item.SubItems.Add(campos[j]);
+                        }
+                        mtv_dadosQuartos.Items.Add(item);
+                    }
+
+                    mtv_dadosQuartos.View = View.Details;
+                    mtv_dadosQuartos.FullRowSelect = true;
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum dado encontrado.");
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show($"Erro: O ficheiro não foi encontrado. Detalhes: {ex.Message}");
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Erro de formato nos dados. Detalhes: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex.Message}");
+            }
+
+        }
     }
+    
 }
 
 
