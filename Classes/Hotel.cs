@@ -1,7 +1,9 @@
+using appBugInn.Classes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,10 +12,13 @@ namespace appBugInn
 {
     internal class Hotel
     {
+        public List<Funcionario> hfuncionarios = new List<Funcionario>();
+        public List<Reserva> hreservas = new List<Reserva>();
         public List<Funcionario> funcionarios = new List<Funcionario>();
         public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
+        public List<CheckIn> checkIn = new List<CheckIn>();
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -114,11 +119,6 @@ namespace appBugInn
             return retorno;
         }
 
-
-
-
-        public List<Funcionario> hfuncionarios = new List<Funcionario>();
-        public List<Reserva> hreservas = new List<Reserva>();
 
         public Hotel() 
         {
@@ -348,6 +348,28 @@ namespace appBugInn
 
                 MessageBox.Show($"Funcionário {nomeSelecionado} modificado com sucesso");
             }
+        }
+
+
+        //-------------------------CHECKIn--------------------------------------
+     
+        public void AdicionarCheckIn(string nomeReserva, double subtotal, bool checkOut, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numQuarto, string hospede1, string hospede2, string hospede3)
+        {
+            int novoId = checkIn.Any() ? checkIn.Max(c => c.Id) + 1 : 1;
+            CheckIn novoCheckIn = new CheckIn(novoId,nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
+             checkIn.Add(novoCheckIn);
+            Funcionalidades.GravarBaseDados("checkin", novoCheckIn.linhaCheckIn());
+        }
+
+        public void gravarCheckIn()
+        {
+            //Apagar a base de dados
+            string linha = "";
+            foreach (var item in checkIn)
+            {
+                linha += item.linhaCheckIn() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("checkin", linha);
         }
 
     }

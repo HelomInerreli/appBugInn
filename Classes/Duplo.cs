@@ -14,7 +14,7 @@ namespace appBugInn
         public Duplo(int numQuarto, int andar, float conta, bool livre, string status, double precoPorNoite, string tipoCama, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
 
         {
-            PrecoPorNoite = precoPorNoite;
+            PrecoPorNoite = 100;
             TipoCama = tipoCama; // Inicializa o tipo de cama
 
 

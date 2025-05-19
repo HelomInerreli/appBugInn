@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using appBugInn.Classes;
 
 namespace appBugInn
 {
@@ -26,7 +27,7 @@ namespace appBugInn
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
-            
+
 
             // No F_telaInicial
 
@@ -86,7 +87,7 @@ namespace appBugInn
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             }
         }
-        
+
         private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -258,7 +259,7 @@ namespace appBugInn
                 LimparCamposFuncionario();
             }
         }
-        
+
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
@@ -459,8 +460,8 @@ namespace appBugInn
 
                 // Atualiza a lista em memória e o ListView
 
-              //  hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, int.Parse(numeroPessoas));
-              //  AtualizarListViewReservas();
+                //  hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, int.Parse(numeroPessoas));
+                //  AtualizarListViewReservas();
                 mtv_dadosReserva.Refresh();
 
             }
@@ -612,7 +613,7 @@ namespace appBugInn
         }// Atualiza o ListeView com os funcionários existentes
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
-           dtp_dataInicioReserva.MinDate = DateTime.Today;
+            dtp_dataInicioReserva.MinDate = DateTime.Today;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -638,7 +639,7 @@ namespace appBugInn
         private void tb_funcionarios_Leave(object sender, EventArgs e)
         {
             LimparCamposFuncionario();
-        }   
+        }
 
         private void dtp_dataInicioReserva_ValueChanged_1(object sender, EventArgs e)
         {
@@ -647,7 +648,7 @@ namespace appBugInn
 
         private void dtp_dataFimReserva_ValueChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void dtp_dataFimReserva_Leave(object sender, EventArgs e)
@@ -672,7 +673,7 @@ namespace appBugInn
 
                     mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Nome", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Telefone",150, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Email", 250, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de inicio", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de fim", 150, HorizontalAlignment.Left);
@@ -711,12 +712,12 @@ namespace appBugInn
             {
                 MessageBox.Show($"Erro inesperado: {ex.Message}");
             }
-            
+
         }
 
         public void AtualizarListViewReservas()
         {
-           
+
             mtv_dadosReserva.Clear(); // Limpa colunas e itens
 
             // Adiciona colunas com base no ficheiro
@@ -739,22 +740,22 @@ namespace appBugInn
                 item.SubItems.Add(reserva.DataInicio.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(reserva.DataFim.ToString("yyyy-MM-dd"));
                 item.SubItems.Add(reserva.TipoQuarto ?? "");
-                 item.SubItems.Add(reserva.NumeroPessoas.ToString());        
+                item.SubItems.Add(reserva.NumeroPessoas.ToString());
 
                 mtv_dadosReserva.Items.Add(item);
             }
 
             mtv_dadosReserva.View = View.Details;
             mtv_dadosReserva.FullRowSelect = true;
-        
 
-    }
+
+        }
 
         private void mtv_dadosReserva_Click(object sender, EventArgs e)
         {
-            
-        
-          
+
+
+
         }
 
         private void mtv_dadosReserva_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -777,7 +778,7 @@ namespace appBugInn
 
                 // Tipo de quarto
                 cb_TipoQuarto.SelectedItem = item.SubItems[6].Text;
-                cb_NumeroPessoas.SelectedItem= item.SubItems[7].Text;
+                cb_NumeroPessoas.SelectedItem = item.SubItems[7].Text;
             }
         }
 
@@ -817,6 +818,72 @@ namespace appBugInn
             {
                 MessageBox.Show("Selecione uma reserva para excluir.");
             }
+
+        }
+
+        private void btn_pesquisar_Click(object sender, EventArgs e)
+        {
+            F_listaReserva listaReserva = new F_listaReserva(this);
+            listaReserva.Show();
+        }
+
+        public void receberDadoseReserva(string nome, string telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numeroPessoas)
+        {
+
+            // Preenche os campos da aba de check-in
+            txt_nomeCheckIn.Text = nome;
+            txt_telefoneCheckIn.Text = telefone;
+            txt_emailCheckIn.Text = email;
+            txt_nPessoasCheckIn.Text = numeroPessoas.ToString();
+            txt_quartoCheckIn.Text = tipoQuarto;
+            txt_dataCheckIn.Text = dataInicio.ToString("dd/MM/yyyy");
+            txt_dataCheckOut.Text = dataFim.ToString("dd/MM/yyyy");
+            txt_subtotal.Text = CalcularSubtotal(tipoQuarto, dataInicio, dataFim).ToString("C");
+
+            // Habilita/desabilita os campos de hóspedes conforme o número de pessoas
+            txt_hospede1.Enabled = numeroPessoas >= 1;
+            txt_hospede2.Enabled = numeroPessoas >= 2;
+            txt_hospede3.Enabled = numeroPessoas >= 3;
+
+            // Limpa os campos não usados
+            if (numeroPessoas < 1) txt_hospede1.Text = "";
+            if (numeroPessoas < 2) txt_hospede2.Text = "";
+            if (numeroPessoas < 3) txt_hospede3.Text = "";
+
+            // Seleciona a tab de check-in
+            materialTabControl1.SelectedTab = tb_checkIn;
+        }
+
+        private double CalcularSubtotal(string tipoQuarto, DateTime dataInicio, DateTime dataFim)
+        {
+            double precoPorNoite = 0;
+            hotel.preencherQuartos();
+
+            // Buscar o preço conforme o tipo de quarto
+            switch (tipoQuarto)
+            {
+                case "Single":
+                    // Pega o primeiro quarto disponível como referência de preço
+                    if (hotel.qSingles.Count > 0)
+                        precoPorNoite = hotel.qSingles[0].PrecoPorNoite;
+                    break;
+                case "Duplo":
+                    if (hotel.qDuplos.Count > 0)
+                        precoPorNoite = hotel.qDuplos[0].PrecoPorNoite;
+                    break;
+                    // Adicione outros tipos se necessário
+                    // case "Suite": ...
+                    // case "Deluxe": ...
+            }
+
+            int numeroDias = (dataFim - dataInicio).Days;
+            if (numeroDias < 1) numeroDias = 1; // Garante pelo menos 1 diária
+
+            return precoPorNoite * numeroDias;
+        }
+
+        private void btn_criarCheckIn_Click(object sender, EventArgs e)
+        {
 
         }
     }

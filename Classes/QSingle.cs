@@ -12,12 +12,13 @@ namespace appBugInn
         public double PrecoPorNoite { get; set; } // Preço por noite
         public QSingle(int numQuarto, int andar, float conta, bool livre, string status, double precoPorNoite, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
             {
-                PrecoPorNoite = precoPorNoite;
+                PrecoPorNoite = 70;
             }
         public string linhaBDSingle()
             {
                 return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{PrecoPorNoite};{Observacoes}";
             }
         
+  
     }
 }
