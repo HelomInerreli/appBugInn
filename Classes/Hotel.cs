@@ -18,6 +18,7 @@ namespace appBugInn
         public List<Suite> qSuites = new List<Suite>();
         public List<Deluxe> qDeluxes = new List<Deluxe>();
         public List<Faturamento> faturamentos = new List<Faturamento>();
+        //Teste de commit
 
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
