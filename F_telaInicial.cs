@@ -825,75 +825,36 @@ namespace appBugInn
 
         }
 
+      
         private void mtv_dadosQuartos_Enter(object sender, EventArgs e)
         {
-
-
             try
             {
-                // NÃO ESTÁ A LIMPAR OS DADOS 
+                //Limpa as colunas
                 mtv_dadosQuartos.Clear();
 
                 hotel.preencherQuartos();
 
-                // Adiciona as colunas (apenas uma vez)
+                // Adiciona as colunas
                 mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Conta", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Livre", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Observações", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Observações", 200, HorizontalAlignment.Left);
 
                 foreach (var quarto in hotel.qSingles)
                 {
-
                     ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
                     item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("single");
+                    item.SubItems.Add("Single"); 
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
                     item.SubItems.Add(quarto.Observacoes);
                     mtv_dadosQuartos.Items.Add(item);
-
                 }
-
-                //foreach (var quarto in hotel.qDuplos)
-                //{
-
-                //    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
-                //    item.SubItems.Add(quarto.Andar.ToString());
-                //    item.SubItems.Add("Duplo");
-                //    item.SubItems.Add(quarto.Conta.ToString());
-                //    item.SubItems.Add(quarto.Livre.ToString());
-                //    item.SubItems.Add(quarto.Status);
-                //    item.SubItems.Add(quarto.Observacoes);
-                //    mtv_dadosQuartos.Items.Add(item);
-
-                //}
-
-
-                //    foreach (var ficheiro in ficheiros)
-                //{
-                //    string[] dados = Funcionalidades.LerBaseDados(ficheiro);
-
-                //    if (dados.Length > 1)
-                //    {
-                //        for (int i = 1; i < dados.Length; i++)
-                //        {
-                //            string[] campos = dados[i].Split(';');
-                //            if (campos.Length >= 4)
-                //            {
-                //                ListViewItem item = new ListViewItem(campos[0]);
-                //                item.SubItems.Add(campos[1]);
-                //                item.SubItems.Add(campos[2]);
-                //                item.SubItems.Add(campos[3]);
-                //////                mtv_dadosQuartos.Items.Add(item);
-                //////            }
-                ////        }
-                //    }
-                //}
 
                 mtv_dadosQuartos.View = View.Details;
                 mtv_dadosQuartos.FullRowSelect = true;
@@ -915,9 +876,6 @@ namespace appBugInn
             {
                 MessageBox.Show($"Erro inesperado: {ex.Message}");
             }
-
-
-
         }
 
         private void mtv_dadosQuartos_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -930,29 +888,13 @@ namespace appBugInn
                 txt_Andar.Text = item.SubItems[1].Text;
                 txt_tQuarto.Text = item.SubItems[2].Text;
                 txt_Conta.Text = item.SubItems[3].Text;
-
-                // Campo "Livre" (bool) está na coluna 4
-                string livreValue = item.SubItems[4].Text.Trim().ToLower();
-                if (livreValue == "true" || livreValue == "sim" || livreValue == "yes" || livreValue == "1")
-                    txt_Status.Text = "Sim";
-                else
-                    txt_Status.Text = "Não";
-
-                //// Ativa/desativa o switch de cama de casal para quartos duplos
-                //if (item.SubItems[2].Text == "Duplo")
-                //{
-                //    int numQuarto = int.Parse(item.SubItems[0].Text);
-                //    var quartoDuplo = hotel.qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
-                //    if (quartoDuplo != null)
-                //        sw_camaCasal.Checked = quartoDuplo.TipoCama.Trim().ToLower().Contains("casal");
-                //    else
-                //        sw_camaCasal.Checked = false;
-                //}
-                //else
-                //{
-                //    sw_camaCasal.Checked = false;
-                }
             }
         }
+
+        private void tb_gerirQuartos_Enter(object sender, EventArgs e)
+        {
+            //Testar erro
+        }
     }
+}
 

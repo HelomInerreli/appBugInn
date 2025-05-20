@@ -14,6 +14,8 @@ namespace appBugInn
         public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
+        //public List<Suite> qSuites = new List<Suite>();
+        //public List<Deluxe> qDeuxe = new List<Deluxe>();
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -49,15 +51,34 @@ namespace appBugInn
                 }
             }
 
-            List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("qDuplos", "Duplo");
-            foreach (var item in qDuplo)
-            {
-                if (item is Duplo duplo)
-                {
-                    qDuplos.Add(duplo);
-                }
+            //List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("qDuplos", "Duplo");
+            //foreach (var item in qDuplo)
+            //{
+            //    if (item is Duplo duplo)
+            //    {
+            //        qDuplos.Add(duplo);
+            //    }
+            //}
+
+            //List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
+            //foreach (var item in qSuite)
+            //{
+            //    if (item is Suite suite)
+            //    {
+            //        qSuite.Add(suite);
+            //    }
+            //}
+
+            //List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxe", "Deluxe");
+            //{
+            //    if (item is Deluxe deluxe)
+            //    {
+            //        qDeluxe.Add(deluxe);
+            //    }
+
             }
         }
+             
 
         public void gravarFuncionario()
         {

@@ -661,6 +661,7 @@ namespace appBugInn
             this.tb_gerirQuartos.TabIndex = 4;
             this.tb_gerirQuartos.Text = "GERIR QUARTOS";
             this.tb_gerirQuartos.UseVisualStyleBackColor = true;
+            this.tb_gerirQuartos.Enter += new System.EventHandler(this.tb_gerirQuartos_Enter);
             // 
             // mtv_dadosQuartos
             // 
