@@ -1,1 +1,2 @@
-NumQuarto;Andar;Conta;Livre;Status
+numQuarto;andar;conta;livre;status;TipoVista;observacoes
+101;1;0;true;Livre;Mar;Quarto Livre para ocupação

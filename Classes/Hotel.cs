@@ -19,6 +19,10 @@ namespace appBugInn
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
         public List<CheckIn> checkIn = new List<CheckIn>();
+        public List<Suite> qSuites = new List<Suite>();
+        public List<Deluxe> qDeluxes = new List<Deluxe>();
+        public List<Faturamento> faturamentos = new List<Faturamento>();
+
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -62,6 +66,22 @@ namespace appBugInn
                     qDuplos.Add(duplo);
                 }
             }
+            List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
+            foreach (var item in qSuite)
+            {
+                if (item is Suite suite)
+                {
+                    qSuites.Add(suite);
+                }
+            }
+            List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxes", "Deluxe");
+            foreach (var item in qDeluxe)
+            {
+                if (item is Deluxe deluxe)
+                {
+                    qDeluxes.Add(deluxe);
+                }
+            }
         }
 
         public void gravarFuncionario()
@@ -92,16 +112,31 @@ namespace appBugInn
             string linha = "";
             foreach (var item in qSingles)
             {
-                linha += item.linhaBDSingle() + "\n";
+                linha += item.linhaBD() + "\n";
             }
             Funcionalidades.GravarBaseDados("Single", linha);
-            ////Apagar a base de dados
-            //linha = "";
-            //foreach (var item in qDuplos)
-            //{
-            //    linha += item.linhaBDQuarto() + "\n";
-            //}
-            //Funcionalidades.GravarBaseDados("Duplo", linha);
+
+            linha = "";
+            foreach (var item in qDuplos)
+            {
+                linha += item.linhaBD() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("Duplo", linha);
+
+            linha = "";
+            foreach (var item in qSuites)
+            {
+                linha += item.linhaBD() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("Suite", linha);
+            
+            linha = "";
+            foreach (var item in qDeluxes)
+            {
+                linha += item.linhaBD() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("Deluxe", linha);
+
         }
 
         public List<int> verificaQuartosVaziosSingle()
@@ -116,6 +151,42 @@ namespace appBugInn
 
             }
 
+            return retorno;
+        }
+        public List<int> verificaQuartosVaziosDuplo()
+        {
+            List<int> retorno = new List<int>();
+            for (int i = 0; i < qDuplos.Count; i++)
+            {
+                if (qDuplos[i].Livre == true)
+                {
+                    retorno.Add(qDuplos[i].NumQuarto);
+                }
+            }
+            return retorno;
+        }
+        public List<int> verificaQuartosVaziosSuite()
+        {
+            List<int> retorno = new List<int>();
+            for (int i = 0; i < qSuites.Count; i++)
+            {
+                if (qSuites[i].Livre == true)
+                {
+                    retorno.Add(qSuites[i].NumQuarto);
+                }
+            }
+            return retorno;
+        }
+        public List<int> verificaQuartosVaziosDeluxe()
+        {
+            List<int> retorno = new List<int>();
+            for (int i = 0; i < qDeluxes.Count; i++)
+            {
+                if (qDeluxes[i].Livre == true)
+                {
+                    retorno.Add(qDeluxes[i].NumQuarto);
+                }
+            }
             return retorno;
         }
 
@@ -380,6 +451,14 @@ namespace appBugInn
                 if (item is CheckIn checkin)
                 {
                     checkIn.Add(checkin);
+        public void preencherFaturamento()
+        {
+            List<object> func = Funcionalidades.CriarObjetosDoTexto("faturamentos", "Faturamento");
+            foreach (var item in func)
+            {
+                if (item is Faturamento faturamento)
+                {
+                    faturamentos.Add(faturamento);
                 }
             }
         }
@@ -409,6 +488,17 @@ namespace appBugInn
                 MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void gravarFaturamento()
+        {
+            //apagar base de dados
+            string linha = "";
+            foreach (var item in faturamentos)
+            {
+                linha += item.linhaBD() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("faturamentos", linha);
+        }
+
     }
 
 }

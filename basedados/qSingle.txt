@@ -1,3 +1,3 @@
-numQuarto;andar;conta;livre;status;precoPorNoite;observacoes
-101;1;0;true;Livre;70;Quarto Livre para ocupação
-102;1;0;false;Ocupado;70;Quarto em utilizacao
+numQuarto;andar;conta;livre;status;observacoes
+101;1;0;true;Livre;Quarto Livre para ocupação
+102;1;0;false;Ocupado;Quarto em utilizacao
