@@ -372,6 +372,43 @@ namespace appBugInn
             Funcionalidades.GravarBaseDados("checkin", linha);
         }
 
+        public void preencherCheckIn()
+        {
+            List<object> func = Funcionalidades.CriarObjetosDoTexto("checkin", "CheckIn");
+            foreach (var item in func)
+            {
+                if (item is CheckIn checkin)
+                {
+                    checkIn.Add(checkin);
+                }
+            }
+        }
+
+        public void AtualizarBaseDeDadosCheckIn()
+        {
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "checkin.txt");
+            string caminhoAbsoluto = Path.GetFullPath(caminho);
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // `false` para sobrescrever o arquivo
+                {
+                    sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3\r\n"); // Escreve o cabeçalho novamente
+
+                    foreach (CheckIn func in checkIn)
+                    {
+                        sw.WriteLine($"{func.Id};{func.NomeReserva};{func.Subtotal};{func.CheckOut};{func.DataInicio:dd/MM/yyyy};{func.DataFim:dd/MM/yyyy};{func.TipoQuarto};{func.NumQuarto};{func.Hospede1};{func.Hospede2};{func.Hospede3}");
+                    }
+
+                }
+
+                //MessageBox.Show("Base de dados atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }

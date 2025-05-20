@@ -102,37 +102,39 @@ namespace appBugInn.Classes
             get => _hospede1;
             set
             {
-                // Verifica se o nome contém apenas letras e espaços
-                // e não está vazio ou nulo
-                if (string.IsNullOrWhiteSpace(value) || !value.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
-                    throw new ArgumentException("O nome da reserva não pode estar vazio.");
+                if (!string.IsNullOrWhiteSpace(value) && !value.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                    throw new ArgumentException("O nome do hospede1 deve conter apenas letras e espaços.");
+
                 _hospede1 = value;
             }
         }
-        public string Hospede2 {
+
+        public string Hospede2
+        {
             get => _hospede2;
             set
             {
-                // Verifica se o nome contém apenas letras e espaços
-                // e não está vazio ou nulo
-                if (string.IsNullOrWhiteSpace(value) || !value.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
-                    throw new ArgumentException("O nome da reserva não pode estar vazio.");
+                if (!string.IsNullOrWhiteSpace(value) && !value.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                    throw new ArgumentException("O nome do hospede2 deve conter apenas letras e espaços.");
+
                 _hospede2 = value;
             }
         }
-        public string Hospede3 {
+
+        public string Hospede3
+        {
             get => _hospede3;
             set
             {
-                // Verifica se o nome contém apenas letras e espaços
-                // e não está vazio ou nulo
-                if (string.IsNullOrWhiteSpace(value) || !value.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
-                    throw new ArgumentException("O nome da reserva não pode estar vazio.");
+                if (!string.IsNullOrWhiteSpace(value) && !value.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
+                    throw new ArgumentException("O nome do hospede3 deve conter apenas letras e espaços.");
+
                 _hospede3 = value;
             }
         }
 
-        
+
+
         public CheckIn(int id, string nomeReserva, double subtotal, bool checkOut, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numQuarto, string hospede1, string hospede2, string hospede3)
         {
             Id = id;

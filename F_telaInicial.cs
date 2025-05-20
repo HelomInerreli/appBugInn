@@ -841,14 +841,14 @@ namespace appBugInn
             txt_subtotal.Text = CalcularSubtotal(tipoQuarto, dataInicio, dataFim).ToString("C");
 
             // Habilita/desabilita os campos de hóspedes conforme o número de pessoas
-            txt_hospede1.Enabled = numeroPessoas >= 1;
-            txt_hospede2.Enabled = numeroPessoas >= 2;
-            txt_hospede3.Enabled = numeroPessoas >= 3;
+            txt_hospede1.Enabled = numeroPessoas >= 2;
+            txt_hospede2.Enabled = numeroPessoas >= 3;
+            txt_hospede3.Enabled = numeroPessoas >= 4;
 
             // Limpa os campos não usados
-            if (numeroPessoas < 1) txt_hospede1.Text = "";
-            if (numeroPessoas < 2) txt_hospede2.Text = "";
-            if (numeroPessoas < 3) txt_hospede3.Text = "";
+            if (numeroPessoas < 2) txt_hospede1.Text = "";
+            if (numeroPessoas < 3) txt_hospede2.Text = "";
+            if (numeroPessoas < 4) txt_hospede3.Text = "";
 
             // Seleciona a tab de check-in
             materialTabControl1.SelectedTab = tb_checkIn;
@@ -884,9 +884,199 @@ namespace appBugInn
 
         private void btn_criarCheckIn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string nomeReserva = txt_nomeCheckIn.Text.Trim();
+                string tipoQuarto = txt_quartoCheckIn.Text.Trim();
+                string hospede1 = txt_hospede1.Text.Trim();
+                string hospede2 = txt_hospede2.Text.Trim();
+                string hospede3 = txt_hospede3.Text.Trim();
+                string subtotalStr = txt_subtotal.Text.Replace("€", "").Trim();
+                string numQuartoStr = txt_idQuartoCheckIn.Text.Trim();
+                string dataInicioStr = txt_dataCheckIn.Text.Trim();
+                string dataFimStr = txt_dataCheckOut.Text.Trim();
+                int numeroPessoas = string.IsNullOrWhiteSpace(txt_nPessoasCheckIn.Text) ? 0 : int.Parse(txt_nPessoasCheckIn.Text);
 
+                if (string.IsNullOrWhiteSpace(nomeReserva) || string.IsNullOrWhiteSpace(tipoQuarto) ||
+                    string.IsNullOrWhiteSpace(subtotalStr) || string.IsNullOrWhiteSpace(numQuartoStr) ||
+                    string.IsNullOrWhiteSpace(dataInicioStr) || string.IsNullOrWhiteSpace(dataFimStr))
+                {
+                    MessageBox.Show("Preencha todos os campos obrigatórios do check-in.");
+                    return;
+                }
+
+                // Dicionário com capacidade de hóspedes extras (excluindo o titular da reserva)
+                Dictionary<string, int> capacidadeExtras = new Dictionary<string, int>
+                {
+                    { "Single", 0 },
+                    { "Duplo", 1 },
+                    { "Suite", 2 },
+                    { "Deluxe", 3 }
+                };
+
+                if (!capacidadeExtras.ContainsKey(tipoQuarto))
+                {
+                    MessageBox.Show("Tipo de quarto inválido.");
+                    return;
+                }
+
+                // Número esperado de hóspedes extras
+                int numeroExtras = capacidadeExtras[tipoQuarto];
+
+                // Validação dos campos de hóspedes adicionais
+                if (numeroExtras >= 1 && string.IsNullOrWhiteSpace(hospede1))
+                {
+                    MessageBox.Show("O primeiro hóspede adicional não foi preenchido.");
+                    return;
+                }
+                if (numeroExtras >= 2 && string.IsNullOrWhiteSpace(hospede2))
+                {
+                    MessageBox.Show("O segundo hóspede adicional não foi preenchido.");
+                    return;
+                }
+                if (numeroExtras >= 3 && string.IsNullOrWhiteSpace(hospede3))
+                {
+                    MessageBox.Show("O terceiro hóspede adicional não foi preenchido.");
+                    return;
+                }
+
+                double subtotal;
+                int numQuarto;
+                DateTime dataInicio, dataFim;
+
+                if (!double.TryParse(subtotalStr, out subtotal))
+                {
+                    MessageBox.Show("Subtotal inválido.");
+                    return;
+                }
+                if (!int.TryParse(numQuartoStr, out numQuarto))
+                {
+                    MessageBox.Show("Número do quarto inválido.");
+                    return;
+                }
+                if (!DateTime.TryParse(dataInicioStr, out dataInicio) || !DateTime.TryParse(dataFimStr, out dataFim))
+                {
+                    MessageBox.Show("Datas inválidas.");
+                    return;
+                }
+
+                bool checkOut = false; // Sempre false ao criar o check-in
+
+                hotel.AdicionarCheckIn(
+                    nomeReserva,
+                    subtotal,
+                    checkOut,
+                    dataInicio,
+                    dataFim,
+                    tipoQuarto,
+                    numQuarto,
+                    hospede1,
+                    hospede2,
+                    hospede3
+                );
+
+                MessageBox.Show("Check-in criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparCamposCheckIn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar check-in: " + ex.Message);
+            }
         }
-    }
+
+        public void LimparCamposCheckIn()
+        {
+            txt_nomeCheckIn.Text = "";
+            txt_telefoneCheckIn.Text = "";
+            txt_emailCheckIn.Text = "";
+            txt_nPessoasCheckIn.Text = "";
+            txt_quartoCheckIn.Text = "";
+            txt_dataCheckIn.Text = "";
+            txt_dataCheckOut.Text = "";
+            txt_subtotal.Text = "";
+            txt_idQuartoCheckIn.Text = "";
+            txt_nAndar.Text = "";
+            // Limpa os campos de hóspedes
+            txt_hospede1.Text = "";
+            txt_hospede2.Text = "";
+            txt_hospede3.Text = "";
+            // Desabilita os campos de hóspedes
+            txt_hospede1.Enabled = false;
+            txt_hospede2.Enabled = false;
+            txt_hospede3.Enabled = false;
+        }
+
+        private void tb_checkin_enter(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] dados = Funcionalidades.LerBaseDados("checkin"); // Lendo dados da reserva
+
+                if (dados.Length > 0)
+                {
+                    mtv_dadosCheckIn.Clear(); // Limpa tudo (colunas + itens)
+
+                    // Adiciona colunas apenas para os campos desejados
+                    mtv_dadosCheckIn.Columns.Add("ID", 60, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Nome Reserva", 180, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Subtotal", 120, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Check-out", 100, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Data Check-in", 120, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Data Check-out", 120, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Tipo Quarto", 150, HorizontalAlignment.Left);
+                    mtv_dadosCheckIn.Columns.Add("Andar", 80, HorizontalAlignment.Left);
+
+                    // Adicionar linhas
+                    for (int i = 1; i < dados.Length; i++)
+                    {
+                        string[] campos = dados[i].Split(';');
+
+                        // Verificação para evitar erro por índice inválido
+                        if (campos.Length < 8)
+                        {
+                            Console.WriteLine($"Erro: A linha {i} tem menos campos do que o esperado.");
+                            continue;
+                        }
+
+                        // Criar item apenas com os campos desejados
+                        ListViewItem item = new ListViewItem(campos[0]); // ID
+                        item.SubItems.Add(campos[1]); // Nome Reserva
+                        item.SubItems.Add(campos[2]); // Subtotal
+                        item.SubItems.Add(campos[3]); // Check-out
+                        item.SubItems.Add(campos[4]); // Data Check-in
+                        item.SubItems.Add(campos[5]); // Data Check-out
+                        item.SubItems.Add(campos[6]); // Tipo Quarto
+                        item.SubItems.Add(campos[7]); // Andar
+
+                        mtv_dadosCheckIn.Items.Add(item);
+                    }
+
+                    mtv_dadosCheckIn.View = View.Details;
+                    mtv_dadosCheckIn.FullRowSelect = true;
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma reserva encontrada.");
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show($"Erro: O ficheiro não foi encontrado. Detalhes: {ex.Message}");
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Erro de formato nos dados. Detalhes: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex.Message}");
+            }
+        }
+
+    } 
+
 }
+
+
 
 
