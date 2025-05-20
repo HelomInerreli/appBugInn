@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,6 +12,8 @@ namespace appBugInn
 {
     internal class Hotel
     {
+        public List<Funcionario> hfuncionarios = new List<Funcionario>();
+        public List<Reserva> hreservas = new List<Reserva>();
         public List<Funcionario> funcionarios = new List<Funcionario>();
         public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
@@ -20,6 +23,7 @@ namespace appBugInn
         public List<Faturamento> faturamentos = new List<Faturamento>();
         //Teste de commit
 
+        public List<CheckIn> checkIn = new List<CheckIn>();
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -187,11 +191,6 @@ namespace appBugInn
             return retorno;
         }
 
-
-
-
-        public List<Funcionario> hfuncionarios = new List<Funcionario>();
-        public List<Reserva> hreservas = new List<Reserva>();
 
         public Hotel() 
         {
@@ -434,6 +433,38 @@ namespace appBugInn
                 }
             }
         }
+        //-------------------------CHECKIn--------------------------------------
+     
+        public void AdicionarCheckIn(string nomeReserva, double subtotal, bool checkOut, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numQuarto, string hospede1, string hospede2, string hospede3)
+        {
+            int novoId = checkIn.Any() ? checkIn.Max(c => c.Id) + 1 : 1;
+            CheckIn novoCheckIn = new CheckIn(novoId,nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
+             checkIn.Add(novoCheckIn);
+            Funcionalidades.GravarBaseDados("checkin", novoCheckIn.linhaCheckIn());
+        }
+
+        public void gravarCheckIn()
+        {
+            //Apagar a base de dados
+            string linha = "";
+            foreach (var item in checkIn)
+            {
+                linha += item.linhaCheckIn() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("checkin", linha);
+        }
+
+        public void preencherCheckIn()
+        {
+            List<object> func = Funcionalidades.CriarObjetosDoTexto("checkin", "CheckIn");
+            foreach (var item in func)
+            {
+                if (item is CheckIn checkin)
+                {
+                    checkIn.Add(checkin);
+                }
+            }
+        }
 
         public void gravarFaturamento()
         {
@@ -446,6 +477,31 @@ namespace appBugInn
             Funcionalidades.GravarBaseDados("faturamentos", linha);
         }
 
+        public void AtualizarBaseDeDadosCheckIn()
+        {
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "checkin.txt");
+            string caminhoAbsoluto = Path.GetFullPath(caminho);
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // `false` para sobrescrever o arquivo
+                {
+                    sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3\r\n"); // Escreve o cabeçalho novamente
+
+                    foreach (CheckIn func in checkIn)
+                    {
+                        sw.WriteLine($"{func.Id};{func.NomeReserva};{func.Subtotal};{func.CheckOut};{func.DataInicio:dd/MM/yyyy};{func.DataFim:dd/MM/yyyy};{func.TipoQuarto};{func.NumQuarto};{func.Hospede1};{func.Hospede2};{func.Hospede3}");
+                    }
+
+                }
+
+                //MessageBox.Show("Base de dados atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }

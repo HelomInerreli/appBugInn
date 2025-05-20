@@ -60,6 +60,24 @@ namespace appBugInn
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tb_checkIn = new System.Windows.Forms.TabPage();
+            this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
+            this.txt_dataCheckOut = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_dataCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_pesquisar = new MaterialSkin.Controls.MaterialButton();
+            this.txt_subtotal = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nAndar = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_idQuartoCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_hospede1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_hospede2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_hospede3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nPessoasCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_quartoCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_criarCheckIn = new MaterialSkin.Controls.MaterialButton();
+            this.txt_nomeCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_telefoneCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_emailCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.tb_checkOut = new System.Windows.Forms.TabPage();
             this.tb_gerirQuartos = new System.Windows.Forms.TabPage();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -102,19 +120,22 @@ namespace appBugInn
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.materialFloatingActionButton1 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.tb_configuracoes = new System.Windows.Forms.TabPage();
             this.sw_darkMode = new MaterialSkin.Controls.MaterialSwitch();
             this.iconesMenu = new System.Windows.Forms.ImageList(this.components);
             this.novasImagensMenu = new System.Windows.Forms.ImageList(this.components);
+            this.mtv_dadosCheckIn = new MaterialSkin.Controls.MaterialListView();
             this.materialTabControl1.SuspendLayout();
             this.tb_reservas.SuspendLayout();
             this.mc_dadosReserva.SuspendLayout();
+            this.tb_checkIn.SuspendLayout();
+            this.materialCard5.SuspendLayout();
             this.tb_gerirQuartos.SuspendLayout();
             this.materialCard7.SuspendLayout();
             this.tb_funcionarios.SuspendLayout();
@@ -141,6 +162,7 @@ namespace appBugInn
             this.materialTabControl1.ImageList = this.iconesMenu;
             this.materialTabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
+            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
@@ -158,6 +180,8 @@ namespace appBugInn
             this.tb_home.Name = "tb_home";
             this.tb_home.Padding = new System.Windows.Forms.Padding(2);
             this.tb_home.Size = new System.Drawing.Size(1266, 850);
+            this.tb_home.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_home.Name = "tb_home";
             this.tb_home.TabIndex = 0;
             this.tb_home.Text = "HOME";
             this.tb_home.ToolTipText = "Home";
@@ -172,6 +196,7 @@ namespace appBugInn
             this.tb_reservas.Name = "tb_reservas";
             this.tb_reservas.Padding = new System.Windows.Forms.Padding(2);
             this.tb_reservas.Size = new System.Drawing.Size(1266, 850);
+            this.tb_reservas.Margin = new System.Windows.Forms.Padding(4);
             this.tb_reservas.TabIndex = 1;
             this.tb_reservas.Text = "RESERVAS";
             this.tb_reservas.UseVisualStyleBackColor = true;
@@ -261,7 +286,8 @@ namespace appBugInn
             "2",
             "3",
             "4"});
-            this.cb_NumeroPessoas.Location = new System.Drawing.Point(326, 129);
+            this.cb_NumeroPessoas.Location = new System.Drawing.Point(435, 159);
+            this.cb_NumeroPessoas.Margin = new System.Windows.Forms.Padding(4);
             this.cb_NumeroPessoas.MaxDropDownItems = 4;
             this.cb_NumeroPessoas.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_NumeroPessoas.Name = "cb_NumeroPessoas";
@@ -293,7 +319,8 @@ namespace appBugInn
             "Suite",
             "Deluxe",
             ""});
-            this.cb_TipoQuarto.Location = new System.Drawing.Point(457, 130);
+            this.cb_TipoQuarto.Location = new System.Drawing.Point(609, 160);
+            this.cb_TipoQuarto.Margin = new System.Windows.Forms.Padding(4);
             this.cb_TipoQuarto.MaxDropDownItems = 4;
             this.cb_TipoQuarto.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_TipoQuarto.Name = "cb_TipoQuarto";
@@ -306,7 +333,8 @@ namespace appBugInn
             // 
             this.dtp_dataFimReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataFimReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataFimReserva.Location = new System.Drawing.Point(830, 41);
+            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1107, 51);
+            this.dtp_dataFimReserva.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_dataFimReserva.Name = "dtp_dataFimReserva";
             this.dtp_dataFimReserva.Size = new System.Drawing.Size(122, 20);
             this.dtp_dataFimReserva.TabIndex = 49;
@@ -353,7 +381,8 @@ namespace appBugInn
             // 
             this.dtp_dataInicioReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataInicioReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(616, 41);
+            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(821, 51);
+            this.dtp_dataInicioReserva.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
             this.dtp_dataInicioReserva.Size = new System.Drawing.Size(123, 20);
             this.dtp_dataInicioReserva.TabIndex = 48;
@@ -503,7 +532,8 @@ namespace appBugInn
             this.txt_nomeReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_nomeReserva1.Hint = "Nome";
             this.txt_nomeReserva1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nomeReserva1.Location = new System.Drawing.Point(17, 17);
+            this.txt_nomeReserva1.Location = new System.Drawing.Point(23, 21);
+            this.txt_nomeReserva1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nomeReserva1.MaxLength = 50;
             this.txt_nomeReserva1.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_nomeReserva1.Multiline = false;
@@ -524,7 +554,8 @@ namespace appBugInn
             this.txt_telefoneReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_telefoneReserva1.Hint = "Telefone";
             this.txt_telefoneReserva1.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefoneReserva1.Location = new System.Drawing.Point(17, 129);
+            this.txt_telefoneReserva1.Location = new System.Drawing.Point(23, 159);
+            this.txt_telefoneReserva1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_telefoneReserva1.MaxLength = 50;
             this.txt_telefoneReserva1.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_telefoneReserva1.Multiline = false;
@@ -544,7 +575,8 @@ namespace appBugInn
             this.txt_emailReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_emailReserva1.Hint = "Email";
             this.txt_emailReserva1.LeadingIcon = global::appBugInn.Properties.Resources.email;
-            this.txt_emailReserva1.Location = new System.Drawing.Point(17, 73);
+            this.txt_emailReserva1.Location = new System.Drawing.Point(23, 90);
+            this.txt_emailReserva1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_emailReserva1.MaxLength = 50;
             this.txt_emailReserva1.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_emailReserva1.Multiline = false;
@@ -624,13 +656,389 @@ namespace appBugInn
             // 
             // tb_checkIn
             // 
+            this.tb_checkIn.Controls.Add(this.mtv_dadosCheckIn);
+            this.tb_checkIn.Controls.Add(this.materialCard5);
             this.tb_checkIn.ImageKey = "icons8-check-in-hotel-32.png";
             this.tb_checkIn.Location = new System.Drawing.Point(4, 39);
+            this.tb_checkIn.Margin = new System.Windows.Forms.Padding(4);
             this.tb_checkIn.Name = "tb_checkIn";
-            this.tb_checkIn.Size = new System.Drawing.Size(1266, 850);
+            this.tb_checkIn.Size = new System.Drawing.Size(1279, 578);
             this.tb_checkIn.TabIndex = 2;
             this.tb_checkIn.Text = "CHECK IN";
             this.tb_checkIn.UseVisualStyleBackColor = true;
+            this.tb_checkIn.Enter += new System.EventHandler(this.tb_checkin_enter);
+            // 
+            // materialCard5
+            // 
+            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.Controls.Add(this.txt_dataCheckOut);
+            this.materialCard5.Controls.Add(this.txt_dataCheckIn);
+            this.materialCard5.Controls.Add(this.btn_pesquisar);
+            this.materialCard5.Controls.Add(this.txt_subtotal);
+            this.materialCard5.Controls.Add(this.txt_nAndar);
+            this.materialCard5.Controls.Add(this.txt_idQuartoCheckIn);
+            this.materialCard5.Controls.Add(this.txt_hospede1);
+            this.materialCard5.Controls.Add(this.txt_hospede2);
+            this.materialCard5.Controls.Add(this.txt_hospede3);
+            this.materialCard5.Controls.Add(this.txt_nPessoasCheckIn);
+            this.materialCard5.Controls.Add(this.txt_quartoCheckIn);
+            this.materialCard5.Controls.Add(this.materialButton3);
+            this.materialCard5.Controls.Add(this.btn_criarCheckIn);
+            this.materialCard5.Controls.Add(this.txt_nomeCheckIn);
+            this.materialCard5.Controls.Add(this.txt_telefoneCheckIn);
+            this.materialCard5.Controls.Add(this.txt_emailCheckIn);
+            this.materialCard5.Depth = 0;
+            this.materialCard5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard5.Location = new System.Drawing.Point(0, 0);
+            this.materialCard5.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard5.Name = "materialCard5";
+            this.materialCard5.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard5.Size = new System.Drawing.Size(1279, 445);
+            this.materialCard5.TabIndex = 40;
+            // 
+            // txt_dataCheckOut
+            // 
+            this.txt_dataCheckOut.AnimateReadOnly = false;
+            this.txt_dataCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dataCheckOut.Depth = 0;
+            this.txt_dataCheckOut.Enabled = false;
+            this.txt_dataCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dataCheckOut.Hint = "Check Out";
+            this.txt_dataCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_dataCheckOut.Location = new System.Drawing.Point(418, 374);
+            this.txt_dataCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_dataCheckOut.MaxLength = 50;
+            this.txt_dataCheckOut.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_dataCheckOut.Multiline = false;
+            this.txt_dataCheckOut.Name = "txt_dataCheckOut";
+            this.txt_dataCheckOut.Size = new System.Drawing.Size(354, 50);
+            this.txt_dataCheckOut.TabIndex = 66;
+            this.txt_dataCheckOut.Text = "";
+            this.txt_dataCheckOut.TrailingIcon = null;
+            this.txt_dataCheckOut.UseAccent = false;
+            // 
+            // txt_dataCheckIn
+            // 
+            this.txt_dataCheckIn.AnimateReadOnly = false;
+            this.txt_dataCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dataCheckIn.Depth = 0;
+            this.txt_dataCheckIn.Enabled = false;
+            this.txt_dataCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dataCheckIn.Hint = "Check In";
+            this.txt_dataCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_dataCheckIn.Location = new System.Drawing.Point(23, 374);
+            this.txt_dataCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_dataCheckIn.MaxLength = 50;
+            this.txt_dataCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_dataCheckIn.Multiline = false;
+            this.txt_dataCheckIn.Name = "txt_dataCheckIn";
+            this.txt_dataCheckIn.Size = new System.Drawing.Size(354, 50);
+            this.txt_dataCheckIn.TabIndex = 65;
+            this.txt_dataCheckIn.Text = "";
+            this.txt_dataCheckIn.TrailingIcon = null;
+            this.txt_dataCheckIn.UseAccent = false;
+            // 
+            // btn_pesquisar
+            // 
+            this.btn_pesquisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_pesquisar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_pesquisar.Depth = 0;
+            this.btn_pesquisar.HighEmphasis = true;
+            this.btn_pesquisar.Icon = null;
+            this.btn_pesquisar.Location = new System.Drawing.Point(821, 321);
+            this.btn_pesquisar.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.btn_pesquisar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_pesquisar.Size = new System.Drawing.Size(100, 36);
+            this.btn_pesquisar.TabIndex = 64;
+            this.btn_pesquisar.Text = "Pesquisar";
+            this.btn_pesquisar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_pesquisar.UseAccentColor = false;
+            this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
+            // 
+            // txt_subtotal
+            // 
+            this.txt_subtotal.AnimateReadOnly = false;
+            this.txt_subtotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_subtotal.Depth = 0;
+            this.txt_subtotal.Enabled = false;
+            this.txt_subtotal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_subtotal.Hint = "Subtotal";
+            this.txt_subtotal.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_subtotal.Location = new System.Drawing.Point(877, 234);
+            this.txt_subtotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_subtotal.MaxLength = 50;
+            this.txt_subtotal.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_subtotal.Multiline = false;
+            this.txt_subtotal.Name = "txt_subtotal";
+            this.txt_subtotal.Size = new System.Drawing.Size(354, 50);
+            this.txt_subtotal.TabIndex = 63;
+            this.txt_subtotal.Text = "";
+            this.txt_subtotal.TrailingIcon = null;
+            this.txt_subtotal.UseAccent = false;
+            // 
+            // txt_nAndar
+            // 
+            this.txt_nAndar.AnimateReadOnly = false;
+            this.txt_nAndar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nAndar.Depth = 0;
+            this.txt_nAndar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nAndar.Hint = "Nº Andar";
+            this.txt_nAndar.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_nAndar.Location = new System.Drawing.Point(418, 307);
+            this.txt_nAndar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nAndar.MaxLength = 50;
+            this.txt_nAndar.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nAndar.Multiline = false;
+            this.txt_nAndar.Name = "txt_nAndar";
+            this.txt_nAndar.Size = new System.Drawing.Size(354, 50);
+            this.txt_nAndar.TabIndex = 62;
+            this.txt_nAndar.Text = "";
+            this.txt_nAndar.TrailingIcon = null;
+            this.txt_nAndar.UseAccent = false;
+            // 
+            // txt_idQuartoCheckIn
+            // 
+            this.txt_idQuartoCheckIn.AnimateReadOnly = false;
+            this.txt_idQuartoCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_idQuartoCheckIn.Depth = 0;
+            this.txt_idQuartoCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_idQuartoCheckIn.Hint = "Nº Quarto";
+            this.txt_idQuartoCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_idQuartoCheckIn.Location = new System.Drawing.Point(23, 307);
+            this.txt_idQuartoCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_idQuartoCheckIn.MaxLength = 50;
+            this.txt_idQuartoCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_idQuartoCheckIn.Multiline = false;
+            this.txt_idQuartoCheckIn.Name = "txt_idQuartoCheckIn";
+            this.txt_idQuartoCheckIn.Size = new System.Drawing.Size(354, 50);
+            this.txt_idQuartoCheckIn.TabIndex = 61;
+            this.txt_idQuartoCheckIn.Text = "";
+            this.txt_idQuartoCheckIn.TrailingIcon = null;
+            this.txt_idQuartoCheckIn.UseAccent = false;
+            // 
+            // txt_hospede1
+            // 
+            this.txt_hospede1.AnimateReadOnly = false;
+            this.txt_hospede1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_hospede1.Depth = 0;
+            this.txt_hospede1.Enabled = false;
+            this.txt_hospede1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_hospede1.Hint = "Nome";
+            this.txt_hospede1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_hospede1.Location = new System.Drawing.Point(657, 21);
+            this.txt_hospede1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_hospede1.MaxLength = 50;
+            this.txt_hospede1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_hospede1.Multiline = false;
+            this.txt_hospede1.Name = "txt_hospede1";
+            this.txt_hospede1.Size = new System.Drawing.Size(599, 50);
+            this.txt_hospede1.TabIndex = 60;
+            this.txt_hospede1.Text = "";
+            this.txt_hospede1.TrailingIcon = null;
+            this.txt_hospede1.UseAccent = false;
+            // 
+            // txt_hospede2
+            // 
+            this.txt_hospede2.AnimateReadOnly = false;
+            this.txt_hospede2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_hospede2.Depth = 0;
+            this.txt_hospede2.Enabled = false;
+            this.txt_hospede2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_hospede2.Hint = "Nome";
+            this.txt_hospede2.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_hospede2.Location = new System.Drawing.Point(657, 95);
+            this.txt_hospede2.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_hospede2.MaxLength = 50;
+            this.txt_hospede2.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_hospede2.Multiline = false;
+            this.txt_hospede2.Name = "txt_hospede2";
+            this.txt_hospede2.Size = new System.Drawing.Size(599, 50);
+            this.txt_hospede2.TabIndex = 59;
+            this.txt_hospede2.Text = "";
+            this.txt_hospede2.TrailingIcon = null;
+            this.txt_hospede2.UseAccent = false;
+            // 
+            // txt_hospede3
+            // 
+            this.txt_hospede3.AnimateReadOnly = false;
+            this.txt_hospede3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_hospede3.Depth = 0;
+            this.txt_hospede3.Enabled = false;
+            this.txt_hospede3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_hospede3.Hint = "Nome";
+            this.txt_hospede3.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_hospede3.Location = new System.Drawing.Point(657, 166);
+            this.txt_hospede3.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_hospede3.MaxLength = 50;
+            this.txt_hospede3.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_hospede3.Multiline = false;
+            this.txt_hospede3.Name = "txt_hospede3";
+            this.txt_hospede3.Size = new System.Drawing.Size(599, 50);
+            this.txt_hospede3.TabIndex = 58;
+            this.txt_hospede3.Text = "";
+            this.txt_hospede3.TrailingIcon = null;
+            this.txt_hospede3.UseAccent = false;
+            // 
+            // txt_nPessoasCheckIn
+            // 
+            this.txt_nPessoasCheckIn.AnimateReadOnly = false;
+            this.txt_nPessoasCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nPessoasCheckIn.Depth = 0;
+            this.txt_nPessoasCheckIn.Enabled = false;
+            this.txt_nPessoasCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nPessoasCheckIn.Hint = "Nº Pessoas";
+            this.txt_nPessoasCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_nPessoasCheckIn.Location = new System.Drawing.Point(418, 234);
+            this.txt_nPessoasCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nPessoasCheckIn.MaxLength = 50;
+            this.txt_nPessoasCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nPessoasCheckIn.Multiline = false;
+            this.txt_nPessoasCheckIn.Name = "txt_nPessoasCheckIn";
+            this.txt_nPessoasCheckIn.Size = new System.Drawing.Size(354, 50);
+            this.txt_nPessoasCheckIn.TabIndex = 57;
+            this.txt_nPessoasCheckIn.Text = "";
+            this.txt_nPessoasCheckIn.TrailingIcon = null;
+            this.txt_nPessoasCheckIn.UseAccent = false;
+            // 
+            // txt_quartoCheckIn
+            // 
+            this.txt_quartoCheckIn.AnimateReadOnly = false;
+            this.txt_quartoCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_quartoCheckIn.Depth = 0;
+            this.txt_quartoCheckIn.Enabled = false;
+            this.txt_quartoCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_quartoCheckIn.Hint = "Tipo Quarto";
+            this.txt_quartoCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_quartoCheckIn.Location = new System.Drawing.Point(23, 234);
+            this.txt_quartoCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_quartoCheckIn.MaxLength = 50;
+            this.txt_quartoCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_quartoCheckIn.Multiline = false;
+            this.txt_quartoCheckIn.Name = "txt_quartoCheckIn";
+            this.txt_quartoCheckIn.Size = new System.Drawing.Size(354, 50);
+            this.txt_quartoCheckIn.TabIndex = 56;
+            this.txt_quartoCheckIn.Text = "";
+            this.txt_quartoCheckIn.TrailingIcon = null;
+            this.txt_quartoCheckIn.UseAccent = false;
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AutoSize = false;
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(1141, 321);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(90, 36);
+            this.materialButton3.TabIndex = 55;
+            this.materialButton3.Text = "Excluir";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // btn_criarCheckIn
+            // 
+            this.btn_criarCheckIn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_criarCheckIn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_criarCheckIn.Depth = 0;
+            this.btn_criarCheckIn.HighEmphasis = true;
+            this.btn_criarCheckIn.Icon = null;
+            this.btn_criarCheckIn.Location = new System.Drawing.Point(978, 321);
+            this.btn_criarCheckIn.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.btn_criarCheckIn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_criarCheckIn.Name = "btn_criarCheckIn";
+            this.btn_criarCheckIn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_criarCheckIn.Size = new System.Drawing.Size(90, 36);
+            this.btn_criarCheckIn.TabIndex = 41;
+            this.btn_criarCheckIn.Text = "Registar";
+            this.btn_criarCheckIn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_criarCheckIn.UseAccentColor = false;
+            this.btn_criarCheckIn.UseVisualStyleBackColor = true;
+            this.btn_criarCheckIn.Click += new System.EventHandler(this.btn_criarCheckIn_Click);
+            // 
+            // txt_nomeCheckIn
+            // 
+            this.txt_nomeCheckIn.AnimateReadOnly = false;
+            this.txt_nomeCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nomeCheckIn.Depth = 0;
+            this.txt_nomeCheckIn.Enabled = false;
+            this.txt_nomeCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeCheckIn.Hint = "Nome";
+            this.txt_nomeCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nomeCheckIn.Location = new System.Drawing.Point(23, 21);
+            this.txt_nomeCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nomeCheckIn.MaxLength = 50;
+            this.txt_nomeCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nomeCheckIn.Multiline = false;
+            this.txt_nomeCheckIn.Name = "txt_nomeCheckIn";
+            this.txt_nomeCheckIn.Size = new System.Drawing.Size(599, 50);
+            this.txt_nomeCheckIn.TabIndex = 30;
+            this.txt_nomeCheckIn.Text = "";
+            this.txt_nomeCheckIn.TrailingIcon = null;
+            this.txt_nomeCheckIn.UseAccent = false;
+            // 
+            // txt_telefoneCheckIn
+            // 
+            this.txt_telefoneCheckIn.AnimateReadOnly = false;
+            this.txt_telefoneCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefoneCheckIn.Depth = 0;
+            this.txt_telefoneCheckIn.Enabled = false;
+            this.txt_telefoneCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_telefoneCheckIn.Hint = "Telefone";
+            this.txt_telefoneCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_telefoneCheckIn.Location = new System.Drawing.Point(23, 95);
+            this.txt_telefoneCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_telefoneCheckIn.MaxLength = 50;
+            this.txt_telefoneCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_telefoneCheckIn.Multiline = false;
+            this.txt_telefoneCheckIn.Name = "txt_telefoneCheckIn";
+            this.txt_telefoneCheckIn.Size = new System.Drawing.Size(599, 50);
+            this.txt_telefoneCheckIn.TabIndex = 31;
+            this.txt_telefoneCheckIn.Text = "";
+            this.txt_telefoneCheckIn.TrailingIcon = null;
+            this.txt_telefoneCheckIn.UseAccent = false;
+            // 
+            // txt_emailCheckIn
+            // 
+            this.txt_emailCheckIn.AnimateReadOnly = false;
+            this.txt_emailCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_emailCheckIn.Depth = 0;
+            this.txt_emailCheckIn.Enabled = false;
+            this.txt_emailCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_emailCheckIn.Hint = "Email";
+            this.txt_emailCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.email;
+            this.txt_emailCheckIn.Location = new System.Drawing.Point(23, 166);
+            this.txt_emailCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_emailCheckIn.MaxLength = 50;
+            this.txt_emailCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_emailCheckIn.Multiline = false;
+            this.txt_emailCheckIn.Name = "txt_emailCheckIn";
+            this.txt_emailCheckIn.Size = new System.Drawing.Size(599, 50);
+            this.txt_emailCheckIn.TabIndex = 32;
+            this.txt_emailCheckIn.Text = "";
+            this.txt_emailCheckIn.TrailingIcon = null;
+            this.txt_emailCheckIn.UseAccent = false;
+            // 
+            // tb_checkOut
+            // 
+            this.tb_checkOut.ImageKey = "icons8-hotel-chekc-fora-32.png";
+            this.tb_checkOut.Location = new System.Drawing.Point(4, 39);
+            this.tb_checkOut.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_checkOut.Name = "tb_checkOut";
+            this.tb_checkOut.Size = new System.Drawing.Size(1279, 578);
+            this.tb_checkOut.TabIndex = 3;
+            this.tb_checkOut.Text = "CHECK OUT";
+            this.tb_checkOut.UseVisualStyleBackColor = true;
             // 
             // tb_gerirQuartos
             // 
@@ -638,6 +1046,7 @@ namespace appBugInn
             this.tb_gerirQuartos.Controls.Add(this.materialCard7);
             this.tb_gerirQuartos.ImageKey = "icons8-bedroom-interior-32.png";
             this.tb_gerirQuartos.Location = new System.Drawing.Point(4, 39);
+            this.tb_gerirQuartos.Margin = new System.Windows.Forms.Padding(4);
             this.tb_gerirQuartos.Name = "tb_gerirQuartos";
             this.tb_gerirQuartos.Size = new System.Drawing.Size(1266, 850);
             this.tb_gerirQuartos.TabIndex = 4;
@@ -658,9 +1067,9 @@ namespace appBugInn
             this.materialListView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(0, 652);
+            this.materialListView1.Location = new System.Drawing.Point(0, 334);
             this.materialListView1.Margin = new System.Windows.Forms.Padding(1);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(50, 27);
+            this.materialListView1.MinimumSize = new System.Drawing.Size(67, 33);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
@@ -707,11 +1116,11 @@ namespace appBugInn
             this.materialCard7.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard7.Location = new System.Drawing.Point(0, 0);
-            this.materialCard7.Margin = new System.Windows.Forms.Padding(7);
+            this.materialCard7.Margin = new System.Windows.Forms.Padding(9);
             this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard7.Name = "materialCard7";
-            this.materialCard7.Padding = new System.Windows.Forms.Padding(7);
-            this.materialCard7.Size = new System.Drawing.Size(1266, 263);
+            this.materialCard7.Padding = new System.Windows.Forms.Padding(9);
+            this.materialCard7.Size = new System.Drawing.Size(1279, 324);
             this.materialCard7.TabIndex = 41;
             // 
             // materialSwitch3
@@ -767,7 +1176,7 @@ namespace appBugInn
             this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox4.Hint = "Andar";
             this.materialTextBox4.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.materialTextBox4.Location = new System.Drawing.Point(15, 165);
+            this.materialTextBox4.Location = new System.Drawing.Point(20, 203);
             this.materialTextBox4.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox4.MaxLength = 50;
             this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
@@ -787,7 +1196,7 @@ namespace appBugInn
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox1.Hint = "Tipo de quarto";
             this.materialTextBox1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.materialTextBox1.Location = new System.Drawing.Point(198, 31);
+            this.materialTextBox1.Location = new System.Drawing.Point(264, 38);
             this.materialTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox1.MaxLength = 50;
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
@@ -807,7 +1216,7 @@ namespace appBugInn
             this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox2.Hint = "Vista";
             this.materialTextBox2.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.materialTextBox2.Location = new System.Drawing.Point(198, 165);
+            this.materialTextBox2.Location = new System.Drawing.Point(264, 203);
             this.materialTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox2.MaxLength = 50;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
@@ -827,7 +1236,7 @@ namespace appBugInn
             this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox3.Hint = "Status";
             this.materialTextBox3.LeadingIcon = global::appBugInn.Properties.Resources.email;
-            this.materialTextBox3.Location = new System.Drawing.Point(198, 99);
+            this.materialTextBox3.Location = new System.Drawing.Point(264, 122);
             this.materialTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox3.MaxLength = 50;
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
@@ -886,7 +1295,7 @@ namespace appBugInn
             this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox7.Hint = "Nº quarto";
             this.materialTextBox7.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
-            this.materialTextBox7.Location = new System.Drawing.Point(8, 31);
+            this.materialTextBox7.Location = new System.Drawing.Point(11, 38);
             this.materialTextBox7.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox7.MaxLength = 50;
             this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
@@ -907,7 +1316,7 @@ namespace appBugInn
             this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox9.Hint = "Conta";
             this.materialTextBox9.LeadingIcon = global::appBugInn.Properties.Resources.euro_symbol_icon_2048x2048_jz6x8c3o;
-            this.materialTextBox9.Location = new System.Drawing.Point(15, 99);
+            this.materialTextBox9.Location = new System.Drawing.Point(20, 122);
             this.materialTextBox9.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox9.MaxLength = 50;
             this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
@@ -925,6 +1334,7 @@ namespace appBugInn
             this.tb_funcionarios.Controls.Add(this.cd_FuncionariosDados);
             this.tb_funcionarios.ImageKey = "icons8-add-user-male-32.png";
             this.tb_funcionarios.Location = new System.Drawing.Point(4, 39);
+            this.tb_funcionarios.Margin = new System.Windows.Forms.Padding(4);
             this.tb_funcionarios.Name = "tb_funcionarios";
             this.tb_funcionarios.Size = new System.Drawing.Size(1266, 850);
             this.tb_funcionarios.TabIndex = 5;
@@ -942,9 +1352,9 @@ namespace appBugInn
             this.mtv_dadosFunc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosFunc.FullRowSelect = true;
             this.mtv_dadosFunc.HideSelection = false;
-            this.mtv_dadosFunc.Location = new System.Drawing.Point(0, 604);
+            this.mtv_dadosFunc.Location = new System.Drawing.Point(0, 275);
             this.mtv_dadosFunc.Margin = new System.Windows.Forms.Padding(2);
-            this.mtv_dadosFunc.MinimumSize = new System.Drawing.Size(100, 52);
+            this.mtv_dadosFunc.MinimumSize = new System.Drawing.Size(133, 64);
             this.mtv_dadosFunc.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosFunc.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosFunc.Name = "mtv_dadosFunc";
@@ -1032,7 +1442,7 @@ namespace appBugInn
             this.txt_usernameFuncionarios.HideSelection = true;
             this.txt_usernameFuncionarios.Hint = "Username";
             this.txt_usernameFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(492, 8);
+            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(656, 10);
             this.txt_usernameFuncionarios.Margin = new System.Windows.Forms.Padding(1);
             this.txt_usernameFuncionarios.MaxLength = 32767;
             this.txt_usernameFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1062,7 +1472,7 @@ namespace appBugInn
             this.txt_nomeFuncionarios.HideSelection = true;
             this.txt_nomeFuncionarios.Hint = "Nome";
             this.txt_nomeFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nomeFuncionarios.Location = new System.Drawing.Point(8, 8);
+            this.txt_nomeFuncionarios.Location = new System.Drawing.Point(11, 10);
             this.txt_nomeFuncionarios.Margin = new System.Windows.Forms.Padding(1);
             this.txt_nomeFuncionarios.MaxLength = 32767;
             this.txt_nomeFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1092,7 +1502,7 @@ namespace appBugInn
             this.txt_telefoneFuncionarios.HideSelection = true;
             this.txt_telefoneFuncionarios.Hint = "Telefone";
             this.txt_telefoneFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(8, 67);
+            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(11, 83);
             this.txt_telefoneFuncionarios.Margin = new System.Windows.Forms.Padding(1);
             this.txt_telefoneFuncionarios.MaxLength = 32767;
             this.txt_telefoneFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1158,7 +1568,7 @@ namespace appBugInn
             this.txt_passwordFuncionarios.HideSelection = true;
             this.txt_passwordFuncionarios.Hint = "Password";
             this.txt_passwordFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
-            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(492, 67);
+            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(656, 83);
             this.txt_passwordFuncionarios.Margin = new System.Windows.Forms.Padding(1);
             this.txt_passwordFuncionarios.MaxLength = 32767;
             this.txt_passwordFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
@@ -1185,12 +1595,13 @@ namespace appBugInn
             this.tb_diretoria.Controls.Add(this.materialCard3);
             this.tb_diretoria.Controls.Add(this.materialCard4);
             this.tb_diretoria.Controls.Add(this.materialCard2);
-            this.tb_diretoria.Controls.Add(this.materialFloatingActionButton1);
             this.tb_diretoria.Controls.Add(this.materialCard1);
+            this.tb_diretoria.Controls.Add(this.materialFloatingActionButton1);
             this.tb_diretoria.ImageKey = "icons8-dashboard-32.png";
             this.tb_diretoria.Location = new System.Drawing.Point(4, 39);
+            this.tb_diretoria.Margin = new System.Windows.Forms.Padding(4);
             this.tb_diretoria.Name = "tb_diretoria";
-            this.tb_diretoria.Size = new System.Drawing.Size(1266, 850);
+            this.tb_diretoria.Size = new System.Drawing.Size(1279, 578);
             this.tb_diretoria.TabIndex = 6;
             this.tb_diretoria.Text = "DASHBOARD";
             this.tb_diretoria.UseVisualStyleBackColor = true;
@@ -1200,7 +1611,8 @@ namespace appBugInn
             // 
             this.materialFloatingActionButton3.Depth = 0;
             this.materialFloatingActionButton3.Icon = global::appBugInn.Properties.Resources.icons8_satisfaction_48;
-            this.materialFloatingActionButton3.Location = new System.Drawing.Point(901, 53);
+            this.materialFloatingActionButton3.Location = new System.Drawing.Point(1201, 65);
+            this.materialFloatingActionButton3.Margin = new System.Windows.Forms.Padding(4);
             this.materialFloatingActionButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
             this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
@@ -1410,6 +1822,19 @@ namespace appBugInn
             this.label1.UseCompatibleTextRendering = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // materialFloatingActionButton1
+            // 
+            this.materialFloatingActionButton1.Depth = 0;
+            this.materialFloatingActionButton1.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
+            this.materialFloatingActionButton1.Location = new System.Drawing.Point(189, 34);
+            this.materialFloatingActionButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
+            this.materialFloatingActionButton1.Size = new System.Drawing.Size(37, 36);
+            this.materialFloatingActionButton1.TabIndex = 1;
+            this.materialFloatingActionButton1.TabStop = false;
+            this.materialFloatingActionButton1.UseVisualStyleBackColor = false;
+            // 
             // tb_configuracoes
             // 
             this.tb_configuracoes.Controls.Add(this.sw_darkMode);
@@ -1469,6 +1894,26 @@ namespace appBugInn
             this.novasImagensMenu.Images.SetKeyName(6, "check-in.png");
             this.novasImagensMenu.Images.SetKeyName(7, "botao-home.png");
             // 
+            // mtv_dadosCheckIn
+            // 
+            this.mtv_dadosCheckIn.AutoSizeTable = false;
+            this.mtv_dadosCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mtv_dadosCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtv_dadosCheckIn.Depth = 0;
+            this.mtv_dadosCheckIn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mtv_dadosCheckIn.FullRowSelect = true;
+            this.mtv_dadosCheckIn.HideSelection = false;
+            this.mtv_dadosCheckIn.Location = new System.Drawing.Point(0, 451);
+            this.mtv_dadosCheckIn.MinimumSize = new System.Drawing.Size(200, 100);
+            this.mtv_dadosCheckIn.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.mtv_dadosCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.mtv_dadosCheckIn.Name = "mtv_dadosCheckIn";
+            this.mtv_dadosCheckIn.OwnerDraw = true;
+            this.mtv_dadosCheckIn.Size = new System.Drawing.Size(1279, 127);
+            this.mtv_dadosCheckIn.TabIndex = 41;
+            this.mtv_dadosCheckIn.UseCompatibleStateImageBehavior = false;
+            this.mtv_dadosCheckIn.View = System.Windows.Forms.View.Details;
+            // 
             // F_telaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1479,6 +1924,7 @@ namespace appBugInn
             this.DrawerTabControl = this.materialTabControl1;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_telaInicial";
             this.Text = "The Bug Inn";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1487,6 +1933,9 @@ namespace appBugInn
             this.tb_reservas.ResumeLayout(false);
             this.mc_dadosReserva.ResumeLayout(false);
             this.mc_dadosReserva.PerformLayout();
+            this.tb_checkIn.ResumeLayout(false);
+            this.materialCard5.ResumeLayout(false);
+            this.materialCard5.PerformLayout();
             this.tb_gerirQuartos.ResumeLayout(false);
             this.materialCard7.ResumeLayout(false);
             this.materialCard7.PerformLayout();
@@ -1590,5 +2039,23 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialButton btn_excluirReserva;
         public System.Windows.Forms.ImageList iconesMenu;
         private System.Windows.Forms.ImageList novasImagensMenu;
+        private MaterialSkin.Controls.MaterialCard materialCard5;
+        private MaterialSkin.Controls.MaterialTextBox txt_quartoCheckIn;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialButton btn_criarCheckIn;
+        private MaterialSkin.Controls.MaterialTextBox txt_nomeCheckIn;
+        private MaterialSkin.Controls.MaterialTextBox txt_telefoneCheckIn;
+        private MaterialSkin.Controls.MaterialTextBox txt_emailCheckIn;
+        private MaterialSkin.Controls.MaterialTextBox txt_hospede1;
+        private MaterialSkin.Controls.MaterialTextBox txt_hospede2;
+        private MaterialSkin.Controls.MaterialTextBox txt_hospede3;
+        private MaterialSkin.Controls.MaterialTextBox txt_nPessoasCheckIn;
+        private MaterialSkin.Controls.MaterialTextBox txt_nAndar;
+        private MaterialSkin.Controls.MaterialTextBox txt_idQuartoCheckIn;
+        private MaterialSkin.Controls.MaterialTextBox txt_subtotal;
+        private MaterialSkin.Controls.MaterialButton btn_pesquisar;
+        private MaterialSkin.Controls.MaterialTextBox txt_dataCheckOut;
+        private MaterialSkin.Controls.MaterialTextBox txt_dataCheckIn;
+        private MaterialSkin.Controls.MaterialListView mtv_dadosCheckIn;
     }
 }

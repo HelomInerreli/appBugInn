@@ -1,3 +1,4 @@
 ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto;NumeroPessoas
 1;joao;123432123;joao@gmail.com;2025-05-19;2025-05-23;Deluxe;4
 2;jose;912345678;jose@gmail.com;2025-05-21;2025-05-23;Single;1
+3;goncalo;912912912;goncalo@gmail.com;2025-05-22;2025-05-25;Duplo;2
