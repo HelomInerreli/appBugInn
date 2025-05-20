@@ -142,7 +142,7 @@ namespace appBugInn
                 return;
 
             // Busca o funcionário na lista
-            var funcionario = hotelFunc.funcionarios
+            var funcionario = hotelFunc.hfuncionarios
                 .FirstOrDefault(f => f.Nome.Equals(nomeSelecionado, StringComparison.OrdinalIgnoreCase));
 
             if (funcionario != null)

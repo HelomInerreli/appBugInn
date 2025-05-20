@@ -1,2 +1,4 @@
 id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3
-1;goncalo;300;False;22/05/2025;25/05/2025;Duplo;202;Xana;;
+1;joao;0;False;22/05/2025;30/05/2025;Deluxe;104;iza;ze;rui
+2;jose;140;False;21/05/2025;23/05/2025;Single;101;;;
+3;goncalo;300;False;22/05/2025;25/05/2025;Duplo;102;xana;;

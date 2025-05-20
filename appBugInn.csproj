@@ -128,6 +128,12 @@
     <Compile Include="F_criarObjeto.Designer.cs">
       <DependentUpon>F_criarObjeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_dadosReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_dadosReserva.Designer.cs">
+      <DependentUpon>F_dadosReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_nFunc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_criarObjeto.resx">
       <DependentUpon>F_criarObjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_dadosReserva.resx">
+      <DependentUpon>F_dadosReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_nFunc.resx">
       <DependentUpon>F_nFunc.cs</DependentUpon>

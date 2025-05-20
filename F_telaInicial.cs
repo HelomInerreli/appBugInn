@@ -71,8 +71,11 @@ namespace appBugInn
         private void F_telaInicial_Load(object sender, EventArgs e)
         {
             mtv_dadosFunc.DoubleClick += mtv_dadosFunc_DoubleClick;
-
+            hotel.preencherChecks(); // Carrega os registros existentes do arquivo para a lista
         }
+
+
+        
 
         private void sw_darkMode_CheckedChanged(object sender, EventArgs e)
         {
@@ -718,7 +721,7 @@ namespace appBugInn
         public void AtualizarListViewReservas()
         {
 
-            mtv_dadosReserva.Clear(); // Limpa colunas e itens
+            mtv_dadosReserva.Clear(); // Limpa colunas e itensc
 
             // Adiciona colunas com base no ficheiro
             mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
@@ -833,8 +836,8 @@ namespace appBugInn
     
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            //F_listaReserva listaReserva = new F_listaReserva(this);
-            //listaReserva.Show();
+            F_dadosReserva dadosReserva = new F_dadosReserva(this);
+            dadosReserva.Show();
         }
 
         public void receberDadoseReserva(string nome, string telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numeroPessoas)
@@ -866,31 +869,38 @@ namespace appBugInn
 
         private double CalcularSubtotal(string tipoQuarto, DateTime dataInicio, DateTime dataFim)
         {
+            hotel.preencherQuartos(); // Garante que listas estão preenchidas
             double precoPorNoite = 0;
-            hotel.preencherQuartos();
 
-            // Buscar o preço conforme o tipo de quarto
             switch (tipoQuarto)
             {
                 case "Single":
-                    // Pega o primeiro quarto disponível como referência de preço
-                    if (hotel.qSingles.Count > 0)
+                    if (hotel.qSingles.Any())
                         precoPorNoite = hotel.qSingles[0].PrecoPorNoite;
                     break;
                 case "Duplo":
-                    if (hotel.qDuplos.Count > 0)
+                    if (hotel.qDuplos.Any())
                         precoPorNoite = hotel.qDuplos[0].PrecoPorNoite;
                     break;
-                    // Adicione outros tipos se necessário
-                    // case "Suite": ...
-                    // case "Deluxe": ...
+                case "Suite":
+                    if (hotel.qSuites.Any())
+                        precoPorNoite = hotel.qSuites[0].PrecoPorNoite;
+                    break;
+                case "Deluxe":
+                    if (hotel.qDeluxes.Any())
+                        precoPorNoite = hotel.qDeluxes[0].PrecoPorNoite;
+                    break;
+                default:
+                    MessageBox.Show("Tipo de quarto inválido ou não encontrado.");
+                    return 0;
             }
 
             int numeroDias = (dataFim - dataInicio).Days;
-            if (numeroDias < 1) numeroDias = 1; // Garante pelo menos 1 diária
+            if (numeroDias < 1) numeroDias = 1;
 
             return precoPorNoite * numeroDias;
         }
+
 
         private void btn_criarCheckIn_Click(object sender, EventArgs e)
         {
@@ -915,14 +925,13 @@ namespace appBugInn
                     return;
                 }
 
-                // Dicionário com capacidade de hóspedes extras (excluindo o titular da reserva)
                 Dictionary<string, int> capacidadeExtras = new Dictionary<string, int>
-                {
-                    { "Single", 0 },
-                    { "Duplo", 1 },
-                    { "Suite", 2 },
-                    { "Deluxe", 3 }
-                };
+        {
+            { "Single", 0 },
+            { "Duplo", 1 },
+            { "Suite", 2 },
+            { "Deluxe", 3 }
+        };
 
                 if (!capacidadeExtras.ContainsKey(tipoQuarto))
                 {
@@ -930,10 +939,8 @@ namespace appBugInn
                     return;
                 }
 
-                // Número esperado de hóspedes extras
                 int numeroExtras = capacidadeExtras[tipoQuarto];
 
-                // Validação dos campos de hóspedes adicionais
                 if (numeroExtras >= 1 && string.IsNullOrWhiteSpace(hospede1))
                 {
                     MessageBox.Show("O primeiro hóspede adicional não foi preenchido.");
@@ -950,27 +957,26 @@ namespace appBugInn
                     return;
                 }
 
-                double subtotal;
-                int numQuarto;
-                DateTime dataInicio, dataFim;
-
-                if (!double.TryParse(subtotalStr, out subtotal))
+                if (!double.TryParse(subtotalStr, out double subtotal))
                 {
                     MessageBox.Show("Subtotal inválido.");
                     return;
                 }
-                if (!int.TryParse(numQuartoStr, out numQuarto))
+                if (!int.TryParse(numQuartoStr, out int numQuarto))
                 {
                     MessageBox.Show("Número do quarto inválido.");
                     return;
                 }
-                if (!DateTime.TryParse(dataInicioStr, out dataInicio) || !DateTime.TryParse(dataFimStr, out dataFim))
+                if (!DateTime.TryParse(dataInicioStr, out DateTime dataInicio) || !DateTime.TryParse(dataFimStr, out DateTime dataFim))
                 {
                     MessageBox.Show("Datas inválidas.");
                     return;
                 }
 
-                bool checkOut = false; // Sempre false ao criar o check-in
+                bool checkOut = false;
+
+                // Garante que os dados anteriores estão carregados antes de adicionar
+                hotel.preencherChecks();
 
                 hotel.AdicionarChecks(
                     nomeReserva,
@@ -986,7 +992,10 @@ namespace appBugInn
                 );
 
                 MessageBox.Show("Check-in criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 LimparCamposCheckIn();
+                AtualizarListViewCheckin(); // Atualiza a lista após salvar
+
             }
             catch (Exception ex)
             {
@@ -1016,74 +1025,112 @@ namespace appBugInn
             txt_hospede3.Enabled = false;
         }
 
+        public void AtualizarListViewCheckin()
+        {
+            // Limpa todos os itens e colunas
+            mtv_dadosCheckIn.Clear();
+
+            // Adiciona as colunas de acordo com o cabeçalho do arquivo
+            mtv_dadosCheckIn.Columns.Add("ID", 60, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Nome Reserva", 180, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Subtotal", 120, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Check-out", 100, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Data Check-in", 120, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Data Check-out", 120, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Tipo Quarto", 150, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Número do Quarto", 100, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Hóspede 1", 150, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Hóspede 2", 150, HorizontalAlignment.Left);
+            mtv_dadosCheckIn.Columns.Add("Hóspede 3", 150, HorizontalAlignment.Left);
+
+            // Percorre cada item da lista de check-ins e adiciona-o na ListView
+            foreach (Checks c in hotel.checkIn)
+            {
+                // Cria o item com o primeiro campo (ID)
+                ListViewItem item = new ListViewItem(c.Id.ToString());
+
+                // Adiciona os demais campos como subitens
+                item.SubItems.Add(c.NomeReserva);
+                item.SubItems.Add(c.Subtotal.ToString());
+                item.SubItems.Add(c.CheckOut.ToString());
+                item.SubItems.Add(c.DataInicio.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(c.DataFim.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(c.TipoQuarto);
+                item.SubItems.Add(c.NumQuarto.ToString());
+                item.SubItems.Add(c.Hospede1);
+                item.SubItems.Add(c.Hospede2);
+                item.SubItems.Add(c.Hospede3);
+
+                mtv_dadosCheckIn.Items.Add(item);
+            }
+
+            // Configura a visualização da ListView
+            mtv_dadosCheckIn.View = View.Details;
+            mtv_dadosCheckIn.FullRowSelect = true;
+        }
+
         private void tb_checkin_enter(object sender, EventArgs e)
         {
             try
             {
-                string[] dados = Funcionalidades.LerBaseDados("checkin"); // Lendo dados da reserva
+                string[] dados;
 
-                if (dados.Length > 0)
+                try
                 {
-                    mtv_dadosCheckIn.Clear(); // Limpa tudo (colunas + itens)
+                    dados = Funcionalidades.LerBaseDados("checkin");
+                }
+                catch (Exception)
+                {
+                    // Silencia erro se o ficheiro não existir ou estiver com problemas
+                    dados = new string[0];
+                }
 
-                    // Adiciona colunas apenas para os campos desejados
-                    mtv_dadosCheckIn.Columns.Add("ID", 60, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Nome Reserva", 180, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Subtotal", 120, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Check-out", 100, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Data Check-in", 120, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Data Check-out", 120, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Tipo Quarto", 150, HorizontalAlignment.Left);
-                    mtv_dadosCheckIn.Columns.Add("Andar", 80, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Clear(); // Limpa a ListView
 
-                    // Adicionar linhas
+                // Adiciona colunas fixas
+                mtv_dadosCheckIn.Columns.Add("ID", 60, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Nome Reserva", 180, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Subtotal", 120, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Check-out", 100, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Data Check-in", 120, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Data Check-out", 120, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Tipo Quarto", 150, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Número do Quarto", 100, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Hóspede 1", 150, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Hóspede 2", 150, HorizontalAlignment.Left);
+                mtv_dadosCheckIn.Columns.Add("Hóspede 3", 150, HorizontalAlignment.Left);
+
+                if (dados.Length > 1) // Garante que há pelo menos uma linha de dados (ignorando cabeçalho)
+                {
                     for (int i = 1; i < dados.Length; i++)
                     {
                         string[] campos = dados[i].Split(';');
+                        if (campos.Length < 11) continue; // Evita erro se faltar dados
 
-                        // Verificação para evitar erro por índice inválido
-                        if (campos.Length < 8)
+                        ListViewItem item = new ListViewItem(campos[0]);
+                        for (int j = 1; j < campos.Length; j++)
                         {
-                            Console.WriteLine($"Erro: A linha {i} tem menos campos do que o esperado.");
-                            continue;
+                            item.SubItems.Add(campos[j]);
                         }
-
-                        // Criar item apenas com os campos desejados
-                        ListViewItem item = new ListViewItem(campos[0]); // ID
-                        item.SubItems.Add(campos[1]); // Nome Reserva
-                        item.SubItems.Add(campos[2]); // Subtotal
-                        item.SubItems.Add(campos[3]); // Check-out
-                        item.SubItems.Add(campos[4]); // Data Check-in
-                        item.SubItems.Add(campos[5]); // Data Check-out
-                        item.SubItems.Add(campos[6]); // Tipo Quarto
-                        item.SubItems.Add(campos[7]); // Andar
 
                         mtv_dadosCheckIn.Items.Add(item);
                     }
+                }
 
-                    mtv_dadosCheckIn.View = View.Details;
-                    mtv_dadosCheckIn.FullRowSelect = true;
-                }
-                else
-                {
-                    MessageBox.Show("Nenhuma reserva encontrada.");
-                }
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show($"Erro: O ficheiro não foi encontrado. Detalhes: {ex.Message}");
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show($"Erro de formato nos dados. Detalhes: {ex.Message}");
+                mtv_dadosCheckIn.View = View.Details;
+                mtv_dadosCheckIn.FullRowSelect = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro inesperado: {ex.Message}");
+                MessageBox.Show("Erro inesperado ao carregar check-ins: " + ex.Message);
             }
         }
 
-    
+
+
+
+
+
 
         //private void label1_Click(object sender, EventArgs e)
         //{
