@@ -18,12 +18,12 @@ namespace appBugInn
         public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
+        public List<CheckIn> checkIn = new List<CheckIn>();
         public List<Suite> qSuites = new List<Suite>();
         public List<Deluxe> qDeluxes = new List<Deluxe>();
         public List<Faturamento> faturamentos = new List<Faturamento>();
         //Teste de commit
 
-        public List<CheckIn> checkIn = new List<CheckIn>();
         public void preencherFuncionarios() {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
@@ -462,6 +462,14 @@ namespace appBugInn
                 if (item is CheckIn checkin)
                 {
                     checkIn.Add(checkin);
+        public void preencherFaturamento()
+        {
+            List<object> func = Funcionalidades.CriarObjetosDoTexto("faturamentos", "Faturamento");
+            foreach (var item in func)
+            {
+                if (item is Faturamento faturamento)
+                {
+                    faturamentos.Add(faturamento);
                 }
             }
         }
@@ -502,6 +510,17 @@ namespace appBugInn
                 MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void gravarFaturamento()
+        {
+            //apagar base de dados
+            string linha = "";
+            foreach (var item in faturamentos)
+            {
+                linha += item.linhaBD() + "\n";
+            }
+            Funcionalidades.GravarBaseDados("faturamentos", linha);
+        }
+
     }
 
 }

@@ -160,9 +160,10 @@ namespace appBugInn
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.iconesMenu;
+            this.materialTabControl1.Location = new System.Drawing.Point(4, 79);
+            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.materialTabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
-            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
@@ -1624,7 +1625,8 @@ namespace appBugInn
             // 
             this.materialFloatingActionButton2.Depth = 0;
             this.materialFloatingActionButton2.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
-            this.materialFloatingActionButton2.Location = new System.Drawing.Point(597, 53);
+            this.materialFloatingActionButton2.Location = new System.Drawing.Point(796, 65);
+            this.materialFloatingActionButton2.Margin = new System.Windows.Forms.Padding(4);
             this.materialFloatingActionButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton2.Name = "materialFloatingActionButton2";
             this.materialFloatingActionButton2.Size = new System.Drawing.Size(56, 56);
@@ -1840,8 +1842,9 @@ namespace appBugInn
             this.tb_configuracoes.Controls.Add(this.sw_darkMode);
             this.tb_configuracoes.ImageKey = "icons8-config-32.png";
             this.tb_configuracoes.Location = new System.Drawing.Point(4, 39);
+            this.tb_configuracoes.Margin = new System.Windows.Forms.Padding(4);
             this.tb_configuracoes.Name = "tb_configuracoes";
-            this.tb_configuracoes.Size = new System.Drawing.Size(1266, 850);
+            this.tb_configuracoes.Size = new System.Drawing.Size(1279, 578);
             this.tb_configuracoes.TabIndex = 7;
             this.tb_configuracoes.Text = "CONFIGURAÇÕES";
             this.tb_configuracoes.UseVisualStyleBackColor = true;
@@ -2057,5 +2060,7 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialTextBox txt_dataCheckOut;
         private MaterialSkin.Controls.MaterialTextBox txt_dataCheckIn;
         private MaterialSkin.Controls.MaterialListView mtv_dadosCheckIn;
+        public System.Windows.Forms.ImageList iconesMenu;
+        private System.Windows.Forms.ImageList novasImagensMenu;
     }
 }
