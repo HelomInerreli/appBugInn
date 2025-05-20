@@ -386,32 +386,13 @@ namespace appBugInn
         {
 
         }
+
         private void btn_registarReserva_Click(object sender, EventArgs e)
         {
             try
             {
-                string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "reservas.txt");
-                int id = 1;
 
-                // Verifica se o ficheiro existe e conta as linhas para gerar ID
-                if (File.Exists(caminho))
-                {
-                    var linhas = File.ReadAllLines(caminho)
-                                     .Where(l => !string.IsNullOrWhiteSpace(l))
-                                     .ToList();
-
-                    if (linhas.Count > 0)
-                    {
-                        string ultimaLinha = linhas.Last();
-                        string[] partes = ultimaLinha.Split(';');
-
-                        if (partes.Length > 0 && int.TryParse(partes[0], out int ultimoId))
-                        {
-                            id = ultimoId + 1;
-                        }
-                    }
-                }
-
+                hotel.CarregarReservas();
                 string nome = "";
                 if (Funcionalidades.ValidarLetras(txt_nomeReserva1.Text))
                 {
@@ -435,7 +416,7 @@ namespace appBugInn
                     return;
                 }
 
-                string tipoQuarto = cb_TipoQuarto.SelectedItem.ToString();
+                string tipoQuarto = cb_TipoQuarto.SelectedItem?.ToString();
                 if (string.IsNullOrEmpty(tipoQuarto))
                 {
                     MessageBox.Show("Por favor, selecione um tipo de quarto.");
@@ -443,32 +424,40 @@ namespace appBugInn
                 }
                 DateTime dataInicio = dtp_dataInicioReserva.Value.Date;
                 DateTime dataFim = dtp_dataFimReserva.Value.Date;
-
+                // Validação para só permitir reservas para amanhã
+                if (dataInicio != DateTime.Today.AddDays(1))
+                {
+                    MessageBox.Show("Só pode reservar para o dia seguinte ao atual.");
+                    return;
+                }
                 if (dataFim < dataInicio)
                 {
                     MessageBox.Show("A data de fim não pode ser anterior à data de início.", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 // Obtenha o número de pessoas do ComboBox
-                string numeroPessoas = cb_NumeroPessoas.SelectedItem?.ToString() ?? "";
+                string numeroPessoasStr = cb_NumeroPessoas.SelectedItem?.ToString() ?? "";
+                int numeroPessoas = 1;
+                int.TryParse(numeroPessoasStr, out numeroPessoas);
+                if (!hotel.PodeReservarQuarto(tipoQuarto, dataInicio, dataFim))
+                {
+                    MessageBox.Show("Não há quartos disponíveis deste tipo para o período selecionado.", "Indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                // Adiciona à lista e atualiza o ficheiro
+                hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
 
-                string linhaReserva = $"{id};{nome};{telefone};{email};{dataInicio:yyyy-MM-dd};{dataFim:yyyy-MM-dd};{tipoQuarto};{numeroPessoas}";
-                // string linhaReserva = $"{id};{nome};{telefone};{email};{dataInicio:yyyy-MM-dd};{dataFim:yyyy-MM-dd};{tipoQuarto}";
-                Funcionalidades.GravarBaseDados("reservas", linhaReserva);
-                MessageBox.Show("Reserva registada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Atualiza a lista em memória e o ListView
-
-              //  hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, int.Parse(numeroPessoas));
-              //  AtualizarListViewReservas();
                 mtv_dadosReserva.Refresh();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao gravar reserva: " + ex.Message);
             }
         }
+        
+
+
+
 
 
 
@@ -612,7 +601,7 @@ namespace appBugInn
         }// Atualiza o ListeView com os funcionários existentes
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
-           dtp_dataInicioReserva.MinDate = DateTime.Today;
+            dtp_dataInicioReserva.MinDate = DateTime.Today;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -642,7 +631,7 @@ namespace appBugInn
 
         private void dtp_dataInicioReserva_ValueChanged_1(object sender, EventArgs e)
         {
-            //
+            
         }
 
         private void dtp_dataFimReserva_ValueChanged(object sender, EventArgs e)
@@ -652,7 +641,7 @@ namespace appBugInn
 
         private void dtp_dataFimReserva_Leave(object sender, EventArgs e)
         {
-
+          dtp_dataFimReserva.MinDate = dtp_dataInicioReserva.Value.AddDays(1);
         }
 
         private void tb_reservas_Enter(object sender, EventArgs e)

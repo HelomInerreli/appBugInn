@@ -15,6 +15,7 @@ namespace appBugInn
         private DateTime _dataFim;
         private string _email;
         private int _numeroPessoas;
+        private string _tipoQuarto;
 
 
 
@@ -65,11 +66,13 @@ namespace appBugInn
             get => _dataInicio;
             set
             {
+                
                 if (value.Date < DateTime.Today)
                 {
-                   throw new ArgumentException("A data de inicio tem de ser superior ao dia atual");
-               }
-                _dataInicio = value.Date;
+                    throw new ArgumentException($"A data de início tem de ser superior ao dia atual: {DateTime.Now:dd/MM/yyyy}");
+
+                }
+                    _dataInicio = value.Date;
 
            }
         }
@@ -101,7 +104,21 @@ namespace appBugInn
 
 
         }
-        public string TipoQuarto { get; set; }
+        public string TipoQuarto
+        {
+            get => _tipoQuarto;
+            set
+            {
+                // Lista de tipos válidos (pode ser expandida se necessário)
+                string[] tiposValidos = { "single", "duplo", "suite", "deluxe" };
+
+                if (string.IsNullOrWhiteSpace(value) || !tiposValidos.Contains(value.Trim().ToLower()))
+                {
+                    throw new ArgumentException("Tipo de quarto inválido. Os tipos válidos são: Single, Duplo, Suite, Deluxe.");
+                }
+                _tipoQuarto = value.Trim();
+            }
+        }
         public int NumeroPessoas
         {
             get => _numeroPessoas;
@@ -129,26 +146,20 @@ namespace appBugInn
 
             string linha = $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto};{NumeroPessoas}";
 
-            try
-            {
-                Funcionalidades.GravarBaseDados("reservas", linha);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao gravar reserva: " + ex.Message);
-            }
+            //try
+            //{
+            //    Funcionalidades.GravarBaseDados("reservas", linha);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Erro ao gravar reserva: " + ex.Message);
+            //}
         }
 
-        //public string linhaBDReservas()
-        //{
-        //    return $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto.NumQuarto};{NumeroPessoas}";
-        //}
         public string linhaBDReservas()
         {
             return $"{Id};{Nome};{Telefone};{Email};{DataInicio:yyyy-MM-dd};{DataFim:yyyy-MM-dd};{TipoQuarto};{NumeroPessoas}";
         }
-
-
 
         public TimeSpan CalcularDuracao()
         {
