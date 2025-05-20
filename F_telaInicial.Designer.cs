@@ -77,7 +77,6 @@ namespace appBugInn
             this.txt_nomeCheckIn = new MaterialSkin.Controls.MaterialTextBox();
             this.txt_telefoneCheckIn = new MaterialSkin.Controls.MaterialTextBox();
             this.txt_emailCheckIn = new MaterialSkin.Controls.MaterialTextBox();
-            this.tb_checkOut = new System.Windows.Forms.TabPage();
             this.tb_gerirQuartos = new System.Windows.Forms.TabPage();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -1029,17 +1028,7 @@ namespace appBugInn
             this.txt_emailCheckIn.Text = "";
             this.txt_emailCheckIn.TrailingIcon = null;
             this.txt_emailCheckIn.UseAccent = false;
-            // 
-            // tb_checkOut
-            // 
-            this.tb_checkOut.ImageKey = "icons8-hotel-chekc-fora-32.png";
-            this.tb_checkOut.Location = new System.Drawing.Point(4, 39);
-            this.tb_checkOut.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_checkOut.Name = "tb_checkOut";
-            this.tb_checkOut.Size = new System.Drawing.Size(1279, 578);
-            this.tb_checkOut.TabIndex = 3;
-            this.tb_checkOut.Text = "CHECK OUT";
-            this.tb_checkOut.UseVisualStyleBackColor = true;
+
             // 
             // tb_gerirQuartos
             // 
@@ -2060,7 +2049,5 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialTextBox txt_dataCheckOut;
         private MaterialSkin.Controls.MaterialTextBox txt_dataCheckIn;
         private MaterialSkin.Controls.MaterialListView mtv_dadosCheckIn;
-        public System.Windows.Forms.ImageList iconesMenu;
-        private System.Windows.Forms.ImageList novasImagensMenu;
     }
 }

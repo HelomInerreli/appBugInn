@@ -833,8 +833,8 @@ namespace appBugInn
     
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            F_listaReserva listaReserva = new F_listaReserva(this);
-            listaReserva.Show();
+            //F_listaReserva listaReserva = new F_listaReserva(this);
+            //listaReserva.Show();
         }
 
         public void receberDadoseReserva(string nome, string telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numeroPessoas)
@@ -972,7 +972,7 @@ namespace appBugInn
 
                 bool checkOut = false; // Sempre false ao criar o check-in
 
-                hotel.AdicionarCheckIn(
+                hotel.AdicionarChecks(
                     nomeReserva,
                     subtotal,
                     checkOut,
@@ -1083,17 +1083,17 @@ namespace appBugInn
             }
         }
 
-    } 
+    
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        //private void label1_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void tb_diretoria_Enter(object sender, EventArgs e)
-        {
-            hotel.preencherFaturamento();
-        }
+        //private void tb_diretoria_Enter(object sender, EventArgs e)
+        //{
+        //    hotel.preencherFaturamento();
+        //}
     }
 }
 
