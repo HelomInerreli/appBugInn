@@ -16,7 +16,8 @@ namespace appBugInn
         public List<Duplo> qDuplos = new List<Duplo>();
         //public List<Suite> qSuites = new List<Suite>();
         //public List<Deluxe> qDeuxe = new List<Deluxe>();
-        public void preencherFuncionarios() {
+        public void preencherFuncionarios()
+        {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
             {
@@ -27,7 +28,7 @@ namespace appBugInn
 
             }
         }
-        
+
         public void preencherReservas()
         {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("reservas", "Reserva");
@@ -76,9 +77,9 @@ namespace appBugInn
             //        qDeluxe.Add(deluxe);
             //    }
 
-            }
         }
-             
+
+
 
         public void gravarFuncionario()
         {
@@ -98,7 +99,7 @@ namespace appBugInn
             foreach (var item in reservas)
             {
                 linha += item.linhaBDReservas() + "\n";
-         
+
             }
             Funcionalidades.GravarBaseDados("reservas", linha);
         }
@@ -141,9 +142,9 @@ namespace appBugInn
         public List<Funcionario> hfuncionarios = new List<Funcionario>();
         public List<Reserva> hreservas = new List<Reserva>();
 
-        public Hotel() 
+        public Hotel()
         {
-            
+
         }
 
         public void AdicionarFuncionario(Funcionario funcionario)
@@ -167,7 +168,7 @@ namespace appBugInn
             if (!hreservas.Any(r => r.Nome == reserva.Nome))
             {
                 hreservas.Add(reserva);
-            
+
                 MessageBox.Show($"Reserva para {reserva.Nome} adicionada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -229,7 +230,7 @@ namespace appBugInn
                 }
             }
 
-           // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -370,7 +371,5 @@ namespace appBugInn
                 MessageBox.Show($"Funcionário {nomeSelecionado} modificado com sucesso");
             }
         }
-
     }
-
 }
