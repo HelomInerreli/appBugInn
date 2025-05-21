@@ -121,6 +121,21 @@ namespace appBugInn
             for (int i = 1; i < linhas.Length; i++)
             {
                 string[] campos = linhas[i].Split(';');
+
+                if (campos.Length <= 5)
+                    continue;
+
+                // Verificar se a data de fim é válida e futura
+                if (DateTime.TryParse(campos[5], out DateTime dataFim))
+                {
+                    if (dataFim < DateTime.Today)
+                        continue; // Ignora reserva expirada
+                }
+                else
+                {
+                    continue; // Ignora se a data de fim for inválida
+                }
+
                 ListViewItem item = new ListViewItem(campos[0]);
 
                 for (int j = 1; j < campos.Length; j++)
@@ -132,14 +147,14 @@ namespace appBugInn
             }
 
             mtv_dadosReserva.View = View.Details;
-            mtv_dadosReserva.FullRowSelect = true
-               ;
+            mtv_dadosReserva.FullRowSelect = true;
+
             if (mtv_dadosReserva.Items.Count == 0)
             {
                 MessageBox.Show("Nenhum item foi carregado.");
             }
-
         }
+
 
         private void LimparCamposReserva()
         {
@@ -645,20 +660,16 @@ namespace appBugInn
         {
             try
             {
-
                 string[] dados = Funcionalidades.LerBaseDados("reservas");
 
                 if (dados.Length > 0)
                 {
-                    mtv_dadosReserva.Clear(); // Limpar tudo (colunas + itens)
+                    mtv_dadosReserva.Clear(); // Limpar colunas e itens
 
-                    string[] colunas = dados[0].Split(';');
-
-                    // Adicionar colunas
-
+                    // Adicionar colunas manualmente
                     mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Nome", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Telefone",150, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Email", 250, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de inicio", 150, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Data de fim", 150, HorizontalAlignment.Left);
@@ -669,6 +680,22 @@ namespace appBugInn
                     for (int i = 1; i < dados.Length; i++)
                     {
                         string[] campos = dados[i].Split(';');
+
+                        if (campos.Length < 6) // Verifica se há campos suficientes
+                            continue;
+
+                        // Verifica se a data de fim é maior ou igual à data atual
+                        if (DateTime.TryParse(campos[5], out DateTime dataFim))
+                        {
+                            if (dataFim < DateTime.Today)
+                                continue; // Ignora reserva expirada
+                        }
+                        else
+                        {
+                            continue; // Ignora se a data for inválida
+                        }
+
+                        // Adiciona à lista
                         ListViewItem item = new ListViewItem(campos[0]);
                         for (int j = 1; j < campos.Length; j++)
                         {
@@ -679,6 +706,11 @@ namespace appBugInn
 
                     mtv_dadosReserva.View = View.Details;
                     mtv_dadosReserva.FullRowSelect = true;
+
+                    if (mtv_dadosReserva.Items.Count == 0)
+                    {
+                        MessageBox.Show("Nenhuma reserva válida foi carregada.");
+                    }
                 }
                 else
                 {
@@ -697,8 +729,8 @@ namespace appBugInn
             {
                 MessageBox.Show($"Erro inesperado: {ex.Message}");
             }
-            
         }
+
 
         public void AtualizarListViewReservas()
         {

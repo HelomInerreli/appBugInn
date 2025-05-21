@@ -231,11 +231,15 @@ namespace appBugInn
                 string email = campos[3];
                 if (!DateTime.TryParse(campos[4], out DateTime dataInicio)) continue;
                 if (!DateTime.TryParse(campos[5], out DateTime dataFim)) continue;
+
+                // ❗️Verifica se a reserva já terminou
+                if (dataFim < DateTime.Today)
+                    continue; // Ignora reservas expiradas
+
                 string tipoQuarto = campos[6];
                 int numeroPessoas = 1;
                 if (!int.TryParse(campos[7], out numeroPessoas)) numeroPessoas = 1;
 
-                // Agora tipoQuarto é string
                 var reserva = new Reserva(id, nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
                 hreservas.Add(reserva);
             }
