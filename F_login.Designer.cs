@@ -1,6 +1,6 @@
-﻿namespace appBugInn
+namespace appBugInn
 {
-    partial class lb_nome
+    partial class F_login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lb_nome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_login));
             this.bt_login = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.flButton_ShowPassowrd = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -67,10 +67,10 @@
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(111, 106);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(598, 462);
             this.materialCard1.TabIndex = 16;
             // 
@@ -79,7 +79,7 @@
             this.flButton_ShowPassowrd.Depth = 0;
             this.flButton_ShowPassowrd.DrawShadows = false;
             this.flButton_ShowPassowrd.Icon = global::appBugInn.Properties.Resources.icons8_visível_24;
-            this.flButton_ShowPassowrd.Location = new System.Drawing.Point(457, 295);
+            this.flButton_ShowPassowrd.Location = new System.Drawing.Point(384, 190);
             this.flButton_ShowPassowrd.Margin = new System.Windows.Forms.Padding(0);
             this.flButton_ShowPassowrd.Mini = true;
             this.flButton_ShowPassowrd.MouseState = MaterialSkin.MouseState.HOVER;
@@ -160,7 +160,7 @@
             this.ClientSize = new System.Drawing.Size(833, 654);
             this.Controls.Add(this.materialCard1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "lb_nome";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.F_login_Load);

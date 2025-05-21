@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace appBugInn
 {
-    public partial class lb_nome : MaterialForm
+    public partial class F_login : MaterialForm
     {
-        public lb_nome()
+        public F_login()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -100,7 +100,18 @@ namespace appBugInn
                         if (usernameDigitado.Equals(usernameArquivo, StringComparison.OrdinalIgnoreCase) &&
                             passwordDigitado.Equals(senhaArquivo))
                         {
+
                             loginValido = true;
+                            Funcionalidades.UsuarioLogado = partes[1]; 
+                            if (partes[3].Trim() == "True")
+                            {
+                                Funcionalidades.UsuarioGestor = true; 
+                            }
+                            else
+                            {
+                                Funcionalidades.UsuarioGestor = false;
+                            }
+                           
                             break;
                         }
                     }
@@ -109,6 +120,7 @@ namespace appBugInn
                 if (loginValido)
                 {
                     MessageBox.Show("Login bem-sucedido!");
+
                    F_telaInicial telaInicial = new F_telaInicial();
                     telaInicial.Show();
                     this.Hide();

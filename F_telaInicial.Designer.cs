@@ -109,7 +109,6 @@ namespace appBugInn
             this.txt_passwordFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
             this.tb_diretoria = new System.Windows.Forms.TabPage();
             this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton2 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.lbl_classificacao = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -137,7 +136,9 @@ namespace appBugInn
             this.materialLabel1_dash = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2_dash = new MaterialSkin.Controls.MaterialLabel();
             this.mc_datas_dash = new MaterialSkin.Controls.MaterialCard();
+            this.lbl_usuarioLogado = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
+            this.tb_home.SuspendLayout();
             this.tb_reservas.SuspendLayout();
             this.mc_dadosReserva.SuspendLayout();
             this.tb_checkIn.SuspendLayout();
@@ -174,7 +175,7 @@ namespace appBugInn
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1274, 893);
+            this.materialTabControl1.Size = new System.Drawing.Size(1461, 893);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.materialTabControl1_Selected);
             // 
@@ -182,12 +183,13 @@ namespace appBugInn
             // 
             this.tb_home.BackgroundImage = global::appBugInn.Properties.Resources.tbi_sem_fundo;
             this.tb_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tb_home.Controls.Add(this.lbl_usuarioLogado);
             this.tb_home.ImageKey = "icons8-home-32.png";
             this.tb_home.Location = new System.Drawing.Point(4, 39);
             this.tb_home.Margin = new System.Windows.Forms.Padding(4);
             this.tb_home.Name = "tb_home";
             this.tb_home.Padding = new System.Windows.Forms.Padding(2);
-            this.tb_home.Size = new System.Drawing.Size(1266, 850);
+            this.tb_home.Size = new System.Drawing.Size(1453, 850);
             this.tb_home.TabIndex = 0;
             this.tb_home.Text = "HOME";
             this.tb_home.ToolTipText = "Home";
@@ -1612,13 +1614,13 @@ namespace appBugInn
             this.tb_diretoria.Controls.Add(this.materialCard3);
             this.tb_diretoria.Controls.Add(this.materialCard4);
             this.tb_diretoria.Controls.Add(this.materialCard2);
-            this.tb_diretoria.Controls.Add(this.materialCard1);
             this.tb_diretoria.Controls.Add(this.materialFloatingActionButton1);
+            this.tb_diretoria.Controls.Add(this.materialCard1);
             this.tb_diretoria.ImageKey = "icons8-dashboard-32.png";
             this.tb_diretoria.Location = new System.Drawing.Point(4, 39);
             this.tb_diretoria.Margin = new System.Windows.Forms.Padding(4);
             this.tb_diretoria.Name = "tb_diretoria";
-            this.tb_diretoria.Size = new System.Drawing.Size(1266, 850);
+            this.tb_diretoria.Size = new System.Drawing.Size(1453, 850);
             this.tb_diretoria.TabIndex = 6;
             this.tb_diretoria.Text = "DASHBOARD";
             this.tb_diretoria.UseVisualStyleBackColor = true;
@@ -1636,19 +1638,6 @@ namespace appBugInn
             this.materialFloatingActionButton3.TabIndex = 7;
             this.materialFloatingActionButton3.TabStop = false;
             this.materialFloatingActionButton3.UseVisualStyleBackColor = false;
-            // 
-            // materialFloatingActionButton2
-            // 
-            this.materialFloatingActionButton2.Depth = 0;
-            this.materialFloatingActionButton2.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
-            this.materialFloatingActionButton2.Location = new System.Drawing.Point(253, 22);
-            this.materialFloatingActionButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.materialFloatingActionButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton2.Name = "materialFloatingActionButton2";
-            this.materialFloatingActionButton2.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton2.TabIndex = 5;
-            this.materialFloatingActionButton2.TabStop = false;
-            this.materialFloatingActionButton2.UseVisualStyleBackColor = false;
             // 
             // materialCard3
             // 
@@ -1698,14 +1687,14 @@ namespace appBugInn
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
             this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard4.Size = new System.Drawing.Size(1014, 511);
+            this.materialCard4.Size = new System.Drawing.Size(1222, 667);
             this.materialCard4.TabIndex = 6;
             // 
             // cartesianChart1
             // 
             this.cartesianChart1.Location = new System.Drawing.Point(18, 18);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(979, 486);
+            this.cartesianChart1.Size = new System.Drawing.Size(1204, 632);
             this.cartesianChart1.TabIndex = 0;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
@@ -1718,12 +1707,12 @@ namespace appBugInn
             this.materialCard2.Controls.Add(this.label6);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(366, 31);
+            this.materialCard2.Location = new System.Drawing.Point(354, 31);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(260, 100);
+            this.materialCard2.Size = new System.Drawing.Size(286, 100);
             this.materialCard2.TabIndex = 4;
             // 
             // mpb_fatAnual
@@ -1732,7 +1721,7 @@ namespace appBugInn
             this.mpb_fatAnual.Location = new System.Drawing.Point(22, 68);
             this.mpb_fatAnual.MouseState = MaterialSkin.MouseState.HOVER;
             this.mpb_fatAnual.Name = "mpb_fatAnual";
-            this.mpb_fatAnual.Size = new System.Drawing.Size(173, 5);
+            this.mpb_fatAnual.Size = new System.Drawing.Size(210, 5);
             this.mpb_fatAnual.TabIndex = 3;
             this.mpb_fatAnual.Value = 37;
             // 
@@ -1740,7 +1729,7 @@ namespace appBugInn
             // 
             this.lbl_desc_fatAnual.AutoSize = true;
             this.lbl_desc_fatAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_desc_fatAnual.Location = new System.Drawing.Point(26, 77);
+            this.lbl_desc_fatAnual.Location = new System.Drawing.Point(59, 77);
             this.lbl_desc_fatAnual.Name = "lbl_desc_fatAnual";
             this.lbl_desc_fatAnual.Size = new System.Drawing.Size(145, 13);
             this.lbl_desc_fatAnual.TabIndex = 2;
@@ -1771,7 +1760,6 @@ namespace appBugInn
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialFloatingActionButton2);
             this.materialCard1.Controls.Add(this.mpb_fatMensal);
             this.materialCard1.Controls.Add(this.lbl_desc_fatMensal);
             this.materialCard1.Controls.Add(this.lbl_fatMensal);
@@ -1789,10 +1777,10 @@ namespace appBugInn
             // mpb_fatMensal
             // 
             this.mpb_fatMensal.Depth = 0;
-            this.mpb_fatMensal.Location = new System.Drawing.Point(22, 68);
+            this.mpb_fatMensal.Location = new System.Drawing.Point(22, 66);
             this.mpb_fatMensal.MouseState = MaterialSkin.MouseState.HOVER;
             this.mpb_fatMensal.Name = "mpb_fatMensal";
-            this.mpb_fatMensal.Size = new System.Drawing.Size(173, 5);
+            this.mpb_fatMensal.Size = new System.Drawing.Size(210, 5);
             this.mpb_fatMensal.TabIndex = 3;
             this.mpb_fatMensal.Value = 45;
             // 
@@ -1800,7 +1788,7 @@ namespace appBugInn
             // 
             this.lbl_desc_fatMensal.AutoSize = true;
             this.lbl_desc_fatMensal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_desc_fatMensal.Location = new System.Drawing.Point(26, 77);
+            this.lbl_desc_fatMensal.Location = new System.Drawing.Point(51, 77);
             this.lbl_desc_fatMensal.Name = "lbl_desc_fatMensal";
             this.lbl_desc_fatMensal.Size = new System.Drawing.Size(145, 13);
             this.lbl_desc_fatMensal.TabIndex = 2;
@@ -1833,11 +1821,11 @@ namespace appBugInn
             // 
             this.materialFloatingActionButton1.Depth = 0;
             this.materialFloatingActionButton1.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
-            this.materialFloatingActionButton1.Location = new System.Drawing.Point(189, 34);
+            this.materialFloatingActionButton1.Location = new System.Drawing.Point(280, 50);
             this.materialFloatingActionButton1.Margin = new System.Windows.Forms.Padding(4);
             this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
-            this.materialFloatingActionButton1.Size = new System.Drawing.Size(37, 36);
+            this.materialFloatingActionButton1.Size = new System.Drawing.Size(59, 62);
             this.materialFloatingActionButton1.TabIndex = 1;
             this.materialFloatingActionButton1.TabStop = false;
             this.materialFloatingActionButton1.UseVisualStyleBackColor = false;
@@ -1906,7 +1894,7 @@ namespace appBugInn
             // 
             this.materialFloatingActionButton4.Depth = 0;
             this.materialFloatingActionButton4.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
-            this.materialFloatingActionButton4.Location = new System.Drawing.Point(597, 53);
+            this.materialFloatingActionButton4.Location = new System.Drawing.Point(610, 53);
             this.materialFloatingActionButton4.Margin = new System.Windows.Forms.Padding(4);
             this.materialFloatingActionButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton4.Name = "materialFloatingActionButton4";
@@ -1943,6 +1931,7 @@ namespace appBugInn
             this.dtp_dataInicioDash.Name = "dtp_dataInicioDash";
             this.dtp_dataInicioDash.Size = new System.Drawing.Size(106, 20);
             this.dtp_dataInicioDash.TabIndex = 9;
+            this.dtp_dataInicioDash.ValueChanged += new System.EventHandler(this.dtp_dataInicioDash_ValueChanged);
             // 
             // dtp_dataFimDash
             // 
@@ -1951,6 +1940,7 @@ namespace appBugInn
             this.dtp_dataFimDash.Name = "dtp_dataFimDash";
             this.dtp_dataFimDash.Size = new System.Drawing.Size(106, 20);
             this.dtp_dataFimDash.TabIndex = 10;
+            this.dtp_dataFimDash.ValueChanged += new System.EventHandler(this.dtp_dataFimDash_ValueChanged);
             // 
             // materialLabel1_dash
             // 
@@ -1994,11 +1984,23 @@ namespace appBugInn
             this.mc_datas_dash.Size = new System.Drawing.Size(278, 123);
             this.mc_datas_dash.TabIndex = 13;
             // 
+            // lbl_usuarioLogado
+            // 
+            this.lbl_usuarioLogado.AutoSize = true;
+            this.lbl_usuarioLogado.Depth = 0;
+            this.lbl_usuarioLogado.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_usuarioLogado.Location = new System.Drawing.Point(26, 29);
+            this.lbl_usuarioLogado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_usuarioLogado.Name = "lbl_usuarioLogado";
+            this.lbl_usuarioLogado.Size = new System.Drawing.Size(86, 19);
+            this.lbl_usuarioLogado.TabIndex = 0;
+            this.lbl_usuarioLogado.Text = "Bem Vindo: ";
+            // 
             // F_telaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 960);
+            this.ClientSize = new System.Drawing.Size(1467, 960);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
@@ -2010,6 +2012,8 @@ namespace appBugInn
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.F_telaInicial_Load);
             this.materialTabControl1.ResumeLayout(false);
+            this.tb_home.ResumeLayout(false);
+            this.tb_home.PerformLayout();
             this.tb_reservas.ResumeLayout(false);
             this.mc_dadosReserva.ResumeLayout(false);
             this.mc_dadosReserva.PerformLayout();
@@ -2056,7 +2060,6 @@ namespace appBugInn
         private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialProgressBar mpb_fatMensal;
         private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton2;
         private MaterialSkin.Controls.MaterialCard materialCard3;
         private System.Windows.Forms.Label lbl_classificacao;
         private System.Windows.Forms.Label label9;
@@ -2146,5 +2149,6 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialCard mc_datas_dash;
         private MaterialSkin.Controls.MaterialLabel materialLabel2_dash;
         private MaterialSkin.Controls.MaterialLabel materialLabel1_dash;
+        private MaterialSkin.Controls.MaterialLabel lbl_usuarioLogado;
     }
 }

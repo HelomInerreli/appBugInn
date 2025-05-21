@@ -430,6 +430,7 @@ namespace appBugInn
 
         public void preencherFaturamento()
         {
+            faturamentos.Clear();
             List<object> func = Funcionalidades.CriarObjetosDoTexto("faturamentos", "Faturamento");
             foreach (var item in func)
             {

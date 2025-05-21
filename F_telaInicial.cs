@@ -27,50 +27,68 @@ namespace appBugInn
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
+        }
 
+        private void PreencherGraficoFaturamentoPorAno(DateTime dataInicio, DateTime dataFim)
+        {
+            // Agrupa os faturamentos por ano dentro do intervalo
+            var faturamentosPorAno = hotel.faturamentos
+                .Where(f => f.DataFaturamento >= dataInicio && f.DataFaturamento <= dataFim)
+                .GroupBy(f => f.DataFaturamento.Year)
+                .OrderBy(g => g.Key);
 
-            // No F_telaInicial
+            cartesianChart1.Series.Clear();
 
-
-
-            //bar
-            cartesianChart1.Series = new SeriesCollection
+            foreach (var grupoAno in faturamentosPorAno)
             {
-                new ColumnSeries
+                // Inicializa o array com 0 para cada mês
+                double[] faturamentoPorMes = new double[12];
+
+                foreach (var fat in grupoAno)
                 {
-                    Title = "2024",
-                    Values = new ChartValues<double> { 16, 15, 14, 13, 15, 15, 16, 15, 17, 16, 14, 16 }
-}
-            };
+                    int mes = fat.DataFaturamento.Month;
+                    faturamentoPorMes[mes - 1] += fat.ValorTotal;
+                }
 
-            //adding series will update and animate the chart automatically
-            cartesianChart1.Series.Add(new ColumnSeries
-            {
-                Title = "2025",
-                Values = new ChartValues<double> { 15, 15, 13, 12, 7, 0, 0, 0, 0, 0, 0, 0 }
-            });
+                cartesianChart1.Series.Add(new ColumnSeries
+                {
+                    Title = grupoAno.Key.ToString(), // O ano como legenda
+                    Values = new LiveCharts.ChartValues<double>(faturamentoPorMes)
+                });
+            }
 
-            //also adding values updates and animates the chart automatically
-            //cartesianChart1.Series[1].Values.Add(48d);
-
+            cartesianChart1.AxisX.Clear();
             cartesianChart1.AxisX.Add(new Axis
             {
                 Title = "Meses",
                 Labels = new[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }
-
             });
 
+            cartesianChart1.AxisY.Clear();
             cartesianChart1.AxisY.Add(new Axis
             {
                 Title = "Faturamento",
                 LabelFormatter = value => value.ToString("N")
             });
 
+            // Exibe a legenda
+            cartesianChart1.LegendLocation = LegendLocation.Right;
         }
 
         private void F_telaInicial_Load(object sender, EventArgs e)
         {
             mtv_dadosFunc.DoubleClick += mtv_dadosFunc_DoubleClick;
+            lbl_usuarioLogado.Text = "Bem-vindo, " + Funcionalidades.UsuarioLogado + "!";
+            if (Funcionalidades.UsuarioGestor)
+            {
+                if (!materialTabControl1.TabPages.Contains(tb_diretoria))
+                    materialTabControl1.TabPages.Add(tb_diretoria);
+            }
+            else
+            {
+                if (materialTabControl1.TabPages.Contains(tb_diretoria))
+                    materialTabControl1.TabPages.Remove(tb_diretoria);
+            }
 
         }
 
@@ -829,6 +847,8 @@ namespace appBugInn
         private void tb_diretoria_Enter(object sender, EventArgs e)
         {
             hotel.preencherFaturamento();
+            float prevMensal = 62000;
+            float prevAnual = 744000;
             float fatMensal = hotel.calcularFaturamentoMensal(DateTime.Now.Month, DateTime.Now.Year);
             float fatAnual = hotel.calcularFaturamentoAnual(DateTime.Now.Year);
             float classificacao = hotel.calcularClassificacao();
@@ -837,13 +857,23 @@ namespace appBugInn
             lbl_fatAnual.Text = fatAnual.ToString("C");
             lbl_classificacao.Text = classificacao.ToString("F1") + " / 5.0";
 
+            float porcentagemMensal = (fatMensal / prevMensal) * 100;
+            float porcentagemAnual = (fatAnual / prevAnual) * 100;
 
-            dtp_dataInicioDash.MinDate = new DateTime(2024,10,01);
+            lbl_desc_fatMensal.Text = porcentagemMensal.ToString("F1") + "% da arrecadação prevista";
+            mpb_fatMensal.Value = (int)porcentagemMensal;
+            lbl_desc_fatAnual.Text = porcentagemAnual.ToString("F1") + "% da arrecadação prevista";
+            mpb_fatAnual.Value = (int)porcentagemAnual;
+
+
+            dtp_dataInicioDash.MinDate = new DateTime(2024,04,01);
             dtp_dataInicioDash.MaxDate = DateTime.Now;
-            dtp_dataInicioDash.Value = new DateTime(2024, 10, 01);
-            dtp_dataFimDash.MinDate = new DateTime(2024, 10, 01);
+            dtp_dataInicioDash.Value = new DateTime(2024, 04, 01);
+            dtp_dataFimDash.MinDate = new DateTime(2024, 04, 01);
             dtp_dataFimDash.MaxDate = DateTime.Now;
             dtp_dataFimDash.Value = DateTime.Now;
+
+            PreencherGraficoFaturamentoPorAno(dtp_dataInicioDash.Value, dtp_dataFimDash.Value);
         }
     
         private void btn_pesquisar_Click(object sender, EventArgs e)
@@ -1107,6 +1137,16 @@ namespace appBugInn
         {
             hotel.exportarFaturamentoParaCSV(dtp_dataInicioDash.Value,
             dtp_dataFimDash.Value);
+        }
+
+        private void dtp_dataInicioDash_ValueChanged(object sender, EventArgs e)
+        {
+            PreencherGraficoFaturamentoPorAno( dtp_dataInicioDash.Value, dtp_dataFimDash.Value);
+        }
+
+        private void dtp_dataFimDash_ValueChanged(object sender, EventArgs e)
+        {
+            PreencherGraficoFaturamentoPorAno(dtp_dataInicioDash.Value, dtp_dataFimDash.Value);
         }
 
 

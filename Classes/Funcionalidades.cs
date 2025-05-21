@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -10,6 +10,9 @@ namespace appBugInn
 {
     internal static class Funcionalidades
     {
+        public static string UsuarioLogado { get; set; }
+        public static bool UsuarioGestor { get; set; }
+
         public static string[] LerBaseDados(string baseDados) // Método permanece estático
         {
             List<string> dados = new List<string>(); // Usar uma lista para armazenar todas as linhas
