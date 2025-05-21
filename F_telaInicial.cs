@@ -974,39 +974,35 @@ namespace appBugInn
                     }
                 }
 
-                // Ativa switch de cama de casal apenas se for "Casal"
+                // Desativa switches por padrão
+                if (sw_banheira != null)
+                    sw_banheira.Checked = false;
+                if (sw_camaCasal != null)
+                    sw_camaCasal.Checked = false;
+                if (sw_miniBar != null)
+                    sw_miniBar.Checked = false;
+
+                // Identifica o tipo de quarto
+                string quarto = selectedItem.SubItems[2].Text.Trim();
+                string numeroQuarto = selectedItem.SubItems[0].Text.Trim();
+
+                // Ativa o switch de banheira se o número do quarto terminar em 4 (Deluxe)
+                if (sw_banheira != null)
+                    sw_banheira.Checked = numeroQuarto.EndsWith("4");
+
+                // Só ativa o switch de cama de casal se o tipo de cama for "Casal"
                 if (sw_camaCasal != null && selectedItem.SubItems.Count > 5)
                 {
                     string tipoCama = selectedItem.SubItems[5].Text.Trim();
                     sw_camaCasal.Checked = tipoCama.Equals("Casal", StringComparison.OrdinalIgnoreCase);
                 }
 
-                // Ativa switch de banheira apenas se for Deluxe e tiver banheira
-                if (sw_banheira != null && tipoQuarto.Equals("Deluxe", StringComparison.OrdinalIgnoreCase))
-                {
-                    // Supondo que a informação da banheira está na coluna 7 ou 8 (ajuste conforme necessário)
-                    // Exemplo: coluna 7: "True" ou "False"
-                    if (selectedItem.SubItems.Count > 7)
-                    {
-                        string banheiraValue = selectedItem.SubItems[7].Text.Trim();
-                        sw_banheira.Checked = banheiraValue.Equals("True", StringComparison.OrdinalIgnoreCase);
-                    }
-                }
 
-                // Ativa switch de minibar apenas se for Deluxe e tiver minibar (ajuste conforme sua estrutura)
-                if (sw_miniBar != null && tipoQuarto.Equals("Deluxe", StringComparison.OrdinalIgnoreCase))
-                {
-                    // Supondo que a informação do minibar está na coluna 8 ou 9 (ajuste conforme necessário)
-                    if (selectedItem.SubItems.Count > 8)
-                    {
-                        string miniBarValue = selectedItem.SubItems[8].Text.Trim();
-                        sw_miniBar.Checked = miniBarValue.Equals("True", StringComparison.OrdinalIgnoreCase);
-                    }
-
-
-                }
             }
         }
+        
+            
+        
         
 
         private void tb_gerirQuartos_Enter(object sender, EventArgs e)
