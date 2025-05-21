@@ -963,10 +963,30 @@ namespace appBugInn
                 // Só mostra a vista para Suite e Deluxe
                 if (txt_Vista != null)
                 {
-                    if (tipoQuarto.Equals("Suite", StringComparison.OrdinalIgnoreCase) ||
-                        tipoQuarto.Equals("Deluxe", StringComparison.OrdinalIgnoreCase))
+                    if (tipoQuarto.Equals("Suite", StringComparison.OrdinalIgnoreCase))
                     {
-                        txt_Vista.Text = selectedItem.SubItems[6].Text;
+                        // Busca o número do quarto selecionado
+                        if (int.TryParse(selectedItem.SubItems[0].Text, out int numQuarto))
+                        {
+                            var suite = hotel.qSuites.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                            txt_Vista.Text = suite != null ? suite.TipoVista : string.Empty;
+                        }
+                        else
+                        {
+                            txt_Vista.Text = string.Empty;
+                        }
+                    }
+                    else if (tipoQuarto.Equals("Deluxe", StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (int.TryParse(selectedItem.SubItems[0].Text, out int numQuarto))
+                        {
+                            var deluxe = hotel.qDeluxes.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                            txt_Vista.Text = deluxe != null ? deluxe.TipoVista : string.Empty;
+                        }
+                        else
+                        {
+                            txt_Vista.Text = string.Empty;
+                        }
                     }
                     else
                     {
