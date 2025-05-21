@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +16,7 @@ namespace appBugInn.Classes
         private DateTime _dataFaturamento;
         private string _tipoPagamento;
         private float _classificacao;
+
 
         public int IdFaturamento
         {
@@ -90,6 +91,17 @@ namespace appBugInn.Classes
                 _classificacao = value;
             }
         }
+        public int anoFaturamento()
+        {
+            return _dataFaturamento.Year;
+        }
+        public int mesFaturamento()
+        {
+            
+            return _dataFaturamento.Month;
+            
+        }
+
         public Faturamento(int idFaturamento, int idCheckIn, float valorTotal, DateTime dataFaturamento, string tipoPagamento, float classificacao)
         {
             IdFaturamento = idFaturamento;

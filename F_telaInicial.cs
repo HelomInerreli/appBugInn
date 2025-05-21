@@ -829,6 +829,21 @@ namespace appBugInn
         private void tb_diretoria_Enter(object sender, EventArgs e)
         {
             hotel.preencherFaturamento();
+            float fatMensal = hotel.calcularFaturamentoMensal(DateTime.Now.Month, DateTime.Now.Year);
+            float fatAnual = hotel.calcularFaturamentoAnual(DateTime.Now.Year);
+            float classificacao = hotel.calcularClassificacao();
+
+            lbl_fatMensal.Text = fatMensal.ToString("C");
+            lbl_fatAnual.Text = fatAnual.ToString("C");
+            lbl_classificacao.Text = classificacao.ToString("F1") + " / 5.0";
+
+
+            dtp_dataInicioDash.MinDate = new DateTime(2024,10,01);
+            dtp_dataInicioDash.MaxDate = DateTime.Now;
+            dtp_dataInicioDash.Value = new DateTime(2024, 10, 01);
+            dtp_dataFimDash.MinDate = new DateTime(2024, 10, 01);
+            dtp_dataFimDash.MaxDate = DateTime.Now;
+            dtp_dataFimDash.Value = DateTime.Now;
         }
     
         private void btn_pesquisar_Click(object sender, EventArgs e)
@@ -1083,7 +1098,18 @@ namespace appBugInn
             }
         }
 
-    
+        private void tb_gerirQuartos_Enter(object sender, EventArgs e)
+        {
+            hotel.preencherQuartos();
+        }
+
+        private void btn_exportarCSV_Click(object sender, EventArgs e)
+        {
+            hotel.exportarFaturamentoParaCSV(dtp_dataInicioDash.Value,
+            dtp_dataFimDash.Value);
+        }
+
+
 
         //private void label1_Click(object sender, EventArgs e)
         //{

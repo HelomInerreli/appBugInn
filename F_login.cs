@@ -1,4 +1,4 @@
-﻿using MaterialSkin;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -71,12 +71,6 @@ namespace appBugInn
         private void txt_nome_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btn_newuser_Click_1(object sender, EventArgs e)
-        {
-            F_nFunc f_NFunc = new F_nFunc();
-            f_NFunc.Show();
         }
 
         private void bt_login_Click_1(object sender, EventArgs e)

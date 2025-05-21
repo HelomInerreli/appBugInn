@@ -50,6 +50,7 @@ namespace appBugInn
 
         public void preencherQuartos()
         {
+            qSingles.Clear();
             List<object> qSing = Funcionalidades.CriarObjetosDoTexto("qSingle", "QSingle");
             foreach (var item in qSing)
             {
@@ -59,6 +60,7 @@ namespace appBugInn
                 }
             }
 
+            qDuplos.Clear();
             List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("qDuplos", "Duplo");
             foreach (var item in qDuplo)
             {
@@ -67,6 +69,8 @@ namespace appBugInn
                     qDuplos.Add(duplo);
                 }
             }
+
+            qSuites.Clear();
             List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
             foreach (var item in qSuite)
             {
@@ -75,7 +79,9 @@ namespace appBugInn
                     qSuites.Add(suite);
                 }
             }
-            List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxes", "Deluxe");
+
+            qDeluxes.Clear();
+            List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxe", "Deluxe");
             foreach (var item in qDeluxe)
             {
                 if (item is Deluxe deluxe)
@@ -522,6 +528,73 @@ namespace appBugInn
                 linha += item.linhaBD() + "\n";
             }
             Funcionalidades.GravarBaseDados("faturamentos", linha);
+        }
+
+        public float calcularFaturamentoMensal(int mes, int ano)
+        {
+            float totalFaturamento = 0;
+            foreach (var item in faturamentos)
+            {
+                if (item.mesFaturamento() == mes && item.anoFaturamento() == ano)
+                {
+                    totalFaturamento += item.ValorTotal;
+                }
+            }
+            return totalFaturamento;
+
+        }
+
+        public float calcularFaturamentoAnual(int ano)
+        {
+            float totalFaturamento = 0;
+            foreach (var item in faturamentos)
+            {
+                if (item.anoFaturamento() == ano)
+                {
+                    totalFaturamento += item.ValorTotal;
+                }
+            }
+            return totalFaturamento;
+
+        }
+
+        public float calcularClassificacao()
+        {
+            float totalClassificacao = 0;
+            foreach (var item in faturamentos)
+            {
+                totalClassificacao += item.Classificacao;
+            }
+            return totalClassificacao / faturamentos.Count;
+        }
+
+        //Funcao para exportar os faturamentos para um ficheiro CSV
+        public void exportarFaturamentoParaCSV(DateTime dtInicio, DateTime dtFim)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                saveFileDialog.Title = "Salvar Faturamento como CSV";
+                saveFileDialog.FileName = "faturamento.csv";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string caminho = saveFileDialog.FileName;
+                    using (StreamWriter sw = new StreamWriter(caminho, false, Encoding.UTF8))
+                    {
+                        sw.WriteLine("ID Faturamento;Id CheckIn;Valor Total;Data Faturamento;Tipo Pagamento;Classificacao");
+                        foreach (var item in faturamentos)
+                        {
+                            if (item.DataFaturamento >= dtInicio && item.DataFaturamento <= dtFim)
+                            {
+                                // Escreve os dados no formato CSV
+                                sw.WriteLine(item.linhaBD());
+                            }
+                        }
+                    }
+                    MessageBox.Show("Faturamento exportado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
     }
