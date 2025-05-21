@@ -43,6 +43,7 @@ namespace appBugInn
 
         public void preencherQuartos()
         {
+            qSingles.Clear();
             List<object> qSing = Funcionalidades.CriarObjetosDoTexto("qSingle", "QSingle");
             foreach (var item in qSing)
             {
@@ -52,15 +53,17 @@ namespace appBugInn
                 }
             }
 
-            //List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("qDuplos", "Duplo");
-            //foreach (var item in qDuplo)
-            //{
-            //    if (item is Duplo duplo)
-            //    {
-            //        qDuplos.Add(duplo);
-            //    }
-            //}
+            qDuplos.Clear();
+            List<object> qDuplo = Funcionalidades.CriarObjetosDoTexto("qDuplos", "Duplo");
+            foreach (var item in qDuplo)
+            {
+                if (item is Duplo duplo)
+                {
+                    qDuplos.Add(duplo);
+                }
+            }
 
+            //qSuite.Clear();
             //List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
             //foreach (var item in qSuite)
             //{
@@ -70,6 +73,7 @@ namespace appBugInn
             //    }
             //}
 
+            //qDeluxe.Clear();
             //List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxe", "Deluxe");
             //{
             //    if (item is Deluxe deluxe)

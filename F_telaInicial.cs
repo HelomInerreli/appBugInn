@@ -830,6 +830,7 @@ namespace appBugInn
         {
             try
             {
+
                 //Limpa as colunas
                 mtv_dadosQuartos.Clear();
 
@@ -844,11 +845,25 @@ namespace appBugInn
                 mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Observações", 200, HorizontalAlignment.Left);
 
+                // Adiciona os quartos Singles
                 foreach (var quarto in hotel.qSingles)
                 {
                     ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
                     item.SubItems.Add(quarto.Andar.ToString());
                     item.SubItems.Add("Single"); 
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+                // Adiciona os quartos Duplos
+                foreach (var quarto in hotel.qDuplos)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Duplo");
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
@@ -880,14 +895,38 @@ namespace appBugInn
 
         private void mtv_dadosQuartos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            // Verifica se existe pelo menos um item selecionado na ListView
             if (mtv_dadosQuartos.SelectedItems.Count > 0)
             {
-                ListViewItem item = mtv_dadosQuartos.SelectedItems[0];
-                // Preenche o campo txt_nQuarto com o número do quarto selecionado
-                txt_nQuarto.Text = item.SubItems[0].Text;
-                txt_Andar.Text = item.SubItems[1].Text;
-                txt_tQuarto.Text = item.SubItems[2].Text;
-                txt_Conta.Text = item.SubItems[3].Text;
+                // Obtém o primeiro item selecionado (assume que só há um selecionado)
+                ListViewItem selectedItem = mtv_dadosQuartos.SelectedItems[0];
+
+                // Preenche a TextBox do número do quarto com o valor da primeira coluna
+                if (txt_nQuarto != null)
+                    txt_nQuarto.Text = selectedItem.SubItems[0].Text;
+
+                if (txt_Andar != null)
+                    txt_Andar.Text = selectedItem.SubItems[1].Text;
+
+                if (txt_tQuarto != null)
+                    txt_tQuarto.Text = selectedItem.SubItems[2].Text;
+
+                if (txt_Conta != null)
+                    txt_Conta.Text = selectedItem.SubItems[3].Text;
+
+                if (txt_Status != null)
+                {
+                    string livreValue = selectedItem.SubItems[4].Text;
+                    txt_Status.Text = (livreValue == "True" || livreValue == "true") ? "Livre" : "Ocupado";
+                }
+
+                // Ativa o switch se for cama de casal, desativa se for solteiro
+                if (sw_camaCasal != null)
+                {
+                    string tipoCama = selectedItem.SubItems[5].Text.Trim();
+                    sw_camaCasal.Checked = tipoCama.Equals("Casal", StringComparison.OrdinalIgnoreCase);
+                }
+
             }
         }
 
@@ -897,4 +936,3 @@ namespace appBugInn
         }
     }
 }
-
