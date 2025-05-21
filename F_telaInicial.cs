@@ -825,7 +825,7 @@ namespace appBugInn
 
         }
 
-      
+
         private void mtv_dadosQuartos_Enter(object sender, EventArgs e)
         {
             try
@@ -850,7 +850,7 @@ namespace appBugInn
                 {
                     ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
                     item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("Single"); 
+                    item.SubItems.Add("Single");
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
@@ -1043,14 +1043,6 @@ namespace appBugInn
                 }
             }
         }
-        
-            
-        
-        
-
-        private void tb_gerirQuartos_Enter(object sender, EventArgs e)
-        {
-            //Testar erro
-        }
     }
 }
+    
