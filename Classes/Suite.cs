@@ -20,5 +20,10 @@ namespace appBugInn
         {
             return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{TipoVista};{Observacoes}";
         }
+
+        public string linhaBD()
+        {
+            return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{TipoVista};{Observacoes}";
+        }
     }
 }

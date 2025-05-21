@@ -33,7 +33,7 @@ namespace appBugInn
 
             }
         }
-        
+
         public void preencherReservas()
         {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("reservas", "Reserva");
@@ -89,6 +89,8 @@ namespace appBugInn
             }
         }
 
+
+
         public void gravarFuncionario()
         {
             //Apagar a base de dados
@@ -107,7 +109,7 @@ namespace appBugInn
             foreach (var item in hreservas)
             {
                 linha += item.linhaBDReservas() + "\n";
-         
+
             }
             Funcionalidades.GravarBaseDados("reservas", linha);
         }
@@ -207,7 +209,7 @@ namespace appBugInn
 
         public Hotel() 
         {
-            
+
         }
 
         public void AdicionarFuncionario(Funcionario funcionario)
@@ -231,7 +233,7 @@ namespace appBugInn
             if (!hreservas.Any(r => r.Nome == reserva.Nome))
             {
                 hreservas.Add(reserva);
-            
+
                 MessageBox.Show($"Reserva para {reserva.Nome} adicionada.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -293,7 +295,7 @@ namespace appBugInn
                 }
             }
 
-           // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -685,5 +687,4 @@ namespace appBugInn
         
 
     }
-
 }

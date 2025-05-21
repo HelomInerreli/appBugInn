@@ -1,0 +1,19 @@
+101;1;0;True;Ocupado;Quarto Livre para ocupação
+201;2;0;False;Ocupado;Quarto em utilizacao
+301;3;0;True;Livre;Quarto Livre para ocupação
+401;4;0;False;Ocupado;Quarto em utilizacao
+
+101;1;0;True;Ocupado;Quarto Livre para ocupação
+201;2;0;False;Ocupado;Quarto em utilizacao
+301;3;0;True;Livre;Quarto Livre para ocupação
+401;4;0;False;Ocupado;Quarto em utilizacao
+
+101;1;0;True;Ocupado;Quarto Livre para ocupação
+201;2;0;False;Ocupado;Quarto em utilizacao
+301;3;0;True;Livre;Quarto Livre para ocupação
+401;4;0;False;Ocupado;Quarto em utilizacao
+
+101;1;0;True;Ocupado;Quarto Livre para ocupação
+201;2;0;False;Ocupado;Quarto em utilizacao
+301;3;0;True;Livre;Quarto Livre para ocupação
+401;4;0;False;Ocupado;Quarto em utilizacao

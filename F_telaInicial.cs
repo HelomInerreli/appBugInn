@@ -860,7 +860,7 @@ namespace appBugInn
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void materialListView1_SelectedIndexChanged_2(object sender, EventArgs e)
         {
 
         }
@@ -1291,3 +1291,224 @@ namespace appBugInn
 
 
 
+
+        private void mtv_dadosQuartos_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+
+                //Limpa as colunas
+                mtv_dadosQuartos.Clear();
+
+                hotel.preencherQuartos();
+
+                // Adiciona as colunas
+                mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Conta", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Livre", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Observações", 300, HorizontalAlignment.Left);
+
+                // Adiciona os quartos Singles
+                foreach (var quarto in hotel.qSingles)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Single");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+                // Adiciona os quartos Duplos
+                foreach (var quarto in hotel.qDuplos)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Duplo");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+                // Adiciona os quartos Suite
+                foreach (var quarto in hotel.qSuites)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Suite");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+                // Adiciona os quartos Deluxe
+                foreach (var quarto in hotel.qDeluxes)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Deluxe");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+
+                mtv_dadosQuartos.View = View.Details;
+                mtv_dadosQuartos.FullRowSelect = true;
+
+                if (mtv_dadosQuartos.Items.Count == 0)
+                {
+                    MessageBox.Show("Nenhum dado encontrado.");
+                }
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show($"Erro: O ficheiro não foi encontrado. Detalhes: {ex.Message}");
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Erro de formato nos dados. Detalhes: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex.Message}");
+            }
+        }
+
+        private void mtv_dadosQuartos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // Verifica se existe pelo menos um item selecionado na ListView
+            if (mtv_dadosQuartos.SelectedItems.Count > 0)
+            {
+                // Obtém o primeiro item selecionado (assume que só há um selecionado)
+                ListViewItem selectedItem = mtv_dadosQuartos.SelectedItems[0];
+
+                // Preenche a TextBox do número do quarto com o valor da primeira coluna
+                if (txt_nQuarto != null)
+                    txt_nQuarto.Text = selectedItem.SubItems[0].Text;
+
+                if (txt_Andar != null)
+                    txt_Andar.Text = selectedItem.SubItems[1].Text;
+
+                if (txt_tQuarto != null)
+                    txt_tQuarto.Text = selectedItem.SubItems[2].Text;
+
+                if (txt_Conta != null)
+                    txt_Conta.Text = selectedItem.SubItems[3].Text;
+
+                if (txt_Status != null)
+                {
+                    string livreValue = selectedItem.SubItems[4].Text;
+                    txt_Status.Text = (livreValue == "True" || livreValue == "true") ? "Livre" : "Ocupado";
+                }
+
+
+                // Desativa switches por padrão
+                if (sw_banheira != null)
+                    sw_banheira.Checked = false;
+                if (sw_camaCasal != null)
+                    sw_camaCasal.Checked = false;
+                if (sw_miniBar != null)
+                    sw_miniBar.Checked = false;
+
+
+                // Identifica o tipo de quarto
+                string tipoQuarto = selectedItem.SubItems[2].Text.Trim();
+
+                // Só mostra a vista para Suite e Deluxe
+                if (txt_Vista != null)
+                {
+                    if (tipoQuarto.Equals("Suite", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Busca o número do quarto selecionado
+                        if (int.TryParse(selectedItem.SubItems[0].Text, out int numQuarto))
+                        {
+                            var suite = hotel.qSuites.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                            txt_Vista.Text = suite != null ? suite.TipoVista : string.Empty;
+                        }
+                        else
+                        {
+                            txt_Vista.Text = string.Empty;
+                        }
+                    }
+                    else if (tipoQuarto.Equals("Deluxe", StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (int.TryParse(selectedItem.SubItems[0].Text, out int numQuarto))
+                        {
+                            var deluxe = hotel.qDeluxes.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                            txt_Vista.Text = deluxe != null ? deluxe.TipoVista : string.Empty;
+                        }
+                        else
+                        {
+                            txt_Vista.Text = string.Empty;
+                        }
+                    }
+                    else
+                    {
+                        txt_Vista.Text = string.Empty;
+                    }
+                }
+
+                // Desativa switches por padrão
+                if (sw_banheira != null)
+                    sw_banheira.Checked = false;
+                if (sw_camaCasal != null)
+                    sw_camaCasal.Checked = false;
+                if (sw_miniBar != null)
+                    sw_miniBar.Checked = false;
+
+                // Identifica o tipo de quarto
+                string quarto = selectedItem.SubItems[2].Text.Trim();
+                string numeroQuarto = selectedItem.SubItems[0].Text.Trim();
+
+                // Ativa o switch de banheira se o número do quarto terminar em 4 (Deluxe)
+                if (sw_banheira != null)
+                    sw_banheira.Checked = numeroQuarto.EndsWith("4");
+
+                // Só ativa o switch de cama de casal se o tipo de cama for "Casal"
+                if (sw_camaCasal != null && selectedItem.SubItems.Count > 5)
+                {
+                    string tipoCama = selectedItem.SubItems[5].Text.Trim();
+                    sw_camaCasal.Checked = tipoCama.Equals("Casal", StringComparison.OrdinalIgnoreCase);
+                }
+
+                // Ativa o switch de cama de casal apenas para Duplo com cama de casal
+                if (tipoQuarto.Equals("Duplo", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (int.TryParse(numeroQuarto, out int numQuarto))
+                    {
+                        var duplo = hotel.qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                        if (duplo != null && duplo.TipoCama != null)
+                        {
+                            sw_camaCasal.Checked = duplo.TipoCama.Equals("Casal", StringComparison.OrdinalIgnoreCase);
+                        }
+                        else
+                        {
+                            sw_camaCasal.Checked = false;
+                        }
+                    }
+                    else
+                    {
+                        sw_camaCasal.Checked = false;
+                    }
+                }
+                else
+                {
+                    sw_camaCasal.Checked = false;
+                }
+            }
+        }
+    }
+}
+    

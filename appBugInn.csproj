@@ -193,6 +193,10 @@
     <Content Include="BaseDados\qSingle.txt" />
     <Content Include="BaseDados\qSuites.txt" />
     <Content Include="BaseDados\reservas.txt" />
+    <None Include="Resources\mountain %281%29.png" />
+    <None Include="Resources\mountain.png" />
+    <None Include="Resources\check-list.png" />
+    <None Include="Resources\building.png" />
     <None Include="Resources\icons8-visível-24.png" />
     <None Include="Resources\icons8-trancar-241.png" />
     <None Include="Resources\icons8-trancar-24.png" />

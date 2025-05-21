@@ -22,10 +22,6 @@ namespace appBugInn
         {
             return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{TipoCama};{Observacoes}";
         }
-
-
-
-
-
     }
 }
+
