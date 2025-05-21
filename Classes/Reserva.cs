@@ -66,15 +66,9 @@ namespace appBugInn
             get => _dataInicio;
             set
             {
-                
-                if (value.Date < DateTime.Today)
-                {
-                    throw new ArgumentException($"A data de início tem de ser superior ao dia atual: {DateTime.Now:dd/MM/yyyy}");
-
-                }
                     _dataInicio = value.Date;
 
-           }
+            }
         }
         public DateTime DataFim
         {
@@ -202,8 +196,7 @@ namespace appBugInn
             return dias * precoPorNoite;
         }
 
-
-
+  
     }
 }
 

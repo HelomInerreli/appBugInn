@@ -353,7 +353,7 @@ namespace appBugInn
             this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
             this.dtp_dataInicioReserva.Size = new System.Drawing.Size(242, 31);
             this.dtp_dataInicioReserva.TabIndex = 48;
-            this.dtp_dataInicioReserva.Value = new System.DateTime(2025, 5, 20, 20, 1, 7, 0);
+            this.dtp_dataInicioReserva.Value = new System.DateTime(2025, 5, 21, 0, 0, 0, 0);
             this.dtp_dataInicioReserva.ValueChanged += new System.EventHandler(this.dtp_dataInicioReserva_ValueChanged);
             this.dtp_dataInicioReserva.Leave += new System.EventHandler(this.dtp_dataInicioReserva_Leave);
             // 

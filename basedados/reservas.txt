@@ -4,4 +4,6 @@ ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto;NumeroPessoas
 3;goncalo;123456987;goncalo@sapo.pt;2025-05-20;2025-05-24;Single;1
 4;ruben;912654987;ruben@sapo.pt;2025-05-20;2025-05-24;Single;1
 5;manuel;912000000;manuel@gmail.com;2025-05-19;2025-05-24;Single;1
-
+6;gui;912333444;gui@teste.com;2025-05-21;2025-05-23;Deluxe;2
+7;maria;919888000;maria@gmail.com;2025-05-21;2025-05-25;Suite;3
+8;ricky;912333444;ricky@gmail.com;2025-05-22;2025-05-25;Duplo;2

@@ -367,7 +367,7 @@ namespace appBugInn
             return reservasNoPeriodo < 4;
         }
 
-
+        
 
     }
 

@@ -29,7 +29,7 @@ namespace appBugInn
             
 
             // No F_telaInicial
-
+            dtp_dataInicioReserva.Value = DateTime.Today;   
 
 
             //bar
@@ -141,6 +141,16 @@ namespace appBugInn
 
         }
 
+        private void LimparCamposReserva()
+        {
+            txt_nomeReserva1.Clear();
+            txt_telefoneReserva1.Clear();
+            txt_emailReserva1.Clear();
+            cb_TipoQuarto.SelectedIndex = -1;
+            dtp_dataInicioReserva.Value = DateTime.Today.AddDays(1);
+            dtp_dataFimReserva.Value = DateTime.Today.AddDays(1);
+            cb_NumeroPessoas.SelectedIndex = -1;
+        }
         private void btn_criar_Click(object sender, EventArgs e)
         {
             try
@@ -423,13 +433,7 @@ namespace appBugInn
                     return;
                 }
                 DateTime dataInicio = dtp_dataInicioReserva.Value.Date;
-                DateTime dataFim = dtp_dataFimReserva.Value.Date;
-                // Validação para só permitir reservas para amanhã
-                if (dataInicio != DateTime.Today.AddDays(1))
-                {
-                    MessageBox.Show("Só pode reservar para o dia seguinte ao atual.");
-                    return;
-                }
+                DateTime dataFim = dtp_dataFimReserva.Value.Date;                
                 if (dataFim < dataInicio)
                 {
                     MessageBox.Show("A data de fim não pode ser anterior à data de início.", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -446,7 +450,7 @@ namespace appBugInn
                 }
                 // Adiciona à lista e atualiza o ficheiro
                 hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
-
+                LimparCamposReserva();
                 mtv_dadosReserva.Refresh();
             }
             catch (Exception ex)
@@ -454,26 +458,18 @@ namespace appBugInn
                 MessageBox.Show("Erro ao gravar reserva: " + ex.Message);
             }
         }
-        
-
-
-
-
-
-
         private void cb_NumeroPessoas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             // Verifica se há algo selecionado no comboBox
             if (cb_NumeroPessoas.SelectedItem != null)
             {
                 string textoSelecionado = cb_NumeroPessoas.SelectedItem.ToString();
                 int numeroPessoas = int.Parse(textoSelecionado.Split(' ')[0]); // Extrai o número de pessoas
 
-                // Limpa o ComboBox de tipo de quarto para adicionar as opções corretas
+                // Limpa o ComboBox de tipo de quarto para adicionar as opções corretas.
                 cb_TipoQuarto.Items.Clear();
 
-                // Adiciona apenas o quarto válido com base no número de pessoas
+                // Adiciona apenas o quarto válido com base no número de pessoas.
                 switch (numeroPessoas)
                 {
                     case 1:
@@ -602,6 +598,7 @@ namespace appBugInn
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
             dtp_dataInicioReserva.MinDate = DateTime.Today;
+            dtp_dataInicioReserva.Value = DateTime.Today;
         }
 
         private void label7_Click(object sender, EventArgs e)
