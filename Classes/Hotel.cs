@@ -14,8 +14,6 @@ namespace appBugInn
     {
         public List<Funcionario> hfuncionarios = new List<Funcionario>();
         public List<Reserva> hreservas = new List<Reserva>();
-        public List<Funcionario> funcionarios = new List<Funcionario>();
-        public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
         public List<Checks> checkIn = new List<Checks>();
@@ -30,7 +28,7 @@ namespace appBugInn
             {
                 if (item is Funcionario funcionario)
                 {
-                    funcionarios.Add(funcionario);
+                    hfuncionarios.Add(funcionario);
                 }
 
             }
@@ -43,7 +41,7 @@ namespace appBugInn
             {
                 if (item is Reserva reserva)
                 {
-                    reservas.Add(reserva);
+                    hreservas.Add(reserva);
                 }
             }
         }
@@ -95,7 +93,7 @@ namespace appBugInn
         {
             //Apagar a base de dados
             string linha = "";
-            foreach (var item in funcionarios)
+            foreach (var item in hfuncionarios)
             {
                 linha += item.linhaBDFuncionarios() + "\n";
             }
@@ -106,44 +104,53 @@ namespace appBugInn
         {
             //apagar base de dados
             string linha = "";
-            foreach (var item in reservas)
+            foreach (var item in hreservas)
             {
                 linha += item.linhaBDReservas() + "\n";
          
             }
             Funcionalidades.GravarBaseDados("reservas", linha);
         }
+
         public void gravarQuartos()
         {
-            //Apagar a base de dados
-            string linha = "";
-            foreach (var item in qSingles)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Single", linha);
+            // ✅ Remove duplicações
+            qSingles = qSingles.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
+            qDuplos = qDuplos.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
+            qSuites = qSuites.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
+            qDeluxes = qDeluxes.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
 
-            linha = "";
-            foreach (var item in qDuplos)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Duplo", linha);
+            // ✅ Grava cada lista limpando o .txt (false = sobrescrever)
+            GravarLista("qSingle", qSingles);
+            GravarLista("qDuplos", qDuplos);
+            GravarLista("qSuites", qSuites);
+            GravarLista("qDeluxe", qDeluxes);
+        }
 
-            linha = "";
-            foreach (var item in qSuites)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Suite", linha);
-            
-            linha = "";
-            foreach (var item in qDeluxes)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Deluxe", linha);
+        private void GravarLista<T>(string nomeArquivo, List<T> lista) where T : class
+        {
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", nomeArquivo + ".txt");
 
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(caminho, false)) // false => sobrescreve
+                {
+                    foreach (var item in lista)
+                    {
+                        // Assume que todos os tipos têm método linhaBD()
+                        var metodo = item.GetType().GetMethod("linhaBD");
+                        if (metodo != null)
+                        {
+                            string linha = metodo.Invoke(item, null) as string;
+                            sw.WriteLine(linha);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao gravar {nomeArquivo}.txt: {ex.Message}");
+            }
         }
 
         public List<int> verificaQuartosVaziosSingle()
@@ -441,59 +448,117 @@ namespace appBugInn
             }
         }
         //-------------------------CHECKIn--------------------------------------
-     
+
         public void AdicionarChecks(string nomeReserva, double subtotal, bool checkOut, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numQuarto, string hospede1, string hospede2, string hospede3)
         {
+            bool duplicado = checkIn.Any(c => c.NomeReserva.Equals(nomeReserva, StringComparison.OrdinalIgnoreCase) && !c.CheckOut);
+
+            if (duplicado)
+            {
+                MessageBox.Show($"Já existe um check-in ativo para a reserva '{nomeReserva}'.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             int novoId = checkIn.Any() ? checkIn.Max(c => c.Id) + 1 : 1;
-            Checks novoChecks = new Checks(novoId,nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
-             checkIn.Add(novoChecks);
-            Funcionalidades.GravarBaseDados("checkin", novoChecks.linhaChecks());
+
+            Checks novoChecks = new Checks(novoId, nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
+            checkIn.Add(novoChecks);
+
+            gravarChecks(); // ✅ Grava apenas os dados atuais da lista
+        }
+        
+
+        public void MarcarQuartoComoOcupado(string tipoQuarto, int numQuarto)
+        {
+            switch (tipoQuarto)
+            {
+                case "Single":
+                    var single = qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (single != null) single.Livre = false;
+                    break;
+
+                case "Duplo":
+                    var duplo = qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (duplo != null) duplo.Livre = false;
+                    break;
+
+                case "Suite":
+                    var suite = qSuites.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (suite != null) suite.Livre = false;
+                    break;
+
+                case "Deluxe":
+                    var deluxe = qDeluxes.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (deluxe != null) deluxe.Livre = false;
+                    break;
+            }
         }
 
         public void gravarChecks()
         {
-            //Apagar a base de dados
-            string linha = "";
-            foreach (var item in checkIn)
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "checkin.txt");
+
+            try
             {
-                linha += item.linhaChecks() + "\n";
+                using (StreamWriter sw = new StreamWriter(caminho, false)) // false = sobrescreve
+                {
+                    sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3");
+
+                    foreach (var item in checkIn)
+                    {
+                        sw.WriteLine(item.linhaChecks());
+                    }
+                }
             }
-            Funcionalidades.GravarBaseDados("checkin", linha);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gravar check-ins: " + ex.Message);
+            }
         }
+        
 
         public void preencherChecks()
         {
-            List<object> func = Funcionalidades.CriarObjetosDoTexto("checkin", "Checks");
-            foreach (var item in func)
+            checkIn.Clear();
+
+            try
             {
-                if (item is Checks checkin)
+                string[] linhas = Funcionalidades.LerBaseDados("checkin");
+
+                // Garante que há pelo menos cabeçalho + 1 linha
+                if (linhas.Length <= 1) return;
+
+                for (int i = 1; i < linhas.Length; i++) // Começa depois do cabeçalho
                 {
-                    checkIn.Add(checkin);
+                    string linha = linhas[i];
+                    if (string.IsNullOrWhiteSpace(linha)) continue;
+
+                    string[] partes = linha.Split(';');
+                    if (partes.Length < 11) continue;
+
+                    int id = int.Parse(partes[0]);
+                    string nomeReserva = partes[1];
+                    double subtotal = double.Parse(partes[2]);
+                    bool checkOut = bool.Parse(partes[3]);
+                    DateTime dataInicio = DateTime.ParseExact(partes[4], "dd/MM/yyyy", null);
+                    DateTime dataFim = DateTime.ParseExact(partes[5], "dd/MM/yyyy", null);
+                    string tipoQuarto = partes[6];
+                    int numQuarto = int.Parse(partes[7]);
+                    string hospede1 = partes[8];
+                    string hospede2 = partes[9];
+                    string hospede3 = partes[10];
+
+                    Checks novo = new Checks(id, nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
+                    checkIn.Add(novo);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao preencher check-ins: " + ex.Message);
+            }
         }
-        //public void preencherFaturamento()
-        //{
-        //    List<object> func = Funcionalidades.CriarObjetosDoTexto("faturamentos", "Faturamento");
-        //    foreach (var item in func)
-        //    {
-        //        if (item is Faturamento faturamento)
-        //        {
-        //            faturamentos.Add(faturamento);
-        //        }
-        //    }
-        //}
 
-        //public void gravarFaturamento()
-        //{
-        //    //apagar base de dados
-        //    string linha = "";
-        //    foreach (var item in faturamentos)
-        //    {
-        //        linha += item.linhaBD() + "\n";
-        //    }
-        //    Funcionalidades.GravarBaseDados("faturamentos", linha);
-        //}
+
 
         public void AtualizarBaseDeDadosChecks()
         {
@@ -502,24 +567,22 @@ namespace appBugInn
 
             try
             {
-                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // `false` para sobrescrever o arquivo
+                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // false para sobrescrever o arquivo
                 {
-                    sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataChecks;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3\r\n"); // Escreve o cabeçalho novamente
+                    sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3");
 
-                    foreach (Checks func in checkIn)
+                    foreach (Checks c in checkIn)
                     {
-                        sw.WriteLine($"{func.Id};{func.NomeReserva};{func.Subtotal};{func.CheckOut};{func.DataInicio:dd/MM/yyyy};{func.DataFim:dd/MM/yyyy};{func.TipoQuarto};{func.NumQuarto};{func.Hospede1};{func.Hospede2};{func.Hospede3}");
+                        sw.WriteLine($"{c.Id};{c.NomeReserva};{c.Subtotal};{c.CheckOut};{c.DataInicio:dd/MM/yyyy};{c.DataFim:dd/MM/yyyy};{c.TipoQuarto};{c.NumQuarto};{c.Hospede1};{c.Hospede2};{c.Hospede3}");
                     }
-
                 }
-
-                //MessageBox.Show("Base de dados atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao atualizar base de dados: " + ex.Message);
             }
         }
+
         public void gravarFaturamento()
         {
             //apagar base de dados

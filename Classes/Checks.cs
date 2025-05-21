@@ -17,6 +17,7 @@ namespace appBugInn.Classes
         private DateTime _dataFim;
         private string _tipoQuarto;
         private int _numQuarto;
+        private int _nAndar;
         private string _hospede1;
         private string _hospede2;
         private string _hospede3;
@@ -95,6 +96,17 @@ namespace appBugInn.Classes
                 if (value <= 0)
                     throw new ArgumentException("O número do quarto deve ser maior que zero.");
                 _numQuarto = value;
+            }
+        }
+
+        public int NumAndar
+        {
+            get => _nAndar;
+            set
+            {
+                if (value <= 0)
+                    throw new ArgumentException("O andar deve ser maior que zero.");
+                _nAndar = value;
             }
         }
         public string Hospede1

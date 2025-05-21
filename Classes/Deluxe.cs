@@ -10,7 +10,7 @@ namespace appBugInn
     {
         public string TipoVista { get; set; } // Tipo de vista (Mar, Montanha, etc.)
         public bool Banheira { get; set; } // Indica se o quarto tem banheira
-        public double PrecoPorNoite { get; set; } = 200; // Preço por noite para o quarto Deluxe
+        public double PrecoPorNoite { get; set; } = 200; // Preï¿½o por noite para o quarto Deluxe
         public Deluxe(int numQuarto, int andar, float conta, bool livre, string status, string tipoVista, bool banheira, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
         {
             TipoVista = tipoVista; // Inicializa o tipo de vista

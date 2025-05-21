@@ -1,4 +1,4 @@
-ID;Nome;Telefone;TipoFuncionario;Password;Username
+ID;Nome;Telefone;Gestor;Password;Username
 1;Goncalo Pinto;912345678;True;atec123;gPinto
 2;Henrique Magalhaes;912345679;False;atec123;hMagalhaes
 3;Helom Valentim;456456456;True;atec123;hValentim
