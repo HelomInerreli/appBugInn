@@ -843,7 +843,7 @@ namespace appBugInn
                 mtv_dadosQuartos.Columns.Add("Conta", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Livre", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Observações", 200, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Observações", 300, HorizontalAlignment.Left);
 
                 // Adiciona os quartos Singles
                 foreach (var quarto in hotel.qSingles)
@@ -1017,7 +1017,30 @@ namespace appBugInn
                     sw_camaCasal.Checked = tipoCama.Equals("Casal", StringComparison.OrdinalIgnoreCase);
                 }
 
-
+                // Ativa o switch de cama de casal apenas para Duplo com cama de casal
+                if (tipoQuarto.Equals("Duplo", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (int.TryParse(numeroQuarto, out int numQuarto))
+                    {
+                        var duplo = hotel.qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                        if (duplo != null && duplo.TipoCama != null)
+                        {
+                            sw_camaCasal.Checked = duplo.TipoCama.Equals("Casal", StringComparison.OrdinalIgnoreCase);
+                        }
+                        else
+                        {
+                            sw_camaCasal.Checked = false;
+                        }
+                    }
+                    else
+                    {
+                        sw_camaCasal.Checked = false;
+                    }
+                }
+                else
+                {
+                    sw_camaCasal.Checked = false;
+                }
             }
         }
         

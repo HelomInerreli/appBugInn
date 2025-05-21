@@ -141,7 +141,7 @@ namespace appBugInn
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(965, 505);
+            this.materialTabControl1.Size = new System.Drawing.Size(1115, 650);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.materialTabControl1_Selected);
             // 
@@ -196,10 +196,10 @@ namespace appBugInn
             this.mc_dadosReserva.Dock = System.Windows.Forms.DockStyle.Top;
             this.mc_dadosReserva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mc_dadosReserva.Location = new System.Drawing.Point(2, 2);
-            this.mc_dadosReserva.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.mc_dadosReserva.Margin = new System.Windows.Forms.Padding(14);
             this.mc_dadosReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.mc_dadosReserva.Name = "mc_dadosReserva";
-            this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(14);
             this.mc_dadosReserva.Size = new System.Drawing.Size(953, 259);
             this.mc_dadosReserva.TabIndex = 39;
             this.mc_dadosReserva.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
@@ -569,7 +569,7 @@ namespace appBugInn
             this.mtv_dadosReserva.FullRowSelect = true;
             this.mtv_dadosReserva.HideSelection = false;
             this.mtv_dadosReserva.Location = new System.Drawing.Point(2, 247);
-            this.mtv_dadosReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtv_dadosReserva.Margin = new System.Windows.Forms.Padding(2);
             this.mtv_dadosReserva.MinimumSize = new System.Drawing.Size(100, 52);
             this.mtv_dadosReserva.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosReserva.MouseState = MaterialSkin.MouseState.OUT;
@@ -644,7 +644,7 @@ namespace appBugInn
             this.tb_gerirQuartos.ImageKey = "icons8-quarto-32.png";
             this.tb_gerirQuartos.Location = new System.Drawing.Point(4, 39);
             this.tb_gerirQuartos.Name = "tb_gerirQuartos";
-            this.tb_gerirQuartos.Size = new System.Drawing.Size(957, 462);
+            this.tb_gerirQuartos.Size = new System.Drawing.Size(1107, 607);
             this.tb_gerirQuartos.TabIndex = 4;
             this.tb_gerirQuartos.Text = "GERIR QUARTOS";
             this.tb_gerirQuartos.UseVisualStyleBackColor = true;
@@ -659,14 +659,14 @@ namespace appBugInn
             this.mtv_dadosQuartos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosQuartos.FullRowSelect = true;
             this.mtv_dadosQuartos.HideSelection = false;
-            this.mtv_dadosQuartos.Location = new System.Drawing.Point(0, 264);
+            this.mtv_dadosQuartos.Location = new System.Drawing.Point(0, 271);
             this.mtv_dadosQuartos.Margin = new System.Windows.Forms.Padding(1);
             this.mtv_dadosQuartos.MinimumSize = new System.Drawing.Size(50, 27);
             this.mtv_dadosQuartos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosQuartos.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosQuartos.Name = "mtv_dadosQuartos";
             this.mtv_dadosQuartos.OwnerDraw = true;
-            this.mtv_dadosQuartos.Size = new System.Drawing.Size(957, 198);
+            this.mtv_dadosQuartos.Size = new System.Drawing.Size(1107, 336);
             this.mtv_dadosQuartos.TabIndex = 42;
             this.mtv_dadosQuartos.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosQuartos.View = System.Windows.Forms.View.Details;
@@ -692,11 +692,11 @@ namespace appBugInn
             this.materialCard7.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialCard7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard7.Location = new System.Drawing.Point(0, 0);
-            this.materialCard7.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.materialCard7.Margin = new System.Windows.Forms.Padding(7);
             this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard7.Name = "materialCard7";
-            this.materialCard7.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.materialCard7.Size = new System.Drawing.Size(957, 263);
+            this.materialCard7.Padding = new System.Windows.Forms.Padding(7);
+            this.materialCard7.Size = new System.Drawing.Size(1107, 263);
             this.materialCard7.TabIndex = 41;
             // 
             // sw_camaCasal
@@ -1212,10 +1212,10 @@ namespace appBugInn
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard3.Location = new System.Drawing.Point(682, 31);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard3.Size = new System.Drawing.Size(248, 100);
             this.materialCard3.TabIndex = 6;
             // 
@@ -1248,10 +1248,10 @@ namespace appBugInn
             this.materialCard4.Depth = 0;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard4.Location = new System.Drawing.Point(30, 159);
-            this.materialCard4.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard4.Name = "materialCard4";
-            this.materialCard4.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard4.Size = new System.Drawing.Size(900, 318);
             this.materialCard4.TabIndex = 6;
             // 
@@ -1273,10 +1273,10 @@ namespace appBugInn
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard2.Location = new System.Drawing.Point(366, 31);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(260, 100);
             this.materialCard2.TabIndex = 4;
             // 
@@ -1332,10 +1332,10 @@ namespace appBugInn
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(30, 31);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(282, 100);
             this.materialCard1.TabIndex = 0;
             // 
@@ -1440,7 +1440,7 @@ namespace appBugInn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 572);
+            this.ClientSize = new System.Drawing.Size(1121, 717);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
