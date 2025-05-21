@@ -316,11 +316,15 @@ namespace appBugInn
                 string email = campos[3];
                 if (!DateTime.TryParse(campos[4], out DateTime dataInicio)) continue;
                 if (!DateTime.TryParse(campos[5], out DateTime dataFim)) continue;
+
+                // ❗️Verifica se a reserva já terminou
+                if (dataFim < DateTime.Today)
+                    continue; // Ignora reservas expiradas
+
                 string tipoQuarto = campos[6];
                 int numeroPessoas = 1;
                 if (!int.TryParse(campos[7], out numeroPessoas)) numeroPessoas = 1;
 
-                // Agora tipoQuarto é string
                 var reserva = new Reserva(id, nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
                 hreservas.Add(reserva);
             }
@@ -387,6 +391,8 @@ namespace appBugInn
         }
         public void AdicionarReservaModificada(string nome, int telefone, string email, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numeroPessoas)
         {
+            // Validação: só permite se houver vaga para o tipo de quarto e datas
+           
             int novoId = hreservas.Any() ? hreservas.Max(r => r.Id) + 1 : 1;
 
             // Agora tipoQuarto é string, não precisa buscar o objeto Quarto
@@ -406,7 +412,7 @@ namespace appBugInn
                 reservaExistente.Email = novoEmail;
                 reservaExistente.DataInicio = novaDataInicio;
                 reservaExistente.DataFim = novaDataFim;
-                reservaExistente.TipoQuarto = novoTipoQuarto; // Agora é string
+                reservaExistente.TipoQuarto = novoTipoQuarto;
 
                 AtualizarBaseDadosReservas(); // Atualiza o .txt
                 MessageBox.Show($"Reserva para {nomeSelecionado} modificada com sucesso");
@@ -660,6 +666,23 @@ namespace appBugInn
                 }
             }
         }
+
+        public bool PodeReservarQuarto(string tipoQuarto, DateTime dataInicio, DateTime dataFim)
+        {
+            // Garante que a lista está atualizada com o ficheiro
+           // CarregarReservas();
+
+            // Conta reservas que têm o mesmo tipo de quarto e datas sobrepostas
+            int reservasNoPeriodo = hreservas.Count(r =>
+                r.TipoQuarto.Equals(tipoQuarto, StringComparison.OrdinalIgnoreCase) &&
+                r.DataInicio < dataFim && dataInicio < r.DataFim
+            );
+
+            // Só pode reservar se houver menos de 4 reservas para esse tipo no período
+            return reservasNoPeriodo < 4;
+        }
+
+        
 
     }
 

@@ -145,6 +145,21 @@ namespace appBugInn
             for (int i = 1; i < linhas.Length; i++)
             {
                 string[] campos = linhas[i].Split(';');
+
+                if (campos.Length <= 5)
+                    continue;
+
+                // Verificar se a data de fim é válida e futura
+                if (DateTime.TryParse(campos[5], out DateTime dataFim))
+                {
+                    if (dataFim < DateTime.Today)
+                        continue; // Ignora reserva expirada
+                }
+                else
+                {
+                    continue; // Ignora se a data de fim for inválida
+                }
+
                 ListViewItem item = new ListViewItem(campos[0]);
 
                 for (int j = 1; j < campos.Length; j++)
@@ -156,15 +171,25 @@ namespace appBugInn
             }
 
             mtv_dadosReserva.View = View.Details;
-            mtv_dadosReserva.FullRowSelect = true
-               ;
+            mtv_dadosReserva.FullRowSelect = true;
+
             if (mtv_dadosReserva.Items.Count == 0)
             {
                 MessageBox.Show("Nenhum item foi carregado.");
             }
-
         }
 
+
+        private void LimparCamposReserva()
+        {
+            txt_nomeReserva1.Clear();
+            txt_telefoneReserva1.Clear();
+            txt_emailReserva1.Clear();
+            cb_TipoQuarto.SelectedIndex = -1;
+            dtp_dataInicioReserva.Value = DateTime.Today.AddDays(1);
+            dtp_dataFimReserva.Value = DateTime.Today.AddDays(1);
+            cb_NumeroPessoas.SelectedIndex = -1;
+        }
         private void btn_criar_Click(object sender, EventArgs e)
         {
             try
@@ -407,32 +432,13 @@ namespace appBugInn
         {
 
         }
+
         private void btn_registarReserva_Click(object sender, EventArgs e)
         {
             try
             {
-                string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "reservas.txt");
-                int id = 1;
 
-                // Verifica se o ficheiro existe e conta as linhas para gerar ID
-                if (File.Exists(caminho))
-                {
-                    var linhas = File.ReadAllLines(caminho)
-                                     .Where(l => !string.IsNullOrWhiteSpace(l))
-                                     .ToList();
-
-                    if (linhas.Count > 0)
-                    {
-                        string ultimaLinha = linhas.Last();
-                        string[] partes = ultimaLinha.Split(';');
-
-                        if (partes.Length > 0 && int.TryParse(partes[0], out int ultimoId))
-                        {
-                            id = ultimoId + 1;
-                        }
-                    }
-                }
-
+                hotel.CarregarReservas();
                 string nome = "";
                 if (Funcionalidades.ValidarLetras(txt_nomeReserva1.Text))
                 {
@@ -456,56 +462,50 @@ namespace appBugInn
                     return;
                 }
 
-                string tipoQuarto = cb_TipoQuarto.SelectedItem.ToString();
+                string tipoQuarto = cb_TipoQuarto.SelectedItem?.ToString();
                 if (string.IsNullOrEmpty(tipoQuarto))
                 {
                     MessageBox.Show("Por favor, selecione um tipo de quarto.");
                     return;
                 }
                 DateTime dataInicio = dtp_dataInicioReserva.Value.Date;
-                DateTime dataFim = dtp_dataFimReserva.Value.Date;
-
+                DateTime dataFim = dtp_dataFimReserva.Value.Date;                
                 if (dataFim < dataInicio)
                 {
                     MessageBox.Show("A data de fim não pode ser anterior à data de início.", "Erro de validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 // Obtenha o número de pessoas do ComboBox
-                string numeroPessoas = cb_NumeroPessoas.SelectedItem?.ToString() ?? "";
-
-                string linhaReserva = $"{id};{nome};{telefone};{email};{dataInicio:yyyy-MM-dd};{dataFim:yyyy-MM-dd};{tipoQuarto};{numeroPessoas}";
-                // string linhaReserva = $"{id};{nome};{telefone};{email};{dataInicio:yyyy-MM-dd};{dataFim:yyyy-MM-dd};{tipoQuarto}";
-                Funcionalidades.GravarBaseDados("reservas", linhaReserva);
-                MessageBox.Show("Reserva registada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Atualiza a lista em memória e o ListView
-
-                //  hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, int.Parse(numeroPessoas));
-                //  AtualizarListViewReservas();
+                string numeroPessoasStr = cb_NumeroPessoas.SelectedItem?.ToString() ?? "";
+                int numeroPessoas = 1;
+                int.TryParse(numeroPessoasStr, out numeroPessoas);
+                if (!hotel.PodeReservarQuarto(tipoQuarto, dataInicio, dataFim))
+                {
+                    MessageBox.Show("Não há quartos disponíveis deste tipo para o período selecionado.", "Indisponível", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                // Adiciona à lista e atualiza o ficheiro
+                hotel.AdicionarReservaModificada(nome, telefone, email, dataInicio, dataFim, tipoQuarto, numeroPessoas);
+                LimparCamposReserva();
                 mtv_dadosReserva.Refresh();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao gravar reserva: " + ex.Message);
             }
         }
-
-
-
         private void cb_NumeroPessoas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             // Verifica se há algo selecionado no comboBox
             if (cb_NumeroPessoas.SelectedItem != null)
             {
                 string textoSelecionado = cb_NumeroPessoas.SelectedItem.ToString();
                 int numeroPessoas = int.Parse(textoSelecionado.Split(' ')[0]); // Extrai o número de pessoas
 
-                // Limpa o ComboBox de tipo de quarto para adicionar as opções corretas
+                // Limpa o ComboBox de tipo de quarto para adicionar as opções corretas.
                 cb_TipoQuarto.Items.Clear();
 
-                // Adiciona apenas o quarto válido com base no número de pessoas
+                // Adiciona apenas o quarto válido com base no número de pessoas.
                 switch (numeroPessoas)
                 {
                     case 1:
@@ -634,6 +634,7 @@ namespace appBugInn
         private void dtp_dataInicioReserva_ValueChanged(object sender, EventArgs e)
         {
             dtp_dataInicioReserva.MinDate = DateTime.Today;
+            dtp_dataInicioReserva.Value = DateTime.Today;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -663,7 +664,7 @@ namespace appBugInn
 
         private void dtp_dataInicioReserva_ValueChanged_1(object sender, EventArgs e)
         {
-            //
+            
         }
 
         private void dtp_dataFimReserva_ValueChanged(object sender, EventArgs e)
@@ -673,24 +674,20 @@ namespace appBugInn
 
         private void dtp_dataFimReserva_Leave(object sender, EventArgs e)
         {
-
+          dtp_dataFimReserva.MinDate = dtp_dataInicioReserva.Value.AddDays(1);
         }
 
         private void tb_reservas_Enter(object sender, EventArgs e)
         {
             try
             {
-
                 string[] dados = Funcionalidades.LerBaseDados("reservas");
 
                 if (dados.Length > 0)
                 {
-                    mtv_dadosReserva.Clear(); // Limpar tudo (colunas + itens)
+                    mtv_dadosReserva.Clear(); // Limpar colunas e itens
 
-                    string[] colunas = dados[0].Split(';');
-
-                    // Adicionar colunas
-
+                    // Adicionar colunas manualmente
                     mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Nome", 200, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
@@ -704,6 +701,22 @@ namespace appBugInn
                     for (int i = 1; i < dados.Length; i++)
                     {
                         string[] campos = dados[i].Split(';');
+
+                        if (campos.Length < 6) // Verifica se há campos suficientes
+                            continue;
+
+                        // Verifica se a data de fim é maior ou igual à data atual
+                        if (DateTime.TryParse(campos[5], out DateTime dataFim))
+                        {
+                            if (dataFim < DateTime.Today)
+                                continue; // Ignora reserva expirada
+                        }
+                        else
+                        {
+                            continue; // Ignora se a data for inválida
+                        }
+
+                        // Adiciona à lista
                         ListViewItem item = new ListViewItem(campos[0]);
                         for (int j = 1; j < campos.Length; j++)
                         {
@@ -714,6 +727,11 @@ namespace appBugInn
 
                     mtv_dadosReserva.View = View.Details;
                     mtv_dadosReserva.FullRowSelect = true;
+
+                    if (mtv_dadosReserva.Items.Count == 0)
+                    {
+                        MessageBox.Show("Nenhuma reserva válida foi carregada.");
+                    }
                 }
                 else
                 {
@@ -734,6 +752,7 @@ namespace appBugInn
             }
 
         }
+
 
         public void AtualizarListViewReservas()
         {

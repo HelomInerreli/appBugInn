@@ -201,12 +201,12 @@ namespace appBugInn
             // 
             this.tb_reservas.Controls.Add(this.mc_dadosReserva);
             this.tb_reservas.Controls.Add(this.mtv_dadosReserva);
-            this.tb_reservas.ImageKey = "icons8-agenda-32.png";
-            this.tb_reservas.Location = new System.Drawing.Point(4, 39);
-            this.tb_reservas.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_reservas.ImageKey = "icons8-livro-32.png";
+            this.tb_reservas.Location = new System.Drawing.Point(8, 42);
+            this.tb_reservas.Margin = new System.Windows.Forms.Padding(6);
             this.tb_reservas.Name = "tb_reservas";
-            this.tb_reservas.Padding = new System.Windows.Forms.Padding(2);
-            this.tb_reservas.Size = new System.Drawing.Size(1266, 850);
+            this.tb_reservas.Padding = new System.Windows.Forms.Padding(3);
+            this.tb_reservas.Size = new System.Drawing.Size(1914, 921);
             this.tb_reservas.TabIndex = 1;
             this.tb_reservas.Text = "RESERVAS";
             this.tb_reservas.UseVisualStyleBackColor = true;
@@ -235,12 +235,12 @@ namespace appBugInn
             this.mc_dadosReserva.Depth = 0;
             this.mc_dadosReserva.Dock = System.Windows.Forms.DockStyle.Top;
             this.mc_dadosReserva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mc_dadosReserva.Location = new System.Drawing.Point(2, 2);
-            this.mc_dadosReserva.Margin = new System.Windows.Forms.Padding(14);
+            this.mc_dadosReserva.Location = new System.Drawing.Point(3, 3);
+            this.mc_dadosReserva.Margin = new System.Windows.Forms.Padding(28, 27, 28, 27);
             this.mc_dadosReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.mc_dadosReserva.Name = "mc_dadosReserva";
-            this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(14);
-            this.mc_dadosReserva.Size = new System.Drawing.Size(1262, 259);
+            this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(28, 27, 28, 27);
+            this.mc_dadosReserva.Size = new System.Drawing.Size(1908, 498);
             this.mc_dadosReserva.TabIndex = 39;
             this.mc_dadosReserva.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
             // 
@@ -252,12 +252,12 @@ namespace appBugInn
             this.btn_excluirReserva.Depth = 0;
             this.btn_excluirReserva.HighEmphasis = true;
             this.btn_excluirReserva.Icon = null;
-            this.btn_excluirReserva.Location = new System.Drawing.Point(884, 135);
-            this.btn_excluirReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_excluirReserva.Location = new System.Drawing.Point(1767, 259);
+            this.btn_excluirReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_excluirReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirReserva.Name = "btn_excluirReserva";
             this.btn_excluirReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluirReserva.Size = new System.Drawing.Size(68, 29);
+            this.btn_excluirReserva.Size = new System.Drawing.Size(135, 56);
             this.btn_excluirReserva.TabIndex = 55;
             this.btn_excluirReserva.Text = "Excluir";
             this.btn_excluirReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -285,23 +285,13 @@ namespace appBugInn
             "1",
             "2",
             "3",
-            "4",
-            "",
-            "1",
-            "2",
-            "3",
-            "4",
-            "",
-            "1",
-            "2",
-            "3",
             "4"});
-            this.cb_NumeroPessoas.Location = new System.Drawing.Point(435, 159);
-            this.cb_NumeroPessoas.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_NumeroPessoas.Location = new System.Drawing.Point(652, 248);
+            this.cb_NumeroPessoas.Margin = new System.Windows.Forms.Padding(6);
             this.cb_NumeroPessoas.MaxDropDownItems = 4;
             this.cb_NumeroPessoas.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_NumeroPessoas.Name = "cb_NumeroPessoas";
-            this.cb_NumeroPessoas.Size = new System.Drawing.Size(123, 49);
+            this.cb_NumeroPessoas.Size = new System.Drawing.Size(242, 49);
             this.cb_NumeroPessoas.StartIndex = 0;
             this.cb_NumeroPessoas.TabIndex = 46;
             this.cb_NumeroPessoas.SelectedIndexChanged += new System.EventHandler(this.cb_NumeroPessoas_SelectedIndexChanged);
@@ -329,12 +319,12 @@ namespace appBugInn
             "Suite",
             "Deluxe",
             ""});
-            this.cb_TipoQuarto.Location = new System.Drawing.Point(609, 160);
-            this.cb_TipoQuarto.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_TipoQuarto.Location = new System.Drawing.Point(914, 250);
+            this.cb_TipoQuarto.Margin = new System.Windows.Forms.Padding(6);
             this.cb_TipoQuarto.MaxDropDownItems = 4;
             this.cb_TipoQuarto.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_TipoQuarto.Name = "cb_TipoQuarto";
-            this.cb_TipoQuarto.Size = new System.Drawing.Size(123, 49);
+            this.cb_TipoQuarto.Size = new System.Drawing.Size(242, 49);
             this.cb_TipoQuarto.StartIndex = 0;
             this.cb_TipoQuarto.TabIndex = 47;
             this.cb_TipoQuarto.SelectedIndexChanged += new System.EventHandler(this.cb_TipoQuarto_SelectedIndexChanged);
@@ -343,23 +333,47 @@ namespace appBugInn
             // 
             this.dtp_dataFimReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataFimReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1107, 51);
-            this.dtp_dataFimReserva.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1660, 80);
+            this.dtp_dataFimReserva.Margin = new System.Windows.Forms.Padding(6);
             this.dtp_dataFimReserva.Name = "dtp_dataFimReserva";
-            this.dtp_dataFimReserva.Size = new System.Drawing.Size(122, 20);
+            this.dtp_dataFimReserva.Size = new System.Drawing.Size(240, 31);
             this.dtp_dataFimReserva.TabIndex = 49;
             this.dtp_dataFimReserva.ValueChanged += new System.EventHandler(this.dtp_dataFimReserva_ValueChanged);
             this.dtp_dataFimReserva.Leave += new System.EventHandler(this.dtp_dataFimReserva_Leave);
+            // 
+            // btn_recuarDiaInicioReserva
+            // 
+            this.btn_recuarDiaInicioReserva.AutoSize = false;
+            this.btn_recuarDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_recuarDiaInicioReserva.BackColor = System.Drawing.Color.Transparent;
+            this.btn_recuarDiaInicioReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_recuarDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_recuarDiaInicioReserva.Depth = 0;
+            this.btn_recuarDiaInicioReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_recuarDiaInicioReserva.HighEmphasis = true;
+            this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
+            this.btn_recuarDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(1281, 127);
+            this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
+            this.btn_recuarDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_recuarDiaInicioReserva.Size = new System.Drawing.Size(68, 31);
+            this.btn_recuarDiaInicioReserva.TabIndex = 29;
+            this.btn_recuarDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_recuarDiaInicioReserva.UseAccentColor = false;
+            this.btn_recuarDiaInicioReserva.UseVisualStyleBackColor = false;
+            this.btn_recuarDiaInicioReserva.Click += new System.EventHandler(this.btn_recuarDiaInicioReserva_Click);
             // 
             // lbl_dataFimReserva
             // 
             this.lbl_dataFimReserva.AutoSize = true;
             this.lbl_dataFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dataFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_dataFimReserva.Location = new System.Drawing.Point(855, 20);
-            this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1710, 38);
+            this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_dataFimReserva.Name = "lbl_dataFimReserva";
-            this.lbl_dataFimReserva.Size = new System.Drawing.Size(44, 9);
+            this.lbl_dataFimReserva.Size = new System.Drawing.Size(91, 20);
             this.lbl_dataFimReserva.TabIndex = 45;
             this.lbl_dataFimReserva.Text = "Data de fim";
             // 
@@ -367,26 +381,93 @@ namespace appBugInn
             // 
             this.dtp_dataInicioReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataInicioReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(821, 51);
-            this.dtp_dataInicioReserva.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(1232, 80);
+            this.dtp_dataInicioReserva.Margin = new System.Windows.Forms.Padding(6);
             this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
-            this.dtp_dataInicioReserva.Size = new System.Drawing.Size(123, 20);
+            this.dtp_dataInicioReserva.Size = new System.Drawing.Size(242, 31);
             this.dtp_dataInicioReserva.TabIndex = 48;
+            this.dtp_dataInicioReserva.Value = new System.DateTime(2025, 5, 21, 0, 0, 0, 0);
             this.dtp_dataInicioReserva.ValueChanged += new System.EventHandler(this.dtp_dataInicioReserva_ValueChanged);
             this.dtp_dataInicioReserva.Leave += new System.EventHandler(this.dtp_dataInicioReserva_Leave);
+            // 
+            // btn_avançaDiaInicioReserva
+            // 
+            this.btn_avançaDiaInicioReserva.AutoSize = false;
+            this.btn_avançaDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_avançaDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_avançaDiaInicioReserva.Depth = 0;
+            this.btn_avançaDiaInicioReserva.HighEmphasis = true;
+            this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
+            this.btn_avançaDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(1358, 127);
+            this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
+            this.btn_avançaDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_avançaDiaInicioReserva.Size = new System.Drawing.Size(68, 31);
+            this.btn_avançaDiaInicioReserva.TabIndex = 27;
+            this.btn_avançaDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_avançaDiaInicioReserva.UseAccentColor = false;
+            this.btn_avançaDiaInicioReserva.UseVisualStyleBackColor = true;
+            this.btn_avançaDiaInicioReserva.Click += new System.EventHandler(this.btn_avançaDiaReserva_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(634, 20);
-            this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label7.Location = new System.Drawing.Point(1268, 38);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 9);
+            this.label7.Size = new System.Drawing.Size(105, 20);
             this.label7.TabIndex = 54;
             this.label7.Text = "Data de início";
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // btn_avançarDiaFimReserva
+            // 
+            this.btn_avançarDiaFimReserva.AutoSize = false;
+            this.btn_avançarDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_avançarDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_avançarDiaFimReserva.Depth = 0;
+            this.btn_avançarDiaFimReserva.HighEmphasis = true;
+            this.btn_avançarDiaFimReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
+            this.btn_avançarDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1784, 127);
+            this.btn_avançarDiaFimReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_avançarDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_avançarDiaFimReserva.Name = "btn_avançarDiaFimReserva";
+            this.btn_avançarDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_avançarDiaFimReserva.Size = new System.Drawing.Size(68, 31);
+            this.btn_avançarDiaFimReserva.TabIndex = 52;
+            this.btn_avançarDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_avançarDiaFimReserva.UseAccentColor = false;
+            this.btn_avançarDiaFimReserva.UseVisualStyleBackColor = true;
+            this.btn_avançarDiaFimReserva.Click += new System.EventHandler(this.btn_avançarDiaFimReserva_Click);
+            // 
+            // btn_recuaDiaFimReserva
+            // 
+            this.btn_recuaDiaFimReserva.AutoSize = false;
+            this.btn_recuaDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_recuaDiaFimReserva.BackColor = System.Drawing.Color.Transparent;
+            this.btn_recuaDiaFimReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_recuaDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_recuaDiaFimReserva.Depth = 0;
+            this.btn_recuaDiaFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_recuaDiaFimReserva.HighEmphasis = true;
+            this.btn_recuaDiaFimReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
+            this.btn_recuaDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(1707, 127);
+            this.btn_recuaDiaFimReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_recuaDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_recuaDiaFimReserva.Name = "btn_recuaDiaFimReserva";
+            this.btn_recuaDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_recuaDiaFimReserva.Size = new System.Drawing.Size(68, 31);
+            this.btn_recuaDiaFimReserva.TabIndex = 26;
+            this.btn_recuaDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_recuaDiaFimReserva.UseAccentColor = false;
+            this.btn_recuaDiaFimReserva.UseVisualStyleBackColor = false;
+            this.btn_recuaDiaFimReserva.Click += new System.EventHandler(this.btn_recuaDiaReserva_Click);
             // 
             // btn_registarReserva
             // 
@@ -395,8 +476,8 @@ namespace appBugInn
             this.btn_registarReserva.Depth = 0;
             this.btn_registarReserva.HighEmphasis = true;
             this.btn_registarReserva.Icon = null;
-            this.btn_registarReserva.Location = new System.Drawing.Point(616, 135);
-            this.btn_registarReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_registarReserva.Location = new System.Drawing.Point(1232, 259);
+            this.btn_registarReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btn_registarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_registarReserva.Name = "btn_registarReserva";
             this.btn_registarReserva.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -417,12 +498,12 @@ namespace appBugInn
             this.btn_cancelarReserva.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelarReserva.HighEmphasis = true;
             this.btn_cancelarReserva.Icon = null;
-            this.btn_cancelarReserva.Location = new System.Drawing.Point(750, 135);
-            this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_cancelarReserva.Location = new System.Drawing.Point(1500, 259);
+            this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btn_cancelarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_cancelarReserva.Name = "btn_cancelarReserva";
             this.btn_cancelarReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_cancelarReserva.Size = new System.Drawing.Size(68, 29);
+            this.btn_cancelarReserva.Size = new System.Drawing.Size(135, 56);
             this.btn_cancelarReserva.TabIndex = 42;
             this.btn_cancelarReserva.Text = "Cancelar";
             this.btn_cancelarReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -436,13 +517,78 @@ namespace appBugInn
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel2.Location = new System.Drawing.Point(214, 352);
+            this.materialLabel2.Location = new System.Drawing.Point(428, 677);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(213, 29);
             this.materialLabel2.TabIndex = 44;
             this.materialLabel2.Text = "Detalhes da reserva";
             this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
+            // 
+            // txt_nomeReserva1
+            // 
+            this.txt_nomeReserva1.AnimateReadOnly = false;
+            this.txt_nomeReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nomeReserva1.Depth = 0;
+            this.txt_nomeReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeReserva1.Hint = "Nome";
+            this.txt_nomeReserva1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nomeReserva1.Location = new System.Drawing.Point(34, 33);
+            this.txt_nomeReserva1.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_nomeReserva1.MaxLength = 50;
+            this.txt_nomeReserva1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nomeReserva1.Multiline = false;
+            this.txt_nomeReserva1.Name = "txt_nomeReserva1";
+            this.txt_nomeReserva1.Size = new System.Drawing.Size(1124, 50);
+            this.txt_nomeReserva1.TabIndex = 30;
+            this.txt_nomeReserva1.Text = "";
+            this.txt_nomeReserva1.TrailingIcon = null;
+            this.txt_nomeReserva1.UseAccent = false;
+            this.txt_nomeReserva1.TextChanged += new System.EventHandler(this.txt_nomeReserva1_TextChanged);
+            this.txt_nomeReserva1.Leave += new System.EventHandler(this.txt_nomeReserva1_Leave);
+            // 
+            // txt_telefoneReserva1
+            // 
+            this.txt_telefoneReserva1.AnimateReadOnly = false;
+            this.txt_telefoneReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefoneReserva1.Depth = 0;
+            this.txt_telefoneReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_telefoneReserva1.Hint = "Telefone";
+            this.txt_telefoneReserva1.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_telefoneReserva1.Location = new System.Drawing.Point(34, 248);
+            this.txt_telefoneReserva1.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_telefoneReserva1.MaxLength = 50;
+            this.txt_telefoneReserva1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_telefoneReserva1.Multiline = false;
+            this.txt_telefoneReserva1.Name = "txt_telefoneReserva1";
+            this.txt_telefoneReserva1.Size = new System.Drawing.Size(606, 50);
+            this.txt_telefoneReserva1.TabIndex = 31;
+            this.txt_telefoneReserva1.Text = "";
+            this.txt_telefoneReserva1.TrailingIcon = null;
+            this.txt_telefoneReserva1.UseAccent = false;
+            this.txt_telefoneReserva1.Leave += new System.EventHandler(this.txt_telefoneReserva1_Leave);
+            // 
+            // txt_emailReserva1
+            // 
+            this.txt_emailReserva1.AnimateReadOnly = false;
+            this.txt_emailReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_emailReserva1.Depth = 0;
+            this.txt_emailReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_emailReserva1.Hint = "Email";
+            this.txt_emailReserva1.LeadingIcon = global::appBugInn.Properties.Resources.email;
+            this.txt_emailReserva1.Location = new System.Drawing.Point(34, 141);
+            this.txt_emailReserva1.Margin = new System.Windows.Forms.Padding(6);
+            this.txt_emailReserva1.MaxLength = 50;
+            this.txt_emailReserva1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_emailReserva1.Multiline = false;
+            this.txt_emailReserva1.Name = "txt_emailReserva1";
+            this.txt_emailReserva1.Size = new System.Drawing.Size(1124, 50);
+            this.txt_emailReserva1.TabIndex = 32;
+            this.txt_emailReserva1.Text = "";
+            this.txt_emailReserva1.TrailingIcon = null;
+            this.txt_emailReserva1.UseAccent = false;
+            this.txt_emailReserva1.Leave += new System.EventHandler(this.txt_emailReserva1_Leave);
             // 
             // mtv_dadosReserva
             // 
@@ -461,14 +607,14 @@ namespace appBugInn
             this.mtv_dadosReserva.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosReserva.FullRowSelect = true;
             this.mtv_dadosReserva.HideSelection = false;
-            this.mtv_dadosReserva.Location = new System.Drawing.Point(2, 635);
-            this.mtv_dadosReserva.Margin = new System.Windows.Forms.Padding(2);
-            this.mtv_dadosReserva.MinimumSize = new System.Drawing.Size(100, 52);
+            this.mtv_dadosReserva.Location = new System.Drawing.Point(3, 509);
+            this.mtv_dadosReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mtv_dadosReserva.MinimumSize = new System.Drawing.Size(200, 100);
             this.mtv_dadosReserva.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosReserva.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosReserva.Name = "mtv_dadosReserva";
             this.mtv_dadosReserva.OwnerDraw = true;
-            this.mtv_dadosReserva.Size = new System.Drawing.Size(1262, 213);
+            this.mtv_dadosReserva.Size = new System.Drawing.Size(1908, 409);
             this.mtv_dadosReserva.TabIndex = 0;
             this.mtv_dadosReserva.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosReserva.View = System.Windows.Forms.View.Details;
@@ -773,6 +919,82 @@ namespace appBugInn
             this.materialSwitch1.Text = "Jacuzzi";
             this.materialSwitch1.UseVisualStyleBackColor = true;
             // 
+            // materialTextBox4
+            // 
+            this.materialTextBox4.AnimateReadOnly = false;
+            this.materialTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox4.Depth = 0;
+            this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox4.Hint = "Andar";
+            this.materialTextBox4.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.materialTextBox4.Location = new System.Drawing.Point(30, 317);
+            this.materialTextBox4.MaxLength = 50;
+            this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox4.Multiline = false;
+            this.materialTextBox4.Name = "materialTextBox4";
+            this.materialTextBox4.Size = new System.Drawing.Size(294, 50);
+            this.materialTextBox4.TabIndex = 48;
+            this.materialTextBox4.Text = "";
+            this.materialTextBox4.TrailingIcon = null;
+            this.materialTextBox4.UseAccent = false;
+            // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.Hint = "Tipo de quarto";
+            this.materialTextBox1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.materialTextBox1.Location = new System.Drawing.Point(396, 59);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(294, 50);
+            this.materialTextBox1.TabIndex = 45;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
+            this.materialTextBox1.UseAccent = false;
+            // 
+            // materialTextBox2
+            // 
+            this.materialTextBox2.AnimateReadOnly = false;
+            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox2.Depth = 0;
+            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.Hint = "Vista";
+            this.materialTextBox2.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.materialTextBox2.Location = new System.Drawing.Point(396, 317);
+            this.materialTextBox2.MaxLength = 50;
+            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox2.Multiline = false;
+            this.materialTextBox2.Name = "materialTextBox2";
+            this.materialTextBox2.Size = new System.Drawing.Size(294, 50);
+            this.materialTextBox2.TabIndex = 46;
+            this.materialTextBox2.Text = "";
+            this.materialTextBox2.TrailingIcon = null;
+            this.materialTextBox2.UseAccent = false;
+            // 
+            // materialTextBox3
+            // 
+            this.materialTextBox3.AnimateReadOnly = false;
+            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox3.Depth = 0;
+            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox3.Hint = "Status";
+            this.materialTextBox3.LeadingIcon = global::appBugInn.Properties.Resources.email;
+            this.materialTextBox3.Location = new System.Drawing.Point(396, 191);
+            this.materialTextBox3.MaxLength = 50;
+            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox3.Multiline = false;
+            this.materialTextBox3.Name = "materialTextBox3";
+            this.materialTextBox3.Size = new System.Drawing.Size(294, 50);
+            this.materialTextBox3.TabIndex = 47;
+            this.materialTextBox3.Text = "";
+            this.materialTextBox3.TrailingIcon = null;
+            this.materialTextBox3.UseAccent = false;
+            // 
             // materialButton1
             // 
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -811,6 +1033,45 @@ namespace appBugInn
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.materialButton2.UseAccentColor = true;
             this.materialButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialTextBox7
+            // 
+            this.materialTextBox7.AnimateReadOnly = false;
+            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox7.Depth = 0;
+            this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox7.Hint = "Nº quarto";
+            this.materialTextBox7.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
+            this.materialTextBox7.Location = new System.Drawing.Point(16, 59);
+            this.materialTextBox7.MaxLength = 50;
+            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox7.Multiline = false;
+            this.materialTextBox7.Name = "materialTextBox7";
+            this.materialTextBox7.Size = new System.Drawing.Size(308, 50);
+            this.materialTextBox7.TabIndex = 30;
+            this.materialTextBox7.Text = "";
+            this.materialTextBox7.TrailingIcon = null;
+            this.materialTextBox7.UseAccent = false;
+            this.materialTextBox7.TextChanged += new System.EventHandler(this.materialTextBox7_TextChanged);
+            // 
+            // materialTextBox9
+            // 
+            this.materialTextBox9.AnimateReadOnly = false;
+            this.materialTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox9.Depth = 0;
+            this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox9.Hint = "Conta";
+            this.materialTextBox9.LeadingIcon = global::appBugInn.Properties.Resources.euro_symbol_icon_2048x2048_jz6x8c3o;
+            this.materialTextBox9.Location = new System.Drawing.Point(30, 191);
+            this.materialTextBox9.MaxLength = 50;
+            this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox9.Multiline = false;
+            this.materialTextBox9.Name = "materialTextBox9";
+            this.materialTextBox9.Size = new System.Drawing.Size(294, 50);
+            this.materialTextBox9.TabIndex = 32;
+            this.materialTextBox9.Text = "";
+            this.materialTextBox9.TrailingIcon = null;
+            this.materialTextBox9.UseAccent = false;
             // 
             // tb_funcionarios
             // 
@@ -2014,6 +2275,42 @@ namespace appBugInn
             this.txt_telefoneFuncionarios.TrailingIcon = null;
             this.txt_telefoneFuncionarios.UseSystemPasswordChar = false;
             // 
+            // btn_criarFunciornarios
+            // 
+            this.btn_criarFunciornarios.AutoSize = false;
+            this.btn_criarFunciornarios.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_criarFunciornarios.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_criarFunciornarios.Depth = 0;
+            this.btn_criarFunciornarios.HighEmphasis = true;
+            this.btn_criarFunciornarios.Icon = null;
+            this.btn_criarFunciornarios.Location = new System.Drawing.Point(420, 280);
+            this.btn_criarFunciornarios.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+            this.btn_criarFunciornarios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_criarFunciornarios.Name = "btn_criarFunciornarios";
+            this.btn_criarFunciornarios.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_criarFunciornarios.Size = new System.Drawing.Size(182, 56);
+            this.btn_criarFunciornarios.TabIndex = 41;
+            this.btn_criarFunciornarios.Text = "Criar";
+            this.btn_criarFunciornarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_criarFunciornarios.UseAccentColor = false;
+            this.btn_criarFunciornarios.UseVisualStyleBackColor = true;
+            this.btn_criarFunciornarios.Click += new System.EventHandler(this.btn_criar_Click);
+            // 
+            // chb_gestorFuncionarios
+            // 
+            this.chb_gestorFuncionarios.AutoSize = true;
+            this.chb_gestorFuncionarios.Depth = 0;
+            this.chb_gestorFuncionarios.Location = new System.Drawing.Point(729, 147);
+            this.chb_gestorFuncionarios.Margin = new System.Windows.Forms.Padding(0);
+            this.chb_gestorFuncionarios.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chb_gestorFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chb_gestorFuncionarios.Name = "chb_gestorFuncionarios";
+            this.chb_gestorFuncionarios.Ripple = true;
+            this.chb_gestorFuncionarios.Size = new System.Drawing.Size(104, 37);
+            this.chb_gestorFuncionarios.TabIndex = 13;
+            this.chb_gestorFuncionarios.Text = "Gestor";
+            this.chb_gestorFuncionarios.UseVisualStyleBackColor = true;
+            // 
             // txt_passwordFuncionarios
             // 
             this.txt_passwordFuncionarios.AnimateReadOnly = false;
@@ -2076,6 +2373,19 @@ namespace appBugInn
             this.materialFloatingActionButton3.TabIndex = 7;
             this.materialFloatingActionButton3.TabStop = false;
             this.materialFloatingActionButton3.UseVisualStyleBackColor = false;
+            // 
+            // materialFloatingActionButton2
+            // 
+            this.materialFloatingActionButton2.Depth = 0;
+            this.materialFloatingActionButton2.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
+            this.materialFloatingActionButton2.Location = new System.Drawing.Point(1194, 102);
+            this.materialFloatingActionButton2.Margin = new System.Windows.Forms.Padding(6);
+            this.materialFloatingActionButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton2.Name = "materialFloatingActionButton2";
+            this.materialFloatingActionButton2.Size = new System.Drawing.Size(112, 108);
+            this.materialFloatingActionButton2.TabIndex = 5;
+            this.materialFloatingActionButton2.TabStop = false;
+            this.materialFloatingActionButton2.UseVisualStyleBackColor = false;
             // 
             // materialCard3
             // 
@@ -2194,6 +2504,19 @@ namespace appBugInn
             this.label6.TabIndex = 0;
             this.label6.Text = "Faturação Ano Atual";
             this.label6.UseCompatibleTextRendering = true;
+            // 
+            // materialFloatingActionButton1
+            // 
+            this.materialFloatingActionButton1.Depth = 0;
+            this.materialFloatingActionButton1.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
+            this.materialFloatingActionButton1.Location = new System.Drawing.Point(284, 53);
+            this.materialFloatingActionButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
+            this.materialFloatingActionButton1.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton1.TabIndex = 1;
+            this.materialFloatingActionButton1.TabStop = false;
+            this.materialFloatingActionButton1.UseVisualStyleBackColor = false;
             // 
             // materialCard1
             // 
