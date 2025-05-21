@@ -14,8 +14,8 @@ namespace appBugInn
         public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
-        //public List<Suite> qSuites = new List<Suite>();
-        //public List<Deluxe> qDeuxe = new List<Deluxe>();
+        public List<Suite> qSuites = new List<Suite>();
+        public List<Deluxe> qDeluxes = new List<Deluxe>();
         public void preencherFuncionarios()
         {
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
@@ -63,24 +63,25 @@ namespace appBugInn
                 }
             }
 
-            //qSuite.Clear();
-            //List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
-            //foreach (var item in qSuite)
-            //{
-            //    if (item is Suite suite)
-            //    {
-            //        qSuite.Add(suite);
-            //    }
-            //}
+            qSuites.Clear();
+            List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
+            foreach (var item in qSuite)
+            {
+                if (item is Suite suite)
+                {
+                    qSuites.Add(suite);
+                }
+            }
 
-            //qDeluxe.Clear();
-            //List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxe", "Deluxe");
-            //{
-            //    if (item is Deluxe deluxe)
-            //    {
-            //        qDeluxe.Add(deluxe);
-            //    }
-
+            qDeluxes.Clear();
+            List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxe", "Deluxe");
+            foreach (var item in qDeluxe) // Added missing foreach loop
+            {
+                if (item is Deluxe deluxe)
+                {
+                    qDeluxes.Add(deluxe);
+                }
+            }
         }
 
 

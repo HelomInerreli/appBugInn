@@ -1,3 +1,3 @@
-NumQuarto;Andar;Conta;Livre;Status
-numQuarto;andar;conta;livre;status;TipoVista;banheira;observacoes
-101;1;0;true;Livre;Mar;true;Quarto Livre para ocupação
+numQuarto;andar;conta;livre;status;TipoVista;observacoes
+103;1;0;true;Livre;Mar;Quarto Livre para ocupação
+203;2;0;true;Livre;Montanha;Quarto Livre para ocupação

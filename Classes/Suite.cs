@@ -8,13 +8,17 @@ namespace appBugInn
 {
     internal class Suite : Quarto
     {
-
-
-        public Suite(int numQuarto, int andar, float conta, bool livre, string status, double precoPorNoite, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
+        public double PrecoPorNoite { get; set; } = 150;
+        public string TipoVista { get; set; } // Tipo de vista (Mar, Montanha, etc.)
+        public Suite(int numQuarto, int andar, float conta, bool livre, string status, string tipoVista, string observacoes) : base(numQuarto, andar, conta, livre, status, observacoes)
         {
-            PrecoPorNoite = 150;
+            TipoVista = tipoVista;
 
+        }
 
+        public string linhaBD()
+        {
+            return $"{NumQuarto};{Andar};{Conta};{Livre};{Status};{TipoVista};{Observacoes}";
         }
     }
 }

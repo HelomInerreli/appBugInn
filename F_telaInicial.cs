@@ -871,6 +871,33 @@ namespace appBugInn
                     mtv_dadosQuartos.Items.Add(item);
                 }
 
+                // Adiciona os quartos Suite
+                foreach (var quarto in hotel.qSuites)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Suite");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+                // Adiciona os quartos Deluxe
+                foreach (var quarto in hotel.qDeluxes)
+                {
+                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
+                    item.SubItems.Add(quarto.Andar.ToString());
+                    item.SubItems.Add("Deluxe");
+                    item.SubItems.Add(quarto.Conta.ToString());
+                    item.SubItems.Add(quarto.Livre.ToString());
+                    item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.Observacoes);
+                    mtv_dadosQuartos.Items.Add(item);
+                }
+
+
                 mtv_dadosQuartos.View = View.Details;
                 mtv_dadosQuartos.FullRowSelect = true;
 

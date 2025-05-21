@@ -1,5 +1,3 @@
-numQuarto;andar;conta;livre;status;TipoVista;banheira;observacoes
-104;4;0;true;Livre;Mar;true;Quarto Livre para ocupação
-204;4;0;true;Ocupado;Montanha;true;Quarto Livre para ocupação
-304;4;0;true;Ocupado;Mar;true;Quarto Livre para ocupação
-404;4;0;true;Livre;Montanha;true;Quarto Livre para ocupação
+numQuarto;andar;conta;livre;status;TipoVista;jacuzzi;observacoes
+104;1;0;true;Livre;Mar;true;Quarto Livre para ocupação
+202;2;0;true;Livre;Mar;true;Quarto Livre para ocupação
