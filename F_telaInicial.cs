@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using appBugInn.Classes;
+using System.Globalization;
 
 namespace appBugInn
 {
@@ -28,7 +29,7 @@ namespace appBugInn
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
 
-
+            hotel.preencherQuartos();
             // No F_telaInicial
 
 
@@ -266,39 +267,36 @@ namespace appBugInn
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            if (mtv_dadosReserva.SelectedItems.Count > 0)
+            if (mtv_dadosFunc.SelectedItems.Count > 0)
             {
                 // Confirmação
-                if (MessageBox.Show("Tem certeza que deseja excluir esta reserva?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Tem certeza que deseja excluir este funcionário?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    ListViewItem itemSelecionado = mtv_dadosReserva.SelectedItems[0];
+                    ListViewItem itemSelecionado = mtv_dadosFunc.SelectedItems[0];
 
-                    // Considerando que a coluna ID é a primeira (índice 0)
-                    int idReserva = int.Parse(itemSelecionado.SubItems[0].Text);
+                    // Considerando que a coluna Nome é a segunda (índice 1)
+                    string nomeFuncionario = itemSelecionado.SubItems[1].Text;
 
-                    Reserva reservaParaExcluir = hotel.hreservas.FirstOrDefault(r => r.Id == idReserva);
-                    if (reservaParaExcluir != null)
+                    Funcionario funcionarioParaExcluir = hotel.hfuncionarios.FirstOrDefault(f => f.Nome == nomeFuncionario);
+                    if (funcionarioParaExcluir != null)
                     {
-                        hotel.hreservas.Remove(reservaParaExcluir);
-                        MessageBox.Show($"Reserva para {reservaParaExcluir.Nome} removida da lista.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        hotel.hfuncionarios.Remove(funcionarioParaExcluir);
+                        hotel.AtualizarBaseDeDados(); // Atualiza o arquivo após a remoção
+                        MessageBox.Show($"Funcionário {nomeFuncionario} removido da lista.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        hotel.AtualizarBaseDadosReservas(); // Atualiza o arquivo após a remoção
-                        AtualizarListViewReservas(); // Atualiza a ListView
-
-                        // Limpa seleção se necessário
-                        mtv_dadosReserva.SelectedItems.Clear();
+                        AtualizarListView(); // Atualiza a ListView
+                        mtv_dadosFunc.SelectedItems.Clear(); // Limpa a seleção
                     }
                     else
                     {
-                        MessageBox.Show($"Reserva com ID {idReserva} não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Funcionário {nomeFuncionario} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Selecione uma reserva para excluir.");
+                MessageBox.Show("Selecione um funcionário para excluir.");
             }
-
         }
 
         private void materialListView1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -851,7 +849,10 @@ namespace appBugInn
             txt_quartoCheckIn.Text = tipoQuarto;
             txt_dataCheckIn.Text = dataInicio.ToString("dd/MM/yyyy");
             txt_dataCheckOut.Text = dataFim.ToString("dd/MM/yyyy");
-            txt_subtotal.Text = CalcularSubtotal(tipoQuarto, dataInicio, dataFim).ToString("C");
+            txt_subtotal.Text = CalcularSubtotal(tipoQuarto, dataInicio, dataFim).ToString("F2") + " €";
+
+            // Preenche a ComboBox apenas com quartos livres desse tipo
+            AtualizarComboBoxQuartos(tipoQuarto);
 
             // Habilita/desabilita os campos de hóspedes conforme o número de pessoas
             txt_hospede1.Enabled = numeroPessoas >= 2;
@@ -911,7 +912,12 @@ namespace appBugInn
                 string hospede1 = txt_hospede1.Text.Trim();
                 string hospede2 = txt_hospede2.Text.Trim();
                 string hospede3 = txt_hospede3.Text.Trim();
-                string subtotalStr = txt_subtotal.Text.Replace("€", "").Trim();
+                string subtotalStr = txt_subtotal.Text
+                    .Replace("€", "")
+                    .Replace(" ", "")
+                    .Replace("\u00A0", "")
+                    .Trim()
+                    .Replace(",", ".");
                 string numQuartoStr = txt_idQuartoCheckIn.Text.Trim();
                 string dataInicioStr = txt_dataCheckIn.Text.Trim();
                 string dataFimStr = txt_dataCheckOut.Text.Trim();
@@ -925,7 +931,7 @@ namespace appBugInn
                     return;
                 }
 
-                Dictionary<string, int> capacidadeExtras = new Dictionary<string, int>
+                var capacidadeExtras = new Dictionary<string, int>
         {
             { "Single", 0 },
             { "Duplo", 1 },
@@ -940,34 +946,15 @@ namespace appBugInn
                 }
 
                 int numeroExtras = capacidadeExtras[tipoQuarto];
+                if (numeroExtras >= 1 && string.IsNullOrWhiteSpace(hospede1)) { MessageBox.Show("O primeiro hóspede adicional não foi preenchido."); return; }
+                if (numeroExtras >= 2 && string.IsNullOrWhiteSpace(hospede2)) { MessageBox.Show("O segundo hóspede adicional não foi preenchido."); return; }
+                if (numeroExtras >= 3 && string.IsNullOrWhiteSpace(hospede3)) { MessageBox.Show("O terceiro hóspede adicional não foi preenchido."); return; }
 
-                if (numeroExtras >= 1 && string.IsNullOrWhiteSpace(hospede1))
-                {
-                    MessageBox.Show("O primeiro hóspede adicional não foi preenchido.");
-                    return;
-                }
-                if (numeroExtras >= 2 && string.IsNullOrWhiteSpace(hospede2))
-                {
-                    MessageBox.Show("O segundo hóspede adicional não foi preenchido.");
-                    return;
-                }
-                if (numeroExtras >= 3 && string.IsNullOrWhiteSpace(hospede3))
-                {
-                    MessageBox.Show("O terceiro hóspede adicional não foi preenchido.");
-                    return;
-                }
+                if (!double.TryParse(subtotalStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double subtotal)) { MessageBox.Show($"Subtotal inválido: '{subtotalStr}'"); return; }
+                if (!int.TryParse(numQuartoStr, out int numQuarto)) { MessageBox.Show("Número do quarto inválido."); return; }
 
-                if (!double.TryParse(subtotalStr, out double subtotal))
-                {
-                    MessageBox.Show("Subtotal inválido.");
-                    return;
-                }
-                if (!int.TryParse(numQuartoStr, out int numQuarto))
-                {
-                    MessageBox.Show("Número do quarto inválido.");
-                    return;
-                }
-                if (!DateTime.TryParse(dataInicioStr, out DateTime dataInicio) || !DateTime.TryParse(dataFimStr, out DateTime dataFim))
+                if (!DateTime.TryParseExact(dataInicioStr, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataInicio) ||
+                    !DateTime.TryParseExact(dataFimStr, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataFim))
                 {
                     MessageBox.Show("Datas inválidas.");
                     return;
@@ -975,8 +962,9 @@ namespace appBugInn
 
                 bool checkOut = false;
 
-                // Garante que os dados anteriores estão carregados antes de adicionar
-                hotel.preencherChecks();
+                // ⚠️ NÃO chamar preencherQuartos aqui de novo
+                hotel.MarcarQuartoComoOcupado(tipoQuarto, numQuarto);
+                hotel.gravarQuartos(); // com GroupBy para evitar duplicações
 
                 hotel.AdicionarChecks(
                     nomeReserva,
@@ -992,10 +980,8 @@ namespace appBugInn
                 );
 
                 MessageBox.Show("Check-in criado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 LimparCamposCheckIn();
-                AtualizarListViewCheckin(); // Atualiza a lista após salvar
-
+                AtualizarListViewCheckin();
             }
             catch (Exception ex)
             {
@@ -1126,7 +1112,80 @@ namespace appBugInn
             }
         }
 
+        private void AtualizarComboBoxQuartos(string tipoQuarto)
+        {
+            cb_idQuartoCheckIn.Items.Clear();
+            txt_nAndar.Text = "";
 
+            List<int> quartosDisponiveis = new List<int>();
+
+            switch (tipoQuarto)
+            {
+                case "Single":
+                    quartosDisponiveis = hotel.qSingles
+                        .Where(q => q.Livre)
+                        .Select(q => q.NumQuarto)
+                        .ToList();
+                    break;
+
+                case "Duplo":
+                    quartosDisponiveis = hotel.qDuplos
+                        .Where(q => q.Livre)
+                        .Select(q => q.NumQuarto)
+                        .ToList();
+                    break;
+
+                case "Suite":
+                    quartosDisponiveis = hotel.qSuites
+                        .Where(q => q.Livre)
+                        .Select(q => q.NumQuarto)
+                        .ToList();
+                    break;
+
+                case "Deluxe":
+                    quartosDisponiveis = hotel.qDeluxes
+                        .Where(q => q.Livre)
+                        .Select(q => q.NumQuarto)
+                        .ToList();
+                    break;
+
+                default:
+                    MessageBox.Show("Tipo de quarto desconhecido.");
+                    return;
+            }
+
+            foreach (int num in quartosDisponiveis)
+            {
+                cb_idQuartoCheckIn.Items.Add(num);
+            }
+
+            if (cb_idQuartoCheckIn.Items.Count > 0)
+            {
+                cb_idQuartoCheckIn.SelectedIndex = 0;
+
+                int numSelecionado = Convert.ToInt32(cb_idQuartoCheckIn.SelectedItem);
+                int andar = numSelecionado / 100;
+                txt_nAndar.Text = andar.ToString();
+            }
+        }
+
+        private void cb_idQuartoCheckIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_idQuartoCheckIn.SelectedItem != null)
+            {
+                int numQuarto = Convert.ToInt32(cb_idQuartoCheckIn.SelectedItem);
+                int andar = numQuarto / 100;
+                txt_nAndar.Text = andar.ToString();
+            }
+        }
+
+        private void btn_checkout_Click(object sender, EventArgs e)
+        {
+            F_checkOut formCheckOut = new F_checkOut(this.hotel); // passa o caderno já preenchido
+            formCheckOut.Show();
+        }
+
+        
 
 
 

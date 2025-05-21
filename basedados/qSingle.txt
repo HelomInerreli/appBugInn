@@ -1,3 +1,2 @@
-numQuarto;andar;conta;livre;status;observacoes
-101;1;0;true;Livre;Quarto Livre para ocupação
-102;1;0;false;Ocupado;Quarto em utilizacao
+101;1;0;True;Livre;Quarto Livre para ocupação
+202;1;0;True;Livre;Quarto em utilizacao

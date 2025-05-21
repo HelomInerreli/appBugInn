@@ -1,3 +1,2 @@
-numQuarto;andar;conta;livre;status;tipoCama;observacoes
-101;1;0;true;Livre;1 Casal;Quarto Livre para ocupação
-102;1;0;false;Ocupado;2 Solteiro;Quarto em utilizacao
+102;1;0;True;Livre;1 Casal;Quarto Livre para ocupação
+202;2;0;True;Livre;2 Solteiro;Quarto Livre para ocupação

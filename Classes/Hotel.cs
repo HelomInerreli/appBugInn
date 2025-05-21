@@ -14,8 +14,6 @@ namespace appBugInn
     {
         public List<Funcionario> hfuncionarios = new List<Funcionario>();
         public List<Reserva> hreservas = new List<Reserva>();
-        //public List<Funcionario> funcionarios = new List<Funcionario>();
-        //public List<Reserva> reservas = new List<Reserva>();
         public List<QSingle> qSingles = new List<QSingle>();
         public List<Duplo> qDuplos = new List<Duplo>();
         public List<Checks> checkIn = new List<Checks>();
@@ -50,6 +48,11 @@ namespace appBugInn
 
         public void preencherQuartos()
         {
+            qSingles.Clear();
+            qDuplos.Clear();
+            qSuites.Clear();
+            qDeluxes.Clear(); // ⬅️ IMPORTANTE: garantir limpeza total
+
             List<object> qSing = Funcionalidades.CriarObjetosDoTexto("qSingle", "QSingle");
             foreach (var item in qSing)
             {
@@ -67,6 +70,7 @@ namespace appBugInn
                     qDuplos.Add(duplo);
                 }
             }
+
             List<object> qSuite = Funcionalidades.CriarObjetosDoTexto("qSuites", "Suite");
             foreach (var item in qSuite)
             {
@@ -75,7 +79,8 @@ namespace appBugInn
                     qSuites.Add(suite);
                 }
             }
-            List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxes", "Deluxe");
+
+            List<object> qDeluxe = Funcionalidades.CriarObjetosDoTexto("qDeluxe", "Deluxe");
             foreach (var item in qDeluxe)
             {
                 if (item is Deluxe deluxe)
@@ -107,37 +112,46 @@ namespace appBugInn
             }
             Funcionalidades.GravarBaseDados("reservas", linha);
         }
+
         public void gravarQuartos()
         {
-            //Apagar a base de dados
-            string linha = "";
-            foreach (var item in qSingles)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Single", linha);
+            // ✅ Remove duplicações
+            qSingles = qSingles.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
+            qDuplos = qDuplos.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
+            qSuites = qSuites.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
+            qDeluxes = qDeluxes.GroupBy(q => q.NumQuarto).Select(g => g.Last()).ToList();
 
-            linha = "";
-            foreach (var item in qDuplos)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Duplo", linha);
+            // ✅ Grava cada lista limpando o .txt (false = sobrescrever)
+            GravarLista("qSingle", qSingles);
+            GravarLista("qDuplos", qDuplos);
+            GravarLista("qSuites", qSuites);
+            GravarLista("qDeluxe", qDeluxes);
+        }
 
-            linha = "";
-            foreach (var item in qSuites)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Suite", linha);
-            
-            linha = "";
-            foreach (var item in qDeluxes)
-            {
-                linha += item.linhaBD() + "\n";
-            }
-            Funcionalidades.GravarBaseDados("Deluxe", linha);
+        private void GravarLista<T>(string nomeArquivo, List<T> lista) where T : class
+        {
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", nomeArquivo + ".txt");
 
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(caminho, false)) // false => sobrescreve
+                {
+                    foreach (var item in lista)
+                    {
+                        // Assume que todos os tipos têm método linhaBD()
+                        var metodo = item.GetType().GetMethod("linhaBD");
+                        if (metodo != null)
+                        {
+                            string linha = metodo.Invoke(item, null) as string;
+                            sw.WriteLine(linha);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao gravar {nomeArquivo}.txt: {ex.Message}");
+            }
         }
 
         public List<int> verificaQuartosVaziosSingle()
@@ -437,9 +451,6 @@ namespace appBugInn
 
         public void AdicionarChecks(string nomeReserva, double subtotal, bool checkOut, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numQuarto, string hospede1, string hospede2, string hospede3)
         {
-            preencherChecks(); // Carrega a lista existente
-
-            // Verifica se já existe um check-in com o mesmo nome da reserva
             bool duplicado = checkIn.Any(c => c.NomeReserva.Equals(nomeReserva, StringComparison.OrdinalIgnoreCase) && !c.CheckOut);
 
             if (duplicado)
@@ -453,20 +464,58 @@ namespace appBugInn
             Checks novoChecks = new Checks(novoId, nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
             checkIn.Add(novoChecks);
 
-            AtualizarBaseDeDadosChecks(); // Grava todos os dados
+            gravarChecks(); // ✅ Grava apenas os dados atuais da lista
         }
+        
 
+        public void MarcarQuartoComoOcupado(string tipoQuarto, int numQuarto)
+        {
+            switch (tipoQuarto)
+            {
+                case "Single":
+                    var single = qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (single != null) single.Livre = false;
+                    break;
+
+                case "Duplo":
+                    var duplo = qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (duplo != null) duplo.Livre = false;
+                    break;
+
+                case "Suite":
+                    var suite = qSuites.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (suite != null) suite.Livre = false;
+                    break;
+
+                case "Deluxe":
+                    var deluxe = qDeluxes.FirstOrDefault(q => q.NumQuarto == numQuarto);
+                    if (deluxe != null) deluxe.Livre = false;
+                    break;
+            }
+        }
 
         public void gravarChecks()
         {
-            //Apagar a base de dados
-            string linha = "";
-            foreach (var item in checkIn)
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "checkin.txt");
+
+            try
             {
-                linha += item.linhaChecks() + "\n";
+                using (StreamWriter sw = new StreamWriter(caminho, false)) // false = sobrescreve
+                {
+                    sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3");
+
+                    foreach (var item in checkIn)
+                    {
+                        sw.WriteLine(item.linhaChecks());
+                    }
+                }
             }
-            Funcionalidades.GravarBaseDados("checkin", linha);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gravar check-ins: " + ex.Message);
+            }
         }
+        
 
         public void preencherChecks()
         {
@@ -518,13 +567,10 @@ namespace appBugInn
 
             try
             {
-                // "false" sobrescreve o arquivo, ou seja, apaga o conteúdo antigo
-                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false))
+                using (StreamWriter sw = new StreamWriter(caminhoAbsoluto, false)) // false para sobrescrever o arquivo
                 {
-                    // Escreve o cabeçalho
                     sw.WriteLine("id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;hospede1;hospede2;hospede3");
 
-                    // Escreve todas as entradas atuais da lista "checkIn"
                     foreach (Checks c in checkIn)
                     {
                         sw.WriteLine($"{c.Id};{c.NomeReserva};{c.Subtotal};{c.CheckOut};{c.DataInicio:dd/MM/yyyy};{c.DataFim:dd/MM/yyyy};{c.TipoQuarto};{c.NumQuarto};{c.Hospede1};{c.Hospede2};{c.Hospede3}");
