@@ -116,6 +116,18 @@
     <Compile Include="Classes\Hotel.cs" />
     <Compile Include="Classes\Quarto.cs" />
     <Compile Include="Classes\Reserva.cs" />
+    <Compile Include="F_checkOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_checkOut.Designer.cs">
+      <DependentUpon>F_checkOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_dadosReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_dadosReserva.Designer.cs">
+      <DependentUpon>F_dadosReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\QSingle.cs" />
     <Compile Include="Classes\Suite.cs" />
+    <EmbeddedResource Include="F_checkOut.resx">
+      <DependentUpon>F_checkOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_dadosReserva.resx">
+      <DependentUpon>F_dadosReserva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_login.resx">
       <DependentUpon>F_login.cs</DependentUpon>
     </EmbeddedResource>
