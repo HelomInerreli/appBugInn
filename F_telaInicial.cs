@@ -953,7 +953,15 @@ namespace appBugInn
         {
             try
             {
-                string nomeReserva = txt_nomeCheckIn.Text.Trim();
+                string nomeReserva = txt_nomeCheckIn.Text.Trim().ToLowerInvariant();
+
+                if (hotel.checkIn.Any(c =>
+                    c.NomeReserva.Trim().ToLowerInvariant() == nomeReserva &&
+                    !c.CheckOut))
+                {
+                    MessageBox.Show($"Já existe um check-in ativo para a reserva '{nomeReserva}'.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 string tipoQuarto = txt_quartoCheckIn.Text.Trim();
                 string hospede1 = txt_hospede1.Text.Trim();
                 string hospede2 = txt_hospede2.Text.Trim();
@@ -964,7 +972,13 @@ namespace appBugInn
                     .Replace("\u00A0", "")
                     .Trim()
                     .Replace(",", ".");
-                string numQuartoStr = txt_idQuartoCheckIn.Text.Trim();
+                if (cb_idQuartoCheckIn.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecione um número de quarto válido.");
+                    return;
+                }
+
+                string numQuartoStr = cb_idQuartoCheckIn.SelectedItem.ToString();
                 string dataInicioStr = txt_dataCheckIn.Text.Trim();
                 string dataFimStr = txt_dataCheckOut.Text.Trim();
                 int numeroPessoas = string.IsNullOrWhiteSpace(txt_nPessoasCheckIn.Text) ? 0 : int.Parse(txt_nPessoasCheckIn.Text);
@@ -978,12 +992,12 @@ namespace appBugInn
                 }
 
                 var capacidadeExtras = new Dictionary<string, int>
-        {
-            { "Single", 0 },
-            { "Duplo", 1 },
-            { "Suite", 2 },
-            { "Deluxe", 3 }
-        };
+                {
+                    { "Single", 0 },
+                    { "Duplo", 1 },
+                    { "Suite", 2 },
+                    { "Deluxe", 3 }
+                };
 
                 if (!capacidadeExtras.ContainsKey(tipoQuarto))
                 {
@@ -1046,7 +1060,7 @@ namespace appBugInn
             txt_dataCheckIn.Text = "";
             txt_dataCheckOut.Text = "";
             txt_subtotal.Text = "";
-            txt_idQuartoCheckIn.Text = "";
+            txt_quartoCheckIn.Text = "";
             txt_nAndar.Text = "";
             // Limpa os campos de hóspedes
             txt_hospede1.Text = "";

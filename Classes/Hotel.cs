@@ -474,7 +474,12 @@ namespace appBugInn
 
         public void AdicionarChecks(string nomeReserva, double subtotal, bool checkOut, DateTime dataInicio, DateTime dataFim, string tipoQuarto, int numQuarto, string hospede1, string hospede2, string hospede3)
         {
-            bool duplicado = checkIn.Any(c => c.NomeReserva.Equals(nomeReserva, StringComparison.OrdinalIgnoreCase) && !c.CheckOut);
+            string nomeNormalizado = nomeReserva.Trim().ToLowerInvariant();
+
+            // Verifica duplicação de check-in ativo com o mesmo nome
+            bool duplicado = checkIn.Any(c =>
+                c.NomeReserva.Trim().ToLowerInvariant() == nomeNormalizado &&
+                !c.CheckOut);
 
             if (duplicado)
             {
@@ -487,9 +492,9 @@ namespace appBugInn
             Checks novoChecks = new Checks(novoId, nomeReserva, subtotal, checkOut, dataInicio, dataFim, tipoQuarto, numQuarto, hospede1, hospede2, hospede3);
             checkIn.Add(novoChecks);
 
-            gravarChecks(); // ✅ Grava apenas os dados atuais da lista
+            gravarChecks(); // Salva a lista atual sem duplicações
         }
-        
+
 
         public void MarcarQuartoComoOcupado(string tipoQuarto, int numQuarto)
         {

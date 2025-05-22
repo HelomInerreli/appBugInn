@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_checkOut));
             this.mt_dadosCheckOut = new MaterialSkin.Controls.MaterialCard();
+            this.cb_review = new MaterialSkin.Controls.MaterialComboBox();
+            this.cb_metodoPagamento = new MaterialSkin.Controls.MaterialComboBox();
             this.txt_dataFimCheckOut = new MaterialSkin.Controls.MaterialTextBox();
             this.txt_dataInCheckOut = new MaterialSkin.Controls.MaterialTextBox();
             this.txt_subtotalCheckOut = new MaterialSkin.Controls.MaterialTextBox();
@@ -38,17 +41,13 @@
             this.txt_quartoCheckOut = new MaterialSkin.Controls.MaterialTextBox();
             this.btn_checkoutConfirmar = new MaterialSkin.Controls.MaterialButton();
             this.txt_nomeCheckOut = new MaterialSkin.Controls.MaterialTextBox();
-            this.cb_metodoPagamento = new MaterialSkin.Controls.MaterialComboBox();
-            this.cb_review = new MaterialSkin.Controls.MaterialComboBox();
             this.mtv_dadosCheckOut = new MaterialSkin.Controls.MaterialListView();
-            this.txt_outroPagamento = new MaterialSkin.Controls.MaterialTextBox();
             this.mt_dadosCheckOut.SuspendLayout();
             this.SuspendLayout();
             // 
             // mt_dadosCheckOut
             // 
             this.mt_dadosCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mt_dadosCheckOut.Controls.Add(this.txt_outroPagamento);
             this.mt_dadosCheckOut.Controls.Add(this.cb_review);
             this.mt_dadosCheckOut.Controls.Add(this.cb_metodoPagamento);
             this.mt_dadosCheckOut.Controls.Add(this.txt_dataFimCheckOut);
@@ -71,15 +70,59 @@
             this.mt_dadosCheckOut.Size = new System.Drawing.Size(1263, 399);
             this.mt_dadosCheckOut.TabIndex = 41;
             // 
+            // cb_review
+            // 
+            this.cb_review.AutoResize = false;
+            this.cb_review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cb_review.Depth = 0;
+            this.cb_review.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cb_review.DropDownHeight = 174;
+            this.cb_review.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_review.DropDownWidth = 121;
+            this.cb_review.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cb_review.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cb_review.FormattingEnabled = true;
+            this.cb_review.IntegralHeight = false;
+            this.cb_review.ItemHeight = 43;
+            this.cb_review.Location = new System.Drawing.Point(859, 201);
+            this.cb_review.MaxDropDownItems = 4;
+            this.cb_review.MouseState = MaterialSkin.MouseState.OUT;
+            this.cb_review.Name = "cb_review";
+            this.cb_review.Size = new System.Drawing.Size(324, 49);
+            this.cb_review.StartIndex = 0;
+            this.cb_review.TabIndex = 68;
+            // 
+            // cb_metodoPagamento
+            // 
+            this.cb_metodoPagamento.AutoResize = false;
+            this.cb_metodoPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cb_metodoPagamento.Depth = 0;
+            this.cb_metodoPagamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cb_metodoPagamento.DropDownHeight = 174;
+            this.cb_metodoPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_metodoPagamento.DropDownWidth = 121;
+            this.cb_metodoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cb_metodoPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cb_metodoPagamento.FormattingEnabled = true;
+            this.cb_metodoPagamento.IntegralHeight = false;
+            this.cb_metodoPagamento.ItemHeight = 43;
+            this.cb_metodoPagamento.Location = new System.Drawing.Point(859, 115);
+            this.cb_metodoPagamento.MaxDropDownItems = 4;
+            this.cb_metodoPagamento.MouseState = MaterialSkin.MouseState.OUT;
+            this.cb_metodoPagamento.Name = "cb_metodoPagamento";
+            this.cb_metodoPagamento.Size = new System.Drawing.Size(324, 49);
+            this.cb_metodoPagamento.StartIndex = 0;
+            this.cb_metodoPagamento.TabIndex = 67;
+            // 
             // txt_dataFimCheckOut
             // 
             this.txt_dataFimCheckOut.AnimateReadOnly = false;
             this.txt_dataFimCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_dataFimCheckOut.Depth = 0;
             this.txt_dataFimCheckOut.Enabled = false;
-            this.txt_dataFimCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dataFimCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_dataFimCheckOut.Hint = "Check Out";
-            this.txt_dataFimCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_dataFimCheckOut.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txt_dataFimCheckOut.LeadingIcon")));
             this.txt_dataFimCheckOut.Location = new System.Drawing.Point(418, 328);
             this.txt_dataFimCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.txt_dataFimCheckOut.MaxLength = 50;
@@ -98,9 +141,9 @@
             this.txt_dataInCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_dataInCheckOut.Depth = 0;
             this.txt_dataInCheckOut.Enabled = false;
-            this.txt_dataInCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dataInCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_dataInCheckOut.Hint = "Check In";
-            this.txt_dataInCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_dataInCheckOut.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txt_dataInCheckOut.LeadingIcon")));
             this.txt_dataInCheckOut.Location = new System.Drawing.Point(23, 328);
             this.txt_dataInCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.txt_dataInCheckOut.MaxLength = 50;
@@ -119,9 +162,9 @@
             this.txt_subtotalCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_subtotalCheckOut.Depth = 0;
             this.txt_subtotalCheckOut.Enabled = false;
-            this.txt_subtotalCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_subtotalCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_subtotalCheckOut.Hint = "Total";
-            this.txt_subtotalCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_subtotalCheckOut.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txt_subtotalCheckOut.LeadingIcon")));
             this.txt_subtotalCheckOut.Location = new System.Drawing.Point(816, 21);
             this.txt_subtotalCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.txt_subtotalCheckOut.MaxLength = 50;
@@ -140,7 +183,7 @@
             this.txt_nAndarCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nAndarCheckOut.Depth = 0;
             this.txt_nAndarCheckOut.Enabled = false;
-            this.txt_nAndarCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nAndarCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_nAndarCheckOut.Hint = "Nº Andar";
             this.txt_nAndarCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
             this.txt_nAndarCheckOut.Location = new System.Drawing.Point(418, 261);
@@ -161,9 +204,9 @@
             this.txt_idQuartoCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_idQuartoCheckOut.Depth = 0;
             this.txt_idQuartoCheckOut.Enabled = false;
-            this.txt_idQuartoCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_idQuartoCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_idQuartoCheckOut.Hint = "Nº Quarto";
-            this.txt_idQuartoCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_idQuartoCheckOut.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txt_idQuartoCheckOut.LeadingIcon")));
             this.txt_idQuartoCheckOut.Location = new System.Drawing.Point(23, 261);
             this.txt_idQuartoCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.txt_idQuartoCheckOut.MaxLength = 50;
@@ -182,9 +225,9 @@
             this.txt_nPessoasCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nPessoasCheckOut.Depth = 0;
             this.txt_nPessoasCheckOut.Enabled = false;
-            this.txt_nPessoasCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nPessoasCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_nPessoasCheckOut.Hint = "Nº Pessoas";
-            this.txt_nPessoasCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_nPessoasCheckOut.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txt_nPessoasCheckOut.LeadingIcon")));
             this.txt_nPessoasCheckOut.Location = new System.Drawing.Point(418, 193);
             this.txt_nPessoasCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nPessoasCheckOut.MaxLength = 50;
@@ -203,9 +246,9 @@
             this.txt_quartoCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_quartoCheckOut.Depth = 0;
             this.txt_quartoCheckOut.Enabled = false;
-            this.txt_quartoCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_quartoCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_quartoCheckOut.Hint = "Tipo Quarto";
-            this.txt_quartoCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_quartoCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
             this.txt_quartoCheckOut.Location = new System.Drawing.Point(23, 193);
             this.txt_quartoCheckOut.Margin = new System.Windows.Forms.Padding(4);
             this.txt_quartoCheckOut.MaxLength = 50;
@@ -244,7 +287,7 @@
             this.txt_nomeCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nomeCheckOut.Depth = 0;
             this.txt_nomeCheckOut.Enabled = false;
-            this.txt_nomeCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txt_nomeCheckOut.Hint = "Nome";
             this.txt_nomeCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
             this.txt_nomeCheckOut.Location = new System.Drawing.Point(23, 21);
@@ -258,50 +301,6 @@
             this.txt_nomeCheckOut.Text = "";
             this.txt_nomeCheckOut.TrailingIcon = null;
             this.txt_nomeCheckOut.UseAccent = false;
-            // 
-            // cb_metodoPagamento
-            // 
-            this.cb_metodoPagamento.AutoResize = false;
-            this.cb_metodoPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cb_metodoPagamento.Depth = 0;
-            this.cb_metodoPagamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cb_metodoPagamento.DropDownHeight = 174;
-            this.cb_metodoPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_metodoPagamento.DropDownWidth = 121;
-            this.cb_metodoPagamento.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cb_metodoPagamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cb_metodoPagamento.FormattingEnabled = true;
-            this.cb_metodoPagamento.IntegralHeight = false;
-            this.cb_metodoPagamento.ItemHeight = 43;
-            this.cb_metodoPagamento.Location = new System.Drawing.Point(859, 115);
-            this.cb_metodoPagamento.MaxDropDownItems = 4;
-            this.cb_metodoPagamento.MouseState = MaterialSkin.MouseState.OUT;
-            this.cb_metodoPagamento.Name = "cb_metodoPagamento";
-            this.cb_metodoPagamento.Size = new System.Drawing.Size(324, 49);
-            this.cb_metodoPagamento.StartIndex = 0;
-            this.cb_metodoPagamento.TabIndex = 67;
-            // 
-            // cb_review
-            // 
-            this.cb_review.AutoResize = false;
-            this.cb_review.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cb_review.Depth = 0;
-            this.cb_review.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cb_review.DropDownHeight = 174;
-            this.cb_review.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_review.DropDownWidth = 121;
-            this.cb_review.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cb_review.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cb_review.FormattingEnabled = true;
-            this.cb_review.IntegralHeight = false;
-            this.cb_review.ItemHeight = 43;
-            this.cb_review.Location = new System.Drawing.Point(859, 201);
-            this.cb_review.MaxDropDownItems = 4;
-            this.cb_review.MouseState = MaterialSkin.MouseState.OUT;
-            this.cb_review.Name = "cb_review";
-            this.cb_review.Size = new System.Drawing.Size(324, 49);
-            this.cb_review.StartIndex = 0;
-            this.cb_review.TabIndex = 68;
             // 
             // mtv_dadosCheckOut
             // 
@@ -323,27 +322,6 @@
             this.mtv_dadosCheckOut.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosCheckOut.View = System.Windows.Forms.View.Details;
             this.mtv_dadosCheckOut.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dc_mtvDadosCheckOut);
-            // 
-            // txt_outroPagamento
-            // 
-            this.txt_outroPagamento.AnimateReadOnly = false;
-            this.txt_outroPagamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_outroPagamento.Depth = 0;
-            this.txt_outroPagamento.Enabled = false;
-            this.txt_outroPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_outroPagamento.Hint = "Nº Pessoas";
-            this.txt_outroPagamento.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_outroPagamento.Location = new System.Drawing.Point(418, 98);
-            this.txt_outroPagamento.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_outroPagamento.MaxLength = 50;
-            this.txt_outroPagamento.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_outroPagamento.Multiline = false;
-            this.txt_outroPagamento.Name = "txt_outroPagamento";
-            this.txt_outroPagamento.Size = new System.Drawing.Size(354, 50);
-            this.txt_outroPagamento.TabIndex = 69;
-            this.txt_outroPagamento.Text = "";
-            this.txt_outroPagamento.TrailingIcon = null;
-            this.txt_outroPagamento.UseAccent = false;
             // 
             // F_checkOut
             // 
@@ -376,6 +354,5 @@
         private MaterialSkin.Controls.MaterialComboBox cb_review;
         private MaterialSkin.Controls.MaterialComboBox cb_metodoPagamento;
         private MaterialSkin.Controls.MaterialListView mtv_dadosCheckOut;
-        private MaterialSkin.Controls.MaterialTextBox txt_outroPagamento;
     }
 }
