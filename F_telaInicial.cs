@@ -843,7 +843,10 @@ namespace appBugInn
                 mtv_dadosQuartos.Columns.Add("Conta", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Livre", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Observações", 300, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Tipo de Cama", 150, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Observações", 220, HorizontalAlignment.Left);
+                mtv_dadosQuartos.Columns.Add("Tipo de Vista", 150, HorizontalAlignment.Left); 
+                mtv_dadosQuartos.Columns.Add("Banheira", 100, HorizontalAlignment.Left);
 
                 // Adiciona os quartos Singles
                 foreach (var quarto in hotel.qSingles)
@@ -854,6 +857,7 @@ namespace appBugInn
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add("");
                     item.SubItems.Add(quarto.Observacoes);
                     mtv_dadosQuartos.Items.Add(item);
                 }
@@ -867,6 +871,7 @@ namespace appBugInn
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add(quarto.TipoCama);
                     item.SubItems.Add(quarto.Observacoes);
                     mtv_dadosQuartos.Items.Add(item);
                 }
@@ -880,7 +885,9 @@ namespace appBugInn
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add("");
                     item.SubItems.Add(quarto.Observacoes);
+                    item.SubItems.Add(quarto.TipoVista);
                     mtv_dadosQuartos.Items.Add(item);
                 }
 
@@ -893,7 +900,11 @@ namespace appBugInn
                     item.SubItems.Add(quarto.Conta.ToString());
                     item.SubItems.Add(quarto.Livre.ToString());
                     item.SubItems.Add(quarto.Status);
+                    item.SubItems.Add("");
                     item.SubItems.Add(quarto.Observacoes);
+                  //  item.SubItems.Add("");
+                    item.SubItems.Add(quarto.TipoVista);
+                    item.SubItems.Add(quarto.Banheira.ToString());
                     mtv_dadosQuartos.Items.Add(item);
                 }
 

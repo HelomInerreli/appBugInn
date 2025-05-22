@@ -1,5 +1,5 @@
 NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes
-101;1;Single;0;False;Ocupado;Quarto Livre para ocupação
+101;1;Single;0;False;Ocupado;Quarto ocupado
 201;2;Single;0;False;Ocupado;Quarto em utilizacao
 301;3;Single;0;True;Livre;Quarto Livre para ocupação
 401;4;Single;0;False;Ocupado;Quarto em utilizacao
