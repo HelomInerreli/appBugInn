@@ -951,6 +951,14 @@ namespace appBugInn
                 // Atualiza o status
                 quarto.AlterarOcupacao(livre);
                 quarto.Status = txt_Status.Text;
+                if (txt_Status.Text == "Livre")
+                {
+                    quarto.Observacoes = "Quarto livre e disponível";
+                }
+                else
+                {
+                    quarto.Observacoes = $"Quarto ocupado";
+                }
                 // Atualiza a base de dados
                 hotel.AtualizarBaseDadosQuartos("single");
             }
@@ -965,6 +973,14 @@ namespace appBugInn
                 // Atualiza o status
                 quarto.AlterarOcupacao(livre);
                 quarto.Status = txt_Status.Text;
+                if (txt_Status.Text == "Livre")
+                {
+                    quarto.Observacoes = "Quarto livre e disponível";
+                }
+                else
+                {
+                    quarto.Observacoes = $"Quarto ocupado";
+                }
                 // Atualiza o tipo de cama
                 quarto.TipoCama = sw_camaCasal.Checked ? "Casal" : "Solteiro";
                 // Atualiza a base de dados
@@ -981,7 +997,15 @@ namespace appBugInn
                 // Atualiza o status
                 quarto.AlterarOcupacao(livre);
                 quarto.Status = txt_Status.Text;
-                // Atualiza a vista
+                if (txt_Status.Text == "Livre")
+                {
+                    quarto.Observacoes = "Quarto livre e disponível";
+                }
+                else
+                {
+                    quarto.Observacoes = $"Quarto ocupado";
+                }
+                        // Atualiza a vista
                 quarto.TipoVista = txt_Vista.Text;
                 // Atualiza a base de dados
                 hotel.AtualizarBaseDadosQuartos("suite");
@@ -999,6 +1023,14 @@ namespace appBugInn
                 quarto.Status = txt_Status.Text;
                 // Atualiza a vista
                 quarto.TipoVista = txt_Vista.Text;
+                if (txt_Status.Text == "Livre")
+                {
+                    quarto.Observacoes = "Quarto livre e disponível";
+                }
+                else
+                {
+                    quarto.Observacoes = $"Quarto ocupado";
+                }
                 // Atualiza a banheira
                 quarto.Banheira = sw_banheira.Checked;
                 // Atualiza a base de dados
