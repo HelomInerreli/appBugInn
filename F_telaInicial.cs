@@ -994,6 +994,8 @@ namespace appBugInn
                 {
                     MessageBox.Show("Preencha todos os campos obrigatórios do check-in.");
                     return;
+                }
+
                 //Limpa as colunas
                 mtv_dadosQuartos.Clear();
 
@@ -1008,44 +1010,85 @@ namespace appBugInn
                 mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Tipo de Cama", 150, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Observações", 220, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Tipo de Vista", 150, HorizontalAlignment.Left); 
+                mtv_dadosQuartos.Columns.Add("Tipo de Vista", 150, HorizontalAlignment.Left);
                 mtv_dadosQuartos.Columns.Add("Banheira", 100, HorizontalAlignment.Left);
 
                 // Adiciona os quartos Singles
                 foreach (var quarto in hotel.qSingles)
                 {
-                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
-                    item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("Single");
-                    item.SubItems.Add(quarto.Conta.ToString());
-                    item.SubItems.Add(quarto.Livre.ToString());
-                    item.SubItems.Add(quarto.Status);
-                    item.SubItems.Add("");
-                    item.SubItems.Add(quarto.Observacoes);
-                    mtv_dadosQuartos.Items.Add(item);
+                    ListViewItem itemSingle = new ListViewItem(quarto.NumQuarto.ToString());
+                    itemSingle.SubItems.Add(quarto.Andar.ToString());
+                    itemSingle.SubItems.Add("Single");
+                    itemSingle.SubItems.Add(quarto.Conta.ToString());
+                    itemSingle.SubItems.Add(quarto.Livre.ToString());
+                    itemSingle.SubItems.Add(quarto.Status);
+                    itemSingle.SubItems.Add("");
+                    itemSingle.SubItems.Add(quarto.Observacoes);
+                    itemSingle.SubItems.Add("");
+                    itemSingle.SubItems.Add("");
+                    mtv_dadosQuartos.Items.Add(itemSingle);
+                }
+
+                // Adiciona os quartos Duplos
+                foreach (var quarto in hotel.qDuplos)
+                {
+                    ListViewItem itemDuplo = new ListViewItem(quarto.NumQuarto.ToString());
+                    itemDuplo.SubItems.Add(quarto.Andar.ToString());
+                    itemDuplo.SubItems.Add("Duplo");
+                    itemDuplo.SubItems.Add(quarto.Conta.ToString());
+                    itemDuplo.SubItems.Add(quarto.Livre.ToString());
+                    itemDuplo.SubItems.Add(quarto.Status);
+                    itemDuplo.SubItems.Add(quarto.TipoCama);
+                    itemDuplo.SubItems.Add(quarto.Observacoes);
+                    itemDuplo.SubItems.Add("");
+                    itemDuplo.SubItems.Add("");
+                    mtv_dadosQuartos.Items.Add(itemDuplo);
+                }
+
+                // Adiciona os quartos Suite
+                foreach (var quarto in hotel.qSuites)
+                {
+                    ListViewItem itemSuite = new ListViewItem(quarto.NumQuarto.ToString());
+                    itemSuite.SubItems.Add(quarto.Andar.ToString());
+                    itemSuite.SubItems.Add("Suite");
+                    itemSuite.SubItems.Add(quarto.Conta.ToString());
+                    itemSuite.SubItems.Add(quarto.Livre.ToString());
+                    itemSuite.SubItems.Add(quarto.Status);
+                    itemSuite.SubItems.Add("");
+                    itemSuite.SubItems.Add(quarto.Observacoes);
+                    itemSuite.SubItems.Add(quarto.TipoVista);
+                    itemSuite.SubItems.Add("");
+                    mtv_dadosQuartos.Items.Add(itemSuite);
+                }
+
+                // Adiciona os quartos Deluxe
+                foreach (var quarto in hotel.qDeluxes)
+                {
+                    ListViewItem itemDeluxe = new ListViewItem(quarto.NumQuarto.ToString());
+                    itemDeluxe.SubItems.Add(quarto.Andar.ToString());
+                    itemDeluxe.SubItems.Add("Deluxe");
+                    itemDeluxe.SubItems.Add(quarto.Conta.ToString());
+                    itemDeluxe.SubItems.Add(quarto.Livre.ToString());
+                    itemDeluxe.SubItems.Add(quarto.Status);
+                    itemDeluxe.SubItems.Add("");
+                    itemDeluxe.SubItems.Add(quarto.Observacoes);
+                    itemDeluxe.SubItems.Add(quarto.TipoVista);
+                    itemDeluxe.SubItems.Add(quarto.Banheira.ToString());
+                    mtv_dadosQuartos.Items.Add(itemDeluxe);
                 }
 
                 var capacidadeExtras = new Dictionary<string, int>
-        {
-            { "Single", 0 },
-            { "Duplo", 1 },
-            { "Suite", 2 },
-            { "Deluxe", 3 }
-        };
+                {
+                    { "Single", 0 },
+                    { "Duplo", 1 },
+                    { "Suite", 2 },
+                    { "Deluxe", 3 }
+                };
 
                 if (!capacidadeExtras.ContainsKey(tipoQuarto))
                 {
                     MessageBox.Show("Tipo de quarto inválido.");
                     return;
-                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
-                    item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("Duplo");
-                    item.SubItems.Add(quarto.Conta.ToString());
-                    item.SubItems.Add(quarto.Livre.ToString());
-                    item.SubItems.Add(quarto.Status);
-                    item.SubItems.Add(quarto.TipoCama);
-                    item.SubItems.Add(quarto.Observacoes);
-                    mtv_dadosQuartos.Items.Add(item);
                 }
 
                 int numeroExtras = capacidadeExtras[tipoQuarto];
@@ -1064,38 +1107,9 @@ namespace appBugInn
                 }
 
                 bool checkOut = false;
-                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
-                    item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("Suite");
-                    item.SubItems.Add(quarto.Conta.ToString());
-                    item.SubItems.Add(quarto.Livre.ToString());
-                    item.SubItems.Add(quarto.Status);
-                    item.SubItems.Add("");
-                    item.SubItems.Add(quarto.Observacoes);
-                    item.SubItems.Add(quarto.TipoVista);
-                    mtv_dadosQuartos.Items.Add(item);
-                }
 
-                // Adiciona os quartos Deluxe
-                foreach (var quarto in hotel.qDeluxes)
-                {
-                    ListViewItem item = new ListViewItem(quarto.NumQuarto.ToString());
-                    item.SubItems.Add(quarto.Andar.ToString());
-                    item.SubItems.Add("Deluxe");
-                    item.SubItems.Add(quarto.Conta.ToString());
-                    item.SubItems.Add(quarto.Livre.ToString());
-                    item.SubItems.Add(quarto.Status);
-                    item.SubItems.Add("");
-                    item.SubItems.Add(quarto.Observacoes);
-                  //  item.SubItems.Add("");
-                    item.SubItems.Add(quarto.TipoVista);
-                    item.SubItems.Add(quarto.Banheira.ToString());
-                    mtv_dadosQuartos.Items.Add(item);
-                }
-
-                // ⚠️ NÃO chamar preencherQuartos aqui de novo
                 hotel.MarcarQuartoComoOcupado(tipoQuarto, numQuarto);
-                hotel.gravarQuartos(); // com GroupBy para evitar duplicações
+                hotel.gravarQuartos();
 
                 hotel.AdicionarChecks(
                     nomeReserva,
@@ -1121,6 +1135,26 @@ namespace appBugInn
         }
 
         public void LimparCamposCheckIn()
+            {
+            txt_nomeCheckIn.Text = "";
+            txt_telefoneCheckIn.Text = "";
+            txt_emailCheckIn.Text = "";
+            txt_nPessoasCheckIn.Text = "";
+            txt_quartoCheckIn.Text = "";
+            txt_dataCheckIn.Text = "";
+            txt_dataCheckOut.Text = "";
+            txt_subtotal.Text = "";
+            txt_idQuartoCheckIn.Text = "";
+            txt_nAndar.Text = "";
+            // Limpa os campos de hóspedes
+            txt_hospede1.Text = "";
+            txt_hospede2.Text = "";
+            txt_hospede3.Text = "";
+            // Desabilita os campos de hóspedes
+            txt_hospede1.Enabled = false;
+            txt_hospede2.Enabled = false;
+            txt_hospede3.Enabled = false;
+        }
         private void tb_gerirQuartos_Leave(object sender, EventArgs e)
         {
             if (materialTabControl1.SelectedTab == tb_gerirQuartos)
@@ -1742,8 +1776,8 @@ namespace appBugInn
                         return;
                 }
 
-                // Atualiza a lista visual de quartos
-                mtv_dadosQuartos_Enter(null, null);
+                //// Atualiza a lista visual de quartos
+                //mtv_dadosQuartos_Enter(null, null);
 
                 // Limpa os campos após a modificação
                 LimparCampos();
