@@ -105,23 +105,9 @@ namespace appBugInn
             this.btn_criarFunciornarios = new MaterialSkin.Controls.MaterialButton();
             this.chb_gestorFuncionarios = new MaterialSkin.Controls.MaterialSwitch();
             this.txt_passwordFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.tb_configuracoes = new System.Windows.Forms.TabPage();
+            this.sw_darkMode = new MaterialSkin.Controls.MaterialSwitch();
             this.tb_diretoria = new System.Windows.Forms.TabPage();
-            this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbl_classificacao = new System.Windows.Forms.Label();
-            this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.label6 = new System.Windows.Forms.Label();
-            this.mpb_fatAnual = new MaterialSkin.Controls.MaterialProgressBar();
-            this.lbl_desc_fatAnual = new System.Windows.Forms.Label();
-            this.lbl_fatAnual = new System.Windows.Forms.Label();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mpb_fatMensal = new MaterialSkin.Controls.MaterialProgressBar();
-            this.lbl_desc_fatMensal = new System.Windows.Forms.Label();
-            this.lbl_fatMensal = new System.Windows.Forms.Label();
             this.mc_datas_dash = new MaterialSkin.Controls.MaterialCard();
             this.btn_exportarCSV = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2_dash = new MaterialSkin.Controls.MaterialLabel();
@@ -129,8 +115,22 @@ namespace appBugInn
             this.materialLabel1_dash = new MaterialSkin.Controls.MaterialLabel();
             this.dtp_dataFimDash = new System.Windows.Forms.DateTimePicker();
             this.materialFloatingActionButton4 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.tb_configuracoes = new System.Windows.Forms.TabPage();
-            this.sw_darkMode = new MaterialSkin.Controls.MaterialSwitch();
+            this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.lbl_classificacao = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.mpb_fatAnual = new MaterialSkin.Controls.MaterialProgressBar();
+            this.lbl_desc_fatAnual = new System.Windows.Forms.Label();
+            this.lbl_fatAnual = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.mpb_fatMensal = new MaterialSkin.Controls.MaterialProgressBar();
+            this.lbl_desc_fatMensal = new System.Windows.Forms.Label();
+            this.lbl_fatMensal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconesMenu = new System.Windows.Forms.ImageList(this.components);
             this.novasImagensMenu = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
@@ -143,13 +143,13 @@ namespace appBugInn
             this.materialCard7.SuspendLayout();
             this.tb_funcionarios.SuspendLayout();
             this.cd_FuncionariosDados.SuspendLayout();
+            this.tb_configuracoes.SuspendLayout();
             this.tb_diretoria.SuspendLayout();
+            this.mc_datas_dash.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard4.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.mc_datas_dash.SuspendLayout();
-            this.tb_configuracoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -171,7 +171,7 @@ namespace appBugInn
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1461, 893);
+            this.materialTabControl1.Size = new System.Drawing.Size(1830, 893);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.materialTabControl1_Selected);
             // 
@@ -212,7 +212,7 @@ namespace appBugInn
             this.tb_reservas.Margin = new System.Windows.Forms.Padding(6);
             this.tb_reservas.Name = "tb_reservas";
             this.tb_reservas.Padding = new System.Windows.Forms.Padding(3);
-            this.tb_reservas.Size = new System.Drawing.Size(1453, 850);
+            this.tb_reservas.Size = new System.Drawing.Size(1822, 850);
             this.tb_reservas.TabIndex = 1;
             this.tb_reservas.Text = "RESERVAS";
             this.tb_reservas.UseVisualStyleBackColor = true;
@@ -246,7 +246,7 @@ namespace appBugInn
             this.mc_dadosReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.mc_dadosReserva.Name = "mc_dadosReserva";
             this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(28, 27, 28, 27);
-            this.mc_dadosReserva.Size = new System.Drawing.Size(1447, 498);
+            this.mc_dadosReserva.Size = new System.Drawing.Size(1816, 277);
             this.mc_dadosReserva.TabIndex = 39;
             this.mc_dadosReserva.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
             // 
@@ -258,12 +258,12 @@ namespace appBugInn
             this.btn_excluirReserva.Depth = 0;
             this.btn_excluirReserva.HighEmphasis = true;
             this.btn_excluirReserva.Icon = null;
-            this.btn_excluirReserva.Location = new System.Drawing.Point(1767, 259);
+            this.btn_excluirReserva.Location = new System.Drawing.Point(1146, 173);
             this.btn_excluirReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_excluirReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirReserva.Name = "btn_excluirReserva";
             this.btn_excluirReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluirReserva.Size = new System.Drawing.Size(135, 56);
+            this.btn_excluirReserva.Size = new System.Drawing.Size(90, 36);
             this.btn_excluirReserva.TabIndex = 55;
             this.btn_excluirReserva.Text = "Excluir";
             this.btn_excluirReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -292,7 +292,7 @@ namespace appBugInn
             "2",
             "3",
             "4"});
-            this.cb_NumeroPessoas.Location = new System.Drawing.Point(652, 248);
+            this.cb_NumeroPessoas.Location = new System.Drawing.Point(336, 160);
             this.cb_NumeroPessoas.Margin = new System.Windows.Forms.Padding(6);
             this.cb_NumeroPessoas.MaxDropDownItems = 4;
             this.cb_NumeroPessoas.MouseState = MaterialSkin.MouseState.OUT;
@@ -325,12 +325,12 @@ namespace appBugInn
             "Suite",
             "Deluxe",
             ""});
-            this.cb_TipoQuarto.Location = new System.Drawing.Point(914, 250);
+            this.cb_TipoQuarto.Location = new System.Drawing.Point(590, 160);
             this.cb_TipoQuarto.Margin = new System.Windows.Forms.Padding(6);
             this.cb_TipoQuarto.MaxDropDownItems = 4;
             this.cb_TipoQuarto.MouseState = MaterialSkin.MouseState.OUT;
             this.cb_TipoQuarto.Name = "cb_TipoQuarto";
-            this.cb_TipoQuarto.Size = new System.Drawing.Size(242, 49);
+            this.cb_TipoQuarto.Size = new System.Drawing.Size(169, 49);
             this.cb_TipoQuarto.StartIndex = 0;
             this.cb_TipoQuarto.TabIndex = 47;
             this.cb_TipoQuarto.SelectedIndexChanged += new System.EventHandler(this.cb_TipoQuarto_SelectedIndexChanged);
@@ -339,7 +339,7 @@ namespace appBugInn
             // 
             this.dtp_dataFimReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataFimReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1660, 80);
+            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1127, 51);
             this.dtp_dataFimReserva.Margin = new System.Windows.Forms.Padding(6);
             this.dtp_dataFimReserva.Name = "dtp_dataFimReserva";
             this.dtp_dataFimReserva.Size = new System.Drawing.Size(240, 20);
@@ -359,7 +359,7 @@ namespace appBugInn
             this.btn_recuarDiaInicioReserva.HighEmphasis = true;
             this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
             this.btn_recuarDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(640, 66);
+            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(870, 80);
             this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
@@ -376,18 +376,19 @@ namespace appBugInn
             this.lbl_dataFimReserva.AutoSize = true;
             this.lbl_dataFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dataFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1710, 38);
+            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1201, 31);
             this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_dataFimReserva.Name = "lbl_dataFimReserva";
             this.lbl_dataFimReserva.Size = new System.Drawing.Size(44, 9);
             this.lbl_dataFimReserva.TabIndex = 45;
             this.lbl_dataFimReserva.Text = "Data de fim";
+            this.lbl_dataFimReserva.Click += new System.EventHandler(this.lbl_dataFimReserva_Click);
             // 
             // dtp_dataInicioReserva
             // 
             this.dtp_dataInicioReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataInicioReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(1232, 80);
+            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(791, 51);
             this.dtp_dataInicioReserva.Margin = new System.Windows.Forms.Padding(6);
             this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
             this.dtp_dataInicioReserva.Size = new System.Drawing.Size(242, 20);
@@ -405,7 +406,7 @@ namespace appBugInn
             this.btn_avançaDiaInicioReserva.HighEmphasis = true;
             this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
             this.btn_avançaDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(679, 66);
+            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(908, 80);
             this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
@@ -415,14 +416,14 @@ namespace appBugInn
             this.btn_avançaDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_avançaDiaInicioReserva.UseAccentColor = false;
             this.btn_avançaDiaInicioReserva.UseVisualStyleBackColor = true;
-            this.btn_avançaDiaInicioReserva.Click += new System.EventHandler(this.btn_avançaDiaReserva_Click);
+            this.btn_avançaDiaInicioReserva.Click += new System.EventHandler(this.btn_avançarDiaInicioReserva_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(1268, 38);
+            this.label7.Location = new System.Drawing.Point(861, 31);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 9);
@@ -439,7 +440,7 @@ namespace appBugInn
             this.btn_avançarDiaFimReserva.HighEmphasis = true;
             this.btn_avançarDiaFimReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
             this.btn_avançarDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(892, 66);
+            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1246, 80);
             this.btn_avançarDiaFimReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_avançarDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_avançarDiaFimReserva.Name = "btn_avançarDiaFimReserva";
@@ -463,7 +464,7 @@ namespace appBugInn
             this.btn_recuaDiaFimReserva.HighEmphasis = true;
             this.btn_recuaDiaFimReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
             this.btn_recuaDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(854, 66);
+            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(1208, 80);
             this.btn_recuaDiaFimReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_recuaDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_recuaDiaFimReserva.Name = "btn_recuaDiaFimReserva";
@@ -482,7 +483,7 @@ namespace appBugInn
             this.btn_registarReserva.Depth = 0;
             this.btn_registarReserva.HighEmphasis = true;
             this.btn_registarReserva.Icon = null;
-            this.btn_registarReserva.Location = new System.Drawing.Point(1232, 259);
+            this.btn_registarReserva.Location = new System.Drawing.Point(942, 173);
             this.btn_registarReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btn_registarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_registarReserva.Name = "btn_registarReserva";
@@ -504,12 +505,12 @@ namespace appBugInn
             this.btn_cancelarReserva.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelarReserva.HighEmphasis = true;
             this.btn_cancelarReserva.Icon = null;
-            this.btn_cancelarReserva.Location = new System.Drawing.Point(1500, 259);
+            this.btn_cancelarReserva.Location = new System.Drawing.Point(1044, 173);
             this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btn_cancelarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_cancelarReserva.Name = "btn_cancelarReserva";
             this.btn_cancelarReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_cancelarReserva.Size = new System.Drawing.Size(135, 56);
+            this.btn_cancelarReserva.Size = new System.Drawing.Size(90, 36);
             this.btn_cancelarReserva.TabIndex = 42;
             this.btn_cancelarReserva.Text = "Cancelar";
             this.btn_cancelarReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -546,7 +547,7 @@ namespace appBugInn
             this.txt_nomeReserva1.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_nomeReserva1.Multiline = false;
             this.txt_nomeReserva1.Name = "txt_nomeReserva1";
-            this.txt_nomeReserva1.Size = new System.Drawing.Size(562, 50);
+            this.txt_nomeReserva1.Size = new System.Drawing.Size(736, 50);
             this.txt_nomeReserva1.TabIndex = 30;
             this.txt_nomeReserva1.Text = "";
             this.txt_nomeReserva1.TrailingIcon = null;
@@ -589,7 +590,7 @@ namespace appBugInn
             this.txt_emailReserva1.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_emailReserva1.Multiline = false;
             this.txt_emailReserva1.Name = "txt_emailReserva1";
-            this.txt_emailReserva1.Size = new System.Drawing.Size(562, 50);
+            this.txt_emailReserva1.Size = new System.Drawing.Size(736, 50);
             this.txt_emailReserva1.TabIndex = 32;
             this.txt_emailReserva1.Text = "";
             this.txt_emailReserva1.TrailingIcon = null;
@@ -613,14 +614,14 @@ namespace appBugInn
             this.mtv_dadosReserva.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosReserva.FullRowSelect = true;
             this.mtv_dadosReserva.HideSelection = false;
-            this.mtv_dadosReserva.Location = new System.Drawing.Point(3, 438);
+            this.mtv_dadosReserva.Location = new System.Drawing.Point(3, 288);
             this.mtv_dadosReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mtv_dadosReserva.MinimumSize = new System.Drawing.Size(200, 100);
             this.mtv_dadosReserva.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosReserva.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosReserva.Name = "mtv_dadosReserva";
             this.mtv_dadosReserva.OwnerDraw = true;
-            this.mtv_dadosReserva.Size = new System.Drawing.Size(1447, 409);
+            this.mtv_dadosReserva.Size = new System.Drawing.Size(1816, 559);
             this.mtv_dadosReserva.TabIndex = 0;
             this.mtv_dadosReserva.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosReserva.View = System.Windows.Forms.View.Details;
@@ -1076,10 +1077,11 @@ namespace appBugInn
             this.tb_gerirQuartos.Location = new System.Drawing.Point(4, 39);
             this.tb_gerirQuartos.Margin = new System.Windows.Forms.Padding(4);
             this.tb_gerirQuartos.Name = "tb_gerirQuartos";
-            this.tb_gerirQuartos.Size = new System.Drawing.Size(1453, 850);
+            this.tb_gerirQuartos.Size = new System.Drawing.Size(1822, 850);
             this.tb_gerirQuartos.TabIndex = 4;
             this.tb_gerirQuartos.Text = "GERIR QUARTOS";
             this.tb_gerirQuartos.UseVisualStyleBackColor = true;
+            this.tb_gerirQuartos.Click += new System.EventHandler(this.tb_gerirQuartos_Click);
             this.tb_gerirQuartos.Enter += new System.EventHandler(this.tb_gerirQuartos_Enter);
             // 
             // mtv_dadosQuartos
@@ -1098,11 +1100,12 @@ namespace appBugInn
             this.mtv_dadosQuartos.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosQuartos.Name = "mtv_dadosQuartos";
             this.mtv_dadosQuartos.OwnerDraw = true;
-            this.mtv_dadosQuartos.Size = new System.Drawing.Size(1453, 336);
+            this.mtv_dadosQuartos.Size = new System.Drawing.Size(1822, 336);
             this.mtv_dadosQuartos.TabIndex = 42;
             this.mtv_dadosQuartos.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosQuartos.View = System.Windows.Forms.View.Details;
             this.mtv_dadosQuartos.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged_2);
+            this.mtv_dadosQuartos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mtv_dadosQuartos_MouseDoubleClick);
             // 
             // materialCard7
             // 
@@ -1126,7 +1129,7 @@ namespace appBugInn
             this.materialCard7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard7.Name = "materialCard7";
             this.materialCard7.Padding = new System.Windows.Forms.Padding(9);
-            this.materialCard7.Size = new System.Drawing.Size(1453, 324);
+            this.materialCard7.Size = new System.Drawing.Size(1822, 324);
             this.materialCard7.TabIndex = 41;
             // 
             // sw_camaCasal
@@ -1272,9 +1275,11 @@ namespace appBugInn
             this.btn_modificar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_modificar.UseAccentColor = false;
             this.btn_modificar.UseVisualStyleBackColor = true;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.AutoSize = false;
             this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_cancelar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btn_cancelar.Depth = 0;
@@ -1288,10 +1293,11 @@ namespace appBugInn
             this.btn_cancelar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_cancelar.Size = new System.Drawing.Size(96, 36);
             this.btn_cancelar.TabIndex = 42;
-            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.Text = "Limpar";
             this.btn_cancelar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.btn_cancelar.UseAccentColor = true;
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // txt_nQuarto
             // 
@@ -1594,6 +1600,34 @@ namespace appBugInn
             this.txt_passwordFuncionarios.TrailingIcon = null;
             this.txt_passwordFuncionarios.UseSystemPasswordChar = false;
             // 
+            // tb_configuracoes
+            // 
+            this.tb_configuracoes.Controls.Add(this.sw_darkMode);
+            this.tb_configuracoes.ImageKey = "icons8-config-32.png";
+            this.tb_configuracoes.Location = new System.Drawing.Point(4, 39);
+            this.tb_configuracoes.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_configuracoes.Name = "tb_configuracoes";
+            this.tb_configuracoes.Size = new System.Drawing.Size(1453, 850);
+            this.tb_configuracoes.TabIndex = 7;
+            this.tb_configuracoes.Text = "CONFIGURAÇÕES";
+            this.tb_configuracoes.UseVisualStyleBackColor = true;
+            // 
+            // sw_darkMode
+            // 
+            this.sw_darkMode.BackColor = System.Drawing.Color.Transparent;
+            this.sw_darkMode.Depth = 0;
+            this.sw_darkMode.Location = new System.Drawing.Point(36, 32);
+            this.sw_darkMode.Margin = new System.Windows.Forms.Padding(0);
+            this.sw_darkMode.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sw_darkMode.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sw_darkMode.Name = "sw_darkMode";
+            this.sw_darkMode.Ripple = true;
+            this.sw_darkMode.Size = new System.Drawing.Size(202, 44);
+            this.sw_darkMode.TabIndex = 1;
+            this.sw_darkMode.Text = "Modo Escuro";
+            this.sw_darkMode.UseVisualStyleBackColor = false;
+            this.sw_darkMode.CheckedChanged += new System.EventHandler(this.sw_darkMode_CheckedChanged);
+            // 
             // tb_diretoria
             // 
             this.tb_diretoria.Controls.Add(this.mc_datas_dash);
@@ -1612,289 +1646,6 @@ namespace appBugInn
             this.tb_diretoria.Text = "DASHBOARD";
             this.tb_diretoria.UseVisualStyleBackColor = true;
             this.tb_diretoria.Enter += new System.EventHandler(this.tb_diretoria_Enter);
-            // 
-            // materialFloatingActionButton3
-            // 
-            this.materialFloatingActionButton3.Depth = 0;
-            this.materialFloatingActionButton3.Icon = global::appBugInn.Properties.Resources.icons8_satisfaction_48;
-            this.materialFloatingActionButton3.Location = new System.Drawing.Point(900, 57);
-            this.materialFloatingActionButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.materialFloatingActionButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
-            this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton3.TabIndex = 7;
-            this.materialFloatingActionButton3.TabStop = false;
-            this.materialFloatingActionButton3.UseVisualStyleBackColor = false;
-            // 
-            // materialFloatingActionButton2
-            // 
-            //this.materialFloatingActionButton2.Depth = 0;
-            //this.materialFloatingActionButton2.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
-            //this.materialFloatingActionButton2.Location = new System.Drawing.Point(1194, 102);
-            //this.materialFloatingActionButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            //this.materialFloatingActionButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            //this.materialFloatingActionButton2.Name = "materialFloatingActionButton2";
-            //this.materialFloatingActionButton2.Size = new System.Drawing.Size(112, 108);
-            //this.materialFloatingActionButton2.TabIndex = 5;
-            //this.materialFloatingActionButton2.TabStop = false;
-            //this.materialFloatingActionButton2.UseVisualStyleBackColor = false;
-            // 
-            // materialCard3
-            // 
-            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.lbl_classificacao);
-            this.materialCard3.Controls.Add(this.label9);
-            this.materialCard3.Depth = 0;
-            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(682, 31);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(248, 100);
-            this.materialCard3.TabIndex = 6;
-            // 
-            // label8
-            // 
-            //this.label8.AutoSize = true;
-            //this.label8.Font = new System.Drawing.Font("Calibri", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label8.ForeColor = System.Drawing.Color.Black;
-            //this.label8.Location = new System.Drawing.Point(180, 110);
-            //this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            //this.label8.Name = "label8";
-            //this.label8.Size = new System.Drawing.Size(103, 71);
-            //this.label8.TabIndex = 1;
-            //this.label8.Text = "4,6";
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(222, 72);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Nível de Satisfação dos clientes";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.UseCompatibleTextRendering = true;
-            // 
-            // lbl_classificacao
-            // 
-            this.lbl_classificacao.AutoSize = true;
-            this.lbl_classificacao.Font = new System.Drawing.Font("Calibri", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_classificacao.ForeColor = System.Drawing.Color.Black;
-            this.lbl_classificacao.Location = new System.Drawing.Point(90, 57);
-            this.lbl_classificacao.Name = "lbl_classificacao";
-            this.lbl_classificacao.Size = new System.Drawing.Size(52, 36);
-            this.lbl_classificacao.TabIndex = 1;
-            this.lbl_classificacao.Text = "4,6";
-            // 
-            // materialCard4
-            // 
-            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.cartesianChart1);
-            this.materialCard4.Depth = 0;
-            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard4.Location = new System.Drawing.Point(30, 169);
-            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard4.Name = "materialCard4";
-            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard4.Size = new System.Drawing.Size(1222, 667);
-            this.materialCard4.TabIndex = 6;
-            // 
-            // cartesianChart1
-            // 
-            this.cartesianChart1.Location = new System.Drawing.Point(18, 18);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(1204, 632);
-            this.cartesianChart1.TabIndex = 0;
-            this.cartesianChart1.Text = "cartesianChart1";
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.mpb_fatAnual);
-            this.materialCard2.Controls.Add(this.lbl_desc_fatAnual);
-            this.materialCard2.Controls.Add(this.lbl_fatAnual);
-            this.materialCard2.Controls.Add(this.label6);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(354, 31);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(286, 100);
-            this.materialCard2.TabIndex = 4;
-            // 
-            // materialProgressBar2
-            //// 
-            //this.materialProgressBar2.Depth = 0;
-            //this.materialProgressBar2.Location = new System.Drawing.Point(44, 131);
-            //this.materialProgressBar2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            //this.materialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER;
-            //this.materialProgressBar2.Name = "materialProgressBar2";
-            //this.materialProgressBar2.Size = new System.Drawing.Size(346, 5);
-            //this.materialProgressBar2.TabIndex = 3;
-            //this.materialProgressBar2.Value = 37;
-            //// 
-            //// label4
-            //// 
-            //this.label4.AutoSize = true;
-            //this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label4.Location = new System.Drawing.Point(52, 148);
-            //this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            //this.label4.Name = "label4";
-            //this.label4.Size = new System.Drawing.Size(294, 26);
-            //this.label4.TabIndex = 2;
-            //this.label4.Text = "37% da arrecadação prevista";
-            //// 
-            //// label5
-            //// 
-            //this.label5.AutoSize = true;
-            //this.label5.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            //this.label5.Location = new System.Drawing.Point(98, 69);
-            //this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            //this.label5.Name = "label5";
-            //this.label5.Size = new System.Drawing.Size(253, 59);
-            //this.label5.TabIndex = 1;
-            //this.label5.Text = "57.912,54 €";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(212, 30);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Faturação Ano Atual";
-            this.label6.UseCompatibleTextRendering = true;
-            // 
-            // mpb_fatAnual
-            // 
-            this.mpb_fatAnual.Depth = 0;
-            this.mpb_fatAnual.Location = new System.Drawing.Point(22, 68);
-            this.mpb_fatAnual.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mpb_fatAnual.Name = "mpb_fatAnual";
-            this.mpb_fatAnual.Size = new System.Drawing.Size(210, 5);
-            this.mpb_fatAnual.TabIndex = 3;
-            this.mpb_fatAnual.Value = 37;
-            // 
-            // lbl_desc_fatAnual
-            // 
-            this.lbl_desc_fatAnual.AutoSize = true;
-            this.lbl_desc_fatAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_desc_fatAnual.Location = new System.Drawing.Point(59, 77);
-            this.lbl_desc_fatAnual.Name = "lbl_desc_fatAnual";
-            this.lbl_desc_fatAnual.Size = new System.Drawing.Size(145, 13);
-            this.lbl_desc_fatAnual.TabIndex = 2;
-            this.lbl_desc_fatAnual.Text = "37% da arrecadação prevista";
-            // 
-            // lbl_fatAnual
-            // 
-            this.lbl_fatAnual.AutoSize = true;
-            this.lbl_fatAnual.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fatAnual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbl_fatAnual.Location = new System.Drawing.Point(49, 36);
-            this.lbl_fatAnual.Name = "lbl_fatAnual";
-            this.lbl_fatAnual.Size = new System.Drawing.Size(25, 29);
-            this.lbl_fatAnual.TabIndex = 1;
-            this.lbl_fatAnual.Text = "0";
-            // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.mpb_fatMensal);
-            this.materialCard1.Controls.Add(this.lbl_desc_fatMensal);
-            this.materialCard1.Controls.Add(this.lbl_fatMensal);
-            this.materialCard1.Controls.Add(this.label1);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(30, 31);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(282, 100);
-            this.materialCard1.TabIndex = 0;
-            // 
-            // materialProgressBar1
-            // 
-            //this.materialProgressBar1.Depth = 0;
-            //this.materialProgressBar1.Location = new System.Drawing.Point(44, 131);
-            //this.materialProgressBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            //this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            //this.materialProgressBar1.Name = "materialProgressBar1";
-            //this.materialProgressBar1.Size = new System.Drawing.Size(346, 5);
-            //this.materialProgressBar1.TabIndex = 3;
-            //this.materialProgressBar1.Value = 45;
-            //// 
-            //// label3
-            //// 
-            //this.label3.AutoSize = true;
-            //this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label3.Location = new System.Drawing.Point(52, 148);
-            //this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            //this.label3.Name = "label3";
-            //this.label3.Size = new System.Drawing.Size(294, 26);
-            //this.label3.TabIndex = 2;
-            //this.label3.Text = "45% da arrecadação prevista";
-            //// 
-            //// label2
-            //// 
-            //this.label2.AutoSize = true;
-            //this.label2.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            //this.label2.Location = new System.Drawing.Point(98, 69);
-            //this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            //this.label2.Name = "label2";
-            //this.label2.Size = new System.Drawing.Size(229, 59);
-            //this.label2.TabIndex = 1;
-            //this.label2.Text = "7.845,12 €";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Faturação Mês Atual";
-            this.label1.UseCompatibleTextRendering = true;
-            // 
-            // mpb_fatMensal
-            // 
-            this.mpb_fatMensal.Depth = 0;
-            this.mpb_fatMensal.Location = new System.Drawing.Point(22, 66);
-            this.mpb_fatMensal.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mpb_fatMensal.Name = "mpb_fatMensal";
-            this.mpb_fatMensal.Size = new System.Drawing.Size(210, 5);
-            this.mpb_fatMensal.TabIndex = 3;
-            this.mpb_fatMensal.Value = 45;
-            // 
-            // lbl_desc_fatMensal
-            // 
-            this.lbl_desc_fatMensal.AutoSize = true;
-            this.lbl_desc_fatMensal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_desc_fatMensal.Location = new System.Drawing.Point(51, 77);
-            this.lbl_desc_fatMensal.Name = "lbl_desc_fatMensal";
-            this.lbl_desc_fatMensal.Size = new System.Drawing.Size(145, 13);
-            this.lbl_desc_fatMensal.TabIndex = 2;
-            this.lbl_desc_fatMensal.Text = "45% da arrecadação prevista";
-            // 
-            // lbl_fatMensal
-            // 
-            this.lbl_fatMensal.AutoSize = true;
-            this.lbl_fatMensal.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fatMensal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbl_fatMensal.Location = new System.Drawing.Point(49, 36);
-            this.lbl_fatMensal.Name = "lbl_fatMensal";
-            this.lbl_fatMensal.Size = new System.Drawing.Size(25, 29);
-            this.lbl_fatMensal.TabIndex = 1;
-            this.lbl_fatMensal.Text = "0";
             // 
             // mc_datas_dash
             // 
@@ -1990,33 +1741,195 @@ namespace appBugInn
             this.materialFloatingActionButton4.TabStop = false;
             this.materialFloatingActionButton4.UseVisualStyleBackColor = false;
             // 
-            // tb_configuracoes
+            // materialFloatingActionButton3
             // 
-            this.tb_configuracoes.Controls.Add(this.sw_darkMode);
-            this.tb_configuracoes.ImageKey = "icons8-config-32.png";
-            this.tb_configuracoes.Location = new System.Drawing.Point(4, 39);
-            this.tb_configuracoes.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_configuracoes.Name = "tb_configuracoes";
-            this.tb_configuracoes.Size = new System.Drawing.Size(1453, 850);
-            this.tb_configuracoes.TabIndex = 7;
-            this.tb_configuracoes.Text = "CONFIGURAÇÕES";
-            this.tb_configuracoes.UseVisualStyleBackColor = true;
+            this.materialFloatingActionButton3.Depth = 0;
+            this.materialFloatingActionButton3.Icon = global::appBugInn.Properties.Resources.icons8_satisfaction_48;
+            this.materialFloatingActionButton3.Location = new System.Drawing.Point(900, 57);
+            this.materialFloatingActionButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.materialFloatingActionButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
+            this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton3.TabIndex = 7;
+            this.materialFloatingActionButton3.TabStop = false;
+            this.materialFloatingActionButton3.UseVisualStyleBackColor = false;
             // 
-            // sw_darkMode
+            // materialCard3
             // 
-            this.sw_darkMode.BackColor = System.Drawing.Color.Transparent;
-            this.sw_darkMode.Depth = 0;
-            this.sw_darkMode.Location = new System.Drawing.Point(36, 32);
-            this.sw_darkMode.Margin = new System.Windows.Forms.Padding(0);
-            this.sw_darkMode.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.sw_darkMode.MouseState = MaterialSkin.MouseState.HOVER;
-            this.sw_darkMode.Name = "sw_darkMode";
-            this.sw_darkMode.Ripple = true;
-            this.sw_darkMode.Size = new System.Drawing.Size(202, 44);
-            this.sw_darkMode.TabIndex = 1;
-            this.sw_darkMode.Text = "Modo Escuro";
-            this.sw_darkMode.UseVisualStyleBackColor = false;
-            this.sw_darkMode.CheckedChanged += new System.EventHandler(this.sw_darkMode_CheckedChanged);
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.lbl_classificacao);
+            this.materialCard3.Controls.Add(this.label9);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard3.Location = new System.Drawing.Point(682, 31);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard3.Size = new System.Drawing.Size(248, 100);
+            this.materialCard3.TabIndex = 6;
+            // 
+            // lbl_classificacao
+            // 
+            this.lbl_classificacao.AutoSize = true;
+            this.lbl_classificacao.Font = new System.Drawing.Font("Calibri", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_classificacao.ForeColor = System.Drawing.Color.Black;
+            this.lbl_classificacao.Location = new System.Drawing.Point(90, 57);
+            this.lbl_classificacao.Name = "lbl_classificacao";
+            this.lbl_classificacao.Size = new System.Drawing.Size(52, 36);
+            this.lbl_classificacao.TabIndex = 1;
+            this.lbl_classificacao.Text = "4,6";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(9, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(222, 72);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Nível de Satisfação dos clientes";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.UseCompatibleTextRendering = true;
+            // 
+            // materialCard4
+            // 
+            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.cartesianChart1);
+            this.materialCard4.Depth = 0;
+            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard4.Location = new System.Drawing.Point(30, 169);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard4.Name = "materialCard4";
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard4.Size = new System.Drawing.Size(1222, 667);
+            this.materialCard4.TabIndex = 6;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(18, 18);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(1204, 632);
+            this.cartesianChart1.TabIndex = 0;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.mpb_fatAnual);
+            this.materialCard2.Controls.Add(this.lbl_desc_fatAnual);
+            this.materialCard2.Controls.Add(this.lbl_fatAnual);
+            this.materialCard2.Controls.Add(this.label6);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(354, 31);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(286, 100);
+            this.materialCard2.TabIndex = 4;
+            // 
+            // mpb_fatAnual
+            // 
+            this.mpb_fatAnual.Depth = 0;
+            this.mpb_fatAnual.Location = new System.Drawing.Point(22, 68);
+            this.mpb_fatAnual.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mpb_fatAnual.Name = "mpb_fatAnual";
+            this.mpb_fatAnual.Size = new System.Drawing.Size(210, 5);
+            this.mpb_fatAnual.TabIndex = 3;
+            this.mpb_fatAnual.Value = 37;
+            // 
+            // lbl_desc_fatAnual
+            // 
+            this.lbl_desc_fatAnual.AutoSize = true;
+            this.lbl_desc_fatAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_desc_fatAnual.Location = new System.Drawing.Point(59, 77);
+            this.lbl_desc_fatAnual.Name = "lbl_desc_fatAnual";
+            this.lbl_desc_fatAnual.Size = new System.Drawing.Size(145, 13);
+            this.lbl_desc_fatAnual.TabIndex = 2;
+            this.lbl_desc_fatAnual.Text = "37% da arrecadação prevista";
+            // 
+            // lbl_fatAnual
+            // 
+            this.lbl_fatAnual.AutoSize = true;
+            this.lbl_fatAnual.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fatAnual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_fatAnual.Location = new System.Drawing.Point(49, 36);
+            this.lbl_fatAnual.Name = "lbl_fatAnual";
+            this.lbl_fatAnual.Size = new System.Drawing.Size(25, 29);
+            this.lbl_fatAnual.TabIndex = 1;
+            this.lbl_fatAnual.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(212, 30);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Faturação Ano Atual";
+            this.label6.UseCompatibleTextRendering = true;
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.mpb_fatMensal);
+            this.materialCard1.Controls.Add(this.lbl_desc_fatMensal);
+            this.materialCard1.Controls.Add(this.lbl_fatMensal);
+            this.materialCard1.Controls.Add(this.label1);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(30, 31);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(282, 100);
+            this.materialCard1.TabIndex = 0;
+            // 
+            // mpb_fatMensal
+            // 
+            this.mpb_fatMensal.Depth = 0;
+            this.mpb_fatMensal.Location = new System.Drawing.Point(22, 66);
+            this.mpb_fatMensal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mpb_fatMensal.Name = "mpb_fatMensal";
+            this.mpb_fatMensal.Size = new System.Drawing.Size(210, 5);
+            this.mpb_fatMensal.TabIndex = 3;
+            this.mpb_fatMensal.Value = 45;
+            // 
+            // lbl_desc_fatMensal
+            // 
+            this.lbl_desc_fatMensal.AutoSize = true;
+            this.lbl_desc_fatMensal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_desc_fatMensal.Location = new System.Drawing.Point(51, 77);
+            this.lbl_desc_fatMensal.Name = "lbl_desc_fatMensal";
+            this.lbl_desc_fatMensal.Size = new System.Drawing.Size(145, 13);
+            this.lbl_desc_fatMensal.TabIndex = 2;
+            this.lbl_desc_fatMensal.Text = "45% da arrecadação prevista";
+            // 
+            // lbl_fatMensal
+            // 
+            this.lbl_fatMensal.AutoSize = true;
+            this.lbl_fatMensal.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fatMensal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lbl_fatMensal.Location = new System.Drawing.Point(49, 36);
+            this.lbl_fatMensal.Name = "lbl_fatMensal";
+            this.lbl_fatMensal.Size = new System.Drawing.Size(25, 29);
+            this.lbl_fatMensal.TabIndex = 1;
+            this.lbl_fatMensal.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Faturação Mês Atual";
+            this.label1.UseCompatibleTextRendering = true;
             // 
             // iconesMenu
             // 
@@ -2054,7 +1967,7 @@ namespace appBugInn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1467, 960);
+            this.ClientSize = new System.Drawing.Size(1836, 960);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
@@ -2080,7 +1993,10 @@ namespace appBugInn
             this.tb_funcionarios.ResumeLayout(false);
             this.cd_FuncionariosDados.ResumeLayout(false);
             this.cd_FuncionariosDados.PerformLayout();
+            this.tb_configuracoes.ResumeLayout(false);
             this.tb_diretoria.ResumeLayout(false);
+            this.mc_datas_dash.ResumeLayout(false);
+            this.mc_datas_dash.PerformLayout();
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
             this.materialCard4.ResumeLayout(false);
@@ -2088,9 +2004,6 @@ namespace appBugInn
             this.materialCard2.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.mc_datas_dash.ResumeLayout(false);
-            this.mc_datas_dash.PerformLayout();
-            this.tb_configuracoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

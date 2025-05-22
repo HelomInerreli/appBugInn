@@ -684,7 +684,58 @@ namespace appBugInn
             return reservasNoPeriodo < 4;
         }
 
-        
+        public void AtualizarBaseDadosQuartos(string tipoQuarto)
+        {
+            string caminhoBase = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados");
+            List<string> linhas;
+            string caminhoArquivo;
+
+            switch (tipoQuarto.ToLower())
+            {
+                case "single":
+                    caminhoArquivo = Path.Combine(caminhoBase, "qSingle.txt");
+                    linhas = new List<string> { "NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes" };
+                    foreach (var quarto in qSingles)
+                    {
+                        linhas.Add($"{quarto.NumQuarto};{quarto.Andar};Single;{quarto.Conta};{quarto.Livre};{quarto.Status};{quarto.Observacoes}");
+                    }
+                    File.WriteAllLines(caminhoArquivo, linhas);
+                    break;
+
+                case "duplo":
+                    caminhoArquivo = Path.Combine(caminhoBase, "qDuplos.txt");
+                    linhas = new List<string> { "NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes;TipoCama" };
+                    foreach (var quarto in qDuplos)
+                    {
+                        linhas.Add($"{quarto.NumQuarto};{quarto.Andar};Duplo;{quarto.Conta};{quarto.Livre};{quarto.Status};{quarto.Observacoes};{quarto.TipoCama}");
+                    }
+                    File.WriteAllLines(caminhoArquivo, linhas);
+                    break;
+
+                case "suite":
+                    caminhoArquivo = Path.Combine(caminhoBase, "qSuites.txt");
+                    linhas = new List<string> { "NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes;TipoVista" };
+                    foreach (var quarto in qSuites)
+                    {
+                        linhas.Add($"{quarto.NumQuarto};{quarto.Andar};Suite;{quarto.Conta};{quarto.Livre};{quarto.Status};{quarto.Observacoes};{quarto.TipoVista}");
+                    }
+                    File.WriteAllLines(caminhoArquivo, linhas);
+                    break;
+
+                case "deluxe":
+                    caminhoArquivo = Path.Combine(caminhoBase, "qDeluxe.txt");
+                    linhas = new List<string> { "NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes;TipoVista;Banheira" };
+                    foreach (var quarto in qDeluxes)
+                    {
+                        linhas.Add($"{quarto.NumQuarto};{quarto.Andar};Deluxe;{quarto.Conta};{quarto.Livre};{quarto.Status};{quarto.Observacoes};{quarto.TipoVista};{quarto.Banheira}");
+                    }
+                    File.WriteAllLines(caminhoArquivo, linhas);
+                    break;
+
+                default:
+                    throw new ArgumentException("Tipo de quarto inválido");
+            }
+        }
 
     }
 }
