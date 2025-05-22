@@ -1108,6 +1108,7 @@ namespace appBugInn
 
                 bool checkOut = false;
 
+                // ⚠️ NÃO chamar preencherQuartos aqui de novo
                 hotel.MarcarQuartoComoOcupado(tipoQuarto, numQuarto);
                 hotel.gravarQuartos();
 
@@ -1195,7 +1196,7 @@ namespace appBugInn
                     quarto.Observacoes = $"Quarto ocupado";
                 }
                 // Atualiza a base de dados
-                hotel.AtualizarBaseDadosQuartos("single");
+                //hotel.AtualizarBaseDadosQuartos("single");
             }
         }
 
@@ -1219,7 +1220,7 @@ namespace appBugInn
                 // Atualiza o tipo de cama
                 quarto.TipoCama = sw_camaCasal.Checked ? "Casal" : "Solteiro";
                 // Atualiza a base de dados
-                hotel.AtualizarBaseDadosQuartos("duplo");
+                //hotel.AtualizarBaseDadosQuartos("duplo");
             }
         }
 
@@ -1243,7 +1244,7 @@ namespace appBugInn
                         // Atualiza a vista
                 quarto.TipoVista = txt_Vista.Text;
                 // Atualiza a base de dados
-                hotel.AtualizarBaseDadosQuartos("suite");
+                //hotel.AtualizarBaseDadosQuartos("suite");
             }
         }
 
@@ -1269,7 +1270,7 @@ namespace appBugInn
                 // Atualiza a banheira
                 quarto.Banheira = sw_banheira.Checked;
                 // Atualiza a base de dados
-                hotel.AtualizarBaseDadosQuartos("deluxe");
+                //hotel.AtualizarBaseDadosQuartos("deluxe");
             }
         }
 
