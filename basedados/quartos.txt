@@ -1,0 +1,13 @@
+NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes;Atributos_Especificos
+101;1;Single;0;False;Ocupado;Quarto Livre para ocupação
+201;2;Single;0;False;Ocupado;Quarto em utilizacao
+301;3;Single;0;True;Livre;Quarto Livre para ocupação
+401;4;Single;0;False;Ocupado;Quarto em utilizacao
+102;1;Duplo;0;True;Livre;Quarto Livre para ocupação;Casal
+202;2;Duplo;0;False;Ocupado;Quarto em utilizacao;Solteiro
+302;3;Duplo;0;True;Livre;Quarto Livre para ocupação;Casal
+402;4;Duplo;0;False;Ocupado;Quarto em utilizacao;Solteiro
+103;1;Suite;0;True;Livre;Quarto Livre para ocupa��o;Mar
+203;2;Suite;0;True;Livre;Quarto em manuten��o;Montanha
+104;1;Deluxe;0;True;Livre;Quarto Livre para ocupa��o;Mar;True
+204;2;Deluxe;0;True;Livre;Quarto em manuten��o;Montanha;True

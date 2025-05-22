@@ -920,6 +920,92 @@ namespace appBugInn
             }
         }
 
+        private void tb_gerirQuartos_Leave(object sender, EventArgs e)
+        {
+            if (materialTabControl1.SelectedTab == tb_gerirQuartos)
+            {
+                LimparCampos();
+            }
+        }
+        public void LimparCampos()
+        {
+            txt_nQuarto.Text = "";
+            txt_tQuarto.Text = "";
+            txt_Conta.Text = "";
+            txt_Andar.Text = "";
+            txt_Status.Text = "";
+            txt_Vista.Text = "";
+
+            sw_banheira.Checked = false;
+            sw_camaCasal.Checked = false;
+            sw_miniBar.Checked = false;
+
+        }
+
+        private void ModificarQuartoSingle(int numQuarto, bool livre)
+        {
+            // Encontra o quarto Single
+            var quarto = hotel.qSingles.FirstOrDefault(q => q.NumQuarto == numQuarto);
+            if (quarto != null)
+            {
+                // Atualiza o status
+                quarto.AlterarOcupacao(livre);
+                quarto.Status = txt_Status.Text;
+                // Atualiza a base de dados
+                hotel.AtualizarBaseDadosQuartos("single");
+            }
+        }
+
+        private void ModificarQuartoDuplo(int numQuarto, bool livre)
+        {
+            // Encontra o quarto Duplo
+            var quarto = hotel.qDuplos.FirstOrDefault(q => q.NumQuarto == numQuarto);
+            if (quarto != null)
+            {
+                // Atualiza o status
+                quarto.AlterarOcupacao(livre);
+                quarto.Status = txt_Status.Text;
+                // Atualiza o tipo de cama
+                quarto.TipoCama = sw_camaCasal.Checked ? "Casal" : "Solteiro";
+                // Atualiza a base de dados
+                hotel.AtualizarBaseDadosQuartos("duplo");
+            }
+        }
+
+        private void ModificarQuartoSuite(int numQuarto, bool livre)
+        {
+            // Encontra o quarto Suite
+            var quarto = hotel.qSuites.FirstOrDefault(q => q.NumQuarto == numQuarto);
+            if (quarto != null)
+            {
+                // Atualiza o status
+                quarto.AlterarOcupacao(livre);
+                quarto.Status = txt_Status.Text;
+                // Atualiza a vista
+                quarto.TipoVista = txt_Vista.Text;
+                // Atualiza a base de dados
+                hotel.AtualizarBaseDadosQuartos("suite");
+            }
+        }
+
+        private void ModificarQuartoDeluxe(int numQuarto, bool livre)
+        {
+            // Encontra o quarto Deluxe
+            var quarto = hotel.qDeluxes.FirstOrDefault(q => q.NumQuarto == numQuarto);
+            if (quarto != null)
+            {
+                // Atualiza o status
+                quarto.AlterarOcupacao(livre);
+                quarto.Status = txt_Status.Text;
+                // Atualiza a vista
+                quarto.TipoVista = txt_Vista.Text;
+                // Atualiza a banheira
+                quarto.Banheira = sw_banheira.Checked;
+                // Atualiza a base de dados
+                hotel.AtualizarBaseDadosQuartos("deluxe");
+            }
+        }
+
         private void mtv_dadosQuartos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             // Verifica se existe pelo menos um item selecionado na ListView
@@ -1042,6 +1128,74 @@ namespace appBugInn
                     sw_camaCasal.Checked = false;
                 }
             }
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verifica se um quarto está selecionado
+                if (string.IsNullOrEmpty(txt_nQuarto.Text))
+                {
+                    MessageBox.Show("Selecione um quarto para modificar.");
+                    return;
+                }
+
+                // Obtém o número do quarto
+                if (!int.TryParse(txt_nQuarto.Text, out int numQuarto))
+                {
+                    MessageBox.Show("Número de quarto inválido.");
+                    return;
+                }
+
+                // Obtém o tipo de quarto
+                string tipoQuarto = txt_tQuarto.Text.Trim().ToLower();
+
+                // Obtém o status (verifica se está marcado como "Livre")
+                bool livre = txt_Status.Text.Equals("Livre", StringComparison.OrdinalIgnoreCase);
+
+                // Modifica o quarto conforme seu tipo
+                switch (tipoQuarto)
+                {
+                    case "single":
+                        ModificarQuartoSingle(numQuarto, livre);
+                        break;
+
+                    case "duplo":
+                        ModificarQuartoDuplo(numQuarto, livre);
+                        break;
+
+                    case "suite":
+                        ModificarQuartoSuite(numQuarto, livre);
+                        break;
+
+                    case "deluxe":
+                        ModificarQuartoDeluxe(numQuarto, livre);
+                        break;
+
+                    default:
+                        MessageBox.Show("Tipo de quarto não reconhecido.");
+                        return;
+                }
+
+                // Atualiza a lista visual de quartos
+                mtv_dadosQuartos_Enter(null, null);
+
+                // Limpa os campos após a modificação
+                LimparCampos();
+
+                // Feedback ao usuário
+                MessageBox.Show("Quarto modificado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao modificar quarto: {ex.Message}");
+            }
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }
