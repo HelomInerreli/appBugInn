@@ -984,7 +984,7 @@ namespace appBugInn
                     .Replace("\u00A0", "")
                     .Trim()
                     .Replace(",", ".");
-                string numQuartoStr = txt_idQuartoCheckIn.Text.Trim();
+                string numQuartoStr = cb_idQuartoCheckIn.SelectedItem?.ToString();
                 string dataInicioStr = txt_dataCheckIn.Text.Trim();
                 string dataFimStr = txt_dataCheckOut.Text.Trim();
                 int numeroPessoas = string.IsNullOrWhiteSpace(txt_nPessoasCheckIn.Text) ? 0 : int.Parse(txt_nPessoasCheckIn.Text);
@@ -997,94 +997,13 @@ namespace appBugInn
                     return;
                 }
 
-                //Limpa as colunas
-                mtv_dadosQuartos.Clear();
-
-                hotel.preencherQuartos();
-
-                // Adiciona as colunas
-                mtv_dadosQuartos.Columns.Add("Nº", 60, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Andar", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Tipo", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Conta", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Livre", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Status", 100, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Tipo de Cama", 150, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Observações", 220, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Tipo de Vista", 150, HorizontalAlignment.Left);
-                mtv_dadosQuartos.Columns.Add("Banheira", 100, HorizontalAlignment.Left);
-
-                // Adiciona os quartos Singles
-                foreach (var quarto in hotel.qSingles)
-                {
-                    ListViewItem itemSingle = new ListViewItem(quarto.NumQuarto.ToString());
-                    itemSingle.SubItems.Add(quarto.Andar.ToString());
-                    itemSingle.SubItems.Add("Single");
-                    itemSingle.SubItems.Add(quarto.Conta.ToString());
-                    itemSingle.SubItems.Add(quarto.Livre.ToString());
-                    itemSingle.SubItems.Add(quarto.Status);
-                    itemSingle.SubItems.Add("");
-                    itemSingle.SubItems.Add(quarto.Observacoes);
-                    itemSingle.SubItems.Add("");
-                    itemSingle.SubItems.Add("");
-                    mtv_dadosQuartos.Items.Add(itemSingle);
-                }
-
-                // Adiciona os quartos Duplos
-                foreach (var quarto in hotel.qDuplos)
-                {
-                    ListViewItem itemDuplo = new ListViewItem(quarto.NumQuarto.ToString());
-                    itemDuplo.SubItems.Add(quarto.Andar.ToString());
-                    itemDuplo.SubItems.Add("Duplo");
-                    itemDuplo.SubItems.Add(quarto.Conta.ToString());
-                    itemDuplo.SubItems.Add(quarto.Livre.ToString());
-                    itemDuplo.SubItems.Add(quarto.Status);
-                    itemDuplo.SubItems.Add(quarto.TipoCama);
-                    itemDuplo.SubItems.Add(quarto.Observacoes);
-                    itemDuplo.SubItems.Add("");
-                    itemDuplo.SubItems.Add("");
-                    mtv_dadosQuartos.Items.Add(itemDuplo);
-                }
-
-                // Adiciona os quartos Suite
-                foreach (var quarto in hotel.qSuites)
-                {
-                    ListViewItem itemSuite = new ListViewItem(quarto.NumQuarto.ToString());
-                    itemSuite.SubItems.Add(quarto.Andar.ToString());
-                    itemSuite.SubItems.Add("Suite");
-                    itemSuite.SubItems.Add(quarto.Conta.ToString());
-                    itemSuite.SubItems.Add(quarto.Livre.ToString());
-                    itemSuite.SubItems.Add(quarto.Status);
-                    itemSuite.SubItems.Add("");
-                    itemSuite.SubItems.Add(quarto.Observacoes);
-                    itemSuite.SubItems.Add(quarto.TipoVista);
-                    itemSuite.SubItems.Add("");
-                    mtv_dadosQuartos.Items.Add(itemSuite);
-                }
-
-                // Adiciona os quartos Deluxe
-                foreach (var quarto in hotel.qDeluxes)
-                {
-                    ListViewItem itemDeluxe = new ListViewItem(quarto.NumQuarto.ToString());
-                    itemDeluxe.SubItems.Add(quarto.Andar.ToString());
-                    itemDeluxe.SubItems.Add("Deluxe");
-                    itemDeluxe.SubItems.Add(quarto.Conta.ToString());
-                    itemDeluxe.SubItems.Add(quarto.Livre.ToString());
-                    itemDeluxe.SubItems.Add(quarto.Status);
-                    itemDeluxe.SubItems.Add("");
-                    itemDeluxe.SubItems.Add(quarto.Observacoes);
-                    itemDeluxe.SubItems.Add(quarto.TipoVista);
-                    itemDeluxe.SubItems.Add(quarto.Banheira.ToString());
-                    mtv_dadosQuartos.Items.Add(itemDeluxe);
-                }
-
                 var capacidadeExtras = new Dictionary<string, int>
-                {
-                    { "Single", 0 },
-                    { "Duplo", 1 },
-                    { "Suite", 2 },
-                    { "Deluxe", 3 }
-                };
+        {
+            { "Single", 0 },
+            { "Duplo", 1 },
+            { "Suite", 2 },
+            { "Deluxe", 3 }
+        };
 
                 if (!capacidadeExtras.ContainsKey(tipoQuarto))
                 {
@@ -1110,8 +1029,9 @@ namespace appBugInn
                 bool checkOut = false;
 
                 // ⚠️ NÃO chamar preencherQuartos aqui de novo
+                hotel.preencherQuartos(); // ✅ Carrega todos os quartos antes de modificar
                 hotel.MarcarQuartoComoOcupado(tipoQuarto, numQuarto);
-                hotel.gravarQuartos();
+                hotel.gravarQuartos(); // com GroupBy para evitar duplicações
 
                 hotel.AdicionarChecks(
                     nomeReserva,
@@ -1163,7 +1083,6 @@ namespace appBugInn
 
         public void AtualizarListViewCheckin()
         {
-            // Limpa todos os itens e colunas
             mtv_dadosCheckIn.Clear();
 
             // Adiciona as colunas de acordo com o cabeçalho do arquivo

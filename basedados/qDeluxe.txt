@@ -1,3 +1,3 @@
-NumQuarto;Andar;Tipo;Conta;Livre;Status;Observacoes;TipoVista;Banheira
-104;1;Deluxe;0;True;Livre;Quarto Livre para ocupação;Mar;True
-204;2;Deluxe;0;True;Livre;Quarto livre e disponível;Montanha;False
+numQuarto;andar;conta;livre;status;tipoVista;banheira;observacoes
+104;1;0;True;Livre;Mar;True;Quarto Livre para ocupação
+204;2;0;True;Livre;Montanha;True;Quarto em manutenção
