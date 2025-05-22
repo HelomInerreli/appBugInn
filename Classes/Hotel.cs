@@ -135,14 +135,37 @@ namespace appBugInn
             {
                 using (StreamWriter sw = new StreamWriter(caminho, false)) // false => sobrescreve
                 {
+                    // ✅ Cabeçalho de acordo com o tipo da classe
+                    if (typeof(T) == typeof(QSingle))
+                    {
+                        sw.WriteLine("numQuarto;andar;conta;livre;status;observacoes");
+                    }
+                    else if (typeof(T) == typeof(Duplo))
+                    {
+                        sw.WriteLine("numQuarto;andar;conta;livre;status;tipoCama;observacoes");
+                    }
+                    else if (typeof(T) == typeof(Suite))
+                    {
+                        sw.WriteLine("numQuarto;andar;conta;livre;status;tipoVista;observacoes");
+                    }
+                    else if (typeof(T) == typeof(Deluxe))
+                    {
+                        sw.WriteLine("numQuarto;andar;conta;livre;status;tipoVista;banheira;observacoes");
+                    }
+                    else
+                    {
+                        sw.WriteLine("numQuarto;andar;conta;livre;status;observacoes"); // fallback
+                    }
+
+                    // ✅ Linhas dos dados
                     foreach (var item in lista)
                     {
-                        // Assume que todos os tipos têm método linhaBD()
                         var metodo = item.GetType().GetMethod("linhaBD");
                         if (metodo != null)
                         {
                             string linha = metodo.Invoke(item, null) as string;
-                            sw.WriteLine(linha);
+                            if (!string.IsNullOrWhiteSpace(linha))
+                                sw.WriteLine(linha);
                         }
                     }
                 }
@@ -585,13 +608,26 @@ namespace appBugInn
 
         public void gravarFaturamento()
         {
-            //apagar base de dados
-            string linha = "";
-            foreach (var item in faturamentos)
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "BaseDados", "faturamentos.txt");
+
+            try
             {
-                linha += item.linhaBD() + "\n";
+                using (StreamWriter sw = new StreamWriter(caminho, false)) // sobrescreve
+                {
+                    // ✅ CABEÇALHO
+                    sw.WriteLine("idFaturamento;idCheckIn;valorTotal;dataFaturamento;tipoPagamento;classificacao");
+
+                    // ✅ DADOS
+                    foreach (var item in faturamentos)
+                    {
+                        sw.WriteLine(item.linhaBD().Trim()); // remove espaços extras ou \n duplicado
+                    }
+                }
             }
-            Funcionalidades.GravarBaseDados("faturamentos", linha);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao gravar faturamentos: " + ex.Message);
+            }
         }
 
         public float calcularFaturamentoMensal(int mes, int ano)

@@ -1009,6 +1009,7 @@ namespace appBugInn
                 bool checkOut = false;
 
                 // ⚠️ NÃO chamar preencherQuartos aqui de novo
+                hotel.preencherQuartos(); // ✅ Carrega todos os quartos antes de modificar
                 hotel.MarcarQuartoComoOcupado(tipoQuarto, numQuarto);
                 hotel.gravarQuartos(); // com GroupBy para evitar duplicações
 

@@ -1,2 +1,3 @@
-104;1;0;False;Livre;Mar;True;Quarto Deluxe com banheira
-204;2;0;True;Livre;Mar;True;Quarto Deluxe com banheira
+numQuarto;andar;conta;livre;status;tipoVista;banheira;observacoes
+104;1;0;False;Livre;Mar;True;Quarto Livre para ocupação
+204;2;0;True;Livre;Montanha;True;Quarto em manutenção
