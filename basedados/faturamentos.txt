@@ -5456,3 +5456,5 @@ idFaturamento;idCheckIn;valorTotal;dataFaturamento;tipoPagamento;classificacao
 5492;1;140;22/05/2025 20:47:26;Dinheiro;4
 5493;2;140;22/05/2025 20:47:32;Dinheiro;4
 5494;5;450;22/05/2025 20:49:36;Dinheiro;5
+5495;6;70;22/05/2025 22:42:10;Dinheiro;5
+5496;9;400;22/05/2025 23:12:54;Cartão;5

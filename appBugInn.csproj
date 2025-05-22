@@ -194,6 +194,12 @@
     <Content Include="BaseDados\qSingle.txt" />
     <Content Include="BaseDados\qSuites.txt" />
     <Content Include="BaseDados\reservas.txt" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\image %281%29.png" />
+    <None Include="Resources\image %282%29.png" />
+    <None Include="Resources\image %283%29.png" />
+    <None Include="Resources\image %284%29.png" />
+    <None Include="Resources\tbi_sem_fundo1.png" />
     <None Include="Resources\mountain %281%29.png" />
     <None Include="Resources\mountain.png" />
     <None Include="Resources\check-list.png" />

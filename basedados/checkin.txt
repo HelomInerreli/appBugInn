@@ -4,4 +4,7 @@ id;nomeReserva;subtotal;checkOut;dataCheckIn;dataCheckOut;tipoQuarto;numQuarto;h
 3;testes;600;True;22/05/2025;26/05/2025;Suite;203;w;w;
 4;ricky;300;True;22/05/2025;25/05/2025;Duplo;202;Joao;;
 5;maria;450;True;22/05/2025;25/05/2025;Suite;103;s;s;
-6;jose;70;False;22/05/2025;23/05/2025;Single;401;;;
+6;jose;70;True;22/05/2025;23/05/2025;Single;401;;;
+7;goncalo;140;False;22/05/2025;24/05/2025;Single;201;;;
+8;Teste Louco;1200;False;22/05/2025;30/05/2025;Suite;203;fgdfgd;;
+9;jao;400;True;23/05/2025;25/05/2025;Deluxe;104;joa;;

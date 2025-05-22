@@ -31,10 +31,13 @@ namespace appBugInn
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_login));
             this.bt_login = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flButton_ShowPassowrd = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.txt_nome = new MaterialSkin.Controls.MaterialTextBox2();
             this.txt_password = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_login
@@ -44,7 +47,7 @@ namespace appBugInn
             this.bt_login.Depth = 0;
             this.bt_login.HighEmphasis = true;
             this.bt_login.Icon = null;
-            this.bt_login.Location = new System.Drawing.Point(248, 295);
+            this.bt_login.Location = new System.Drawing.Point(143, 293);
             this.bt_login.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.bt_login.MouseState = MaterialSkin.MouseState.HOVER;
             this.bt_login.Name = "bt_login";
@@ -60,26 +63,37 @@ namespace appBugInn
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.pictureBox1);
             this.materialCard1.Controls.Add(this.flButton_ShowPassowrd);
             this.materialCard1.Controls.Add(this.txt_nome);
             this.materialCard1.Controls.Add(this.txt_password);
             this.materialCard1.Controls.Add(this.bt_login);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(111, 106);
+            this.materialCard1.Location = new System.Drawing.Point(17, 78);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(598, 462);
+            this.materialCard1.Size = new System.Drawing.Size(360, 349);
             this.materialCard1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::appBugInn.Properties.Resources.tbi_sem_fundo1;
+            this.pictureBox1.Location = new System.Drawing.Point(125, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // flButton_ShowPassowrd
             // 
             this.flButton_ShowPassowrd.Depth = 0;
             this.flButton_ShowPassowrd.DrawShadows = false;
             this.flButton_ShowPassowrd.Icon = global::appBugInn.Properties.Resources.icons8_visível_24;
-            this.flButton_ShowPassowrd.Location = new System.Drawing.Point(384, 190);
+            this.flButton_ShowPassowrd.Location = new System.Drawing.Point(279, 188);
             this.flButton_ShowPassowrd.Margin = new System.Windows.Forms.Padding(0);
             this.flButton_ShowPassowrd.Mini = true;
             this.flButton_ShowPassowrd.MouseState = MaterialSkin.MouseState.HOVER;
@@ -100,7 +114,7 @@ namespace appBugInn
             this.txt_nome.HideSelection = true;
             this.txt_nome.Hint = "Utilizador";
             this.txt_nome.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nome.Location = new System.Drawing.Point(131, 93);
+            this.txt_nome.Location = new System.Drawing.Point(26, 91);
             this.txt_nome.MaxLength = 32767;
             this.txt_nome.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_nome.Name = "txt_nome";
@@ -132,7 +146,7 @@ namespace appBugInn
             this.txt_password.HideSelection = true;
             this.txt_password.Hint = "Password";
             this.txt_password.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("txt_password.LeadingIcon")));
-            this.txt_password.Location = new System.Drawing.Point(131, 186);
+            this.txt_password.Location = new System.Drawing.Point(26, 184);
             this.txt_password.MaxLength = 32767;
             this.txt_password.MouseState = MaterialSkin.MouseState.OUT;
             this.txt_password.Name = "txt_password";
@@ -153,20 +167,38 @@ namespace appBugInn
             this.txt_password.UseSystemPasswordChar = false;
             this.txt_password.Click += new System.EventHandler(this.txt_password_Click_1);
             // 
-            // lb_nome
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Caption;
+            this.materialLabel1.Location = new System.Drawing.Point(104, 441);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(175, 14);
+            this.materialLabel1.TabIndex = 17;
+            this.materialLabel1.Text = "Desenvolvido por @Grupo2 Atec";
+            // 
+            // F_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 654);
+            this.ClientSize = new System.Drawing.Size(392, 467);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialCard1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "lb_nome";
-            this.Text = "Login";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "F_login";
+            this.Text = "Login - The Bug Inn";
             this.Load += new System.EventHandler(this.F_login_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,5 +208,7 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialFloatingActionButton flButton_ShowPassowrd;
         private MaterialSkin.Controls.MaterialTextBox2 txt_password;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }

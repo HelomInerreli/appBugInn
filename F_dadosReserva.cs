@@ -1,4 +1,4 @@
-﻿using MaterialSkin.Controls;
+using MaterialSkin.Controls;
 using MaterialSkin;
 using System;
 using System.Collections.Generic;
@@ -40,12 +40,12 @@ namespace appBugInn
 
                     mtv_dadosReserva.Columns.Add("ID", 60, HorizontalAlignment.Left);
                     mtv_dadosReserva.Columns.Add("Nome", 200, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Email", 250, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Data de inicio", 150, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Data de fim", 150, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Tipo de quarto", 170, HorizontalAlignment.Left);
-                    mtv_dadosReserva.Columns.Add("Número de Pessoas", 180, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Telefone", 120, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Email", 200, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Data inicio", 130, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Data fim", 130, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Tipo quarto", 100, HorizontalAlignment.Left);
+                    mtv_dadosReserva.Columns.Add("Nº Pessoas", 100, HorizontalAlignment.Left);
 
                     for (int i = 1; i < dados.Length; i++)
                     {

@@ -23,6 +23,7 @@ namespace appBugInn
         //Teste de commit
 
         public void preencherFuncionarios() {
+            hfuncionarios.Clear();
             List<object> func = Funcionalidades.CriarObjetosDoTexto("funcionarios", "Funcionario");
             foreach (var item in func)
             {
@@ -240,13 +241,9 @@ namespace appBugInn
             if (!hfuncionarios.Any(f => f.Nome == funcionario.Nome))
             {
                 hfuncionarios.Add(funcionario);
-                //MessageBox.Show($"Funcionário {funcionario.Nome} adicionado.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
             }
 
-            else
-            {
-                MessageBox.Show($"Funcionário {funcionario.Nome} já está na lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
         public void AdicionarReserva(Reserva reserva)
         {
@@ -318,7 +315,6 @@ namespace appBugInn
                 }
             }
 
-            // MessageBox.Show("Funcionários carregados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -373,7 +369,7 @@ namespace appBugInn
                     }
                 }
 
-                //MessageBox.Show("Base de dados atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (Exception ex)
             {
@@ -707,9 +703,7 @@ namespace appBugInn
 
         public bool PodeReservarQuarto(string tipoQuarto, DateTime dataInicio, DateTime dataFim)
         {
-            // Garante que a lista está atualizada com o ficheiro
-           // CarregarReservas();
-
+            
             // Conta reservas que têm o mesmo tipo de quarto e datas sobrepostas
             int reservasNoPeriodo = hreservas.Count(r =>
                 r.TipoQuarto.Equals(tipoQuarto, StringComparison.OrdinalIgnoreCase) &&

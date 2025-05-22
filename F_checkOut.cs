@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -103,22 +103,22 @@ namespace appBugInn
 
             cb_metodoPagamento.Items.Clear();
             // ✅ Adiciona "Outro" no ComboBox
-            cb_metodoPagamento.Items.AddRange(new string[] { "Dinheiro", "Cartão", "Fatura", "Outro" });
+            cb_metodoPagamento.Items.AddRange(new string[] { "Dinheiro", "Cartão", "Fatura" });
             cb_metodoPagamento.SelectedIndex = 0;
 
             cb_review.Items.Clear();
             for (int i = 1; i <= 5; i++)
             {
-                cb_review.Items.Add($"{i} ★");
+                cb_review.Items.Add($"{i} {new string('★', i)}");
             }
             cb_review.SelectedIndex = 4;
 
-            txt_outroPagamento.Visible = false;
+            //txt_outroPagamento.Visible = false;
 
-            cb_metodoPagamento.SelectedIndexChanged += (s, ev) =>
-            {
-                txt_outroPagamento.Visible = cb_metodoPagamento.SelectedItem.ToString() == "Outro";
-            };
+            //cb_metodoPagamento.SelectedIndexChanged += (s, ev) =>
+            //{
+            //    txt_outroPagamento.Visible = cb_metodoPagamento.SelectedItem.ToString() == "Outro";
+            //};
         }
 
         private void btn_checkoutConfirmar_Click_1(object sender, EventArgs e)
@@ -137,8 +137,8 @@ namespace appBugInn
             hotel.AtualizarBaseDeDadosChecks();
 
             string pagamento = cb_metodoPagamento.SelectedItem?.ToString();
-            if (pagamento == "Outro")
-                pagamento = txt_outroPagamento.Text.Trim();
+            //if (pagamento == "Outro")
+            //    pagamento = txt_outroPagamento.Text.Trim();
 
             // ✅ Adiciona validação do campo "Outro"
             if (string.IsNullOrWhiteSpace(pagamento))

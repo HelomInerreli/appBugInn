@@ -4,8 +4,9 @@ ID;Nome;Telefone;Email;DataInicio;DataFim;TipoQuarto;NumeroPessoas
 3;goncalo;123456987;goncalo@sapo.pt;2025-05-22;2025-05-24;Single;1
 4;ruben;912654987;ruben@sapo.pt;2025-05-22;2025-05-24;Single;1
 5;manuel;912000000;manuel@gmail.com;2025-05-22;2025-05-24;Single;1
-6;gui;912333444;gui@teste.com;2025-05-22;2025-05-23;Deluxe;2
 7;maria;919888000;maria@gmail.com;2025-05-22;2025-05-25;Suite;3
 8;ricky;912333444;ricky@gmail.com;2025-05-22;2025-05-25;Duplo;2
 9;testes;912000543;teste@gmail.com;2025-05-22;2025-05-26;Suite;3
-10;zas,123456789;ewer@gmail.com;2025-05-22;2025-05-14;Suite;3
+11;gui;912333444;gui@teste.com;2025-05-22;2025-05-23;Duplo;2
+13;jao;123456123;joa@jao.com;2025-05-23;2025-05-25;Deluxe;2
+14;jhgashd;123456445;hjgsjh@fsdf.com;2025-05-22;2025-05-23;Deluxe;1

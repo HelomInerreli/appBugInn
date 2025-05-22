@@ -31,27 +31,18 @@ namespace appBugInn
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_telaInicial));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tb_home = new System.Windows.Forms.TabPage();
-            this.lbl_usuarioLogado = new MaterialSkin.Controls.MaterialLabel();
             this.tb_reservas = new System.Windows.Forms.TabPage();
             this.mc_dadosReserva = new MaterialSkin.Controls.MaterialCard();
             this.btn_excluirReserva = new MaterialSkin.Controls.MaterialButton();
             this.cb_NumeroPessoas = new MaterialSkin.Controls.MaterialComboBox();
             this.cb_TipoQuarto = new MaterialSkin.Controls.MaterialComboBox();
             this.dtp_dataFimReserva = new System.Windows.Forms.DateTimePicker();
-            this.btn_recuarDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
             this.lbl_dataFimReserva = new System.Windows.Forms.Label();
             this.dtp_dataInicioReserva = new System.Windows.Forms.DateTimePicker();
-            this.btn_avançaDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_avançarDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
-            this.btn_recuaDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
             this.btn_registarReserva = new MaterialSkin.Controls.MaterialButton();
             this.btn_cancelarReserva = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.txt_nomeReserva1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_telefoneReserva1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_emailReserva1 = new MaterialSkin.Controls.MaterialTextBox();
             this.mtv_dadosReserva = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,50 +52,26 @@ namespace appBugInn
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tb_checkIn = new System.Windows.Forms.TabPage();
-            this.cb_idQuartoCheckIn = new System.Windows.Forms.ComboBox();
             this.mtv_dadosCheckIn = new MaterialSkin.Controls.MaterialListView();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
-            this.txt_dataCheckOut = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_dataCheckIn = new MaterialSkin.Controls.MaterialTextBox();
             this.btn_pesquisar = new MaterialSkin.Controls.MaterialButton();
-            this.txt_subtotal = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_nAndar = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_idQuartoCheckIn = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_hospede1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_hospede2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_hospede3 = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_nPessoasCheckIn = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_quartoCheckIn = new MaterialSkin.Controls.MaterialTextBox();
             this.btn_checkout = new MaterialSkin.Controls.MaterialButton();
             this.btn_criarCheckIn = new MaterialSkin.Controls.MaterialButton();
-            this.txt_nomeCheckIn = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_telefoneCheckIn = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_emailCheckIn = new MaterialSkin.Controls.MaterialTextBox();
             this.tb_gerirQuartos = new System.Windows.Forms.TabPage();
             this.mtv_dadosQuartos = new MaterialSkin.Controls.MaterialListView();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
             this.sw_camaCasal = new MaterialSkin.Controls.MaterialSwitch();
             this.sw_miniBar = new MaterialSkin.Controls.MaterialSwitch();
             this.sw_banheira = new MaterialSkin.Controls.MaterialSwitch();
-            this.txt_Andar = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_tQuarto = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_Vista = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_Status = new MaterialSkin.Controls.MaterialTextBox();
             this.btn_modificar = new MaterialSkin.Controls.MaterialButton();
             this.btn_cancelar = new MaterialSkin.Controls.MaterialButton();
-            this.txt_nQuarto = new MaterialSkin.Controls.MaterialTextBox();
-            this.txt_Conta = new MaterialSkin.Controls.MaterialTextBox();
             this.tb_funcionarios = new System.Windows.Forms.TabPage();
             this.mtv_dadosFunc = new MaterialSkin.Controls.MaterialListView();
             this.cd_FuncionariosDados = new MaterialSkin.Controls.MaterialCard();
             this.btn_limparFuncionarios = new MaterialSkin.Controls.MaterialButton();
             this.btn_excluirFuncionarios = new MaterialSkin.Controls.MaterialButton();
-            this.txt_usernameFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txt_nomeFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txt_telefoneFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
             this.btn_criarFunciornarios = new MaterialSkin.Controls.MaterialButton();
             this.chb_gestorFuncionarios = new MaterialSkin.Controls.MaterialSwitch();
-            this.txt_passwordFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
             this.tb_configuracoes = new System.Windows.Forms.TabPage();
             this.sw_darkMode = new MaterialSkin.Controls.MaterialSwitch();
             this.tb_diretoria = new System.Windows.Forms.TabPage();
@@ -114,8 +81,6 @@ namespace appBugInn
             this.dtp_dataInicioDash = new System.Windows.Forms.DateTimePicker();
             this.materialLabel1_dash = new MaterialSkin.Controls.MaterialLabel();
             this.dtp_dataFimDash = new System.Windows.Forms.DateTimePicker();
-            this.materialFloatingActionButton4 = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
             this.lbl_classificacao = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -126,15 +91,47 @@ namespace appBugInn
             this.lbl_desc_fatAnual = new System.Windows.Forms.Label();
             this.lbl_fatAnual = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.mpb_fatMensal = new MaterialSkin.Controls.MaterialProgressBar();
             this.lbl_desc_fatMensal = new System.Windows.Forms.Label();
             this.lbl_fatMensal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.iconesMenu = new System.Windows.Forms.ImageList(this.components);
             this.novasImagensMenu = new System.Windows.Forms.ImageList(this.components);
+            this.cb_idQuartoCheckIn = new MaterialSkin.Controls.MaterialComboBox();
+            this.tb_home = new System.Windows.Forms.TabPage();
+            this.lbl_usuarioLogado = new MaterialSkin.Controls.MaterialLabel();
+            this.btn_recuarDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_avançaDiaInicioReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_avançarDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
+            this.btn_recuaDiaFimReserva = new MaterialSkin.Controls.MaterialButton();
+            this.txt_nomeReserva1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_telefoneReserva1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_emailReserva1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_dataCheckOut = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_dataCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_subtotal = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nAndar = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_hospede1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_hospede2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_hospede3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nPessoasCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_quartoCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nomeCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_telefoneCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_emailCheckIn = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Andar = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_tQuarto = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Vista = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Status = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_nQuarto = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_Conta = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_usernameFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txt_nomeFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txt_telefoneFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txt_passwordFuncionarios = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialFloatingActionButton4 = new MaterialSkin.Controls.MaterialFloatingActionButton();
+            this.materialFloatingActionButton3 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialTabControl1.SuspendLayout();
-            this.tb_home.SuspendLayout();
             this.tb_reservas.SuspendLayout();
             this.mc_dadosReserva.SuspendLayout();
             this.tb_checkIn.SuspendLayout();
@@ -149,7 +146,7 @@ namespace appBugInn
             this.materialCard3.SuspendLayout();
             this.materialCard4.SuspendLayout();
             this.materialCard2.SuspendLayout();
-            this.materialCard1.SuspendLayout();
+            this.tb_home.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -175,34 +172,6 @@ namespace appBugInn
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.materialTabControl1_Selected);
             // 
-            // tb_home
-            // 
-            this.tb_home.BackgroundImage = global::appBugInn.Properties.Resources.tbi_sem_fundo;
-            this.tb_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tb_home.Controls.Add(this.lbl_usuarioLogado);
-            this.tb_home.ImageKey = "icons8-home-32.png";
-            this.tb_home.Location = new System.Drawing.Point(4, 39);
-            this.tb_home.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_home.Name = "tb_home";
-            this.tb_home.Padding = new System.Windows.Forms.Padding(2);
-            this.tb_home.Size = new System.Drawing.Size(1822, 850);
-            this.tb_home.TabIndex = 0;
-            this.tb_home.Text = "HOME";
-            this.tb_home.ToolTipText = "Home";
-            this.tb_home.UseVisualStyleBackColor = true;
-            // 
-            // lbl_usuarioLogado
-            // 
-            this.lbl_usuarioLogado.AutoSize = true;
-            this.lbl_usuarioLogado.Depth = 0;
-            this.lbl_usuarioLogado.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lbl_usuarioLogado.Location = new System.Drawing.Point(26, 29);
-            this.lbl_usuarioLogado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbl_usuarioLogado.Name = "lbl_usuarioLogado";
-            this.lbl_usuarioLogado.Size = new System.Drawing.Size(86, 19);
-            this.lbl_usuarioLogado.TabIndex = 0;
-            this.lbl_usuarioLogado.Text = "Bem Vindo: ";
-            // 
             // tb_reservas
             // 
             this.tb_reservas.Controls.Add(this.mc_dadosReserva);
@@ -217,6 +186,7 @@ namespace appBugInn
             this.tb_reservas.Text = "RESERVAS";
             this.tb_reservas.UseVisualStyleBackColor = true;
             this.tb_reservas.Enter += new System.EventHandler(this.tb_reservas_Enter);
+            this.tb_reservas.Leave += new System.EventHandler(this.tb_reservas_Leave);
             // 
             // mc_dadosReserva
             // 
@@ -248,7 +218,6 @@ namespace appBugInn
             this.mc_dadosReserva.Padding = new System.Windows.Forms.Padding(28, 27, 28, 27);
             this.mc_dadosReserva.Size = new System.Drawing.Size(1816, 277);
             this.mc_dadosReserva.TabIndex = 39;
-            this.mc_dadosReserva.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard6_Paint);
             // 
             // btn_excluirReserva
             // 
@@ -258,13 +227,13 @@ namespace appBugInn
             this.btn_excluirReserva.Depth = 0;
             this.btn_excluirReserva.HighEmphasis = true;
             this.btn_excluirReserva.Icon = null;
-            this.btn_excluirReserva.Location = new System.Drawing.Point(1146, 173);
+            this.btn_excluirReserva.Location = new System.Drawing.Point(1078, 173);
             this.btn_excluirReserva.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btn_excluirReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirReserva.Name = "btn_excluirReserva";
             this.btn_excluirReserva.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_excluirReserva.Size = new System.Drawing.Size(90, 36);
-            this.btn_excluirReserva.TabIndex = 55;
+            this.btn_excluirReserva.TabIndex = 9;
             this.btn_excluirReserva.Text = "Excluir";
             this.btn_excluirReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_excluirReserva.UseAccentColor = false;
@@ -299,7 +268,7 @@ namespace appBugInn
             this.cb_NumeroPessoas.Name = "cb_NumeroPessoas";
             this.cb_NumeroPessoas.Size = new System.Drawing.Size(242, 49);
             this.cb_NumeroPessoas.StartIndex = 0;
-            this.cb_NumeroPessoas.TabIndex = 46;
+            this.cb_NumeroPessoas.TabIndex = 3;
             this.cb_NumeroPessoas.SelectedIndexChanged += new System.EventHandler(this.cb_NumeroPessoas_SelectedIndexChanged);
             // 
             // cb_TipoQuarto
@@ -332,149 +301,56 @@ namespace appBugInn
             this.cb_TipoQuarto.Name = "cb_TipoQuarto";
             this.cb_TipoQuarto.Size = new System.Drawing.Size(169, 49);
             this.cb_TipoQuarto.StartIndex = 0;
-            this.cb_TipoQuarto.TabIndex = 47;
+            this.cb_TipoQuarto.TabIndex = 4;
             this.cb_TipoQuarto.SelectedIndexChanged += new System.EventHandler(this.cb_TipoQuarto_SelectedIndexChanged);
             // 
             // dtp_dataFimReserva
             // 
             this.dtp_dataFimReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataFimReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1127, 51);
+            this.dtp_dataFimReserva.Location = new System.Drawing.Point(1044, 51);
             this.dtp_dataFimReserva.Margin = new System.Windows.Forms.Padding(6);
             this.dtp_dataFimReserva.Name = "dtp_dataFimReserva";
-            this.dtp_dataFimReserva.Size = new System.Drawing.Size(240, 20);
-            this.dtp_dataFimReserva.TabIndex = 49;
-            this.dtp_dataFimReserva.ValueChanged += new System.EventHandler(this.dtp_dataFimReserva_ValueChanged);
+            this.dtp_dataFimReserva.Size = new System.Drawing.Size(128, 20);
+            this.dtp_dataFimReserva.TabIndex = 6;
             this.dtp_dataFimReserva.Leave += new System.EventHandler(this.dtp_dataFimReserva_Leave);
-            // 
-            // btn_recuarDiaInicioReserva
-            // 
-            this.btn_recuarDiaInicioReserva.AutoSize = false;
-            this.btn_recuarDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_recuarDiaInicioReserva.BackColor = System.Drawing.Color.Transparent;
-            this.btn_recuarDiaInicioReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_recuarDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_recuarDiaInicioReserva.Depth = 0;
-            this.btn_recuarDiaInicioReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_recuarDiaInicioReserva.HighEmphasis = true;
-            this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
-            this.btn_recuarDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(870, 80);
-            this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
-            this.btn_recuarDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_recuarDiaInicioReserva.Size = new System.Drawing.Size(34, 16);
-            this.btn_recuarDiaInicioReserva.TabIndex = 29;
-            this.btn_recuarDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_recuarDiaInicioReserva.UseAccentColor = false;
-            this.btn_recuarDiaInicioReserva.UseVisualStyleBackColor = false;
-            this.btn_recuarDiaInicioReserva.Click += new System.EventHandler(this.btn_recuarDiaInicioReserva_Click);
             // 
             // lbl_dataFimReserva
             // 
             this.lbl_dataFimReserva.AutoSize = true;
             this.lbl_dataFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dataFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1201, 31);
+            this.lbl_dataFimReserva.Location = new System.Drawing.Point(1042, 36);
             this.lbl_dataFimReserva.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_dataFimReserva.Name = "lbl_dataFimReserva";
             this.lbl_dataFimReserva.Size = new System.Drawing.Size(44, 9);
             this.lbl_dataFimReserva.TabIndex = 45;
             this.lbl_dataFimReserva.Text = "Data de fim";
-            this.lbl_dataFimReserva.Click += new System.EventHandler(this.lbl_dataFimReserva_Click);
             // 
             // dtp_dataInicioReserva
             // 
             this.dtp_dataInicioReserva.CustomFormat = "dd/MM/yyyy";
             this.dtp_dataInicioReserva.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(791, 51);
+            this.dtp_dataInicioReserva.Location = new System.Drawing.Point(845, 51);
             this.dtp_dataInicioReserva.Margin = new System.Windows.Forms.Padding(6);
             this.dtp_dataInicioReserva.Name = "dtp_dataInicioReserva";
-            this.dtp_dataInicioReserva.Size = new System.Drawing.Size(242, 20);
-            this.dtp_dataInicioReserva.TabIndex = 48;
+            this.dtp_dataInicioReserva.Size = new System.Drawing.Size(128, 20);
+            this.dtp_dataInicioReserva.TabIndex = 5;
             this.dtp_dataInicioReserva.Value = new System.DateTime(2025, 5, 21, 0, 0, 0, 0);
             this.dtp_dataInicioReserva.ValueChanged += new System.EventHandler(this.dtp_dataInicioReserva_ValueChanged);
             this.dtp_dataInicioReserva.Leave += new System.EventHandler(this.dtp_dataInicioReserva_Leave);
-            // 
-            // btn_avançaDiaInicioReserva
-            // 
-            this.btn_avançaDiaInicioReserva.AutoSize = false;
-            this.btn_avançaDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_avançaDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_avançaDiaInicioReserva.Depth = 0;
-            this.btn_avançaDiaInicioReserva.HighEmphasis = true;
-            this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
-            this.btn_avançaDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(908, 80);
-            this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
-            this.btn_avançaDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_avançaDiaInicioReserva.Size = new System.Drawing.Size(34, 16);
-            this.btn_avançaDiaInicioReserva.TabIndex = 27;
-            this.btn_avançaDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_avançaDiaInicioReserva.UseAccentColor = false;
-            this.btn_avançaDiaInicioReserva.UseVisualStyleBackColor = true;
-            this.btn_avançaDiaInicioReserva.Click += new System.EventHandler(this.btn_avançarDiaInicioReserva_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(861, 31);
+            this.label7.Location = new System.Drawing.Point(843, 36);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 9);
             this.label7.TabIndex = 54;
             this.label7.Text = "Data de início";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // btn_avançarDiaFimReserva
-            // 
-            this.btn_avançarDiaFimReserva.AutoSize = false;
-            this.btn_avançarDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_avançarDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_avançarDiaFimReserva.Depth = 0;
-            this.btn_avançarDiaFimReserva.HighEmphasis = true;
-            this.btn_avançarDiaFimReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
-            this.btn_avançarDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1246, 80);
-            this.btn_avançarDiaFimReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_avançarDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_avançarDiaFimReserva.Name = "btn_avançarDiaFimReserva";
-            this.btn_avançarDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_avançarDiaFimReserva.Size = new System.Drawing.Size(34, 16);
-            this.btn_avançarDiaFimReserva.TabIndex = 52;
-            this.btn_avançarDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_avançarDiaFimReserva.UseAccentColor = false;
-            this.btn_avançarDiaFimReserva.UseVisualStyleBackColor = true;
-            this.btn_avançarDiaFimReserva.Click += new System.EventHandler(this.btn_avançarDiaFimReserva_Click);
-            // 
-            // btn_recuaDiaFimReserva
-            // 
-            this.btn_recuaDiaFimReserva.AutoSize = false;
-            this.btn_recuaDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_recuaDiaFimReserva.BackColor = System.Drawing.Color.Transparent;
-            this.btn_recuaDiaFimReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_recuaDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_recuaDiaFimReserva.Depth = 0;
-            this.btn_recuaDiaFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_recuaDiaFimReserva.HighEmphasis = true;
-            this.btn_recuaDiaFimReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
-            this.btn_recuaDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(1208, 80);
-            this.btn_recuaDiaFimReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btn_recuaDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_recuaDiaFimReserva.Name = "btn_recuaDiaFimReserva";
-            this.btn_recuaDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_recuaDiaFimReserva.Size = new System.Drawing.Size(34, 16);
-            this.btn_recuaDiaFimReserva.TabIndex = 26;
-            this.btn_recuaDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_recuaDiaFimReserva.UseAccentColor = false;
-            this.btn_recuaDiaFimReserva.UseVisualStyleBackColor = false;
-            this.btn_recuaDiaFimReserva.Click += new System.EventHandler(this.btn_recuaDiaReserva_Click);
             // 
             // btn_registarReserva
             // 
@@ -483,13 +359,13 @@ namespace appBugInn
             this.btn_registarReserva.Depth = 0;
             this.btn_registarReserva.HighEmphasis = true;
             this.btn_registarReserva.Icon = null;
-            this.btn_registarReserva.Location = new System.Drawing.Point(942, 173);
+            this.btn_registarReserva.Location = new System.Drawing.Point(874, 173);
             this.btn_registarReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btn_registarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_registarReserva.Name = "btn_registarReserva";
             this.btn_registarReserva.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_registarReserva.Size = new System.Drawing.Size(90, 36);
-            this.btn_registarReserva.TabIndex = 41;
+            this.btn_registarReserva.TabIndex = 7;
             this.btn_registarReserva.Text = "Registar";
             this.btn_registarReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_registarReserva.UseAccentColor = false;
@@ -505,13 +381,13 @@ namespace appBugInn
             this.btn_cancelarReserva.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancelarReserva.HighEmphasis = true;
             this.btn_cancelarReserva.Icon = null;
-            this.btn_cancelarReserva.Location = new System.Drawing.Point(1044, 173);
+            this.btn_cancelarReserva.Location = new System.Drawing.Point(976, 173);
             this.btn_cancelarReserva.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btn_cancelarReserva.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_cancelarReserva.Name = "btn_cancelarReserva";
             this.btn_cancelarReserva.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_cancelarReserva.Size = new System.Drawing.Size(90, 36);
-            this.btn_cancelarReserva.TabIndex = 42;
+            this.btn_cancelarReserva.TabIndex = 8;
             this.btn_cancelarReserva.Text = "Cancelar";
             this.btn_cancelarReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.btn_cancelarReserva.UseAccentColor = true;
@@ -531,71 +407,6 @@ namespace appBugInn
             this.materialLabel2.Size = new System.Drawing.Size(213, 29);
             this.materialLabel2.TabIndex = 44;
             this.materialLabel2.Text = "Detalhes da reserva";
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
-            // 
-            // txt_nomeReserva1
-            // 
-            this.txt_nomeReserva1.AnimateReadOnly = false;
-            this.txt_nomeReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nomeReserva1.Depth = 0;
-            this.txt_nomeReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nomeReserva1.Hint = "Nome";
-            this.txt_nomeReserva1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nomeReserva1.Location = new System.Drawing.Point(23, 21);
-            this.txt_nomeReserva1.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nomeReserva1.MaxLength = 50;
-            this.txt_nomeReserva1.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nomeReserva1.Multiline = false;
-            this.txt_nomeReserva1.Name = "txt_nomeReserva1";
-            this.txt_nomeReserva1.Size = new System.Drawing.Size(736, 50);
-            this.txt_nomeReserva1.TabIndex = 30;
-            this.txt_nomeReserva1.Text = "";
-            this.txt_nomeReserva1.TrailingIcon = null;
-            this.txt_nomeReserva1.UseAccent = false;
-            this.txt_nomeReserva1.TextChanged += new System.EventHandler(this.txt_nomeReserva1_TextChanged);
-            this.txt_nomeReserva1.Leave += new System.EventHandler(this.txt_nomeReserva1_Leave);
-            // 
-            // txt_telefoneReserva1
-            // 
-            this.txt_telefoneReserva1.AnimateReadOnly = false;
-            this.txt_telefoneReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_telefoneReserva1.Depth = 0;
-            this.txt_telefoneReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_telefoneReserva1.Hint = "Telefone";
-            this.txt_telefoneReserva1.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefoneReserva1.Location = new System.Drawing.Point(23, 159);
-            this.txt_telefoneReserva1.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_telefoneReserva1.MaxLength = 50;
-            this.txt_telefoneReserva1.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_telefoneReserva1.Multiline = false;
-            this.txt_telefoneReserva1.Name = "txt_telefoneReserva1";
-            this.txt_telefoneReserva1.Size = new System.Drawing.Size(303, 50);
-            this.txt_telefoneReserva1.TabIndex = 31;
-            this.txt_telefoneReserva1.Text = "";
-            this.txt_telefoneReserva1.TrailingIcon = null;
-            this.txt_telefoneReserva1.UseAccent = false;
-            this.txt_telefoneReserva1.Leave += new System.EventHandler(this.txt_telefoneReserva1_Leave);
-            // 
-            // txt_emailReserva1
-            // 
-            this.txt_emailReserva1.AnimateReadOnly = false;
-            this.txt_emailReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_emailReserva1.Depth = 0;
-            this.txt_emailReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_emailReserva1.Hint = "Email";
-            this.txt_emailReserva1.LeadingIcon = global::appBugInn.Properties.Resources.email;
-            this.txt_emailReserva1.Location = new System.Drawing.Point(23, 90);
-            this.txt_emailReserva1.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_emailReserva1.MaxLength = 50;
-            this.txt_emailReserva1.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_emailReserva1.Multiline = false;
-            this.txt_emailReserva1.Name = "txt_emailReserva1";
-            this.txt_emailReserva1.Size = new System.Drawing.Size(736, 50);
-            this.txt_emailReserva1.TabIndex = 32;
-            this.txt_emailReserva1.Text = "";
-            this.txt_emailReserva1.TrailingIcon = null;
-            this.txt_emailReserva1.UseAccent = false;
-            this.txt_emailReserva1.Leave += new System.EventHandler(this.txt_emailReserva1_Leave);
             // 
             // mtv_dadosReserva
             // 
@@ -611,7 +422,6 @@ namespace appBugInn
             this.columnHeader6,
             this.columnHeader7});
             this.mtv_dadosReserva.Depth = 0;
-            this.mtv_dadosReserva.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosReserva.FullRowSelect = true;
             this.mtv_dadosReserva.HideSelection = false;
             this.mtv_dadosReserva.Location = new System.Drawing.Point(3, 288);
@@ -625,7 +435,6 @@ namespace appBugInn
             this.mtv_dadosReserva.TabIndex = 0;
             this.mtv_dadosReserva.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosReserva.View = System.Windows.Forms.View.Details;
-            this.mtv_dadosReserva.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
             this.mtv_dadosReserva.Enter += new System.EventHandler(this.tb_reservas_Enter);
             this.mtv_dadosReserva.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mtv_dadosReserva_MouseDoubleClick);
             // 
@@ -677,31 +486,21 @@ namespace appBugInn
             this.tb_checkIn.UseVisualStyleBackColor = true;
             this.tb_checkIn.Enter += new System.EventHandler(this.tb_checkin_enter);
             // 
-            // cb_idQuartoCheckIn
-            // 
-            this.cb_idQuartoCheckIn.FormattingEnabled = true;
-            this.cb_idQuartoCheckIn.Location = new System.Drawing.Point(530, 386);
-            this.cb_idQuartoCheckIn.Name = "cb_idQuartoCheckIn";
-            this.cb_idQuartoCheckIn.Size = new System.Drawing.Size(121, 21);
-            this.cb_idQuartoCheckIn.TabIndex = 42;
-            this.cb_idQuartoCheckIn.SelectedIndexChanged += new System.EventHandler(this.cb_idQuartoCheckIn_SelectedIndexChanged);
-            // 
             // mtv_dadosCheckIn
             // 
             this.mtv_dadosCheckIn.AutoSizeTable = false;
             this.mtv_dadosCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mtv_dadosCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtv_dadosCheckIn.Depth = 0;
-            this.mtv_dadosCheckIn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosCheckIn.FullRowSelect = true;
             this.mtv_dadosCheckIn.HideSelection = false;
-            this.mtv_dadosCheckIn.Location = new System.Drawing.Point(0, 723);
+            this.mtv_dadosCheckIn.Location = new System.Drawing.Point(0, 400);
             this.mtv_dadosCheckIn.MinimumSize = new System.Drawing.Size(200, 100);
             this.mtv_dadosCheckIn.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosCheckIn.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosCheckIn.Name = "mtv_dadosCheckIn";
             this.mtv_dadosCheckIn.OwnerDraw = true;
-            this.mtv_dadosCheckIn.Size = new System.Drawing.Size(1822, 127);
+            this.mtv_dadosCheckIn.Size = new System.Drawing.Size(1822, 450);
             this.mtv_dadosCheckIn.TabIndex = 41;
             this.mtv_dadosCheckIn.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosCheckIn.View = System.Windows.Forms.View.Details;
@@ -715,7 +514,6 @@ namespace appBugInn
             this.materialCard5.Controls.Add(this.btn_pesquisar);
             this.materialCard5.Controls.Add(this.txt_subtotal);
             this.materialCard5.Controls.Add(this.txt_nAndar);
-            this.materialCard5.Controls.Add(this.txt_idQuartoCheckIn);
             this.materialCard5.Controls.Add(this.txt_hospede1);
             this.materialCard5.Controls.Add(this.txt_hospede2);
             this.materialCard5.Controls.Add(this.txt_hospede3);
@@ -734,50 +532,8 @@ namespace appBugInn
             this.materialCard5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard5.Name = "materialCard5";
             this.materialCard5.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard5.Size = new System.Drawing.Size(1822, 445);
+            this.materialCard5.Size = new System.Drawing.Size(1822, 386);
             this.materialCard5.TabIndex = 40;
-            // 
-            // txt_dataCheckOut
-            // 
-            this.txt_dataCheckOut.AnimateReadOnly = false;
-            this.txt_dataCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_dataCheckOut.Depth = 0;
-            this.txt_dataCheckOut.Enabled = false;
-            this.txt_dataCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_dataCheckOut.Hint = "Check Out";
-            this.txt_dataCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_dataCheckOut.Location = new System.Drawing.Point(23, 307);
-            this.txt_dataCheckOut.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_dataCheckOut.MaxLength = 50;
-            this.txt_dataCheckOut.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_dataCheckOut.Multiline = false;
-            this.txt_dataCheckOut.Name = "txt_dataCheckOut";
-            this.txt_dataCheckOut.Size = new System.Drawing.Size(354, 50);
-            this.txt_dataCheckOut.TabIndex = 66;
-            this.txt_dataCheckOut.Text = "";
-            this.txt_dataCheckOut.TrailingIcon = null;
-            this.txt_dataCheckOut.UseAccent = false;
-            // 
-            // txt_dataCheckIn
-            // 
-            this.txt_dataCheckIn.AnimateReadOnly = false;
-            this.txt_dataCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_dataCheckIn.Depth = 0;
-            this.txt_dataCheckIn.Enabled = false;
-            this.txt_dataCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_dataCheckIn.Hint = "Check In";
-            this.txt_dataCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_dataCheckIn.Location = new System.Drawing.Point(23, 365);
-            this.txt_dataCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_dataCheckIn.MaxLength = 50;
-            this.txt_dataCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_dataCheckIn.Multiline = false;
-            this.txt_dataCheckIn.Name = "txt_dataCheckIn";
-            this.txt_dataCheckIn.Size = new System.Drawing.Size(354, 50);
-            this.txt_dataCheckIn.TabIndex = 65;
-            this.txt_dataCheckIn.Text = "";
-            this.txt_dataCheckIn.TrailingIcon = null;
-            this.txt_dataCheckIn.UseAccent = false;
             // 
             // btn_pesquisar
             // 
@@ -792,178 +548,12 @@ namespace appBugInn
             this.btn_pesquisar.Name = "btn_pesquisar";
             this.btn_pesquisar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_pesquisar.Size = new System.Drawing.Size(100, 36);
-            this.btn_pesquisar.TabIndex = 64;
+            this.btn_pesquisar.TabIndex = 0;
             this.btn_pesquisar.Text = "Pesquisar";
             this.btn_pesquisar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_pesquisar.UseAccentColor = false;
             this.btn_pesquisar.UseVisualStyleBackColor = true;
             this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
-            // 
-            // txt_subtotal
-            // 
-            this.txt_subtotal.AnimateReadOnly = false;
-            this.txt_subtotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_subtotal.Depth = 0;
-            this.txt_subtotal.Enabled = false;
-            this.txt_subtotal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_subtotal.Hint = "Subtotal";
-            this.txt_subtotal.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_subtotal.Location = new System.Drawing.Point(877, 234);
-            this.txt_subtotal.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_subtotal.MaxLength = 50;
-            this.txt_subtotal.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_subtotal.Multiline = false;
-            this.txt_subtotal.Name = "txt_subtotal";
-            this.txt_subtotal.Size = new System.Drawing.Size(354, 50);
-            this.txt_subtotal.TabIndex = 63;
-            this.txt_subtotal.Text = "";
-            this.txt_subtotal.TrailingIcon = null;
-            this.txt_subtotal.UseAccent = false;
-            // 
-            // txt_nAndar
-            // 
-            this.txt_nAndar.AnimateReadOnly = false;
-            this.txt_nAndar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nAndar.Depth = 0;
-            this.txt_nAndar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nAndar.Hint = "Nº Andar";
-            this.txt_nAndar.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_nAndar.Location = new System.Drawing.Point(418, 234);
-            this.txt_nAndar.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nAndar.MaxLength = 50;
-            this.txt_nAndar.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nAndar.Multiline = false;
-            this.txt_nAndar.Name = "txt_nAndar";
-            this.txt_nAndar.Size = new System.Drawing.Size(354, 50);
-            this.txt_nAndar.TabIndex = 62;
-            this.txt_nAndar.Text = "";
-            this.txt_nAndar.TrailingIcon = null;
-            this.txt_nAndar.UseAccent = false;
-            // 
-            // txt_idQuartoCheckIn
-            // 
-            this.txt_idQuartoCheckIn.AnimateReadOnly = false;
-            this.txt_idQuartoCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_idQuartoCheckIn.Depth = 0;
-            this.txt_idQuartoCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_idQuartoCheckIn.Hint = "Nº Quarto";
-            this.txt_idQuartoCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_idQuartoCheckIn.Location = new System.Drawing.Point(758, 374);
-            this.txt_idQuartoCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_idQuartoCheckIn.MaxLength = 50;
-            this.txt_idQuartoCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_idQuartoCheckIn.Multiline = false;
-            this.txt_idQuartoCheckIn.Name = "txt_idQuartoCheckIn";
-            this.txt_idQuartoCheckIn.Size = new System.Drawing.Size(354, 50);
-            this.txt_idQuartoCheckIn.TabIndex = 61;
-            this.txt_idQuartoCheckIn.Text = "";
-            this.txt_idQuartoCheckIn.TrailingIcon = null;
-            this.txt_idQuartoCheckIn.UseAccent = false;
-            // 
-            // txt_hospede1
-            // 
-            this.txt_hospede1.AnimateReadOnly = false;
-            this.txt_hospede1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_hospede1.Depth = 0;
-            this.txt_hospede1.Enabled = false;
-            this.txt_hospede1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_hospede1.Hint = "Nome";
-            this.txt_hospede1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_hospede1.Location = new System.Drawing.Point(657, 21);
-            this.txt_hospede1.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_hospede1.MaxLength = 50;
-            this.txt_hospede1.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_hospede1.Multiline = false;
-            this.txt_hospede1.Name = "txt_hospede1";
-            this.txt_hospede1.Size = new System.Drawing.Size(599, 50);
-            this.txt_hospede1.TabIndex = 60;
-            this.txt_hospede1.Text = "";
-            this.txt_hospede1.TrailingIcon = null;
-            this.txt_hospede1.UseAccent = false;
-            // 
-            // txt_hospede2
-            // 
-            this.txt_hospede2.AnimateReadOnly = false;
-            this.txt_hospede2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_hospede2.Depth = 0;
-            this.txt_hospede2.Enabled = false;
-            this.txt_hospede2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_hospede2.Hint = "Nome";
-            this.txt_hospede2.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_hospede2.Location = new System.Drawing.Point(657, 95);
-            this.txt_hospede2.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_hospede2.MaxLength = 50;
-            this.txt_hospede2.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_hospede2.Multiline = false;
-            this.txt_hospede2.Name = "txt_hospede2";
-            this.txt_hospede2.Size = new System.Drawing.Size(599, 50);
-            this.txt_hospede2.TabIndex = 59;
-            this.txt_hospede2.Text = "";
-            this.txt_hospede2.TrailingIcon = null;
-            this.txt_hospede2.UseAccent = false;
-            // 
-            // txt_hospede3
-            // 
-            this.txt_hospede3.AnimateReadOnly = false;
-            this.txt_hospede3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_hospede3.Depth = 0;
-            this.txt_hospede3.Enabled = false;
-            this.txt_hospede3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_hospede3.Hint = "Nome";
-            this.txt_hospede3.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_hospede3.Location = new System.Drawing.Point(657, 166);
-            this.txt_hospede3.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_hospede3.MaxLength = 50;
-            this.txt_hospede3.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_hospede3.Multiline = false;
-            this.txt_hospede3.Name = "txt_hospede3";
-            this.txt_hospede3.Size = new System.Drawing.Size(599, 50);
-            this.txt_hospede3.TabIndex = 58;
-            this.txt_hospede3.Text = "";
-            this.txt_hospede3.TrailingIcon = null;
-            this.txt_hospede3.UseAccent = false;
-            // 
-            // txt_nPessoasCheckIn
-            // 
-            this.txt_nPessoasCheckIn.AnimateReadOnly = false;
-            this.txt_nPessoasCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nPessoasCheckIn.Depth = 0;
-            this.txt_nPessoasCheckIn.Enabled = false;
-            this.txt_nPessoasCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nPessoasCheckIn.Hint = "Nº Pessoas";
-            this.txt_nPessoasCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_nPessoasCheckIn.Location = new System.Drawing.Point(418, 307);
-            this.txt_nPessoasCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nPessoasCheckIn.MaxLength = 50;
-            this.txt_nPessoasCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nPessoasCheckIn.Multiline = false;
-            this.txt_nPessoasCheckIn.Name = "txt_nPessoasCheckIn";
-            this.txt_nPessoasCheckIn.Size = new System.Drawing.Size(354, 50);
-            this.txt_nPessoasCheckIn.TabIndex = 57;
-            this.txt_nPessoasCheckIn.Text = "";
-            this.txt_nPessoasCheckIn.TrailingIcon = null;
-            this.txt_nPessoasCheckIn.UseAccent = false;
-            // 
-            // txt_quartoCheckIn
-            // 
-            this.txt_quartoCheckIn.AnimateReadOnly = false;
-            this.txt_quartoCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_quartoCheckIn.Depth = 0;
-            this.txt_quartoCheckIn.Enabled = false;
-            this.txt_quartoCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_quartoCheckIn.Hint = "Tipo Quarto";
-            this.txt_quartoCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_quartoCheckIn.Location = new System.Drawing.Point(23, 234);
-            this.txt_quartoCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_quartoCheckIn.MaxLength = 50;
-            this.txt_quartoCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_quartoCheckIn.Multiline = false;
-            this.txt_quartoCheckIn.Name = "txt_quartoCheckIn";
-            this.txt_quartoCheckIn.Size = new System.Drawing.Size(354, 50);
-            this.txt_quartoCheckIn.TabIndex = 56;
-            this.txt_quartoCheckIn.Text = "";
-            this.txt_quartoCheckIn.TrailingIcon = null;
-            this.txt_quartoCheckIn.UseAccent = false;
             // 
             // btn_checkout
             // 
@@ -979,7 +569,7 @@ namespace appBugInn
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_checkout.Size = new System.Drawing.Size(90, 36);
-            this.btn_checkout.TabIndex = 55;
+            this.btn_checkout.TabIndex = 6;
             this.btn_checkout.Text = "Check Out";
             this.btn_checkout.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_checkout.UseAccentColor = false;
@@ -999,75 +589,12 @@ namespace appBugInn
             this.btn_criarCheckIn.Name = "btn_criarCheckIn";
             this.btn_criarCheckIn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btn_criarCheckIn.Size = new System.Drawing.Size(90, 36);
-            this.btn_criarCheckIn.TabIndex = 41;
+            this.btn_criarCheckIn.TabIndex = 5;
             this.btn_criarCheckIn.Text = "Registar";
             this.btn_criarCheckIn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_criarCheckIn.UseAccentColor = false;
             this.btn_criarCheckIn.UseVisualStyleBackColor = true;
             this.btn_criarCheckIn.Click += new System.EventHandler(this.btn_criarCheckIn_Click);
-            // 
-            // txt_nomeCheckIn
-            // 
-            this.txt_nomeCheckIn.AnimateReadOnly = false;
-            this.txt_nomeCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nomeCheckIn.Depth = 0;
-            this.txt_nomeCheckIn.Enabled = false;
-            this.txt_nomeCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nomeCheckIn.Hint = "Nome";
-            this.txt_nomeCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nomeCheckIn.Location = new System.Drawing.Point(23, 21);
-            this.txt_nomeCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nomeCheckIn.MaxLength = 50;
-            this.txt_nomeCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nomeCheckIn.Multiline = false;
-            this.txt_nomeCheckIn.Name = "txt_nomeCheckIn";
-            this.txt_nomeCheckIn.Size = new System.Drawing.Size(599, 50);
-            this.txt_nomeCheckIn.TabIndex = 30;
-            this.txt_nomeCheckIn.Text = "";
-            this.txt_nomeCheckIn.TrailingIcon = null;
-            this.txt_nomeCheckIn.UseAccent = false;
-            // 
-            // txt_telefoneCheckIn
-            // 
-            this.txt_telefoneCheckIn.AnimateReadOnly = false;
-            this.txt_telefoneCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_telefoneCheckIn.Depth = 0;
-            this.txt_telefoneCheckIn.Enabled = false;
-            this.txt_telefoneCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_telefoneCheckIn.Hint = "Telefone";
-            this.txt_telefoneCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefoneCheckIn.Location = new System.Drawing.Point(23, 95);
-            this.txt_telefoneCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_telefoneCheckIn.MaxLength = 50;
-            this.txt_telefoneCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_telefoneCheckIn.Multiline = false;
-            this.txt_telefoneCheckIn.Name = "txt_telefoneCheckIn";
-            this.txt_telefoneCheckIn.Size = new System.Drawing.Size(599, 50);
-            this.txt_telefoneCheckIn.TabIndex = 31;
-            this.txt_telefoneCheckIn.Text = "";
-            this.txt_telefoneCheckIn.TrailingIcon = null;
-            this.txt_telefoneCheckIn.UseAccent = false;
-            // 
-            // txt_emailCheckIn
-            // 
-            this.txt_emailCheckIn.AnimateReadOnly = false;
-            this.txt_emailCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_emailCheckIn.Depth = 0;
-            this.txt_emailCheckIn.Enabled = false;
-            this.txt_emailCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_emailCheckIn.Hint = "Email";
-            this.txt_emailCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.email;
-            this.txt_emailCheckIn.Location = new System.Drawing.Point(23, 166);
-            this.txt_emailCheckIn.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_emailCheckIn.MaxLength = 50;
-            this.txt_emailCheckIn.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_emailCheckIn.Multiline = false;
-            this.txt_emailCheckIn.Name = "txt_emailCheckIn";
-            this.txt_emailCheckIn.Size = new System.Drawing.Size(599, 50);
-            this.txt_emailCheckIn.TabIndex = 32;
-            this.txt_emailCheckIn.Text = "";
-            this.txt_emailCheckIn.TrailingIcon = null;
-            this.txt_emailCheckIn.UseAccent = false;
             // 
             // tb_gerirQuartos
             // 
@@ -1081,8 +608,8 @@ namespace appBugInn
             this.tb_gerirQuartos.TabIndex = 4;
             this.tb_gerirQuartos.Text = "GERIR QUARTOS";
             this.tb_gerirQuartos.UseVisualStyleBackColor = true;
-            this.tb_gerirQuartos.Click += new System.EventHandler(this.tb_gerirQuartos_Click);
             this.tb_gerirQuartos.Enter += new System.EventHandler(this.tb_gerirQuartos_Enter);
+            this.tb_gerirQuartos.Leave += new System.EventHandler(this.tb_gerirQuartos_Leave_1);
             // 
             // mtv_dadosQuartos
             // 
@@ -1090,17 +617,16 @@ namespace appBugInn
             this.mtv_dadosQuartos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mtv_dadosQuartos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtv_dadosQuartos.Depth = 0;
-            this.mtv_dadosQuartos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosQuartos.FullRowSelect = true;
             this.mtv_dadosQuartos.HideSelection = false;
-            this.mtv_dadosQuartos.Location = new System.Drawing.Point(0, 514);
+            this.mtv_dadosQuartos.Location = new System.Drawing.Point(0, 334);
             this.mtv_dadosQuartos.Margin = new System.Windows.Forms.Padding(1);
             this.mtv_dadosQuartos.MinimumSize = new System.Drawing.Size(50, 27);
             this.mtv_dadosQuartos.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosQuartos.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosQuartos.Name = "mtv_dadosQuartos";
             this.mtv_dadosQuartos.OwnerDraw = true;
-            this.mtv_dadosQuartos.Size = new System.Drawing.Size(1822, 336);
+            this.mtv_dadosQuartos.Size = new System.Drawing.Size(1822, 516);
             this.mtv_dadosQuartos.TabIndex = 42;
             this.mtv_dadosQuartos.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosQuartos.View = System.Windows.Forms.View.Details;
@@ -1177,86 +703,6 @@ namespace appBugInn
             this.sw_banheira.Text = "Banheira";
             this.sw_banheira.UseVisualStyleBackColor = true;
             // 
-            // txt_Andar
-            // 
-            this.txt_Andar.AnimateReadOnly = false;
-            this.txt_Andar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Andar.Depth = 0;
-            this.txt_Andar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_Andar.Hint = "Andar";
-            this.txt_Andar.LeadingIcon = global::appBugInn.Properties.Resources.building;
-            this.txt_Andar.Location = new System.Drawing.Point(15, 165);
-            this.txt_Andar.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Andar.MaxLength = 50;
-            this.txt_Andar.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_Andar.Multiline = false;
-            this.txt_Andar.Name = "txt_Andar";
-            this.txt_Andar.Size = new System.Drawing.Size(147, 50);
-            this.txt_Andar.TabIndex = 48;
-            this.txt_Andar.Text = "";
-            this.txt_Andar.TrailingIcon = null;
-            this.txt_Andar.UseAccent = false;
-            // 
-            // txt_tQuarto
-            // 
-            this.txt_tQuarto.AnimateReadOnly = false;
-            this.txt_tQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_tQuarto.Depth = 0;
-            this.txt_tQuarto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_tQuarto.Hint = "Tipo de quarto";
-            this.txt_tQuarto.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_tQuarto.Location = new System.Drawing.Point(198, 31);
-            this.txt_tQuarto.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_tQuarto.MaxLength = 50;
-            this.txt_tQuarto.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_tQuarto.Multiline = false;
-            this.txt_tQuarto.Name = "txt_tQuarto";
-            this.txt_tQuarto.Size = new System.Drawing.Size(147, 50);
-            this.txt_tQuarto.TabIndex = 45;
-            this.txt_tQuarto.Text = "";
-            this.txt_tQuarto.TrailingIcon = null;
-            this.txt_tQuarto.UseAccent = false;
-            // 
-            // txt_Vista
-            // 
-            this.txt_Vista.AnimateReadOnly = false;
-            this.txt_Vista.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Vista.Depth = 0;
-            this.txt_Vista.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_Vista.Hint = "Vista";
-            this.txt_Vista.LeadingIcon = global::appBugInn.Properties.Resources.mountain__1_;
-            this.txt_Vista.Location = new System.Drawing.Point(198, 165);
-            this.txt_Vista.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Vista.MaxLength = 50;
-            this.txt_Vista.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_Vista.Multiline = false;
-            this.txt_Vista.Name = "txt_Vista";
-            this.txt_Vista.Size = new System.Drawing.Size(147, 50);
-            this.txt_Vista.TabIndex = 46;
-            this.txt_Vista.Text = "";
-            this.txt_Vista.TrailingIcon = null;
-            this.txt_Vista.UseAccent = false;
-            // 
-            // txt_Status
-            // 
-            this.txt_Status.AnimateReadOnly = false;
-            this.txt_Status.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Status.Depth = 0;
-            this.txt_Status.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_Status.Hint = "Status";
-            this.txt_Status.LeadingIcon = global::appBugInn.Properties.Resources.check_list;
-            this.txt_Status.Location = new System.Drawing.Point(198, 99);
-            this.txt_Status.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Status.MaxLength = 50;
-            this.txt_Status.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_Status.Multiline = false;
-            this.txt_Status.Name = "txt_Status";
-            this.txt_Status.Size = new System.Drawing.Size(147, 50);
-            this.txt_Status.TabIndex = 47;
-            this.txt_Status.Text = "";
-            this.txt_Status.TrailingIcon = null;
-            this.txt_Status.UseAccent = false;
-            // 
             // btn_modificar
             // 
             this.btn_modificar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -1299,47 +745,6 @@ namespace appBugInn
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // txt_nQuarto
-            // 
-            this.txt_nQuarto.AnimateReadOnly = false;
-            this.txt_nQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_nQuarto.Depth = 0;
-            this.txt_nQuarto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nQuarto.Hint = "Nº quarto";
-            this.txt_nQuarto.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
-            this.txt_nQuarto.Location = new System.Drawing.Point(8, 31);
-            this.txt_nQuarto.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_nQuarto.MaxLength = 50;
-            this.txt_nQuarto.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nQuarto.Multiline = false;
-            this.txt_nQuarto.Name = "txt_nQuarto";
-            this.txt_nQuarto.Size = new System.Drawing.Size(154, 50);
-            this.txt_nQuarto.TabIndex = 30;
-            this.txt_nQuarto.Text = "";
-            this.txt_nQuarto.TrailingIcon = null;
-            this.txt_nQuarto.UseAccent = false;
-            this.txt_nQuarto.TextChanged += new System.EventHandler(this.materialTextBox7_TextChanged);
-            // 
-            // txt_Conta
-            // 
-            this.txt_Conta.AnimateReadOnly = false;
-            this.txt_Conta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Conta.Depth = 0;
-            this.txt_Conta.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_Conta.Hint = "Conta";
-            this.txt_Conta.LeadingIcon = global::appBugInn.Properties.Resources.euro_symbol_icon_2048x2048_jz6x8c3o;
-            this.txt_Conta.Location = new System.Drawing.Point(15, 99);
-            this.txt_Conta.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_Conta.MaxLength = 50;
-            this.txt_Conta.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_Conta.Multiline = false;
-            this.txt_Conta.Name = "txt_Conta";
-            this.txt_Conta.Size = new System.Drawing.Size(147, 50);
-            this.txt_Conta.TabIndex = 32;
-            this.txt_Conta.Text = "";
-            this.txt_Conta.TrailingIcon = null;
-            this.txt_Conta.UseAccent = false;
-            // 
             // tb_funcionarios
             // 
             this.tb_funcionarios.Controls.Add(this.mtv_dadosFunc);
@@ -1361,22 +766,19 @@ namespace appBugInn
             this.mtv_dadosFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mtv_dadosFunc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtv_dadosFunc.Depth = 0;
-            this.mtv_dadosFunc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mtv_dadosFunc.FullRowSelect = true;
             this.mtv_dadosFunc.HideSelection = false;
-            this.mtv_dadosFunc.Location = new System.Drawing.Point(0, 604);
+            this.mtv_dadosFunc.Location = new System.Drawing.Point(0, 206);
             this.mtv_dadosFunc.Margin = new System.Windows.Forms.Padding(2);
             this.mtv_dadosFunc.MinimumSize = new System.Drawing.Size(133, 64);
             this.mtv_dadosFunc.MouseLocation = new System.Drawing.Point(-1, -1);
             this.mtv_dadosFunc.MouseState = MaterialSkin.MouseState.OUT;
             this.mtv_dadosFunc.Name = "mtv_dadosFunc";
             this.mtv_dadosFunc.OwnerDraw = true;
-            this.mtv_dadosFunc.Size = new System.Drawing.Size(1822, 246);
+            this.mtv_dadosFunc.Size = new System.Drawing.Size(1822, 644);
             this.mtv_dadosFunc.TabIndex = 44;
             this.mtv_dadosFunc.UseCompatibleStateImageBehavior = false;
             this.mtv_dadosFunc.View = System.Windows.Forms.View.Details;
-            this.mtv_dadosFunc.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged_1);
-            this.mtv_dadosFunc.DoubleClick += new System.EventHandler(this.mtv_dadosFunc_DoubleClick_1);
             // 
             // cd_FuncionariosDados
             // 
@@ -1408,13 +810,13 @@ namespace appBugInn
             this.btn_limparFuncionarios.Depth = 0;
             this.btn_limparFuncionarios.HighEmphasis = true;
             this.btn_limparFuncionarios.Icon = null;
-            this.btn_limparFuncionarios.Location = new System.Drawing.Point(604, 145);
+            this.btn_limparFuncionarios.Location = new System.Drawing.Point(543, 135);
             this.btn_limparFuncionarios.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btn_limparFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_limparFuncionarios.Name = "btn_limparFuncionarios";
             this.btn_limparFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_limparFuncionarios.Size = new System.Drawing.Size(91, 29);
-            this.btn_limparFuncionarios.TabIndex = 46;
+            this.btn_limparFuncionarios.Size = new System.Drawing.Size(90, 36);
+            this.btn_limparFuncionarios.TabIndex = 7;
             this.btn_limparFuncionarios.Text = "Limpar";
             this.btn_limparFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_limparFuncionarios.UseAccentColor = false;
@@ -1430,109 +832,19 @@ namespace appBugInn
             this.btn_excluirFuncionarios.Depth = 0;
             this.btn_excluirFuncionarios.HighEmphasis = true;
             this.btn_excluirFuncionarios.Icon = null;
-            this.btn_excluirFuncionarios.Location = new System.Drawing.Point(422, 145);
+            this.btn_excluirFuncionarios.Location = new System.Drawing.Point(426, 135);
             this.btn_excluirFuncionarios.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btn_excluirFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_excluirFuncionarios.Name = "btn_excluirFuncionarios";
             this.btn_excluirFuncionarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(91, 29);
-            this.btn_excluirFuncionarios.TabIndex = 45;
+            this.btn_excluirFuncionarios.Size = new System.Drawing.Size(90, 36);
+            this.btn_excluirFuncionarios.TabIndex = 6;
             this.btn_excluirFuncionarios.Text = "Excluir";
             this.btn_excluirFuncionarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.btn_excluirFuncionarios.UseAccentColor = true;
             this.btn_excluirFuncionarios.UseVisualStyleBackColor = true;
             this.btn_excluirFuncionarios.Visible = false;
             this.btn_excluirFuncionarios.Click += new System.EventHandler(this.btn_excluir_Click);
-            // 
-            // txt_usernameFuncionarios
-            // 
-            this.txt_usernameFuncionarios.AnimateReadOnly = false;
-            this.txt_usernameFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_usernameFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_usernameFuncionarios.Depth = 0;
-            this.txt_usernameFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_usernameFuncionarios.HideSelection = true;
-            this.txt_usernameFuncionarios.Hint = "Username";
-            this.txt_usernameFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(656, 10);
-            this.txt_usernameFuncionarios.Margin = new System.Windows.Forms.Padding(1);
-            this.txt_usernameFuncionarios.MaxLength = 32767;
-            this.txt_usernameFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_usernameFuncionarios.Name = "txt_usernameFuncionarios";
-            this.txt_usernameFuncionarios.PasswordChar = '\0';
-            this.txt_usernameFuncionarios.PrefixSuffixText = null;
-            this.txt_usernameFuncionarios.ReadOnly = false;
-            this.txt_usernameFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_usernameFuncionarios.SelectedText = "";
-            this.txt_usernameFuncionarios.SelectionLength = 0;
-            this.txt_usernameFuncionarios.SelectionStart = 0;
-            this.txt_usernameFuncionarios.ShortcutsEnabled = true;
-            this.txt_usernameFuncionarios.Size = new System.Drawing.Size(337, 48);
-            this.txt_usernameFuncionarios.TabIndex = 14;
-            this.txt_usernameFuncionarios.TabStop = false;
-            this.txt_usernameFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_usernameFuncionarios.TrailingIcon = null;
-            this.txt_usernameFuncionarios.UseSystemPasswordChar = false;
-            // 
-            // txt_nomeFuncionarios
-            // 
-            this.txt_nomeFuncionarios.AnimateReadOnly = false;
-            this.txt_nomeFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_nomeFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_nomeFuncionarios.Depth = 0;
-            this.txt_nomeFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_nomeFuncionarios.HideSelection = true;
-            this.txt_nomeFuncionarios.Hint = "Nome";
-            this.txt_nomeFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
-            this.txt_nomeFuncionarios.Location = new System.Drawing.Point(11, 10);
-            this.txt_nomeFuncionarios.Margin = new System.Windows.Forms.Padding(1);
-            this.txt_nomeFuncionarios.MaxLength = 32767;
-            this.txt_nomeFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_nomeFuncionarios.Name = "txt_nomeFuncionarios";
-            this.txt_nomeFuncionarios.PasswordChar = '\0';
-            this.txt_nomeFuncionarios.PrefixSuffixText = null;
-            this.txt_nomeFuncionarios.ReadOnly = false;
-            this.txt_nomeFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_nomeFuncionarios.SelectedText = "";
-            this.txt_nomeFuncionarios.SelectionLength = 0;
-            this.txt_nomeFuncionarios.SelectionStart = 0;
-            this.txt_nomeFuncionarios.ShortcutsEnabled = true;
-            this.txt_nomeFuncionarios.Size = new System.Drawing.Size(441, 48);
-            this.txt_nomeFuncionarios.TabIndex = 12;
-            this.txt_nomeFuncionarios.TabStop = false;
-            this.txt_nomeFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_nomeFuncionarios.TrailingIcon = null;
-            this.txt_nomeFuncionarios.UseSystemPasswordChar = false;
-            // 
-            // txt_telefoneFuncionarios
-            // 
-            this.txt_telefoneFuncionarios.AnimateReadOnly = false;
-            this.txt_telefoneFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_telefoneFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_telefoneFuncionarios.Depth = 0;
-            this.txt_telefoneFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_telefoneFuncionarios.HideSelection = true;
-            this.txt_telefoneFuncionarios.Hint = "Telefone";
-            this.txt_telefoneFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.tele;
-            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(11, 83);
-            this.txt_telefoneFuncionarios.Margin = new System.Windows.Forms.Padding(1);
-            this.txt_telefoneFuncionarios.MaxLength = 32767;
-            this.txt_telefoneFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_telefoneFuncionarios.Name = "txt_telefoneFuncionarios";
-            this.txt_telefoneFuncionarios.PasswordChar = '\0';
-            this.txt_telefoneFuncionarios.PrefixSuffixText = null;
-            this.txt_telefoneFuncionarios.ReadOnly = false;
-            this.txt_telefoneFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_telefoneFuncionarios.SelectedText = "";
-            this.txt_telefoneFuncionarios.SelectionLength = 0;
-            this.txt_telefoneFuncionarios.SelectionStart = 0;
-            this.txt_telefoneFuncionarios.ShortcutsEnabled = true;
-            this.txt_telefoneFuncionarios.Size = new System.Drawing.Size(230, 48);
-            this.txt_telefoneFuncionarios.TabIndex = 11;
-            this.txt_telefoneFuncionarios.TabStop = false;
-            this.txt_telefoneFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_telefoneFuncionarios.TrailingIcon = null;
-            this.txt_telefoneFuncionarios.UseSystemPasswordChar = false;
             // 
             // btn_criarFunciornarios
             // 
@@ -1542,13 +854,13 @@ namespace appBugInn
             this.btn_criarFunciornarios.Depth = 0;
             this.btn_criarFunciornarios.HighEmphasis = true;
             this.btn_criarFunciornarios.Icon = null;
-            this.btn_criarFunciornarios.Location = new System.Drawing.Point(420, 280);
+            this.btn_criarFunciornarios.Location = new System.Drawing.Point(277, 135);
             this.btn_criarFunciornarios.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
             this.btn_criarFunciornarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_criarFunciornarios.Name = "btn_criarFunciornarios";
             this.btn_criarFunciornarios.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_criarFunciornarios.Size = new System.Drawing.Size(182, 56);
-            this.btn_criarFunciornarios.TabIndex = 41;
+            this.btn_criarFunciornarios.Size = new System.Drawing.Size(123, 36);
+            this.btn_criarFunciornarios.TabIndex = 5;
             this.btn_criarFunciornarios.Text = "Criar";
             this.btn_criarFunciornarios.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_criarFunciornarios.UseAccentColor = false;
@@ -1557,48 +869,17 @@ namespace appBugInn
             // 
             // chb_gestorFuncionarios
             // 
-            this.chb_gestorFuncionarios.AutoSize = true;
             this.chb_gestorFuncionarios.Depth = 0;
-            this.chb_gestorFuncionarios.Location = new System.Drawing.Point(729, 147);
+            this.chb_gestorFuncionarios.Location = new System.Drawing.Point(321, 83);
             this.chb_gestorFuncionarios.Margin = new System.Windows.Forms.Padding(0);
             this.chb_gestorFuncionarios.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chb_gestorFuncionarios.MouseState = MaterialSkin.MouseState.HOVER;
             this.chb_gestorFuncionarios.Name = "chb_gestorFuncionarios";
             this.chb_gestorFuncionarios.Ripple = true;
-            this.chb_gestorFuncionarios.Size = new System.Drawing.Size(104, 37);
-            this.chb_gestorFuncionarios.TabIndex = 13;
+            this.chb_gestorFuncionarios.Size = new System.Drawing.Size(131, 37);
+            this.chb_gestorFuncionarios.TabIndex = 3;
             this.chb_gestorFuncionarios.Text = "Gestor";
             this.chb_gestorFuncionarios.UseVisualStyleBackColor = true;
-            // 
-            // txt_passwordFuncionarios
-            // 
-            this.txt_passwordFuncionarios.AnimateReadOnly = false;
-            this.txt_passwordFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txt_passwordFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txt_passwordFuncionarios.Depth = 0;
-            this.txt_passwordFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txt_passwordFuncionarios.HideSelection = true;
-            this.txt_passwordFuncionarios.Hint = "Password";
-            this.txt_passwordFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
-            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(656, 83);
-            this.txt_passwordFuncionarios.Margin = new System.Windows.Forms.Padding(1);
-            this.txt_passwordFuncionarios.MaxLength = 32767;
-            this.txt_passwordFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
-            this.txt_passwordFuncionarios.Name = "txt_passwordFuncionarios";
-            this.txt_passwordFuncionarios.PasswordChar = '\0';
-            this.txt_passwordFuncionarios.PrefixSuffixText = null;
-            this.txt_passwordFuncionarios.ReadOnly = false;
-            this.txt_passwordFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_passwordFuncionarios.SelectedText = "";
-            this.txt_passwordFuncionarios.SelectionLength = 0;
-            this.txt_passwordFuncionarios.SelectionStart = 0;
-            this.txt_passwordFuncionarios.ShortcutsEnabled = true;
-            this.txt_passwordFuncionarios.Size = new System.Drawing.Size(337, 48);
-            this.txt_passwordFuncionarios.TabIndex = 10;
-            this.txt_passwordFuncionarios.TabStop = false;
-            this.txt_passwordFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txt_passwordFuncionarios.TrailingIcon = null;
-            this.txt_passwordFuncionarios.UseSystemPasswordChar = false;
             // 
             // tb_configuracoes
             // 
@@ -1630,13 +911,12 @@ namespace appBugInn
             // 
             // tb_diretoria
             // 
-            this.tb_diretoria.Controls.Add(this.mc_datas_dash);
-            this.tb_diretoria.Controls.Add(this.materialFloatingActionButton4);
             this.tb_diretoria.Controls.Add(this.materialFloatingActionButton3);
+            this.tb_diretoria.Controls.Add(this.materialFloatingActionButton4);
+            this.tb_diretoria.Controls.Add(this.mc_datas_dash);
             this.tb_diretoria.Controls.Add(this.materialCard3);
             this.tb_diretoria.Controls.Add(this.materialCard4);
             this.tb_diretoria.Controls.Add(this.materialCard2);
-            this.tb_diretoria.Controls.Add(this.materialCard1);
             this.tb_diretoria.ImageKey = "icons8-dashboard-32.png";
             this.tb_diretoria.Location = new System.Drawing.Point(4, 39);
             this.tb_diretoria.Margin = new System.Windows.Forms.Padding(4);
@@ -1728,32 +1008,6 @@ namespace appBugInn
             this.dtp_dataFimDash.TabIndex = 10;
             this.dtp_dataFimDash.ValueChanged += new System.EventHandler(this.dtp_dataFimDash_ValueChanged);
             // 
-            // materialFloatingActionButton4
-            // 
-            this.materialFloatingActionButton4.Depth = 0;
-            this.materialFloatingActionButton4.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
-            this.materialFloatingActionButton4.Location = new System.Drawing.Point(610, 53);
-            this.materialFloatingActionButton4.Margin = new System.Windows.Forms.Padding(4);
-            this.materialFloatingActionButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton4.Name = "materialFloatingActionButton4";
-            this.materialFloatingActionButton4.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton4.TabIndex = 6;
-            this.materialFloatingActionButton4.TabStop = false;
-            this.materialFloatingActionButton4.UseVisualStyleBackColor = false;
-            // 
-            // materialFloatingActionButton3
-            // 
-            this.materialFloatingActionButton3.Depth = 0;
-            this.materialFloatingActionButton3.Icon = global::appBugInn.Properties.Resources.icons8_satisfaction_48;
-            this.materialFloatingActionButton3.Location = new System.Drawing.Point(900, 57);
-            this.materialFloatingActionButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.materialFloatingActionButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
-            this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton3.TabIndex = 7;
-            this.materialFloatingActionButton3.TabStop = false;
-            this.materialFloatingActionButton3.UseVisualStyleBackColor = false;
-            // 
             // materialCard3
             // 
             this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1766,7 +1020,7 @@ namespace appBugInn
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
             this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(248, 100);
+            this.materialCard3.Size = new System.Drawing.Size(248, 123);
             this.materialCard3.TabIndex = 6;
             // 
             // lbl_classificacao
@@ -1774,7 +1028,7 @@ namespace appBugInn
             this.lbl_classificacao.AutoSize = true;
             this.lbl_classificacao.Font = new System.Drawing.Font("Calibri", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_classificacao.ForeColor = System.Drawing.Color.Black;
-            this.lbl_classificacao.Location = new System.Drawing.Point(90, 57);
+            this.lbl_classificacao.Location = new System.Drawing.Point(90, 64);
             this.lbl_classificacao.Name = "lbl_classificacao";
             this.lbl_classificacao.Size = new System.Drawing.Size(52, 36);
             this.lbl_classificacao.TabIndex = 1;
@@ -1785,7 +1039,7 @@ namespace appBugInn
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(9, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(222, 72);
+            this.label9.Size = new System.Drawing.Size(222, 47);
             this.label9.TabIndex = 0;
             this.label9.Text = "Nível de Satisfação dos clientes";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1816,24 +1070,28 @@ namespace appBugInn
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.mpb_fatMensal);
             this.materialCard2.Controls.Add(this.mpb_fatAnual);
+            this.materialCard2.Controls.Add(this.lbl_desc_fatMensal);
             this.materialCard2.Controls.Add(this.lbl_desc_fatAnual);
+            this.materialCard2.Controls.Add(this.lbl_fatMensal);
             this.materialCard2.Controls.Add(this.lbl_fatAnual);
+            this.materialCard2.Controls.Add(this.label1);
             this.materialCard2.Controls.Add(this.label6);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(354, 31);
+            this.materialCard2.Location = new System.Drawing.Point(30, 31);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(286, 100);
+            this.materialCard2.Size = new System.Drawing.Size(610, 123);
             this.materialCard2.TabIndex = 4;
             // 
             // mpb_fatAnual
             // 
             this.mpb_fatAnual.Depth = 0;
-            this.mpb_fatAnual.Location = new System.Drawing.Point(22, 68);
+            this.mpb_fatAnual.Location = new System.Drawing.Point(337, 88);
             this.mpb_fatAnual.MouseState = MaterialSkin.MouseState.HOVER;
             this.mpb_fatAnual.Name = "mpb_fatAnual";
             this.mpb_fatAnual.Size = new System.Drawing.Size(210, 5);
@@ -1844,7 +1102,7 @@ namespace appBugInn
             // 
             this.lbl_desc_fatAnual.AutoSize = true;
             this.lbl_desc_fatAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_desc_fatAnual.Location = new System.Drawing.Point(59, 77);
+            this.lbl_desc_fatAnual.Location = new System.Drawing.Point(374, 97);
             this.lbl_desc_fatAnual.Name = "lbl_desc_fatAnual";
             this.lbl_desc_fatAnual.Size = new System.Drawing.Size(145, 13);
             this.lbl_desc_fatAnual.TabIndex = 2;
@@ -1855,7 +1113,7 @@ namespace appBugInn
             this.lbl_fatAnual.AutoSize = true;
             this.lbl_fatAnual.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fatAnual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbl_fatAnual.Location = new System.Drawing.Point(49, 36);
+            this.lbl_fatAnual.Location = new System.Drawing.Point(420, 46);
             this.lbl_fatAnual.Name = "lbl_fatAnual";
             this.lbl_fatAnual.Size = new System.Drawing.Size(25, 29);
             this.lbl_fatAnual.TabIndex = 1;
@@ -1865,34 +1123,17 @@ namespace appBugInn
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 14);
+            this.label6.Location = new System.Drawing.Point(333, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(212, 30);
             this.label6.TabIndex = 0;
             this.label6.Text = "Faturação Ano Atual";
             this.label6.UseCompatibleTextRendering = true;
             // 
-            // materialCard1
-            // 
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.mpb_fatMensal);
-            this.materialCard1.Controls.Add(this.lbl_desc_fatMensal);
-            this.materialCard1.Controls.Add(this.lbl_fatMensal);
-            this.materialCard1.Controls.Add(this.label1);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(30, 31);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(282, 100);
-            this.materialCard1.TabIndex = 0;
-            // 
             // mpb_fatMensal
             // 
             this.mpb_fatMensal.Depth = 0;
-            this.mpb_fatMensal.Location = new System.Drawing.Point(22, 66);
+            this.mpb_fatMensal.Location = new System.Drawing.Point(41, 86);
             this.mpb_fatMensal.MouseState = MaterialSkin.MouseState.HOVER;
             this.mpb_fatMensal.Name = "mpb_fatMensal";
             this.mpb_fatMensal.Size = new System.Drawing.Size(210, 5);
@@ -1903,7 +1144,7 @@ namespace appBugInn
             // 
             this.lbl_desc_fatMensal.AutoSize = true;
             this.lbl_desc_fatMensal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_desc_fatMensal.Location = new System.Drawing.Point(51, 77);
+            this.lbl_desc_fatMensal.Location = new System.Drawing.Point(70, 97);
             this.lbl_desc_fatMensal.Name = "lbl_desc_fatMensal";
             this.lbl_desc_fatMensal.Size = new System.Drawing.Size(145, 13);
             this.lbl_desc_fatMensal.TabIndex = 2;
@@ -1914,7 +1155,7 @@ namespace appBugInn
             this.lbl_fatMensal.AutoSize = true;
             this.lbl_fatMensal.Font = new System.Drawing.Font("Calibri", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fatMensal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lbl_fatMensal.Location = new System.Drawing.Point(49, 36);
+            this.lbl_fatMensal.Location = new System.Drawing.Point(109, 43);
             this.lbl_fatMensal.Name = "lbl_fatMensal";
             this.lbl_fatMensal.Size = new System.Drawing.Size(25, 29);
             this.lbl_fatMensal.TabIndex = 1;
@@ -1924,7 +1165,7 @@ namespace appBugInn
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Location = new System.Drawing.Point(33, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 30);
             this.label1.TabIndex = 0;
@@ -1963,6 +1204,729 @@ namespace appBugInn
             this.novasImagensMenu.Images.SetKeyName(6, "check-in.png");
             this.novasImagensMenu.Images.SetKeyName(7, "botao-home.png");
             // 
+            // cb_idQuartoCheckIn
+            // 
+            this.cb_idQuartoCheckIn.AutoResize = false;
+            this.cb_idQuartoCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cb_idQuartoCheckIn.Depth = 0;
+            this.cb_idQuartoCheckIn.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cb_idQuartoCheckIn.DropDownHeight = 174;
+            this.cb_idQuartoCheckIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_idQuartoCheckIn.DropDownWidth = 121;
+            this.cb_idQuartoCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cb_idQuartoCheckIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cb_idQuartoCheckIn.FormattingEnabled = true;
+            this.cb_idQuartoCheckIn.Hint = "Nº Quarto";
+            this.cb_idQuartoCheckIn.IntegralHeight = false;
+            this.cb_idQuartoCheckIn.ItemHeight = 43;
+            this.cb_idQuartoCheckIn.Location = new System.Drawing.Point(407, 235);
+            this.cb_idQuartoCheckIn.MaxDropDownItems = 4;
+            this.cb_idQuartoCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.cb_idQuartoCheckIn.Name = "cb_idQuartoCheckIn";
+            this.cb_idQuartoCheckIn.Size = new System.Drawing.Size(152, 49);
+            this.cb_idQuartoCheckIn.StartIndex = 0;
+            this.cb_idQuartoCheckIn.TabIndex = 1;
+            this.cb_idQuartoCheckIn.SelectedIndexChanged += new System.EventHandler(this.cb_idQuartoCheckIn_SelectedIndexChanged);
+            // 
+            // tb_home
+            // 
+            this.tb_home.BackgroundImage = global::appBugInn.Properties.Resources.tbi_sem_fundo;
+            this.tb_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tb_home.Controls.Add(this.lbl_usuarioLogado);
+            this.tb_home.ImageKey = "icons8-home-32.png";
+            this.tb_home.Location = new System.Drawing.Point(4, 39);
+            this.tb_home.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_home.Name = "tb_home";
+            this.tb_home.Padding = new System.Windows.Forms.Padding(2);
+            this.tb_home.Size = new System.Drawing.Size(1822, 850);
+            this.tb_home.TabIndex = 0;
+            this.tb_home.Text = "HOME";
+            this.tb_home.ToolTipText = "Home";
+            this.tb_home.UseVisualStyleBackColor = true;
+            // 
+            // lbl_usuarioLogado
+            // 
+            this.lbl_usuarioLogado.AutoSize = true;
+            this.lbl_usuarioLogado.Depth = 0;
+            this.lbl_usuarioLogado.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_usuarioLogado.Location = new System.Drawing.Point(26, 29);
+            this.lbl_usuarioLogado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_usuarioLogado.Name = "lbl_usuarioLogado";
+            this.lbl_usuarioLogado.Size = new System.Drawing.Size(86, 19);
+            this.lbl_usuarioLogado.TabIndex = 0;
+            this.lbl_usuarioLogado.Text = "Bem Vindo: ";
+            // 
+            // btn_recuarDiaInicioReserva
+            // 
+            this.btn_recuarDiaInicioReserva.AutoSize = false;
+            this.btn_recuarDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_recuarDiaInicioReserva.BackColor = System.Drawing.Color.Transparent;
+            this.btn_recuarDiaInicioReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_recuarDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_recuarDiaInicioReserva.Depth = 0;
+            this.btn_recuarDiaInicioReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_recuarDiaInicioReserva.HighEmphasis = true;
+            this.btn_recuarDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
+            this.btn_recuarDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_recuarDiaInicioReserva.Location = new System.Drawing.Point(876, 79);
+            this.btn_recuarDiaInicioReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_recuarDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_recuarDiaInicioReserva.Name = "btn_recuarDiaInicioReserva";
+            this.btn_recuarDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_recuarDiaInicioReserva.Size = new System.Drawing.Size(34, 16);
+            this.btn_recuarDiaInicioReserva.TabIndex = 15;
+            this.btn_recuarDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_recuarDiaInicioReserva.UseAccentColor = false;
+            this.btn_recuarDiaInicioReserva.UseVisualStyleBackColor = false;
+            this.btn_recuarDiaInicioReserva.Click += new System.EventHandler(this.btn_recuarDiaInicioReserva_Click);
+            // 
+            // btn_avançaDiaInicioReserva
+            // 
+            this.btn_avançaDiaInicioReserva.AutoSize = false;
+            this.btn_avançaDiaInicioReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_avançaDiaInicioReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_avançaDiaInicioReserva.Depth = 0;
+            this.btn_avançaDiaInicioReserva.HighEmphasis = true;
+            this.btn_avançaDiaInicioReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
+            this.btn_avançaDiaInicioReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_avançaDiaInicioReserva.Location = new System.Drawing.Point(914, 79);
+            this.btn_avançaDiaInicioReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_avançaDiaInicioReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_avançaDiaInicioReserva.Name = "btn_avançaDiaInicioReserva";
+            this.btn_avançaDiaInicioReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_avançaDiaInicioReserva.Size = new System.Drawing.Size(34, 16);
+            this.btn_avançaDiaInicioReserva.TabIndex = 16;
+            this.btn_avançaDiaInicioReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_avançaDiaInicioReserva.UseAccentColor = false;
+            this.btn_avançaDiaInicioReserva.UseVisualStyleBackColor = true;
+            this.btn_avançaDiaInicioReserva.Click += new System.EventHandler(this.btn_avançarDiaInicioReserva_Click);
+            // 
+            // btn_avançarDiaFimReserva
+            // 
+            this.btn_avançarDiaFimReserva.AutoSize = false;
+            this.btn_avançarDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_avançarDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_avançarDiaFimReserva.Depth = 0;
+            this.btn_avançarDiaFimReserva.HighEmphasis = true;
+            this.btn_avançarDiaFimReserva.Icon = global::appBugInn.Properties.Resources.right_arrow;
+            this.btn_avançarDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_avançarDiaFimReserva.Location = new System.Drawing.Point(1116, 79);
+            this.btn_avançarDiaFimReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_avançarDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_avançarDiaFimReserva.Name = "btn_avançarDiaFimReserva";
+            this.btn_avançarDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_avançarDiaFimReserva.Size = new System.Drawing.Size(34, 16);
+            this.btn_avançarDiaFimReserva.TabIndex = 18;
+            this.btn_avançarDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_avançarDiaFimReserva.UseAccentColor = false;
+            this.btn_avançarDiaFimReserva.UseVisualStyleBackColor = true;
+            this.btn_avançarDiaFimReserva.Click += new System.EventHandler(this.btn_avançarDiaFimReserva_Click);
+            // 
+            // btn_recuaDiaFimReserva
+            // 
+            this.btn_recuaDiaFimReserva.AutoSize = false;
+            this.btn_recuaDiaFimReserva.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_recuaDiaFimReserva.BackColor = System.Drawing.Color.Transparent;
+            this.btn_recuaDiaFimReserva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_recuaDiaFimReserva.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_recuaDiaFimReserva.Depth = 0;
+            this.btn_recuaDiaFimReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btn_recuaDiaFimReserva.HighEmphasis = true;
+            this.btn_recuaDiaFimReserva.Icon = global::appBugInn.Properties.Resources.left_arrow_10238776;
+            this.btn_recuaDiaFimReserva.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btn_recuaDiaFimReserva.Location = new System.Drawing.Point(1078, 79);
+            this.btn_recuaDiaFimReserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_recuaDiaFimReserva.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_recuaDiaFimReserva.Name = "btn_recuaDiaFimReserva";
+            this.btn_recuaDiaFimReserva.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_recuaDiaFimReserva.Size = new System.Drawing.Size(34, 16);
+            this.btn_recuaDiaFimReserva.TabIndex = 17;
+            this.btn_recuaDiaFimReserva.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_recuaDiaFimReserva.UseAccentColor = false;
+            this.btn_recuaDiaFimReserva.UseVisualStyleBackColor = false;
+            this.btn_recuaDiaFimReserva.Click += new System.EventHandler(this.btn_recuaDiaReserva_Click);
+            // 
+            // txt_nomeReserva1
+            // 
+            this.txt_nomeReserva1.AnimateReadOnly = false;
+            this.txt_nomeReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nomeReserva1.Depth = 0;
+            this.txt_nomeReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeReserva1.Hint = "Nome";
+            this.txt_nomeReserva1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nomeReserva1.Location = new System.Drawing.Point(23, 21);
+            this.txt_nomeReserva1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nomeReserva1.MaxLength = 50;
+            this.txt_nomeReserva1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nomeReserva1.Multiline = false;
+            this.txt_nomeReserva1.Name = "txt_nomeReserva1";
+            this.txt_nomeReserva1.Size = new System.Drawing.Size(736, 50);
+            this.txt_nomeReserva1.TabIndex = 0;
+            this.txt_nomeReserva1.Text = "";
+            this.txt_nomeReserva1.TrailingIcon = null;
+            this.txt_nomeReserva1.UseAccent = false;
+            this.txt_nomeReserva1.Leave += new System.EventHandler(this.txt_nomeReserva1_Leave);
+            // 
+            // txt_telefoneReserva1
+            // 
+            this.txt_telefoneReserva1.AnimateReadOnly = false;
+            this.txt_telefoneReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefoneReserva1.Depth = 0;
+            this.txt_telefoneReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_telefoneReserva1.Hint = "Telefone";
+            this.txt_telefoneReserva1.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_telefoneReserva1.Location = new System.Drawing.Point(23, 159);
+            this.txt_telefoneReserva1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_telefoneReserva1.MaxLength = 50;
+            this.txt_telefoneReserva1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_telefoneReserva1.Multiline = false;
+            this.txt_telefoneReserva1.Name = "txt_telefoneReserva1";
+            this.txt_telefoneReserva1.Size = new System.Drawing.Size(303, 50);
+            this.txt_telefoneReserva1.TabIndex = 2;
+            this.txt_telefoneReserva1.Text = "";
+            this.txt_telefoneReserva1.TrailingIcon = null;
+            this.txt_telefoneReserva1.UseAccent = false;
+            this.txt_telefoneReserva1.Leave += new System.EventHandler(this.txt_telefoneReserva1_Leave);
+            // 
+            // txt_emailReserva1
+            // 
+            this.txt_emailReserva1.AnimateReadOnly = false;
+            this.txt_emailReserva1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_emailReserva1.Depth = 0;
+            this.txt_emailReserva1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_emailReserva1.Hint = "Email";
+            this.txt_emailReserva1.LeadingIcon = global::appBugInn.Properties.Resources.email;
+            this.txt_emailReserva1.Location = new System.Drawing.Point(23, 90);
+            this.txt_emailReserva1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_emailReserva1.MaxLength = 50;
+            this.txt_emailReserva1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_emailReserva1.Multiline = false;
+            this.txt_emailReserva1.Name = "txt_emailReserva1";
+            this.txt_emailReserva1.Size = new System.Drawing.Size(736, 50);
+            this.txt_emailReserva1.TabIndex = 1;
+            this.txt_emailReserva1.Text = "";
+            this.txt_emailReserva1.TrailingIcon = null;
+            this.txt_emailReserva1.UseAccent = false;
+            this.txt_emailReserva1.Leave += new System.EventHandler(this.txt_emailReserva1_Leave);
+            // 
+            // txt_dataCheckOut
+            // 
+            this.txt_dataCheckOut.AnimateReadOnly = false;
+            this.txt_dataCheckOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dataCheckOut.Depth = 0;
+            this.txt_dataCheckOut.Enabled = false;
+            this.txt_dataCheckOut.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dataCheckOut.Hint = "Check Out";
+            this.txt_dataCheckOut.LeadingIcon = global::appBugInn.Properties.Resources.image__3_;
+            this.txt_dataCheckOut.Location = new System.Drawing.Point(207, 304);
+            this.txt_dataCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_dataCheckOut.MaxLength = 50;
+            this.txt_dataCheckOut.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_dataCheckOut.Multiline = false;
+            this.txt_dataCheckOut.Name = "txt_dataCheckOut";
+            this.txt_dataCheckOut.Size = new System.Drawing.Size(170, 50);
+            this.txt_dataCheckOut.TabIndex = 66;
+            this.txt_dataCheckOut.Text = "";
+            this.txt_dataCheckOut.TrailingIcon = null;
+            this.txt_dataCheckOut.UseAccent = false;
+            // 
+            // txt_dataCheckIn
+            // 
+            this.txt_dataCheckIn.AnimateReadOnly = false;
+            this.txt_dataCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dataCheckIn.Depth = 0;
+            this.txt_dataCheckIn.Enabled = false;
+            this.txt_dataCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dataCheckIn.Hint = "Check In";
+            this.txt_dataCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.image__4_;
+            this.txt_dataCheckIn.Location = new System.Drawing.Point(23, 304);
+            this.txt_dataCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_dataCheckIn.MaxLength = 50;
+            this.txt_dataCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_dataCheckIn.Multiline = false;
+            this.txt_dataCheckIn.Name = "txt_dataCheckIn";
+            this.txt_dataCheckIn.Size = new System.Drawing.Size(170, 50);
+            this.txt_dataCheckIn.TabIndex = 65;
+            this.txt_dataCheckIn.Text = "";
+            this.txt_dataCheckIn.TrailingIcon = null;
+            this.txt_dataCheckIn.UseAccent = false;
+            // 
+            // txt_subtotal
+            // 
+            this.txt_subtotal.AnimateReadOnly = false;
+            this.txt_subtotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_subtotal.Depth = 0;
+            this.txt_subtotal.Enabled = false;
+            this.txt_subtotal.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_subtotal.Hint = "Subtotal";
+            this.txt_subtotal.LeadingIcon = global::appBugInn.Properties.Resources.image__2_;
+            this.txt_subtotal.Location = new System.Drawing.Point(601, 304);
+            this.txt_subtotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_subtotal.MaxLength = 50;
+            this.txt_subtotal.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_subtotal.Multiline = false;
+            this.txt_subtotal.Name = "txt_subtotal";
+            this.txt_subtotal.Size = new System.Drawing.Size(160, 50);
+            this.txt_subtotal.TabIndex = 63;
+            this.txt_subtotal.Text = "";
+            this.txt_subtotal.TrailingIcon = null;
+            this.txt_subtotal.UseAccent = false;
+            // 
+            // txt_nAndar
+            // 
+            this.txt_nAndar.AnimateReadOnly = false;
+            this.txt_nAndar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nAndar.Depth = 0;
+            this.txt_nAndar.Enabled = false;
+            this.txt_nAndar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nAndar.Hint = "Nº Andar";
+            this.txt_nAndar.LeadingIcon = global::appBugInn.Properties.Resources.image;
+            this.txt_nAndar.Location = new System.Drawing.Point(601, 237);
+            this.txt_nAndar.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nAndar.MaxLength = 50;
+            this.txt_nAndar.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nAndar.Multiline = false;
+            this.txt_nAndar.Name = "txt_nAndar";
+            this.txt_nAndar.Size = new System.Drawing.Size(160, 50);
+            this.txt_nAndar.TabIndex = 62;
+            this.txt_nAndar.Text = "";
+            this.txt_nAndar.TrailingIcon = null;
+            this.txt_nAndar.UseAccent = false;
+            // 
+            // txt_hospede1
+            // 
+            this.txt_hospede1.AnimateReadOnly = false;
+            this.txt_hospede1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_hospede1.Depth = 0;
+            this.txt_hospede1.Enabled = false;
+            this.txt_hospede1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_hospede1.Hint = "Nome";
+            this.txt_hospede1.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_hospede1.Location = new System.Drawing.Point(657, 21);
+            this.txt_hospede1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_hospede1.MaxLength = 50;
+            this.txt_hospede1.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_hospede1.Multiline = false;
+            this.txt_hospede1.Name = "txt_hospede1";
+            this.txt_hospede1.Size = new System.Drawing.Size(599, 50);
+            this.txt_hospede1.TabIndex = 2;
+            this.txt_hospede1.Text = "";
+            this.txt_hospede1.TrailingIcon = null;
+            this.txt_hospede1.UseAccent = false;
+            // 
+            // txt_hospede2
+            // 
+            this.txt_hospede2.AnimateReadOnly = false;
+            this.txt_hospede2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_hospede2.Depth = 0;
+            this.txt_hospede2.Enabled = false;
+            this.txt_hospede2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_hospede2.Hint = "Nome";
+            this.txt_hospede2.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_hospede2.Location = new System.Drawing.Point(657, 95);
+            this.txt_hospede2.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_hospede2.MaxLength = 50;
+            this.txt_hospede2.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_hospede2.Multiline = false;
+            this.txt_hospede2.Name = "txt_hospede2";
+            this.txt_hospede2.Size = new System.Drawing.Size(599, 50);
+            this.txt_hospede2.TabIndex = 3;
+            this.txt_hospede2.Text = "";
+            this.txt_hospede2.TrailingIcon = null;
+            this.txt_hospede2.UseAccent = false;
+            // 
+            // txt_hospede3
+            // 
+            this.txt_hospede3.AnimateReadOnly = false;
+            this.txt_hospede3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_hospede3.Depth = 0;
+            this.txt_hospede3.Enabled = false;
+            this.txt_hospede3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_hospede3.Hint = "Nome";
+            this.txt_hospede3.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_hospede3.Location = new System.Drawing.Point(657, 166);
+            this.txt_hospede3.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_hospede3.MaxLength = 50;
+            this.txt_hospede3.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_hospede3.Multiline = false;
+            this.txt_hospede3.Name = "txt_hospede3";
+            this.txt_hospede3.Size = new System.Drawing.Size(599, 50);
+            this.txt_hospede3.TabIndex = 4;
+            this.txt_hospede3.Text = "";
+            this.txt_hospede3.TrailingIcon = null;
+            this.txt_hospede3.UseAccent = false;
+            // 
+            // txt_nPessoasCheckIn
+            // 
+            this.txt_nPessoasCheckIn.AnimateReadOnly = false;
+            this.txt_nPessoasCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nPessoasCheckIn.Depth = 0;
+            this.txt_nPessoasCheckIn.Enabled = false;
+            this.txt_nPessoasCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nPessoasCheckIn.Hint = "Nº Pessoas";
+            this.txt_nPessoasCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.image__1_;
+            this.txt_nPessoasCheckIn.Location = new System.Drawing.Point(407, 304);
+            this.txt_nPessoasCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nPessoasCheckIn.MaxLength = 50;
+            this.txt_nPessoasCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nPessoasCheckIn.Multiline = false;
+            this.txt_nPessoasCheckIn.Name = "txt_nPessoasCheckIn";
+            this.txt_nPessoasCheckIn.Size = new System.Drawing.Size(152, 50);
+            this.txt_nPessoasCheckIn.TabIndex = 57;
+            this.txt_nPessoasCheckIn.Text = "";
+            this.txt_nPessoasCheckIn.TrailingIcon = null;
+            this.txt_nPessoasCheckIn.UseAccent = false;
+            // 
+            // txt_quartoCheckIn
+            // 
+            this.txt_quartoCheckIn.AnimateReadOnly = false;
+            this.txt_quartoCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_quartoCheckIn.Depth = 0;
+            this.txt_quartoCheckIn.Enabled = false;
+            this.txt_quartoCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_quartoCheckIn.Hint = "Tipo Quarto";
+            this.txt_quartoCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.image;
+            this.txt_quartoCheckIn.Location = new System.Drawing.Point(23, 234);
+            this.txt_quartoCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_quartoCheckIn.MaxLength = 50;
+            this.txt_quartoCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_quartoCheckIn.Multiline = false;
+            this.txt_quartoCheckIn.Name = "txt_quartoCheckIn";
+            this.txt_quartoCheckIn.Size = new System.Drawing.Size(354, 50);
+            this.txt_quartoCheckIn.TabIndex = 56;
+            this.txt_quartoCheckIn.Text = "";
+            this.txt_quartoCheckIn.TrailingIcon = null;
+            this.txt_quartoCheckIn.UseAccent = false;
+            // 
+            // txt_nomeCheckIn
+            // 
+            this.txt_nomeCheckIn.AnimateReadOnly = false;
+            this.txt_nomeCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nomeCheckIn.Depth = 0;
+            this.txt_nomeCheckIn.Enabled = false;
+            this.txt_nomeCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeCheckIn.Hint = "Nome";
+            this.txt_nomeCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nomeCheckIn.Location = new System.Drawing.Point(23, 21);
+            this.txt_nomeCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nomeCheckIn.MaxLength = 50;
+            this.txt_nomeCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nomeCheckIn.Multiline = false;
+            this.txt_nomeCheckIn.Name = "txt_nomeCheckIn";
+            this.txt_nomeCheckIn.Size = new System.Drawing.Size(599, 50);
+            this.txt_nomeCheckIn.TabIndex = 1;
+            this.txt_nomeCheckIn.Text = "";
+            this.txt_nomeCheckIn.TrailingIcon = null;
+            this.txt_nomeCheckIn.UseAccent = false;
+            // 
+            // txt_telefoneCheckIn
+            // 
+            this.txt_telefoneCheckIn.AnimateReadOnly = false;
+            this.txt_telefoneCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefoneCheckIn.Depth = 0;
+            this.txt_telefoneCheckIn.Enabled = false;
+            this.txt_telefoneCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_telefoneCheckIn.Hint = "Telefone";
+            this.txt_telefoneCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_telefoneCheckIn.Location = new System.Drawing.Point(23, 95);
+            this.txt_telefoneCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_telefoneCheckIn.MaxLength = 50;
+            this.txt_telefoneCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_telefoneCheckIn.Multiline = false;
+            this.txt_telefoneCheckIn.Name = "txt_telefoneCheckIn";
+            this.txt_telefoneCheckIn.Size = new System.Drawing.Size(599, 50);
+            this.txt_telefoneCheckIn.TabIndex = 31;
+            this.txt_telefoneCheckIn.Text = "";
+            this.txt_telefoneCheckIn.TrailingIcon = null;
+            this.txt_telefoneCheckIn.UseAccent = false;
+            // 
+            // txt_emailCheckIn
+            // 
+            this.txt_emailCheckIn.AnimateReadOnly = false;
+            this.txt_emailCheckIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_emailCheckIn.Depth = 0;
+            this.txt_emailCheckIn.Enabled = false;
+            this.txt_emailCheckIn.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_emailCheckIn.Hint = "Email";
+            this.txt_emailCheckIn.LeadingIcon = global::appBugInn.Properties.Resources.email;
+            this.txt_emailCheckIn.Location = new System.Drawing.Point(23, 166);
+            this.txt_emailCheckIn.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_emailCheckIn.MaxLength = 50;
+            this.txt_emailCheckIn.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_emailCheckIn.Multiline = false;
+            this.txt_emailCheckIn.Name = "txt_emailCheckIn";
+            this.txt_emailCheckIn.Size = new System.Drawing.Size(599, 50);
+            this.txt_emailCheckIn.TabIndex = 32;
+            this.txt_emailCheckIn.Text = "";
+            this.txt_emailCheckIn.TrailingIcon = null;
+            this.txt_emailCheckIn.UseAccent = false;
+            // 
+            // txt_Andar
+            // 
+            this.txt_Andar.AnimateReadOnly = false;
+            this.txt_Andar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Andar.Depth = 0;
+            this.txt_Andar.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Andar.Hint = "Andar";
+            this.txt_Andar.LeadingIcon = global::appBugInn.Properties.Resources.building;
+            this.txt_Andar.Location = new System.Drawing.Point(15, 165);
+            this.txt_Andar.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Andar.MaxLength = 50;
+            this.txt_Andar.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Andar.Multiline = false;
+            this.txt_Andar.Name = "txt_Andar";
+            this.txt_Andar.Size = new System.Drawing.Size(147, 50);
+            this.txt_Andar.TabIndex = 48;
+            this.txt_Andar.Text = "";
+            this.txt_Andar.TrailingIcon = null;
+            this.txt_Andar.UseAccent = false;
+            // 
+            // txt_tQuarto
+            // 
+            this.txt_tQuarto.AnimateReadOnly = false;
+            this.txt_tQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_tQuarto.Depth = 0;
+            this.txt_tQuarto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_tQuarto.Hint = "Tipo de quarto";
+            this.txt_tQuarto.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_tQuarto.Location = new System.Drawing.Point(198, 31);
+            this.txt_tQuarto.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_tQuarto.MaxLength = 50;
+            this.txt_tQuarto.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_tQuarto.Multiline = false;
+            this.txt_tQuarto.Name = "txt_tQuarto";
+            this.txt_tQuarto.Size = new System.Drawing.Size(147, 50);
+            this.txt_tQuarto.TabIndex = 45;
+            this.txt_tQuarto.Text = "";
+            this.txt_tQuarto.TrailingIcon = null;
+            this.txt_tQuarto.UseAccent = false;
+            // 
+            // txt_Vista
+            // 
+            this.txt_Vista.AnimateReadOnly = false;
+            this.txt_Vista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Vista.Depth = 0;
+            this.txt_Vista.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Vista.Hint = "Vista";
+            this.txt_Vista.LeadingIcon = global::appBugInn.Properties.Resources.mountain__1_;
+            this.txt_Vista.Location = new System.Drawing.Point(198, 165);
+            this.txt_Vista.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Vista.MaxLength = 50;
+            this.txt_Vista.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Vista.Multiline = false;
+            this.txt_Vista.Name = "txt_Vista";
+            this.txt_Vista.Size = new System.Drawing.Size(147, 50);
+            this.txt_Vista.TabIndex = 46;
+            this.txt_Vista.Text = "";
+            this.txt_Vista.TrailingIcon = null;
+            this.txt_Vista.UseAccent = false;
+            // 
+            // txt_Status
+            // 
+            this.txt_Status.AnimateReadOnly = false;
+            this.txt_Status.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Status.Depth = 0;
+            this.txt_Status.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Status.Hint = "Status";
+            this.txt_Status.LeadingIcon = global::appBugInn.Properties.Resources.check_list;
+            this.txt_Status.Location = new System.Drawing.Point(198, 99);
+            this.txt_Status.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Status.MaxLength = 50;
+            this.txt_Status.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Status.Multiline = false;
+            this.txt_Status.Name = "txt_Status";
+            this.txt_Status.Size = new System.Drawing.Size(147, 50);
+            this.txt_Status.TabIndex = 47;
+            this.txt_Status.Text = "";
+            this.txt_Status.TrailingIcon = null;
+            this.txt_Status.UseAccent = false;
+            // 
+            // txt_nQuarto
+            // 
+            this.txt_nQuarto.AnimateReadOnly = false;
+            this.txt_nQuarto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nQuarto.Depth = 0;
+            this.txt_nQuarto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nQuarto.Hint = "Nº quarto";
+            this.txt_nQuarto.LeadingIcon = global::appBugInn.Properties.Resources.png_transparent_computer_icons_icon_design_bed_bed_room_text_rectangle_computer;
+            this.txt_nQuarto.Location = new System.Drawing.Point(15, 31);
+            this.txt_nQuarto.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_nQuarto.MaxLength = 50;
+            this.txt_nQuarto.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nQuarto.Multiline = false;
+            this.txt_nQuarto.Name = "txt_nQuarto";
+            this.txt_nQuarto.Size = new System.Drawing.Size(147, 50);
+            this.txt_nQuarto.TabIndex = 30;
+            this.txt_nQuarto.Text = "";
+            this.txt_nQuarto.TrailingIcon = null;
+            this.txt_nQuarto.UseAccent = false;
+            // 
+            // txt_Conta
+            // 
+            this.txt_Conta.AnimateReadOnly = false;
+            this.txt_Conta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Conta.Depth = 0;
+            this.txt_Conta.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_Conta.Hint = "Conta";
+            this.txt_Conta.LeadingIcon = global::appBugInn.Properties.Resources.euro_symbol_icon_2048x2048_jz6x8c3o;
+            this.txt_Conta.Location = new System.Drawing.Point(15, 99);
+            this.txt_Conta.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Conta.MaxLength = 50;
+            this.txt_Conta.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_Conta.Multiline = false;
+            this.txt_Conta.Name = "txt_Conta";
+            this.txt_Conta.Size = new System.Drawing.Size(147, 50);
+            this.txt_Conta.TabIndex = 32;
+            this.txt_Conta.Text = "";
+            this.txt_Conta.TrailingIcon = null;
+            this.txt_Conta.UseAccent = false;
+            // 
+            // txt_usernameFuncionarios
+            // 
+            this.txt_usernameFuncionarios.AnimateReadOnly = false;
+            this.txt_usernameFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_usernameFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_usernameFuncionarios.Depth = 0;
+            this.txt_usernameFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_usernameFuncionarios.HideSelection = true;
+            this.txt_usernameFuncionarios.Hint = "Username";
+            this.txt_usernameFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_usernameFuncionarios.Location = new System.Drawing.Point(656, 10);
+            this.txt_usernameFuncionarios.Margin = new System.Windows.Forms.Padding(1);
+            this.txt_usernameFuncionarios.MaxLength = 32767;
+            this.txt_usernameFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_usernameFuncionarios.Name = "txt_usernameFuncionarios";
+            this.txt_usernameFuncionarios.PasswordChar = '\0';
+            this.txt_usernameFuncionarios.PrefixSuffixText = null;
+            this.txt_usernameFuncionarios.ReadOnly = false;
+            this.txt_usernameFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_usernameFuncionarios.SelectedText = "";
+            this.txt_usernameFuncionarios.SelectionLength = 0;
+            this.txt_usernameFuncionarios.SelectionStart = 0;
+            this.txt_usernameFuncionarios.ShortcutsEnabled = true;
+            this.txt_usernameFuncionarios.Size = new System.Drawing.Size(337, 48);
+            this.txt_usernameFuncionarios.TabIndex = 1;
+            this.txt_usernameFuncionarios.TabStop = false;
+            this.txt_usernameFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_usernameFuncionarios.TrailingIcon = null;
+            this.txt_usernameFuncionarios.UseSystemPasswordChar = false;
+            // 
+            // txt_nomeFuncionarios
+            // 
+            this.txt_nomeFuncionarios.AnimateReadOnly = false;
+            this.txt_nomeFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_nomeFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_nomeFuncionarios.Depth = 0;
+            this.txt_nomeFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_nomeFuncionarios.HideSelection = true;
+            this.txt_nomeFuncionarios.Hint = "Nome";
+            this.txt_nomeFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.Personnome;
+            this.txt_nomeFuncionarios.Location = new System.Drawing.Point(11, 10);
+            this.txt_nomeFuncionarios.Margin = new System.Windows.Forms.Padding(1);
+            this.txt_nomeFuncionarios.MaxLength = 32767;
+            this.txt_nomeFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_nomeFuncionarios.Name = "txt_nomeFuncionarios";
+            this.txt_nomeFuncionarios.PasswordChar = '\0';
+            this.txt_nomeFuncionarios.PrefixSuffixText = null;
+            this.txt_nomeFuncionarios.ReadOnly = false;
+            this.txt_nomeFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_nomeFuncionarios.SelectedText = "";
+            this.txt_nomeFuncionarios.SelectionLength = 0;
+            this.txt_nomeFuncionarios.SelectionStart = 0;
+            this.txt_nomeFuncionarios.ShortcutsEnabled = true;
+            this.txt_nomeFuncionarios.Size = new System.Drawing.Size(441, 48);
+            this.txt_nomeFuncionarios.TabIndex = 0;
+            this.txt_nomeFuncionarios.TabStop = false;
+            this.txt_nomeFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_nomeFuncionarios.TrailingIcon = null;
+            this.txt_nomeFuncionarios.UseSystemPasswordChar = false;
+            // 
+            // txt_telefoneFuncionarios
+            // 
+            this.txt_telefoneFuncionarios.AnimateReadOnly = false;
+            this.txt_telefoneFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_telefoneFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_telefoneFuncionarios.Depth = 0;
+            this.txt_telefoneFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_telefoneFuncionarios.HideSelection = true;
+            this.txt_telefoneFuncionarios.Hint = "Telefone";
+            this.txt_telefoneFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.tele;
+            this.txt_telefoneFuncionarios.Location = new System.Drawing.Point(11, 83);
+            this.txt_telefoneFuncionarios.Margin = new System.Windows.Forms.Padding(1);
+            this.txt_telefoneFuncionarios.MaxLength = 32767;
+            this.txt_telefoneFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_telefoneFuncionarios.Name = "txt_telefoneFuncionarios";
+            this.txt_telefoneFuncionarios.PasswordChar = '\0';
+            this.txt_telefoneFuncionarios.PrefixSuffixText = null;
+            this.txt_telefoneFuncionarios.ReadOnly = false;
+            this.txt_telefoneFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_telefoneFuncionarios.SelectedText = "";
+            this.txt_telefoneFuncionarios.SelectionLength = 0;
+            this.txt_telefoneFuncionarios.SelectionStart = 0;
+            this.txt_telefoneFuncionarios.ShortcutsEnabled = true;
+            this.txt_telefoneFuncionarios.Size = new System.Drawing.Size(230, 48);
+            this.txt_telefoneFuncionarios.TabIndex = 2;
+            this.txt_telefoneFuncionarios.TabStop = false;
+            this.txt_telefoneFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_telefoneFuncionarios.TrailingIcon = null;
+            this.txt_telefoneFuncionarios.UseSystemPasswordChar = false;
+            // 
+            // txt_passwordFuncionarios
+            // 
+            this.txt_passwordFuncionarios.AnimateReadOnly = false;
+            this.txt_passwordFuncionarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_passwordFuncionarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_passwordFuncionarios.Depth = 0;
+            this.txt_passwordFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_passwordFuncionarios.HideSelection = true;
+            this.txt_passwordFuncionarios.Hint = "Password";
+            this.txt_passwordFuncionarios.LeadingIcon = global::appBugInn.Properties.Resources.icons8_trancar_24;
+            this.txt_passwordFuncionarios.Location = new System.Drawing.Point(656, 83);
+            this.txt_passwordFuncionarios.Margin = new System.Windows.Forms.Padding(1);
+            this.txt_passwordFuncionarios.MaxLength = 32767;
+            this.txt_passwordFuncionarios.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_passwordFuncionarios.Name = "txt_passwordFuncionarios";
+            this.txt_passwordFuncionarios.PasswordChar = '\0';
+            this.txt_passwordFuncionarios.PrefixSuffixText = null;
+            this.txt_passwordFuncionarios.ReadOnly = false;
+            this.txt_passwordFuncionarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_passwordFuncionarios.SelectedText = "";
+            this.txt_passwordFuncionarios.SelectionLength = 0;
+            this.txt_passwordFuncionarios.SelectionStart = 0;
+            this.txt_passwordFuncionarios.ShortcutsEnabled = true;
+            this.txt_passwordFuncionarios.Size = new System.Drawing.Size(337, 48);
+            this.txt_passwordFuncionarios.TabIndex = 4;
+            this.txt_passwordFuncionarios.TabStop = false;
+            this.txt_passwordFuncionarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_passwordFuncionarios.TrailingIcon = null;
+            this.txt_passwordFuncionarios.UseSystemPasswordChar = false;
+            // 
+            // materialFloatingActionButton4
+            // 
+            this.materialFloatingActionButton4.Depth = 0;
+            this.materialFloatingActionButton4.Icon = global::appBugInn.Properties.Resources.icons8_profit_48;
+            this.materialFloatingActionButton4.Location = new System.Drawing.Point(610, 66);
+            this.materialFloatingActionButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.materialFloatingActionButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton4.Name = "materialFloatingActionButton4";
+            this.materialFloatingActionButton4.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton4.TabIndex = 6;
+            this.materialFloatingActionButton4.TabStop = false;
+            this.materialFloatingActionButton4.UseVisualStyleBackColor = false;
+            // 
+            // materialFloatingActionButton3
+            // 
+            this.materialFloatingActionButton3.Depth = 0;
+            this.materialFloatingActionButton3.Icon = global::appBugInn.Properties.Resources.icons8_satisfaction_48;
+            this.materialFloatingActionButton3.Location = new System.Drawing.Point(900, 65);
+            this.materialFloatingActionButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.materialFloatingActionButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
+            this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
+            this.materialFloatingActionButton3.TabIndex = 7;
+            this.materialFloatingActionButton3.TabStop = false;
+            this.materialFloatingActionButton3.UseVisualStyleBackColor = false;
+            // 
             // F_telaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1979,8 +1943,6 @@ namespace appBugInn
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.F_telaInicial_Load);
             this.materialTabControl1.ResumeLayout(false);
-            this.tb_home.ResumeLayout(false);
-            this.tb_home.PerformLayout();
             this.tb_reservas.ResumeLayout(false);
             this.mc_dadosReserva.ResumeLayout(false);
             this.mc_dadosReserva.PerformLayout();
@@ -1992,7 +1954,6 @@ namespace appBugInn
             this.materialCard7.PerformLayout();
             this.tb_funcionarios.ResumeLayout(false);
             this.cd_FuncionariosDados.ResumeLayout(false);
-            this.cd_FuncionariosDados.PerformLayout();
             this.tb_configuracoes.ResumeLayout(false);
             this.tb_diretoria.ResumeLayout(false);
             this.mc_datas_dash.ResumeLayout(false);
@@ -2002,8 +1963,8 @@ namespace appBugInn
             this.materialCard4.ResumeLayout(false);
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
-            this.materialCard1.ResumeLayout(false);
-            this.materialCard1.PerformLayout();
+            this.tb_home.ResumeLayout(false);
+            this.tb_home.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2019,7 +1980,6 @@ namespace appBugInn
         private System.Windows.Forms.TabPage tb_diretoria;
         private System.Windows.Forms.TabPage tb_configuracoes;
         private MaterialSkin.Controls.MaterialSwitch sw_darkMode;
-        private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard4;
         private System.Windows.Forms.Label lbl_desc_fatMensal;
         private System.Windows.Forms.Label lbl_fatMensal;
@@ -2098,7 +2058,6 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialTextBox txt_hospede3;
         private MaterialSkin.Controls.MaterialTextBox txt_nPessoasCheckIn;
         private MaterialSkin.Controls.MaterialTextBox txt_nAndar;
-        private MaterialSkin.Controls.MaterialTextBox txt_idQuartoCheckIn;
         private MaterialSkin.Controls.MaterialTextBox txt_subtotal;
         private MaterialSkin.Controls.MaterialButton btn_pesquisar;
         private MaterialSkin.Controls.MaterialTextBox txt_dataCheckOut;
@@ -2112,6 +2071,6 @@ namespace appBugInn
         private MaterialSkin.Controls.MaterialLabel materialLabel2_dash;
         private MaterialSkin.Controls.MaterialLabel materialLabel1_dash;
         private MaterialSkin.Controls.MaterialLabel lbl_usuarioLogado;
-        private System.Windows.Forms.ComboBox cb_idQuartoCheckIn;
+        private MaterialSkin.Controls.MaterialComboBox cb_idQuartoCheckIn;
     }
 }
